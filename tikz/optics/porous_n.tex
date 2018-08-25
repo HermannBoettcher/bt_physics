@@ -1,0 +1,35 @@
+\documentclass[../../thesis.tex]{subfiles}
+
+
+\begin{document}
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}
+        \tikzstyle arrowstyle=[scale=2]
+        \tikzstyle directed=[postaction={decorate,decoration={markings,
+            mark=at position .65 with {\arrow[arrowstyle]{stealth}}}}]
+        \pgfdeclarelayer{bg}    % declare background layer
+        \pgfdeclarelayer{bbg}    % declare backbackground layer
+        \pgfsetlayers{bg,main}  % set the order of the layers (main is the standard layer)
+        \fill[blue!10] (4,0) -- (4,5.75) -- (6,5.75) -- (6,0) -- cycle;
+        \foreach \y in {1,2,3,4,5}
+            {\fill[white] (3.5,\y) -- (6.5,\y) -- (6.5,\y-0.25) -- (3.5,\y-0.25) -- cycle;}
+        \draw (4,5.75) -- (4,5) -- (6,5) --(6,5.75) --cycle;
+        \draw (4,4.75) -- (4,4) -- (6,4) --(6,4.75) --cycle;
+        \draw (4,3.75) -- (4,3) -- (6,3) --(6,3.75) --cycle;
+        \draw (4,2.75) -- (4,2) -- (6,2) --(6,2.75) --cycle;
+        \draw (4,1.75) -- (4,1) -- (6,1) --(6,1.75) --cycle;
+        \draw (4,0.75) -- (4,0) -- (6,0) --(6,0.75) --cycle;
+        \draw[color=red, directed] (0,5.75) -- (4,3);
+        \draw[color=red, directed] (4,3) -- (6,2.75);
+        \draw[color=red, directed] (6,2.75) -- (10,0);
+        \node at (3,5.75) {$n_\mathrm{vac}$};
+        \node at (7,5.75) {$n_\mathrm{vac}$};
+        \draw [decorate,decoration={brace,amplitude=10pt},xshift=0pt,yshift=+4pt] (4,5.75) -- (6,5.75) node [black,midway,yshift=18pt] {\footnotesize $n_\mathrm{eff}^\mathrm{empty}$};
+    \end{tikzpicture}
+    \caption{Using the blabla approximation for the refractive index of a nanoporous medium the transmission in its empty state is computed in section ???. }
+    \label{fig:porous-transmission}
+\end{figure}
+
+
+\end{document}

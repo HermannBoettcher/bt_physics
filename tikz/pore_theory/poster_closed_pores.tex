@@ -1,0 +1,36 @@
+\documentclass{standalone}
+\usepackage{Bachelor_Thesis_Institut_Neel/sty/themeKonstanz}
+
+\begin{document}
+    \begin{tikzpicture}[every node/.style = {font = \small},
+                        pore/.style = {line width = 0.1cm, color = gray},
+                        film/.style = {line width = 0.1cm, color = blue!50},
+                        thick_film/.style = {line width = 0.3cm, color = blue!50},
+                        graph_label/.style={color = gray, line width = 0.05cm},
+                        pore_collapse/.style = {color = blue!50, line width = 0.07cm, ->},
+                        MyArrow/.style={single arrow, draw, minimum width=8mm, minimum height=3mm,
+                        inner sep=0mm, single arrow head extend=1mm}]
+        \tikzset{fontscale/.style = {font=\relsize{#1}}}
+        \tikzset{MyArrow/.style={single arrow, draw, minimum width=8mm, minimum height=5mm, inner sep=0mm, single arrow head extend=1mm}}
+        \pgfdeclarelayer{bg}    % declare background layer
+        \pgfdeclarelayer{bbg}    % declare backbackground layer
+        \pgfsetlayers{bbg,bg,main}  % set the order of the layers (main is the standard layer)
+        \tikzstyle arrowstyle=[scale=2]
+        \tikzstyle directed=[postaction={decorate,decoration={markings,
+            mark=at position .65 with {\arrow[arrowstyle]{stealth}}}}]
+        \begin{scope}
+            \foreach \Xcoor in {0, 2.8}
+            \draw[pore] (\Xcoor,3.5) -- (\Xcoor,0) -- (\Xcoor + 1.4,0) -- (\Xcoor + 1.4,3.5);
+            \node[draw = red!70, fill = red!50, MyArrow] at (2.05, 2.5) {\phantom{arrow}};
+            \node[draw = red!70, fill = red!50, MyArrow, rotate = 180] at (2.1, 1) {\phantom{arrow}};
+            \begin{pgfonlayer}{bg}
+                \fill[blue!50] (2.8,0) -- (2.8,3.5)  -- (4.2,3.5) -- (4.2,0) -- cycle ;
+                \fill[blue!50] (0,0) -- (0,3.5)  -- (1.4,3.5) -- (1.4,0) -- cycle ;
+                \path [draw = none, fill = white](3,3.6) arc[start angle = -180, end angle = 0, radius=0.5];
+                \fill[white] (1.2,3.55) -- (0.2,3.55) -- (0.2,0.7) arc[start angle = -180, end angle = 0, radius=0.5] -- cycle;
+                \draw[color = blue!50, ->, line width = 0.5mm] (0.7,0.2) -- (0.7,3.3);
+                \draw[color = white, ->, line width = 0.5mm] (3.5,3.3) -- (3.5,0.4);
+            \end{pgfonlayer}
+        \end{scope}
+    \end{tikzpicture}
+\end{document}

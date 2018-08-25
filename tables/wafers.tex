@@ -1,0 +1,58 @@
+%\documentclass[border = 3mm,
+%               tikz]{standalone}
+\documentclass{article}
+\usepackage{../sty/themeKonstanz}
+\usepackage{tabu}
+\usepackage{fontawesome}
+
+\begin{document}
+
+
+    \begin{table}
+        \caption{Wafer 295}
+        \label{tbl:wafer295}
+        \selectfontsize{10pt}
+        \centering
+        \begin{tabu} {cccccc}
+            \unitoprule \\
+            Sample &op/ cp &Al dis. bath &ALD &MEB &Isotherm  \\
+            \unimidrule \\
+            \textbf{a} &cp &- &- &- &180523-180528 \\
+            \textbf{a'} &cp &$\SI{4,5}{\hour}$ &- &- &180523-180528 \\
+            \textbf{b} &cp &- &- &- &180613-180620 \\
+            \textbf{c} &op &- &- &- &180704-180706 \\
+            \textbf{d} &op &- &- &- &180606-180613 \\
+            \textbf{d'} &op &- &250 &- &180713-180716 \\
+            \textbf{e} &op &- &- &- &180706-180709 \\
+            \textbf{e'} &op &- &100 &- &180711-180712 \\
+            \textbf{e''} &op &- &200 &- &- \\
+            \textbf{f} &op &- &- &- &180709-180711 \\
+            \textbf{f'} &op &- &200 &- &180716-180718 \\
+            \textbf{g} &op &- &- &- &180712-180713 \\
+            \unitoprule \\
+        \end{tabu}
+    \end{table}
+    
+    
+
+    \begin{table}
+        \caption{Wafer 296}
+        \label{tbl:wafer296}
+        \selectfontsize{10pt}
+        \centering
+        \begin{tabu} {cccccc}
+            \unitoprule \\
+            Sample &op/ cp &$t_\mathrm{float}$ &$t_\mathrm{immersed}$ &MEB &Isotherm  \\
+            \unimidrule \\  
+            \textbf{a} &cp &0 &0 &\faTimes &180623-180625 \\
+            \textbf{b} &cp &0 &0 &\faTimes & \\
+            \textbf{c} &cp &0 &$\SI{6,5}{\minute}$ &\faCheck &180625-180627 \\
+            \textbf{d} &cp &0 &$\SI{13}{\minute}$ &\faTimes &180702-180704 \\
+            \textbf{e} &cp &$\SI{13}{\minute}$ &0 &\faTimes &180627-180629 \\
+            \textbf{f} &cp &$\SI{26}{\minute}$ &0 &\faTimes &180629-180702 \\
+            \unitoprule \\
+        \end{tabu}
+    \end{table}
+
+
+\end{document}

@@ -1,0 +1,92 @@
+\documentclass[border = 3mm,
+               tikz]{standalone}
+
+\usepackage{tikz}
+\usepackage{siunitx}
+\usepackage{forest}
+\usepackage{pstricks-add}
+\usepackage{cleveref}\usepackage{relsize}
+
+\usetikzlibrary{arrows,shapes,positioning}
+\usetikzlibrary{decorations.markings}
+
+\tikzset{fontscale/.style = {font=\relsize{#1}}
+    }
+\usetikzlibrary{arrows.meta,shapes,positioning}
+\tikzset{
+    full/.style={circle,draw,inner sep=0, minimum size=1mm,fill=black},
+    every node/.style={minimum height=5mm,font=\footnotesize}
+}
+
+\begin{document}
+
+    \pgfdeclarelayer{bg}    % declare background layer
+    \pgfdeclarelayer{bbg}    % declare backbackground layer
+    \pgfsetlayers{bbg,bg,main}  % set the order of the layers (main is the standard layer)
+    \begin{tikzpicture}[every node/.style={fontscale = 3},
+                        pore/.style = {line width = 0.2cm, color = gray},
+                        film/.style = {line width = 0.15cm, color = blue!40},
+                        thick_film/.style = {line width = 0.3cm, color = blue!40},
+                        graph_label/.style={color = gray, line width = 0.07cm},
+                        pore_collapse/.style = {color = blue!50, line width = 0.07cm, ->},
+                        my_arrow/.style = {fontscale = 0.5}]
+        \tikzstyle arrowstyle=[scale=2]
+        \tikzstyle directed=[postaction={decorate,decoration={markings,
+            mark=at position .65 with {\arrow[arrowstyle]{stealth}}}}]
+        \foreach \Xcoor in {0, 3, 5, 8, 11, 14, 16, 19, 22, 25}
+        \draw[pore] (\Xcoor,-1) -- (\Xcoor,-8);
+        \node[gray] at (1.5,-0.6) {$r$};
+        \draw[graph_label, ->,] (2,-0.6) -- (2.9,-0.6);
+        \draw[graph_label, ->,] (1,-0.6) -- (0.1,-0.6);
+        \node[draw = orange!70, fill = orange!50, single arrow, my_arrow] at (4, -4.5) {\phantom{arrow}};
+        \node[draw = green!70, fill = green!50, single arrow, my_arrow] at (9, -4.5) {\phantom{arrow}};
+        \node[draw = red!70, fill = red!50, single arrow, my_arrow] at (15, -4.5) {\phantom{arrow}};
+        \node[draw = blue!70, fill = blue!50, single arrow, my_arrow] at (21, -4.5) {\phantom{arrow}};
+        \draw[color = red!60, line width = 0.1cm] (10,0) -- (20,0) -- (20,-9) -- (10,-9) -- cycle; \node[color = red!60] at (15,-10) {spinodal pressure};
+        \node[color = gray] at (6.5,-9) {cylindrical meniscus};
+        \begin{pgfonlayer}{bg}    % select the background layer
+            %filmed pore
+            \draw[film] (5.14,-1) -- (5.14,-8);
+            \draw[film] (7.86,-1) -- (7.86,-8);
+            %thick filmed pore
+            \draw[thick_film] (11.24,-1) -- (11.24,-8);
+            \draw[thick_film] (13.76,-1) -- (13.76,-8);
+            \begin{pgfonlayer}{bbg}
+                \draw[pore_collapse] (11.3,-2) -- (12.2,-2);
+                \draw[pore_collapse] (13.70,-2) -- (12.8,-2);
+                \draw[pore_collapse] (11.3,-7) -- (12.2,-7);
+                \draw[pore_collapse] (13.70,-7) -- (12.8,-7);
+                \draw[pore_collapse] (11.3,-4.5) -- (12.2,-4.5);
+                \draw[pore_collapse] (13.70,-4.5) -- (12.8,-4.5);
+            \end{pgfonlayer}
+            %spinodal pore !!! ADD MENISCI HERE !!!
+            \fill[blue!40] (16,-8) rectangle (19,-1);
+            \path [name path = upper_meniscus, draw = none, fill = white](16.4,-0.9) arc[start angle = -180, end angle = 0, radius=1.1];
+            \path [name path = lower_meniscus, draw = none, fill = white](16.4,-8.1) arc[start angle = 180, end angle = 0, radius=1.1];
+            %filled pore
+            \fill[blue!40] (22,-8) rectangle (25,-1);
+        \end{pgfonlayer};
+    \draw[line width = 0.07cm,->, color = gray] (3,-18) -- (3,-11) node[anchor=south] {Liquid fraction};
+    \draw[line width = 0.07cm,->, color = gray] (3,-18) -- (21,-18) node[anchor=west] {Pressure};
+    %x labels
+    \draw[graph_label] (3,-18) -- (3,-18.5) node[anchor=north] {$0$};
+    \draw[graph_label] (11.8,-18) -- (11.8,-18.2) node[anchor=north] {$P_\mathrm{eq}(r)$};
+    \draw[graph_label] (14.2,-18) -- (14.2,-18.2) node[anchor=north] {$P_\mathrm{sp}^\mathrm{cyl}(r)$};
+    \draw[graph_label] (20,-18) -- (20,-18.2) node[anchor=north] {$P_\mathrm{sv}$};
+    %y labels
+    \draw[graph_label] (3,-18) -- (2.5,-18) node[anchor=east] {$0$};
+    \draw[graph_label] (3,-12) -- (2.8,-12) node[anchor=east] {$1$};
+    %grid
+    \draw[dashed, graph_label] (3,-12) -- (20,-12);
+    \draw[dashed, graph_label] (3,-12.3) -- (14.2,-12.3);
+    \draw[dashed, graph_label] (20,-18) -- (20,-12);
+    \draw[dashed, graph_label] (14.2,-18) -- (14.2,-17.44);
+    \draw[dashed, graph_label] (3,-17.44) -- (14.2,-17.44);
+    %isotherm
+    \draw[line width = 0.1cm, color = orange!70, directed] (3,-18) -- (9,-17.7);
+    \draw[line width= 0.1cm, color = green!70, directed] (9,-17.7) -- (14.2,-17.44);
+    \draw[line width = 0.1cm, color = red!70, directed] (14.2,-17.44) -- (14.2,-12.3);
+    \draw[line width = 0.1cm, color = blue!70, directed] (14.2,-12.3) -- (20,-12);
+    \end{tikzpicture}
+
+\end{document}

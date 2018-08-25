@@ -1,0 +1,558 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"begin",
+				"\\begin{}                                          \tlatex-document"
+			],
+			[
+				"usepackag",
+				"\\usepackage{package}                              \tlatex-document"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "thesis.tex",
+			"settings":
+			{
+				"buffer_size": 14721,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Traditional"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Script Builder"
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				"PdfLaTeX"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"build with late",
+				"Build With: LaTeX - Traditional"
+			],
+			[
+				"setting",
+				"Preferences: Settings"
+			],
+			[
+				"package control",
+				"Package Control: Install Package"
+			],
+			[
+				"package cntrol:",
+				"Package Control: Install Package"
+			],
+			[
+				"latex",
+				"LaTeXTools: Check system"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/sections",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/tikz",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/tikz/wafers"
+	],
+	"file_history":
+	[
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/tikz/transmission_disorder/pore_disorder.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/tikz/wafer_analysis/funnelling_increase.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/tikz/wafers/wafer_295_processing_plan.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/tikz/wafers/wafer_296_tansmission_initial.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/sections/experimental_setup.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/sections/isotherm_computation.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/tikz/wafers/wafer_296_processing_plan.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/tikz/wafers/wafer_295_transmission_post_initial.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/tikz/setup/setup.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/sections/alumina_membranes.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/sections/wafer_analysis.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/tikz/membrane_production/barrier_layer_dissolution.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/sections/ideal_gas_law.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/tikz/pore_theory/iso_loops.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/thesis.lof",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/sections/optics.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/tikz/setup/setup_bypass.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/sty/themeKonstanz.sty",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/thesis.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/tikz/membrane_production/anodizing.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/tikz/membrane_production/new_test.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/tikz/membrane_production/production.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/tikz/membrane_production/production_stages.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/tikz/optics/fresnel_equations.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/tikz/membrane_production/aluminum_dissolution.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/tikz/optics/porous_n.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/tikz/optics/snells_law.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/tikz/optics/transmission_two_layers.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/sections/laplace_young_equation.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/sections/kelvin_equation.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/thesis.log",
+		"/usr/share/texmf-dist/tex/latex/cmbright/cmbright.sty",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/sections/cond_evap_cyl_pore.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/tikz/pore_theory/open_straight_cyl_pore_isos.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/tikz/pore_theory/closed_straight_cyl_pore_isos.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/tikz/pore_theory/open_funnelled_cyl_pores_isos.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/tikz/pore_theory/closed_funnelled_pore_isos_cle.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/tikz/pore_theory/closed_funnelled_pore_isos_cse.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/sections/notes.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/sections/peltier_effect.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/sections/theme.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/sections/atomic_layer_deposition.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/sections/cavitation.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/sections/chemistry.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/sections/equilibrium.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/sections/hexane.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/sections/introduction.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/tikz/wafers/saved.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/bt.sublime-project",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/thesis.pdf",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis_Institut_Neel/sty/themeKonstanz.sty",
+		"/home/chajia/.config/sublime-text-3/Packages/User/LaTeXTools.sublime-settings",
+		"/usr/share/texmf-dist/tex/latex/chngcntr/chngcntr.sty",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/latex.sublime-project",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/btsublime-project",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis_Institut_Neel/sections/wafer_analysis.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis_Institut_Neel/bt.sublime-project",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis_Institut_Neel/Thesis.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis_Institut_Neel/tikz/graphs/295e_ALD/plot.tex",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis_Institut_Neel/tikz/graphs/295e_ALD/plot.pdf",
+		"/home/chajia/.config/sublime-text-3/Cache/LaTeXTools/internal/preview_math/dd55b13a5b9f1050385dcff41ff8b64c.png.err",
+		"/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis_Institut_Neel/sections/wafer_analysis.log",
+		"/home/chajia/Desktop/bla.tex",
+		"/home/chajia/.config/sublime-text-3/Cache/LaTeXTools/internal/preview_math/be5031f915bae6378404d06e5988a2a3.png.err"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"subsec:barrier-layer-dissolution",
+			"fig:barrier-layer-dissolution-setup-1",
+			"h]",
+			"figure",
+			"h]",
+			"goodgap",
+			"subfigure",
+			"centering",
+			"subfigure",
+			"custom fade",
+			"schrift",
+			"12pt",
+			"sc",
+			"16",
+			"18",
+			"../",
+			"%",
+			"../",
+			"}",
+			"decoration",
+			"Bachelor_Thesis_Institut_Neel",
+			"Bachelor_thesis_institut_Neel",
+			"subfile",
+			"include",
+			"etex",
+			"docSubtitle",
+			"\\subtitle",
+			"counterwithout"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"hfill",
+			"subfloat",
+			"",
+			".."
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "thesis.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14721,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13485,
+								13485
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": 41,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										13484,
+										13485
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										13470,
+										13471
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content"
+							],
+							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 7344.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.latextools":
+	{
+		"height": 289.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "bt.sublime-project",
+	"replace":
+	{
+		"height": 70.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 232.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

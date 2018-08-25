@@ -1,0 +1,98 @@
+\documentclass[../thesis.tex]{subfiles}
+
+\begin{document}
+
+    \section{Condensation and evaporation in a cylindrical pore}
+
+        To understand the condensation and evaporation of hexane in the alumina membranes, used for the conducted experiments, the processes must be understood for a single pore. The following explanation starts off with a straight cylindrical pore which is closed on one end. Then, funnelization is included in the theory. Finally, the model is applied to cylindrical pores open on both ends, straight and funnelled.
+        \medskip
+
+        As a precondition, all pores are wetting. This means when exposed to vapor, a liquid film forms on their surface.
+
+
+        \subsection{Closed pore}
+
+            The term \textit{closed pore} shall from now on be linked to a pore that is only open at one end.
+
+            \subsubsection{Closed straight pore}
+
+                The absorption isotherm of a straight cylindrical pore is illustrated in \cref{fig:closed-straight-cyl-pore-isos} (a) with the corresponding processes inside the pore. Exposing the pore to vapor yields a wetting film on its surface (orange pressure range of the isotherm). As by \textsc{Laplace-Young} \cref{eq:laplace-young} different radii of menisci correspond to different pressures. Therefore, the film starts forming a spherical meniscus at the closed end of the pore (green). Upon reaching equilibrium pressure $P_\mathrm{eq}(d)$ the pore fills due to the translational symmetry of the meniscus leaving only a spherical meniscus at the open end (red). The latter relaxes with increasing pressure till an even surface is left at saturated vapor pressure $P_\mathrm{sv}$ (blue).
+                \medskip
+
+                \Cref{fig:closed-straight-cyl-pore-isos} (b) shows the corresponding desorption isotherm. When lowering the pressure from saturated vapor pressure, a spherical cap meniscus forms on the open end of the pore (orange pressure range of the isotherm). At equilibrium pressure this meniscus becomes spherical and invariant to translation inside the pore (green). Therefore, the pore empties except for a film on its surface (red). The film gets thinner with decreasing pressure and completely disappears when vacuum is reached.
+
+
+
+            \subsubsection{Closed funneled pore - large end open}
+            \label{sssec:cfp-leo}
+
+                The absorption isotherm of a funnelled pore that is closed on the small end is shown in \cref{fig:closed-funnelled-cyl-pore-isos-cse} (a). Increasing the vapor pressure yields a thickening wetting film on the surface of the pore (orange pressure range of the isotherm). At the bottom of the pore a spherical cap meniscus forms that becomes a spherical meniscus at equilibrium pressure $P_\mathrm{{eq}(r')}$ (green). At this point the pore starts to fill significantly with increasing pressure. It does not fill at one given pressure though as for the meniscus to move to larger radii, the pressure must also increase. Except for the spherical meniscus at the open end, the pore is filled at equilibrium pressure $P_\mathrm{eq}(d)$. This continuous filling is implied by the red colored range of the absorption isotherm. The spherical meniscus relaxes into a spherical cap meniscus and finally transforms into an even surface at saturated vapor pressure.
+                \medskip
+
+                The desorption isotherm is illustrated in \cref{fig:closed-funnelled-cyl-pore-isos-cse} (b). First, a spherical cap meniscus forms on the open end (orange) which transforms into a spherical meniscus upon reaching equilibrium pressure $P_\mathrm{eq}(d)$ (green). At this pressure the pore begins to empty continuously till $P_\mathrm{eq}(d')$ is reached (red). Only a film covering the pore's surface is left. The latter evaporates with decreasing pressure and a dry pore is left at zero pressure.
+
+
+
+            \subsubsection{Closed funnelled pore - small end open}
+
+                \Cref{fig:closed-funnelled-cyl-pore-isos-cle} (a) shows the absorption isotherm of a funneled pore that is closed at the large end. With increasing vapor pressure a film forms on the pore's surface (orange pressure range of the isotherm) and a spherical cap meniscus forms at the closed end. The latter becomes a spherical meniscus upon reaching equilibrium pressure $P_\mathrm{eq}(d)$ (green). As
+                \begin{equation}
+                    P_\mathrm{eq}(d) < P_\mathrm{eq}(d')
+                    \label{eq:diff}
+                \end{equation}
+                holds for this type of pore, the latter fills completely at this pressure. Only a spherical cap meniscus at the open end is left as the current vapor pressure, according to \cref{eq:diff}, already exceeds the respecting equilibrium pressure. The liquids surface flattens at saturated vapor pressure.
+                \medskip
+
+                The corresponding desorption isotherm is illustrated in \cref{fig:closed-funnelled-cyl-pore-isos-cle} (b). Decreasing the vapor pressure starting at saturated vapor pressure $P_\mathrm{sv}$ yields a spherical cap meniscus at the open end of the pore (orange). The meniscus evolves to a spherical meniscus upon reaching equilibrium pressure $P_\mathrm{eq}(d')$ (green). At this pressure, due to \cref{eq:diff}, the pore empties completely leaving only a wetting film on its surface (red). The latter disappears in vacuum.
+
+                \subfile{tikz/pore_theory/closed_straight_cyl_pore_isos.tex}
+                \subfile{tikz/pore_theory/closed_funnelled_pore_isos_cse.tex}
+                \subfile{tikz/pore_theory/closed_funnelled_pore_isos_cle.tex}
+                \subfile{tikz/pore_theory/open_straight_cyl_pore_isos.tex}
+                \subfile{tikz/pore_theory/open_funnelled_cyl_pores_isos.tex}
+
+
+        \subsection{Open cylindrical pore}
+
+            The term \textit{open pore} shall from now on be linked to a pore that is open at both ends.
+
+            \subsubsection{Open straight pore}
+
+                \Cref{fig:open-straight-cyl-pore-isos} (a) shows the desorption isotherm of an open pore of straight cylindrical shape and the corresponding processes inside the pore. As a wetting pore of diameter $d$ is regarded, a film of liquid appears on the inside of the pore at low pressures already (orange pressure range of the isotherm). The latter forms a cylindrical meniscus. Upon increasing the pressure, the film thickens in correspondence to the green pressure range of the isotherm. Reaching the spinodal pressure $P_\mathrm{sp}(d)$, the films collapse yielding a filled pore with menisci at either open end (red). The menisci are spherical cap menisci as
+                \begin{equation}
+                    P_\mathrm{eq}(d)<P_\mathrm{sp}(d)<P_\mathrm{sv}
+                \end{equation}
+                holds holds for this type of pore, where $P_\mathrm{eq}(d)$ is the equilibrium pressure and $P_\mathrm{sv}$ the saturated vapor pressure. The menisci relax upon further increasing the pressure and finally transform into even surfaces at saturated vapor pressure (blue).
+                \medskip
+
+                The desorption isotherm of a straight cylindrical pore is illustrated in \cref{fig:open-straight-cyl-pore-isos} (b). Again, the corresponding processes inside the pore are illustrated below. At first, spherical cap menisci form on either end of the filled pore (orange). Upon reaching equilibrium pressure $P_\mathrm{eq}(d)$ these menisci are spherical (green) and invariant regarding translation along the pore axes. Moreover, the vapor is not saturated yet, so the pore empties leaving only a film of liquid on the inside of the pore (red). The film gets thinner with decreasing pressure and disappears at saturated vapor pressure (blue).
+
+                As condensation and evaporation for a perfect cylindrical pore occur on two different values of vapor pressure, the spinodal pressure $P_\mathrm{sp}$ and the equilibrium pressure $P_\mathrm{eq}$, the process yields a hysteresis. A complete isothermic loop of condensation and evaporation is shown in \cref{fig:iso-loops}.
+
+
+
+            \subsubsection{Open funnelled pore}
+            \label{sssec:open-funnelled-pores}
+
+                Here, a funnelled cylindrical pore that is open at both ends is regarded. A precondition shall be that the funnelization is small in respect to the pore's diameter, in explanation
+                \begin{equation}
+                    P_\mathrm{sp}(d')\ge P_\mathrm{eq}(d).
+                    \label{eq:open-fun-pore-precond}
+                \end{equation}
+                \medskip
+
+                The absorption isotherm is illustrated in \cref{fig:open-funnelled-cyl-pore-isos} (a). Exposed to vapor, the surface of the pore wets leaving a thickening film (orange and green pressure range of the isotherm). At spinodal pressure $P_\mathrm{sp}(d')$, the films collapse on the small end of the pore yielding a closed pore. The liquid bridge forms spherical menisci on both sides and in reference to \cref{eq:open-fun-pore-precond}, the pore fills completely leaving only a spherical cap meniscus at each end. These relax when further increasing the vapor pressure and disappear at saturated vapor pressure $P_\mathrm{sv}$.
+                \medskip
+
+                \Cref{fig:open-funnelled-cyl-pore-isos} (b) shows the desorption isotherm of the regarded pore. Spherical cap menisci form at both ends when reducing the vapor pressure from saturated vapor pressure (orange pressure range of the isotherm). Upon reaching equilibrium pressure $P_\mathrm{eq}(d)$, the meniscus on the large end transforms into a spherical meniscus (green). Then, the pore starts to continuously empty from the large end with decreasing pressure. At $P_\mathrm{eq}(d')$, only a wetting film is left on the surface of the pore (red). This film disappears at zero pressure (blue).
+
+            \subfile{tikz/pore_theory/iso_loops.tex}
+
+        \subsection{Isotherm comparison}
+
+            From the previous sections a resume as to which kind of pore yields which kind of absorption and desorption isotherm loop can be concluded. The loops for closed pores are  shown in \cref{fig:iso-loops} (a),  those for closed pores in (b). Closed pores do not necessarily result in a hysteresis, open pores do so.
+
+\end{document}
+
+
+

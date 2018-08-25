@@ -1,0 +1,40 @@
+{
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				"*.lof",
+				"*.lot",
+				"*.out",
+				"*.fmt",
+				"*.fot",
+				"*.cb",
+				"*.cb2",
+				"*.aux",
+				"*.fdb_latexmk",
+				"*.fls",
+				"*.toc",
+				"*.log",
+				"*.pdf",
+				"*.synctex.gz",
+				"*.synctex.gz(busy)",
+			],
+			"path": "."
+		}
+	],
+	"settings":
+	{
+		"word_wrap": true,
+		"spell_check": true,
+		"ensure_newline_at_eof_on_save": true,
+		"trim_trailing_white_space_on_save": true,
+		"TEXroot": "thesis.tex",
+    	"tex_file_exts": [".tex"],
+    	"builder_settings": {
+        "program": "latex",
+        "options": "--shell-escape"
+                        }
+    }
+
+}

@@ -1,0 +1,179 @@
+\documentclass[../../thesis.tex]{subfiles}
+
+\begin{document}
+\begin{figure}[p]
+    \centering
+    \subfloat[Absorption isotherm. Significant is the absorption at spinodal pressure $P_\mathrm{sp}(d')\ge P_\mathrm{eq}(d)$.]{
+    \begin{tikzpicture}[every node/.style = {font = \small},
+                        pore/.style = {line width = 0.1cm, color = gray},
+                        film/.style = {line width = 0.1cm, color = blue!50},
+                        thick_film/.style = {line width = 0.3cm, color = blue!50},
+                        graph_label/.style={color = gray, line width = 0.05cm},
+                        pore_collapse/.style = {color = blue!50, line width = 0.07cm, ->},
+                        MyArrow/.style={single arrow, draw, minimum width=8mm, minimum height=3mm, inner sep=0mm, single arrow head extend=1mm}]
+        \tikzset{fontscale/.style = {font=\relsize{#1}}}
+        \tikzset{MyArrow/.style={single arrow, draw, minimum width=8mm, minimum height=5mm, inner sep=0mm, single arrow head extend=1mm}}
+        \pgfdeclarelayer{bg}    % declare background layer
+        \pgfdeclarelayer{bbg}    % declare backbackground layer
+        \pgfsetlayers{bbg,bg,main}  % set the order of the layers (main is the standard layer)
+        \tikzstyle arrowstyle=[scale=2]
+        \tikzstyle directed=[postaction={decorate,decoration={markings,
+            mark=at position .65 with {\arrow[arrowstyle]{stealth}}}}]
+        \begin{scope}
+            \foreach \Xcoor in {0, 2.8, 6.3, 9.1, 12.6}
+            \draw[pore] (\Xcoor + 0.2,0) -- (\Xcoor,3.5);
+            \foreach \Xcoor in {1.4, 4.2, 7.7, 10.5, 14}
+            \draw[pore] (\Xcoor - 0.2,0) -- (\Xcoor,3.5);
+            \draw (0.4,3.65) -- (0,3.65);
+            \draw (1,3.65) -- (1.4,3.65);
+            \node at (0.7,3.65) {$d$};
+            \draw (0.4,-0.15) -- (0 + 0.2,-0.15);
+            \draw (1,-0.15) -- (1.4 - 0.2,-0.15);
+            \node at (0.7,-0.15) {$d'$};
+            \node[draw = orange!70, fill = orange!50, MyArrow] at (2.05, 2) {\phantom{arrow}};
+            \node[draw = green!70, fill = green!50, MyArrow] at (4.85, 2) {\phantom{arrow}};
+            \node[draw = red!70, fill = red!50, MyArrow] at (8.35, 2) {\phantom{arrow}};
+            \node[draw = blue!70, fill = blue!50, MyArrow] at (11.85, 2) {\phantom{arrow}};
+            %
+            \draw[color = red!60, line width = 0.05cm] (5.6,-0.2) -- (11.2,-0.2) -- (11.2,3.7) -- (5.6,3.7) -- cycle;
+            \node at (8.4,-0.6) {Spinodal pressure};
+            \node at (3.5,-0.4) {Cylindrical meniscus};
+            \begin{pgfonlayer}{bg}    % select the background layer
+                %filmed pore
+                \draw[film] (2.85 + 0.2,0) -- (2.85,3.5);
+                \draw[film] (4.15 - 0.2,0) -- (4.15,3.5);
+                %filmed pore
+                \draw[film] (6.38 + 0.2,0) -- (6.38,3.5);
+                \draw[film] (7.62 - 0.2,0) -- (7.62,3.5);
+                \draw[color = blue!50, ->, line width = 0.5mm] (6.3 + 0.2,0.1) -- (6.9,0.1);
+                \draw[color = blue!50, ->, line width = 0.5mm] (7.7 - 0.2,0.1) -- (7.1,0.1);
+                \draw[color = blue!50, ->, line width = 0.5mm] (7,0.3) -- (7,3.3);
+                %full pore with menisci
+                \fill[blue!50] (9.1 + 0.2,0) -- (9.1,3.5)  -- (10.5,3.5) -- (10.5 - 0.2,0) -- cycle ;
+                \path [draw = none, fill = white](9.1,4) arc[start angle = -180, end angle = 0, radius=0.7];
+                \path [draw = none, fill = white](9.4,-0.15) arc[start angle = 180, end angle = 0, radius=0.4];
+                %full pore
+                \fill[blue!50] (12.6 + 0.2,0) -- (12.6,3.5)  -- (14,3.5) -- (14 - 0.2,0) -- cycle ;
+            \end{pgfonlayer}
+        \end{scope}
+        \begin{scope}[xshift=1cm,yshift=5cm]
+            \draw (0,0) -- (0,3.5);
+            \draw (12,0) -- (12,3.5);
+            \node[rotate=90] at (-0.7,1.75) {Liquid fraction};
+            \draw (0,0) -- (12,0);
+            \draw (0,3.5) -- (12,3.5);
+            \node at (6,-0.7) {Pressure};
+            %yellow
+            \draw[color = orange, directed] (0,0) -- (4,0.2);
+            %green
+            \draw[color = green, directed] (4,0.2) -- (8,0.4);
+            %red
+            \draw[color = red, directed] (8,0.4) -- (8,3.35);
+            %blue
+            \draw[color = blue, directed] (8,3.35) -- (11,3.5);
+            %DASHED
+            \draw[dashed] (11,0) -- (11,3.5);  %psat
+            \draw[dashed] (9,0) -- (9,0.15);  %psp
+            \draw[dashed] (8,0) -- (8,0.15);  %peq
+            \draw[dashed] (8,3.5) -- (8,3.35);  %psp
+            \draw[dashed] (6.5,3.5) -- (6.5,3.35);  %peq
+            %labels
+            \node at (-0.2,-0.3) {$0$};
+            \node at (-0.2,3.5) {$1$};
+            \node at (11,-0.3) {$P_\mathrm{sv}$};
+            \node at (8,-0.3) {$P_\mathrm{eq}(d)$};
+            \node at (9,-0.3) {$P_\mathrm{sp}(d)$};
+            \node at (6.5,3.8) {$P_\mathrm{eq}(d')$};
+            \node at (8,3.8) {$P_\mathrm{sp}(d')$};
+        \end{scope}
+    \end{tikzpicture}
+    \label{fig:4a}} \\
+    \subfloat[Desorption isotherm. Significant is the continuous desorption at the equilibrium pressures ${P_\mathrm{sp}(d)}$ to ${P_\mathrm{sp}(d')}$.]{
+    \begin{tikzpicture}[every node/.style = {font = \small},
+                        pore/.style = {line width = 0.1cm, color = gray},
+                        film/.style = {line width = 0.1cm, color = blue!50},
+                        thick_film/.style = {line width = 0.3cm, color = blue!50},
+                        graph_label/.style={color = gray, line width = 0.05cm},
+                        pore_collapse/.style = {color = blue!50, line width = 0.07cm, ->},
+                        MyArrow/.style={single arrow, draw, minimum width=8mm, minimum height=5mm,
+                        inner sep=0mm, single arrow head extend=1mm}]
+        \tikzset{fontscale/.style = {font=\relsize{#1}}}
+        \tikzset{MyArrow/.style={single arrow, draw, minimum width=8mm, minimum height=5mm, inner sep=0mm, single arrow head extend=1mm}}
+        \pgfdeclarelayer{bg}    % declare background layer
+        \pgfdeclarelayer{bbg}    % declare backbackground layer
+        \pgfsetlayers{bbg,bg,main}  % set the order of the layers (main is the standard layer)
+        \tikzstyle arrowstyle=[scale=2]
+        \tikzstyle directed=[postaction={decorate,decoration={markings,
+            mark=at position .65 with {\arrow[arrowstyle]{stealth}}}}]
+        \begin{scope}
+            \foreach \Xcoor in {0, 2.8, 6.3, 9.1, 12.6}
+            \draw[pore] (\Xcoor + 0.2,0) -- (\Xcoor,3.5);
+            \foreach \Xcoor in {1.4, 4.2, 7.7, 10.5, 14}
+            \draw[pore] (\Xcoor - 0.2,0) -- (\Xcoor,3.5);
+            \draw (0.4,3.65) -- (0,3.65);
+            \draw (1,3.65) -- (1.4,3.65);
+            \node at (0.7,3.65) {$d$};
+            \draw (0.4,-0.15) -- (0 + 0.2,-0.15);
+            \draw (1,-0.15) -- (1.4 - 0.2,-0.15);
+            \node at (0.7,-0.15) {$d'$};
+            \node[draw = orange!70, fill = orange!50, MyArrow] at (2.05, 2) {\phantom{arrow}};
+            \node[draw = green!70, fill = green!50, MyArrow] at (4.85, 2) {\phantom{arrow}};
+            \node[draw = red!70, fill = red!50, MyArrow] at (8.35, 2) {\phantom{arrow}};
+            \node[draw = blue!70, fill = blue!50, MyArrow] at (11.85, 2) {\phantom{arrow}};
+            %
+            \draw[color = red!60, line width = 0.05cm] (5.6,-0.2) -- (11.2,-0.2) -- (11.2,3.7) -- (5.6,3.7) -- cycle;
+            \node at (8.4,-0.6) {Equilibrium pressure};
+            \node at (3.5,-0.4) {Spherical meniscus};
+            \begin{pgfonlayer}{bg}    % select the background layer
+                %full pore
+                \fill[blue!50] (0 + 0.2,0) -- (0,3.5)  -- (1.4,3.5) -- (1.4 - 0.2,0) -- cycle ;
+                %full pore with menisci
+                \fill[blue!50] (2.8 + 0.2,0) -- (2.8,3.5)  -- (4.2,3.5) -- (4.2 - 0.2,0) -- cycle ;
+                \path [draw = none, fill = white](2.8,4) arc[start angle = -180, end angle = 0, radius=0.7];
+                \path [draw = none, fill = white](3,-0.5) arc[start angle = 180, end angle = 0, radius=0.5];
+                %emptying
+                \fill[blue!50] (6.3 + 0.2,0) -- (6.3,3.5)  -- (7.7,3.5) -- (7.7 - 0.2,0) -- cycle ;
+                \path [draw = none, fill = white](6.5,3.6) arc[start angle = -180, end angle = 0, radius=0.5];
+                \path [draw = none, fill = white](6.7,-0.1) arc[start angle = 180, end angle = 0, radius=0.3];
+                \draw[color = white, ->, line width = 0.5mm] (7,3.8) -- (7,0.4);
+                %filmed pore
+                \draw[film] (9.18 + 0.2,0) -- (9.18,3.5);
+                \draw[film] (10.42 - 0.2,0) -- (10.42,3.5);
+            \end{pgfonlayer}
+        \end{scope}
+        \begin{scope}[xshift=1cm,yshift=5cm]
+            \draw (0,0) -- (0,3.5);
+            \draw (12,0) -- (12,3.5);
+            \node[rotate=90] at (-0.7,1.75) {Liquid fraction};
+            \draw (0,0) -- (12,0);
+            \draw (0,3.5) -- (12,3.5);
+            \node at (6,-0.7) {Pressure};
+            %blue
+            \draw[color = blue, directed] (6.5,0.325) -- (0,0);
+            %red
+            \draw[color = red, directed] (8,3.35) -- (6.5,0.325);
+            %green
+            \draw[color = green, directed] (9.5,3.425) -- (8,3.35);
+            %orange
+            \draw[color = orange, directed] (11,3.5) -- (9.5,3.425);
+            %DASHED
+            \draw[dashed] (11,0) -- (11,3.5);  %psat
+            \draw[dashed] (9,0) -- (9,0.15);  %psp
+            \draw[dashed] (8,0) -- (8,3.35);  %peq
+            \draw[dashed] (8,3.5) -- (8,3.35);  %psp
+            \draw[dashed] (6.5,3.5) -- (6.5,0.325);  %peq
+            %labels
+            \node at (-0.2,-0.3) {$0$};
+            \node at (-0.2,3.5) {$1$};
+            \node at (11,-0.3) {$P_\mathrm{sv}$};
+            \node at (8,-0.3) {$P_\mathrm{eq}(d)$};
+            \node at (9,-0.3) {$P_\mathrm{sp}(d)$};
+            \node at (6.5,3.8) {$P_\mathrm{eq}(d')$};
+            \node at (8,3.8) {$P_\mathrm{sp}(d')$};
+        \end{scope}
+    \end{tikzpicture}
+    \label{fig:4b}}
+    \caption{Absorption \protect\subref{fig:4a} and desorption \protect\subref{fig:4b} isotherm of a funnelled cylindrical pore open on both ends. The corresponding processes inside the pore are illustrated below the isotherm itself. Colors of the arrows between pore states and the respecting pressure range of the graph match.}
+    \label{fig:open-funnelled-cyl-pore-isos}
+\end{figure}
+\end{document}

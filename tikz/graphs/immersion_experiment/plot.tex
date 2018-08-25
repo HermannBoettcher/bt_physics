@@ -1,0 +1,47 @@
+\documentclass{standalone}
+\usepackage{/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis_Institut_Neel/sty/themeKonstanz}
+
+\begin{document}
+	
+	
+	\begin{tikzpicture} 
+	\def\PrelMin{.88}
+	\def\PrelMax{.96}
+	\def\LfMin{0}
+	\def\LfMax{1}
+	\def\TransMin{1e-7}
+	\def\TransMax{1}
+	\def\LineWidth{1pt}
+	% Prel
+	\begin{axis} 
+	[ 
+	/tikz/line join=bevel, 
+	%ymode=log, 
+	axis y line*=left, 
+	line width = 1pt, 
+	%	minor x tick num= , 
+	%	minor y tick num= , 
+	xmin = \PrelMin, xmax = \PrelMax, 
+	ymin = \LfMin, ymax = \LfMax, 
+	xlabel = {Relative Pressure $\frac{P}{P_\mathrm{sv}}$}, 
+	ylabel = {Liquid Fraction}, 
+	ytick = {0,0.25,0.50,0.75,1},
+	%	legend entries={Avec,Sans}, 
+	grid,
+	legend style={at={(0,1)}, legend columns=1, anchor=north west},
+	%title={Membrane 296b - $\SI{60}{\micro\meter}$}
+	] 
+	% Add plots
+	\addplot[mark=none, color=red] table [x=Prel,y=liquid_fraction]{296a_cond_2.txt};
+	\addlegendentry{$t_\mathrm{float}=\SI{0}{\minute}$}
+	\addplot[mark=none, color=blue] table [x=Prel,y=liquid_fraction]{296c_cond_2.txt};
+	\addlegendentry{$t_\mathrm{float}=\SI{6,5}{\minute}$}
+	\addplot[mark=none, color=green] table [x=Prel,y=liquid_fraction]{296d_cond_2.txt};
+	\addlegendentry{$t_\mathrm{float}=\SI{13}{\minute}$}
+	\addplot[mark=none, color=red, dashed] table [x=Prel,y=liquid_fraction]{296a_evap_2.txt};
+	\addplot[mark=none, color=blue, dashed] table [x=Prel,y=liquid_fraction]{296c_evap_2.txt};
+	\addplot[mark=none, color=green, dashed] table [x=Prel,y=liquid_fraction]{296d_evap_2.txt};
+	\end{axis} 	
+	\end{tikzpicture}
+	
+\end{document}

@@ -1,0 +1,95 @@
+\documentclass[../../thesis.tex]{subfiles}
+
+\begin{document}
+\begin{figure}
+    \centering
+    \pgfdeclarelayer{bg}    % declare background layer
+    \pgfsetlayers{bg,main}  % set the order of the layers (main is the standard layer)
+    \begin{forest}
+        for tree = {forked edges,
+                    l = 1.5cm,
+                    s sep = 10mm},
+        [{Wafer 295\\ $d = \SI{30}{\micro\meter}$ }, align = center, for tree={fill=yellow!50, boarder}
+            [ab, phantom]
+            [{a, b, c, d, e, f, g, h, i, j, k, l}, name = cp_r, for tree={fill=red!30}
+                [cd, phantom]
+                [{c, d, e, f, g, h, i, j, k, l}, name = op_r, for tree={fill=green!30}
+                    [ef, phantom]
+                    [{e, f, g, h, i, j, k, l}, name = ald50, for tree={fill=blue!20}
+                        [gh, phantom]
+                        [{g, h, i, j, k, l}, name = ald100, for tree={fill=blue!30}
+                            [ij, phantom]
+                            [{i, j, k, l}, name = ald150, for tree={fill=blue!40}
+                                [kl, phantom]
+                                [{k, l}, name = ald200, for tree={fill=blue!50}]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+        \node[left = of cp_r, fill=red!30] (ab) {a, b};
+        \draw (ab) -- (cp_r);
+        \node[left = of op_r, fill=green!30] (cd) {c, d};
+        \draw (cd) -- (op_r);
+        \node[left = of ald50, fill=blue!20] (ef) {e, f};
+        \draw (ef) -- (ald50);
+        \node[left = of ald100, fill=blue!30] (gh) {g, h};
+        \draw (gh) -- (ald100);
+        \node[left = of ald150, fill=blue!40] (ij) {i, j};
+        \draw (ij) -- (ald150);
+        \coordinate[left = 15pt of cp_l] (cp_left);
+        \coordinate[right = 125pt of cp_r] (cp_right);
+        \coordinate[left = 15pt of op_r] (op_right);
+        \coordinate[left = 1pt of op_r] (op_circle);
+        \coordinate[left = 59.5pt of op_r] (op_grid);
+        \coordinate[left = 15pt of ald50] (ald50_right);
+        \coordinate[left = 15pt of ald100] (ald100_right);
+        \coordinate[left = 15pt of ald150] (ald150_right);
+        \coordinate[left = 15pt of ald200] (ald200_right);
+        \coordinate[below = 5pt of ald200] (ald200_grid);
+        \begin{pgfonlayer}{bg}    % select the background layer
+            \draw[dashed] (cp_r) -- (cp_right) node[anchor=west] {pores open on one side},;
+            \draw[dashed] let \p{cp_right} = (cp_right), \p{op_r} = (op_r) in (op_r) -- (\x{cp_right},\y{op_r}) node[anchor=west] {pores open on both sides},;
+            \draw[dashed] let \p{cp_right} = (cp_right), \p{ald50} = (ald50) in (ald50) -- (\x{cp_right},\y{ald50}) node[anchor=west] {50 layers of ALD},;
+            \draw[dashed] let \p{cp_right} = (cp_right), \p{ald100} = (ald100) in (ald100) -- (\x{cp_right},\y{ald100}) node[anchor=west] {100 layers of ALD},;
+            \draw[dashed] let \p{cp_right} = (cp_right), \p{ald150} = (ald150) in (ald150) -- (\x{cp_right},\y{ald150}) node[anchor=west] {150 layers of ALD},;
+            \draw[dashed] let \p{cp_right} = (cp_right), \p{ald200} = (ald200) in (ald200) -- (\x{cp_right},\y{ald200}) node[anchor=west] {200 layers of ALD},;
+            %wafer image
+            \clip[draw] (circle) (-1,-7) circle (2.4);
+            %\fill[circle, , fill=yellow!50] (-2,-6) circle (2.4);
+            \fill[cube, fill=blue!40] (-1,-6) -- (-2,-6) -- (-2,-7) -- (-1,-7) -- cycle;
+            \fill[cube, fill=blue!40] (0,-6) -- (-1,-6) -- (-1,-7) -- (0,-7) -- cycle;
+            %\fill[cube, fill=blue!30] (-3,-5) -- (-4,-5) -- (-4,-6) -- (-3,-6) -- cycle;
+            %\fill[cube, fill=blue!30] (-3,-6) -- (-4,-6) -- (-4,-7) -- (-3,-7) -- cycle;
+            \fill[cube, fill=blue!30] (-2,-6) -- (-4,-6) -- (-4,-8) -- (-2,-8) -- cycle;
+            \fill[cube, fill=blue!50] (-1,-7) -- (-2,-7) -- (-2,-8) -- (-1,-8) -- cycle;
+            \fill[cube, fill=blue!50] (0,-7) -- (-1,-7) -- (-1,-8) -- (0,-8) -- cycle;
+            %\fill[cube, fill=green!20] (0,-6) -- (-1,-6) -- (-1,-7) -- (0,-7) -- cycle;
+            %\fill[cube, fill=green!20] (0,-5) -- (-1,-5) -- (-1,-6) -- (0,-6) -- cycle;
+            \fill[cube, fill=green!30] (2,-10) -- (2,-5) -- (0,-5) -- (0,-10) -- cycle;
+            %\fill[cube, fill=blue!20] (-1,-7) -- (-2,-7) -- (-2,-8) -- (-1,-8) -- cycle;
+            %\fill[cube, fill=blue!20] (-2,-7) -- (-3,-7) -- (-3,-8) -- (-2,-8) -- cycle;
+            \fill[cube, fill=blue!20] (-4,-8) -- (-4,-10) -- (0,-10) -- (0,-8) -- cycle;
+            \fill[cube, fill=red!30] (-4,-4) -- (2,-4) -- (2,-6) -- (-4,-6) -- cycle;
+            %\fill[cube, fill=red!20] (-2,-4) -- (-3,-4) -- (-3,-5) -- (-2,-5) -- cycle;
+            %\fill[cube, fill=red!20] (-1,-4) -- (-2,-4) -- (-2,-5) -- (-1,-5) -- cycle;
+            \node at (-1.5,-5.5) {a};
+            \node at (-0.5,-5.5) {b};
+            \node at (0.5,-6.5) {c};
+            \node at (0.5,-7.5) {d};
+            \node at (-0.5,-8.5) {e};
+            \node at (-1.5,-8.5) {f};
+            \node at (-2.5,-7.5) {g};
+            \node at (-2.5,-6.5) {h};
+            \node at (-1.5,-6.5) {i};
+            \node at (-0.5,-6.5) {j};
+            \node at (-1.5,-7.5) {l};
+            \node at (-0.5,-7.5) {k};
+            \draw[step=1] (-4,-10) grid (2,-4);
+        \end{pgfonlayer}
+    \end{forest}
+    \caption{Wafer 295 processing plan. For each step  MEB views will be taken. Furthermore each membrane will be placed inside the cell to record isotherms. }
+    \label{fig:wafer_295}
+\end{figure}
+\end{document}

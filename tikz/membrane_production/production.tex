@@ -1,0 +1,165 @@
+\documentclass[../../thesis.tex]{subfiles}
+
+\begin{document}
+\begin{figure}[ht]
+    \centering
+    \pgfdeclarelayer{bg}    % declare background layer
+    \pgfsetlayers{bg,main}  % set the order of the layers (main is the standard layer)
+    \begin{tikzpicture}
+        \tikzfading[name=fade out,
+        inner color=transparent!0, outer color=transparent!100]
+        \def\holerad{0.3}
+        \def\factor{4}
+        \def\xradius{2}
+        \def\yradius{2/\factor}
+        \def\height{1.05cm}
+        \def\xandy{2 and 2/\factor}
+            \tikzset{
+          pics/.cd, %
+          disc/.style ={
+            code = {
+              %% the foundation
+              \path [fill=black!15] (-\xradius,0) -- (-\xradius,-\height) arc
+              (180:360:\xandy) -- (\xradius,0) arc (0:180:\xandy);%
+              \path [top color=black!25, bottom color=white, opacity=0.2] (0,0) ellipse
+              [x radius=\xradius, y radius =\yradius];%
+              \path [left color=black!25, right color=black!15] (-\xradius,0) --
+              (-\xradius,-\height) arc (180:240:\xandy) -- +(0,\height) arc
+              (240:180:\xandy);%
+              \path [left color=black!15, right color=black!30] (\xradius,0) --
+              (\xradius,-\height) arc (360:320:\xandy) -- +(0,\height) arc
+              (320:360:\xandy);
+              %% rays in front
+              \foreach \col/\r/\shift/\stop/\opacity in {%
+                black/205/25/20/100, %
+                black/295/35/30/100, %
+                black/295/30/30/200, %
+                black/295/25/20/300, %
+                white/245/14/14/100, %
+                white/245/12/12/20, %
+                white/245/10/10/10} {%
+                \foreach \i [evaluate={\opposite=\r-180;}] in {0,1,...,\stop}{%
+                  \fill [\col, fill opacity = 1/\opacity] (\opposite:0.1 and
+                  0.1/\factor) -- (\r+\shift-\i:\xandy) -- ++(0,-\height) arc
+                  (\r+\shift-\i:\r-\shift+\i:\xandy) -- +(0,\height) -- cycle; }}
+              %% rays in back
+              \foreach \r/\shift/\stop/\opacity in {%
+                25/25/20/100, %
+                115/35/3/150,%
+                115/30/23/100} {%
+                \foreach \i [evaluate={\opposite=\r-180;}] in {0,1,...,\stop}{%
+                  \fill [black, fill opacity = 1/\opacity] (\opposite:0.1 and 0.1/\factor) --
+                  (\r+\shift-\i:\xandy) arc (\r+\shift-\i:\r-\shift+\i:\xandy) --
+                  cycle; }}
+              %% masking the four edges in the center
+              \foreach \i in {0.1, 0.2, ..., 0.4}%
+              \fill[black!15, opacity=0.7, path fading=fade out]
+              (0,0) ellipse[x radius=\i, y radius =\i/\factor];
+              %% the light and the dark arcs
+              \foreach \i [evaluate={\start=185+10*\i; \finish=355-10*\i;}]%
+              in {0.1, 0.2, ..., 1.5}{%
+                \draw[white, opacity=0.04, line width=\i, yshift=0.02cm]
+                (\start:\xandy) arc (\start:\finish:\xandy);
+                \draw[black!80, opacity=0.05, line width=\i, yshift=-\height]
+                (\start:\xandy) arc (\start:\finish:\xandy); }
+            }
+          },%
+          disc bottom/.style = {
+            code = {
+              \foreach \i/\opacity in {%
+                1/20,2/20,3/20,4/30,5/35,6/40,7/60,8/80,9/100,10/100,11/100,12/100}%
+                %\fill [red, fill opacity = 1/\opacity, yshift=-0.03cm] (0,-\height)
+                ellipse [x radius = \xradius+\i/40, y radius = \yradius+\i/20/\factor];
+              \path pic {disc};
+            }
+          },%
+        }
+        %
+
+        \pgfdeclarelayer{bg}    % declare background layer
+        \pgfsetlayers{bg,main}  % set the order of the layers (main is the
+        \tikzmath{
+        \l = 5.62;
+        \h = 2.5;
+        \d = 0.9;}
+        \begin{scope}
+            \fill[gray] (0,0) rectangle (\l,\h);
+        \end{scope}
+        \begin{scope}[yshift=-3.5cm]
+            \fill[gray] (0,0) rectangle (\l,\h);
+            \begin{scope}[xshift=0.2cm]
+                \foreach \i in {0,1.2,2.4,3.6,4.8}{
+                    \fill[white] (0 + \i * \d, \h + 0.1) arc (180:360:\d / 2) -- cycle;}
+            \end{scope}
+        \end{scope}
+        \begin{scope}[yshift=-7cm]
+            \fill[lightgray] (0,0) rectangle (\l,\h);
+            \fill[gray] (0,0) rectangle (\l,0.3);
+            \begin{scope}[xshift=0.2cm]
+                \foreach \i in {0,1.2,2.4,3.6,4.8}{
+                    \fill[white] (0 + \i * \d, \h + 0.1) arc (180:360:\d / 2) -- cycle;
+                    \fill[white] (0 + \i * \d + \d /3, \h) -- (0 + \i * \d + \d /3, \h - 1.8) arc (180:360:\d / 6) -- (0 + \i * \d + 2* \d /3, \h) -- cycle;}
+            \end{scope}
+        \end{scope}
+        \begin{scope}[yshift=-10.5cm]
+            \fill[lightgray] (0,0.1) rectangle (\l,\h);
+            \fill[white] (0,0) rectangle (\l,0.3);
+            \begin{scope}[xshift=0.2cm]
+                \foreach \i in {0,1.2,2.4,3.6,4.8}{
+                    \fill[white] (0 + \i * \d, \h + 0.1) arc (180:360:\d / 2) -- cycle;
+                    \fill[white] (0 + \i * \d + \d /3, \h) -- (0 + \i * \d + \d /3, \h - 1.8) arc (180:360:\d / 6) -- (0 + \i * \d + 2* \d /3, \h) -- cycle;}
+            \end{scope}
+        \end{scope}
+        \begin{scope}[yshift=-10.5cm]
+            \fill[lightgray] (0,0.1) rectangle (\l,\h);
+            \fill[white] (0,0) rectangle (\l,0.7);
+            \begin{scope}[xshift=0.2cm]
+                \foreach \i in {0,1.2,2.4,3.6,4.8}{
+                    \fill[white] (0 + \i * \d, \h + 0.1) arc (180:360:\d / 2) -- cycle;
+                    \fill[white] (0 + \i * \d + \d /3, \h) -- (0 + \i * \d + \d /3, \h - 1.8) arc (180:360:\d / 6) -- (0 + \i * \d + 2* \d /3, \h) -- cycle;}
+            \end{scope}
+        \end{scope}
+        % procces simages
+        \begin{scope}[xshift=8cm, yshift=-1cm]
+            \draw[line width = 1mm, color = gray] (0,3) -- (0,0) -- (6,0) -- (6,3);
+            %\fill[gray] (3,1.5) ellipse [x radius = 2, y radius = 2/3];
+            \path (3,2) pic {disc bottom};
+            \fill[blue!50, fill opacity = 0.3] (0,2.8) -- (0,0) -- (6,0) -- (6,2.8) -- cycle;
+        \end{scope}
+        \begin{scope}[xshift=8cm, yshift=-5cm]
+            \draw[line width = 1mm, color = gray] (0,3) -- (0,0) -- (6,0) -- (6,3);
+            %\fill[gray] (3,1.5) ellipse [x radius = 2, y radius = 2/3];
+            \begin{pgfonlayer}{bg}    % select the background layer
+                \path (3,2) pic {disc bottom};
+            \end{pgfonlayer}
+            %
+            \foreach \x/\y in {1.7/2, 2.5/1.7, 3.5/1.7, 4.3/2, 2.5/2.3, 3.5/2.3, 3/2}{
+                \begin{scope}
+                    \draw[color=gray](\x,\y)ellipse[x radius=\holerad,y radius=\holerad/\factor];
+                    \clip(\x,\y)ellipse[x radius=\holerad,y radius=\holerad/\factor];
+                    \shade[left color=black,right color=black,middle color=white](\x-1,\y-1)rectangle(\x+1,\y+1);
+                    \draw(\x,\y)ellipse[x radius=\holerad,y radius=\holerad/\factor];
+                \end{scope}}
+            \fill[blue!50, fill opacity = 0.3] (0,2.8) -- (0,0) -- (6,0) -- (6,2.8) -- cycle;
+        \end{scope}
+        \begin{scope}[xshift=8cm, yshift=-9cm]
+            \draw[line width = 1mm, color = gray] (0,3) -- (0,0) -- (6,0) -- (6,3);
+            %\fill[gray] (3,1.5) ellipse [x radius = 2, y radius = 2/3];
+            \begin{pgfonlayer}{bg}    % select the background layer
+                \path (3,2) pic {disc bottom};
+            \end{pgfonlayer}
+            %
+            \foreach \x/\y in {1.7/2, 2.5/1.7, 3.5/1.7, 4.3/2, 2.5/2.3, 3.5/2.3, 3/2}{
+                \begin{scope}
+                    \draw[color=gray](\x,\y)ellipse[x radius=\holerad,y radius=\holerad/\factor];
+                    \clip(\x,\y)ellipse[x radius=\holerad,y radius=\holerad/\factor];
+                    \shade[left color=black,right color=black,middle color=white](\x-1,\y-1)rectangle(\x+1,\y+1);
+                    \draw(\x,\y)ellipse[x radius=\holerad,y radius=\holerad/\factor];
+                \end{scope}}
+            \fill[blue!50, fill opacity = 0.3] (0,1.7) -- (0,0) -- (6,0) -- (6,1.7) -- (5,1.7) arc (360:180:2 and 0.5) -- cycle;
+        \end{scope}
+    \end{tikzpicture}
+    \caption{Membrane production}
+    \label{fig:membrane production}
+\end{figure}
+\end{document}

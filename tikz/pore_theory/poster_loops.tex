@@ -1,0 +1,58 @@
+\documentclass{standalone}
+\usepackage{Bachelor_Thesis_Institut_Neel/sty/themeKonstanz}
+
+
+\begin{document}
+    \begin{tikzpicture}[every node/.style = {font = \small},
+                        pore/.style = {line width = 0.1cm, color = gray},
+                        film/.style = {line width = 0.1cm, color = blue!50},
+                        thick_film/.style = {line width = 0.3cm, color = blue!50},
+                        graph_label/.style={color = gray, line width = 0.05cm},
+                        pore_collapse/.style = {color = blue!50, line width = 0.07cm, ->},
+                        MyArrow/.style={single arrow, draw, minimum width=8mm, minimum height=5mm,
+                        inner sep=0mm, single arrow head extend=1mm}]
+        \pgfdeclarelayer{bg}    % declare background layer
+        \pgfdeclarelayer{bbg}    % declare backbackground layer
+        \pgfsetlayers{bbg,bg,main}  % set the order of the layers (main is the standard layer)
+        \tikzset{fontscale/.style = {font=\relsize{#1}}}
+        \tikzset{MyArrow/.style={single arrow, draw, minimum width=8mm, minimum height=5mm, inner sep=0mm, single arrow head extend=1mm}}
+        \tikzstyle arrowstyle=[scale=2]
+        \tikzstyle directed=[postaction={decorate,decoration={markings,
+            mark=at position .65 with {\arrow[arrowstyle]{stealth}}}}]
+        \begin{scope}
+            \draw (0,0) -- (0,3.5);
+            \draw (12,0) -- (12,3.5);
+            \node[rotate=90] at (-0.7,1.75) {Liquid fraction};
+            \draw (0,0) -- (12,0);
+            \draw (0,3.5) -- (12,3.5);
+            \node at (6,-0.7) {Pressure};
+            %straight evap
+            \draw[color = blue, postaction={decorate,decoration={markings,
+            mark=at position .3 with {\arrow[arrowstyle]{stealth}}}}] (11,3.5) -- (9.5,3.425) -- (8,3.35) -- (8,0.4) -- (0,0);
+            %straight cond
+            \draw[color = blue, postaction={decorate,decoration={markings,
+            mark=at position .65 with {\arrow[arrowstyle]{stealth}}}}] (0,0) -- (4,0.2) -- (8,0.4) -- (8,3.35) -- (11,3.5);
+            %cond straight
+            \draw[color = red, postaction={decorate,decoration={markings,
+            mark=at position .70 with {\arrow[arrowstyle]{stealth}}}}] (0,0) -- (4,0.2) -- (9,0.45) -- (9,3.40) -- (11,3.5);
+            %evap straight
+            \draw[color = red, postaction={decorate,decoration={markings,
+            mark=at position .32 with {\arrow[arrowstyle]{stealth}}}}] (11,3.5) -- (9.5,3.425) -- (8,3.35) -- (8,0.40) -- (0,0);
+            %DASHED
+            \draw[dashed] (11,0) -- (11,3.5);  %psat
+            \draw[dashed] (9,0) -- (9,0.15);  %psp
+            \draw[dashed] (8,0) -- (8,0.15);  %peq
+            %labels
+            \node at (-0.2,-0.3) {$0$};
+            \node at (-0.2,3.5) {$1$};
+            \node at (11,-0.3) {$P_\mathrm{sv}$};
+            \node at (8,-0.3) {$P_\mathrm{eq}(d)$};
+            \node at (9,-0.3) {$P_\mathrm{sp}(d)$};
+            \draw[color=gray, line width=1mm] (0.5,3) -- (0.5,2.5) -- (0.8,2.5) -- (0.8,3);
+            \draw[color=blue] (1,2.75) -- (1.5,2.75);
+            \draw[color=gray, line width=1mm] (0.5,2.3) -- (0.5,1.8);
+            \draw[color=gray, line width=1mm] (0.8,2.3) -- (0.8,1.8);
+            \draw[color=red] (1,2.05) -- (1.5,2.05);
+        \end{scope}
+    \end{tikzpicture}
+\end{document}

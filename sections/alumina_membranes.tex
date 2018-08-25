@@ -1,0 +1,143 @@
+\documentclass[../thesis.tex]{subfiles}
+
+\begin{document}
+
+    \section{Alumina Membranes}
+    \label{sec:alumina-membranes}
+
+
+        \subsection{Membrane Production}
+        \label{subsec:membrane-production}
+
+            The alumina membrane production process starts with a circular wafer of amorphous aluminum of $\SI{99,999}{\percent}$ purity. With an initial thickness of $h_\mathrm{\ce{Al}}=\SI{1}{\milli\meter}$ and diameter of $d_\mathrm{wafer}=\SI{5}{\centi\meter}$, one wafer is cut into twelve square membranes of side length $l_\mathrm{membrane}=\SI{1}{\centi\meter}$.
+
+            First, the aluminum is anodized to create parallel pores that are arranged in a hexagonal order (compare section \cref{sssec:anodizing}). For the conducted experiment, pore lengths $l_\mathrm{pore}=\SIlist{30;60}{\micro\meter}$ are used. After the anodizing, the remaining aluminum of the wafer is dissolved by immersion in as specified in \cref{eq:aluminum-dis-acid} in \cref{sssec:al-dissolution}). Last, the so called \textit{barrier layer} closing the pores on the bottom end is etched using oxalic acid (section \cref{sssec:barrier-layer-dissolution}).
+
+
+            \subsubsection{Anodizing}
+            \label{sssec:anodizing}
+
+                \Cref{fig:anodizing} shows a sketch of the anodizing setup. The bulk aluminum wafer (compare \cref{fig:bulk-al}), which functions as the anode, is glued to a copper plate using none conductive silver paste. Only one circular surface is exposed to the acid. The cathode is given by a platinum plate that is placed at a horizontal distance of $\SI{3}{\centi\meter}$ from the anode. The whole setup is immersed in oxalic acid that is stirred at all times. The anodizing of the wafers is conducted at a constant voltage $U_\mathrm{anodizing}$. To produce parallel pores, the anodizing is carried out in two stages. Both use the same setup with the same parameters.
+
+                \subfile{tikz/membrane_production/anodizing.tex}
+
+
+                The pore diameter $d_\mathrm{pore}$ and the inter pore distance $d_\mathrm{interpore}$ depends on the anodizing conditions, in explanation the voltage $U_\mathrm{anodizing}$, the oxalic acid's molar concentration $n_\mathrm{\ce{C2H2O4}}$ and the acid temperature $T_\mathrm{\ce{C2H2O4}}$. Feasible are diameters of $\SIrange{10}{100}{\nano\meter}$. To produce wafers with the pore specifications
+                \begin{align}
+                    \begin{split}
+                        d_\mathrm{pore}=\SI{40}{\nano\meter},    \\
+                        d_\mathrm{interpore}=\SI{100}{\nano\meter},
+                    \end{split}
+                    \label{eq:pore-specs}
+                \end{align}
+                the parameters
+                \begin{align}
+                    \begin{split}
+                        U_\mathrm{anodizing}^{\SI{40}{\nano\meter}} &= \SI{40}{\volt}, \\
+                        n_\mathrm{\ce{C2H2O4}} &= \SI{0,5}{\mol\per\litre},  \\
+                        T_\mathrm{\ce{C2H2O4}} &= \SI{15}{\celsius}
+                    \end{split}
+                    \label{eq:anodizing-parameters}
+                \end{align}
+                are used for the two anodizings. This makes for a growth rate of alumina of
+                \begin{equation}
+                    r_{\ce{Al2O3}} \approx \SI{8}{\micro\meter\per\second}.
+                \end{equation}
+                \medskip
+
+                The first anodizing treats the raw bulk aluminum wafer. By the oxalic acid \ce{C2H2O4}, pathways are etched into the aluminum which follow no pattern at first. Only some of them continue to grow forming real pores, though. With the ongoing anodizing pores start to combine to form larger pores and finally areas of hexagonally arrange pores are created throughout the wafer. The longer the anodizing process is carried out, the larger these ordered areas become. Figure \cref{fig:first-anodizing} shows the cross-section of a wafer observable at this point. Because the process transforms aluminum to alumina (compare section ???) at a given penetration speed, the so called \textit{barrier layer} of alumina separates the pores from the bulk aluminum.
+                \medskip
+
+                Before the second anodizing, the wafer is immersed in a mixture of chromic and phosphoric acid with the concentrations
+                \begin{align}
+                    \begin{split}
+                        n_\mathrm{\ce{H3PO4}} &= \SI{0,4}{\mol\per\litre}    \\
+                        n_\mathrm{\ce{C2O3}} &= \SI{0,2}{\mol\per\litre}
+                    \end{split}
+                \end{align}
+                at at temperature of
+                \begin{equation}
+                    T_\mathrm{\ce{C2O3}}^\mathrm{\ce{H3PO4}}=\SI{0,2}{\mol\per\litre}
+                \end{equation}
+                Hereby the created alumina is dissolved. This yields a slightly thinner wafer of bulk aluminum, where the thickness $d_\mathrm{Al}'$ depends on the time of the first anodizing. The relevant difference to the initial wafer are the areas of hexagonally arranged hollows (compare figure \cref{fig:al-dissolution-1}).
+
+                Due to this new surface structure, the second anodizing yields a wafer with a top layer of alumina penetrated by parallel, hexagonally arranged pores. Again, the \textit{barrier layer} of alumina separates the pores from the bulk aluminum as illustrated in figure \cref{fig:second-anodizing}. Increasing the time of the second anodizing increases the length of the pores $l_\mathrm{pore}$ and hereby the thickness of the final wafer. As the second anodizing is carried out under the same conditions as the first, the pore size $d_\mathrm{pore}$ is the same in both production steps.
+
+
+            \subsubsection{Aluminum Dissolution}
+            \label{sssec:al-dissolution}
+
+                To dissolve the remaining aluminum on the bottom side of the wafer, it is immersed in an acid composed of
+                \begin{equation}
+                    \SI{27,2}{\gram}\ce{CuCl2} + \SI{0,2}{\l}\ce{HCL}(\SI{37}{\percent} + \SI{0,8}{\l}\ce{H2O}
+                    \label{eq:aluminum-dis-acid}
+                \end{equation}
+                at a temperature of
+                \begin{equation}
+                    T = \SI{0}{\celsius}
+                \end{equation}
+                as shown in figure \cref{fig:al-dissolution-setup}. The latter transforms the aluminum to copper in a very exothermic reaction (compare section ???). A lot of turbulences are created and thus this step limits either the thickness or the size of the wafers because it can easily break.
+                \medskip
+
+                Furthermore, by measuring an alumina membrane with closed pores, immersing it into the acid \cref{eq:aluminum-dis-acid}, and measuring it one more time after this process, a change in the pore diameter could be detected. Therefore, the acid apparently also attacks alumina and could be a source of corrugation and uncontrolled pore enlarging.
+
+                \subfile{tikz/membrane_production/aluminum_dissolution.tex}
+
+
+            \subsubsection{Barrier Layer Dissolution}
+            \label{sssec:barrier-layer-dissolution}
+
+                The \textit{barrier layer} dissolution is one step of the membrane production chain that is taken a closer look at in this report. The procedure is done using phosphoric acid of the concentration
+                \begin{equation}
+                    n_\mathrm{\ce{H3O4P}} = \SI{0,2}{\mol\per\l}.
+                \end{equation}
+                Up to the date the internship started, the wafer was floated on phosphoric acid to open the pores on the bottom side as shown in figure \cref{fig:barrier-layer-dissolution-setup}.
+                Following, the pore opening of membrane 295 c shall be inspected.
+                \medskip
+
+                \subfile{tikz/membrane_production/barrier_layer_dissolution.tex}
+
+                After $t_1^{295c}$ of floating on phosphoric acid, white speckles appear on the wafer. As this phenomenon looks similar to the observation made during the absorption process of an isotherm, this can be interpreted as the membrane filling with the acid. Due to the capillary flow rate of phosphoric acid in pores of diameter $d_\mathrm{pore}^{295c}=\SI{40}{\nano\meter}$, a single pore fills within $t_\mathrm{fill}^{295}=\SI{5}{\second}$ ??? quote physical basics ???. That the milky aspects occur over about $\Delta t^{295c} = \SI{3}{\minute}$ implies that some pores fill minutes before others. Therefore, the pore size distribution is increased during this time. The caused distribution in radius can be approximated by the etch rate of the acid.
+                \medskip
+
+                The barrier layer's thickness of wafer 295 is about $d_\mathrm{barrierlayer}^{295c}=\SI{30}{\nano\meter} $ as observed on the MEB views shown in figure ???. As the first milky speckles appear after $t_1^{295c}=\SI{20}{\minute} $, the etch rate is about
+                \begin{equation}
+                    e = \SI{1,5}{\nano\meter\per\minute}. \label{eq:etch-rate}
+                \end{equation}
+                This yields a diameter distribution of
+                \begin{equation}
+                    \Delta d_1^{295c} = \SI{9}{\nano\meter}
+                \end{equation}
+
+                which is only due to the opening process of the pores. Furthermore, the wafers are left floating until the whole upper side is observably covered by a liquid film (compare figure???). This state has been reached after $t_\mathrm{2}^{295c}=\SI{40}{\minute} $ of floating. Thus, by the theory explained above, the pores should widen by up to
+                \begin{equation}
+                    \Delta d_2^{295c} =\SI{60}{\nano\meter}.
+                \end{equation}
+                \medskip
+
+                Summing up the section above, the pore diameters should be distributed around
+                \begin{equation}
+                    d_\mathrm{pore}^\mathrm{295c-theory} = \SI{109}{\nano\meter}.
+                \end{equation}
+                The analysis of the MEB vues of the membrane yield a diameter distribution around
+                \begin{equation}
+                    d_\mathrm{pore}^\mathrm{295c-MEB} = \SI{54}{\nano\meter},
+                \end{equation}
+                though. Thus, at some point there must be a mistake in the interpretation of the observations.
+                \medskip
+
+                Moreover, a problem appears when observing the \textit{barrier layer} dissolution of membrane 296b. Again, the barrier layer's thickness is expected to be $d_\mathrm{barrierlayer}^{296b-expected}=\SI{30}{\nano\meter}$ as no parameters of the anodizing process were changed. By the MEB views, no proper measurements could be conducted due to the charging of the membrane, an larger thickness of $d_\mathrm{barrierlayer}^{296b-actual}\approx\SI{45}{\nano\meter}$. Upon floating the membrane 296 a on oxalic acid though, the milky aspects only appear after $t_1^{296}=\SI{27}{\minute}$. This makes for a theoretical barrier layer thickness of $d_\mathrm{barrierlayer}^{296b-theory}=\SI{40,5}{\nano\meter}$ when relying on the computed etch rate \cref{eq:etch-rate}. Assuming a large error bar on the MEB view analysis of membrane 296b, this is coherent with 295a. As the etching process has been aborted at the milky stage, no clue can be made as to the enlarging of the pore size.
+                \medskip
+
+                To better understand what happens during the opening and to find a systematic way to do it with a minimal pore diameter increment and diameter distribution increment, floating and submerging in phosphoric acid shall be analyzed. The plan is to use wafer 296 to calibrate the respecting etch rates $e_\mathrm{float}$ and $e_\mathrm{sub}$ as shown in figure \cref{fig:barrier-layer-dissolution}.
+                \medskip
+
+            \subfile{tikz/membrane_production/production_stages.tex}
+
+
+        \subsection{Membrane Specifications}
+
+            For the experiments, square alumina membranes of
+
+
+\end{document}

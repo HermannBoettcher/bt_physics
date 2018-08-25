@@ -1,0 +1,85 @@
+\documentclass[../thesis.tex]{subfiles}
+
+\begin{document}
+
+    \section{Experimental Setup}
+    \label{sec:exp-setup}
+
+        The experimental setup consists of two independent parts. To record isotherms, the core of the experiment is the volumetric measurement conducted in the setup explained in \cref{subsec:volumetric-setup}. Furthermore, there is a light transmission setup and a camera setup that can be chosen from for a given experiment. Both setups are used to monitor what is really happening inside the membrane. While the camera setup provides for a visual interpretation of the occurrences, the data acquired by the light transmission measurement is more precise to put in context with the volumetric isotherms.
+
+
+        \subsection{Volumetric Setup}
+        \label{subsec:volumetric-setup}
+
+            The initial volumetric setup is sketched in \cref{fig:setup}. A thermostatted bath by \textsc{Lauda} functions as a reservoir of bulk hexane and is connected to the rest the experiment via a valve. Behind the valve lies a cross leading to a pressure gauge $P_\mathrm{res}$, via another valve to a primary pump (void), and via a \textsc{Pfeiffer} microvalve to the cell containing the sample membrane. This branch is also connected to a pressure gauge $P_\mathrm{cell}$. The microvalve is the key part of the experiment as it allows for the extremely low flow rates that are necessary for the conducted experiment (\cref{sec:experimental-procedure}). Furthermore, the temperature of the cell and that of the thermostatted bath are monitored by the thermometers $T_\mathrm{cell}$ and $T_\mathrm{res}$.
+            \medskip
+
+            \subfile{tikz/setup/setup.tex}
+
+            The whole experiment setup is placed in a climatized room set to \begin{equation}
+                T_\mathrm{room} = \SI{23}{\celsius}.
+            \end{equation}
+            The coldest point of the experiment must be the cell containing the sample membrane as to be sure no hexane condenses anywhere else in the setup. Therefore, the temperature of the cell is regulated to
+            \begin{equation}
+                T_\mathrm{cell} = \SI{19}{\celsius}
+            \end{equation}
+            as explained in section \cref{subsec:tcell-regulation} while the reservoir of bulk hexane is set to a temperature of
+            \begin{equation}
+                T_\mathrm{res} = \SI{21}{\celsius}
+            \end{equation}
+            using the \textsc{Lauda}.
+
+
+            \subsubsection{Cell Temperature Regulation}
+            \label{subsec:tcell-regulation}
+
+                The cell itself is made of a copper ring which is sealed on both sides using sapphire windows. Making use of indium O-rings, the windows are pressed onto the the copper ring by two aluminum rings. This circular cell is designed so it can be mounted to a second copper construction which is connected to a \textsc{Peltier} heat pump and a heater. Moreover, two thermometers installed - one for the temperature regulation feedback loop and one for the output value. While the power of the \textsc{Peltier} is fixed, the heater's power output is controlled by the feedback loop. From the microvalve to the pressure gauge $P_\mathrm{cell}$, the setup is packed in styrofoam for thermal insulation from the room temperature and also to minimize the gradient inside this part of the setup. At first, the regulation has been run via a regular computer. As this led to breakdowns of the regulation for short periods of time multiple times per hour,  the regulation was then externalized to an \textsc{raspberry pi}. It regulates the temperature to $T_\mathrm{cell}=\SI{19.000(5)}{\celsius}$.
+
+
+            \subsubsection{Pressure Gauges}
+
+                Because of its high resolution, at first, a \textsc{Keller} S21 ??? pressure gauge was used for $P_\mathrm{cell}$. As its construction contains a porous O'ring that could be identified as the source of degassing inside the system, the gauge has been swapped for a \textsc{Wika} ??? which exposes only metallic parts to the system. $P_\mathrm{res}$ uses the same model of pressure gauge.
+
+
+    \section{Experimental Procedure}
+            \label{sec:experimental-procedure}
+
+                To start an experiment (here also referred to as an isotherm) the valve $U_1$ is closed while $U_2$ and the \textsc{Pfeiffer} microvalve $U_\mathrm{PV}$ are fully opened. This allows the primary pump, which experimentally realizes the void, to pump the system. As the condensation of hexane inside the sample starts at a pressure of about $\SI{150}{\milli\bar}$, it is not import to reach low pressures in this step. On the other hand the pumping is used to clean the system of air which unavoidably enters the system when places the membrane inside the cell (or removing it from of the cell).\\
+
+                After pumping the system, $U_2$ is closed and the condensation process initialized by setting $U_\mathrm{PV}$ to a sufficiently low opening voltage and opening $U_1$. Sufficiently low opening voltage shall imply that the condensation plateau of the condensation inside the membrane's pores is distinguishable on the recorded $P$ over $t$ isotherm. The employed flow rate's magnitude is  $\SI{e-5}{\milli\bar\litre\per\second}$.\\
+
+                To also record the bulk condensation plateau, which defines the saturated vapor pressure $P_\mathrm{sv}$ in the evaluation process, the setup is left condensing iniside the cell for five hours after the pressure inside the cell reaches $P_\mathrm{cell} = \SI{150}{\milli\bar}$. This way a small amount of bulk liquid is condensed inside the cell. At the end of the process, all the valves are closed. \\
+
+                The evaporation process is then initialized by opening the valve $U_2$. Meanwhile, the \textsc{Pfeiffer} microvalve is set to a sufficiently low opening voltage $U_\mathrm{PV}$ to permit the primary pump to pump the system. Again, sufficiently low implies that the evaporation plateau of the  liquid evaporating from the membrane's pores is visible on the recorded $P$ over $t$ isotherm. The system is left in this state till the pressure inside the cell $P_\mathrm{cell}$ reached a given setpoint at which the microvalve is fully opened to pump the system and prepare for another isotherm.
+
+
+            \subsection{Bypass}
+            \label{subsec:bypass}
+
+                As the flow rate of hexane in the system only depends on the opening of the \textsc{Pfeiffer} microvalve and the pressures $P_\mathrm{res}$ and $P_\mathrm{cell}$, this opening should always be the same to be able to compare multiple isotherms. Due to the uncertainty of the microvalve showing some hysteresis upon opening and closing, a bypass is added to the setup. As shown in \cref{fig:setup-bypass}, the new setup allows to pump the part of the system containing the cell without changing the opening of the \textsc{Pfeiffer} microvalve now. This way there is no need to ever change the before mentioned opening and one potential error source is removed from the system.
+                \medskip
+
+                \subfile{tikz/setup/setup_bypass.tex}
+
+
+                The red volume of the system, which is the one of interest for the isotherm computation, is calibrated using the method explained in section \cref{subsec:boyle-mariotte}. Its volume is
+                \begin{equation}
+                    V_\mathrm{cell}=\SI{8,27}{\centi\meter\cubic}.
+                \end{equation}
+
+
+            \subsubsection{Changing the Sample}
+            \label{sssec:changing-the-sample}
+
+                To change the sample, the copper cell must be opened
+
+
+        \subsection{Light Transmission Setup}
+        \label{subsec:transmission-setup}
+
+
+        \subsection{Camera Setup}
+        \label{subsec:camera-setup}
+
+\end{document}
+

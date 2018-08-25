@@ -1,0 +1,88 @@
+\documentclass[../../thesis.tex]{subfiles}
+
+
+\begin{document}
+\begin{figure}[ht]
+    \centering
+    \pgfdeclarelayer{bg}    % declare background layer
+    \pgfsetlayers{bg,main}  % set the order of the layers (main is the standard layer)
+    \begin{tikzpicture}[colormap = {mymap}{[1pt]
+                rgb(0pt)=(0,0,0.5);
+                rgb(22pt)=(0,0,1);
+                rgb(25pt)=(0,0,1);
+                rgb(68pt)=(0,0.86,1);
+                rgb(70pt)=(0,0.9,0.967741935483871);
+                rgb(75pt)=(0.0806451612903226,1,0.887096774193548);
+                rgb(128pt)=(0.935483870967742,1,0.0322580645161291);
+                rgb(130pt)=(0.967741935483871,0.962962962962963,0);
+                rgb(132pt)=(1,0.925925925925926,0);
+                rgb(178pt)=(1,0.0740740740740741,0);
+                rgb(182pt)=(0.909090909090909,0,0);
+                rgb(200pt)=(0.5,0,0)
+                },]
+        \begin{scope}
+            \clip[draw] (circle) (0,-0) circle (4.5);
+            \fill[gray] (circle) (0,-0) circle (4.5);\fill[ /utils/exec={
+            % map linearly from [0:1000] into the colormap. 500 is in the
+            % middle:
+            %a
+            \pgfplotscolormapdefinemappedcolor{500}}, color of colormap=850] (-2,4) -- (0,4) -- (0,2) -- (-2,2) -- cycle;
+            \node[align = center] at (-1,3) {a\\ \\ $T = \SI{69}{\percent}$};
+            %b
+            \fill[/utils/exec={\pgfplotscolormapdefinemappedcolor{500}}, color of colormap=825] (0,4) -- (2,4) -- (2,2) -- (-0,2) -- cycle;
+            \node[align = center] at (1,3) {b\\ \\ $T = \SI{68}{\percent}$};
+            %c
+            \fill[/utils/exec={\pgfplotscolormapdefinemappedcolor{500}}, color of colormap=550] (2,2) -- (2,0) -- (4,0) -- (4,2) -- cycle;
+            \node[align = center] at (3,1) {c\\ \\ $T = \SI{57}{\percent}$};
+            %d
+            \fill[/utils/exec={\pgfplotscolormapdefinemappedcolor{500}}, color of colormap=350] (2,0) -- (4,0) -- (4,-2) -- (2,-2) -- cycle;
+            \node[align = center] at (3,-1) {d\\ \\ $T = \SI{49}{\percent}$};
+            %e
+            \fill[/utils/exec={\pgfplotscolormapdefinemappedcolor{500}}, color of colormap=400] (0,-2) -- (2,-2) -- (2,-4) -- (0,-4) -- cycle;
+            \node[align = center] at (1,-3) {e\\ \\ $T = \SI{51}{\percent}$};
+            %f
+            \fill[/utils/exec={\pgfplotscolormapdefinemappedcolor{500}}, color of colormap=375] (-2,-2) -- (0,-2) -- (0,-4) -- (-2,-4) -- cycle;
+            \node[align = center] at (-1,-3) {f\\ \\ $T = \SI{50}{\percent}$};
+            %g
+            \fill[/utils/exec={\pgfplotscolormapdefinemappedcolor{500}}, color of colormap=125] (-4,0) -- (-2,0) -- (-2,-2) -- (-4,-2) -- cycle;
+            \node[align = center] at (-3,-1) {g\\ \\ $T = \SI{40}{\percent}$};
+            %h
+            \fill[/utils/exec={\pgfplotscolormapdefinemappedcolor{500}}, color of colormap=250] (-4,2) -- (-2,2) -- (-2,0) -- (-4,0) -- cycle;
+            \node[align = center] at (-3,1) {h\\ \\ $T = \SI{45}{\percent}$};
+            %i
+            \fill[/utils/exec={\pgfplotscolormapdefinemappedcolor{500}}, color of colormap=300] (-2,2) -- (0,2) -- (0,0) -- (-2,0) -- cycle;
+            \node[align = center] at (-1,1) {i\\ \\ $T = \SI{47}{\percent}$};
+            %j
+            \fill[/utils/exec={\pgfplotscolormapdefinemappedcolor{500}}, color of colormap=425] (0,2) -- (2,2) -- (2,0) -- (0,0) -- cycle;
+            \node[align = center] at (1,1) {j\\ \\ $T = \SI{52}{\percent}$};
+            %k
+            \fill[/utils/exec={\pgfplotscolormapdefinemappedcolor{500}}, color of colormap=400] (0,0) -- (2,0) -- (2,-2) -- (0,-2) -- cycle;
+            \node[align = center] at (1,-1) {k\\ \\ $T = \SI{51}{\percent}$};
+            %l
+            \fill[/utils/exec={\pgfplotscolormapdefinemappedcolor{500}}, color of colormap=350] (-2,0) -- (0,0) -- (0,-2) -- (-2,-2) -- cycle;
+            \node[align = center] at (-1,-1) {l\\ \\ $T = \SI{49}{\percent}$};
+            \draw[step=2] (-4.5,-4.5) grid (4.5,4.5);
+        \end{scope}
+        \begin{scope}[xshift=5cm, yshift=4.5cm]
+            \begin{axis}[
+                hide axis,
+                scale only axis,
+                height=0pt,
+                width=0pt,
+                mymap,
+                colorbar sampled,
+                point meta min=35,
+                point meta max=75,
+                colorbar style={
+                    width=0.5cm,
+                    height= 9cm,
+                    xtick={35,40,...,75},
+                    xlabels
+                }]
+                \addplot [draw=none] (5,5);
+            \end{axis}
+        \end{scope}
+    \end{tikzpicture}
+    \caption{Transmission measurements of wafer 295. The membranes a and b are closed pores while the rest of the wafer has been opened.}
+\end{figure}
+\end{document}

@@ -1,0 +1,5 @@
+{
+  "root" : "/home/chajia/Documents/Studies/physics/Bachelorarbeit/Bachelor_Thesis",
+  "toolchain" : "%TEX %ARG %DOC",
+  "latex_ext": [".tikz", ".Rnw"]
+}

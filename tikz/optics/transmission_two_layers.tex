@@ -1,0 +1,77 @@
+\documentclass[../../thesis.tex]{subfiles}
+
+
+\begin{document}
+\begin{figure}[ht]
+    \centering
+    \subfloat[]{
+        \begin{tikzpicture}
+        \tikzstyle arrowstyle=[scale=2]
+        \tikzstyle directed=[postaction={decorate,decoration={markings,
+            mark=at position .65 with {\arrow[arrowstyle]{stealth}}}}]
+        \pgfdeclarelayer{bg}    % declare background layer
+        \pgfdeclarelayer{bbg}    % declare backbackground layer
+        \pgfsetlayers{bg,main}  % set the order of the layers (main is the standard layer)
+        \fill[blue!10] (6,0) -- (6,6) -- (12,6) -- (12,0) -- cycle;
+        \draw[dashed] (0,2) -- (12,2);
+        \draw (6,0) -- (6,6);
+        \draw[color=red, directed] (0,6) -- (6,2);
+        \draw[color=red, directed] (6,2) -- (12,0);
+        \coordinate (a) at (0,6);
+        \coordinate (b) at (6,2);
+        \coordinate (c) at (0,2);
+        \pic[draw," $ \alpha $ ", draw=orange,angle eccentricity=1.2, angle radius=1.5cm] { angle=a--b--c } ;
+        \coordinate (a) at (12,0);
+        \coordinate (b) at (6,2);
+        \coordinate (c) at (12,2);
+        \pic[draw," $ \beta $ ", draw=orange,angle eccentricity=1.2, angle radius=1.5cm] { angle=a--b--c } ;
+        \node at (5.5,5.5) {$n_1$};
+        \node at (6.5,5.5) {$n_2$};
+    \end{tikzpicture}
+    }\\
+    \subfloat[]{
+        \begin{tikzpicture}
+        \tikzstyle arrowstyle=[scale=2]
+        \tikzstyle directed=[postaction={decorate,decoration={markings,
+            mark=at position .65 with {\arrow[arrowstyle]{stealth}}}}]
+        \pgfdeclarelayer{bg}    % declare background layer
+        \pgfdeclarelayer{bbg}    % declare backbackground layer
+        \pgfsetlayers{bg,main}  % set the order of the layers (main is the standard layer)
+        \fill[green!10] (4,0) -- (4,6) -- (8,6) -- (8,0) -- cycle;
+        \fill[blue!10] (8,0) -- (8,6) -- (12,6) -- (12,0) -- cycle;
+        \draw[dashed] (0,3) -- (12,3);
+        \draw[dashed] (0,1) -- (12,1);
+        \draw (4,0) -- (4,6);
+        \draw (8,0) -- (8,6);
+        \draw[color=red, directed] (0,6) -- (4,3);
+        \draw[color=red, directed] (4,3) -- (0,0);
+        \draw[color=red, directed] (4,3) -- (8,1);
+        \draw[color=red, directed] (8,1) -- (6,0);
+        \draw[color=red, directed] (8,1) -- (12,0);
+        \coordinate (a) at (0,6);
+        \coordinate (b) at (4,3);
+        \coordinate (c) at (0,3);
+        \pic[draw," $ \alpha $ ", draw=orange,angle eccentricity=1.2, angle radius=1.5cm] { angle=a--b--c } ;
+        \coordinate (a) at (10,0);
+        \coordinate (b) at (4,3);
+        \coordinate (c) at (10,3);
+        \pic[draw," $ \gamma $ ", draw=orange,angle eccentricity=1.2, angle radius=1.5cm] { angle=a--b--c } ;
+        \coordinate (c) at (0,1);
+        \coordinate (b) at (8,1);
+        \coordinate (a) at (4,3);
+        \pic[draw," $ \gamma $ ", draw=orange, angle eccentricity=1.2, angle radius=1.5cm] { angle=a--b--c } ;
+        \coordinate (a) at (12,0);
+        \coordinate (b) at (8,1);
+        \coordinate (c) at (12,1);
+        \pic[draw," $ \delta $ ", draw=orange, angle eccentricity=1.2, angle radius=1.5cm] { angle=a--b--c } ;
+        \node at (3.5,5.5) {$n_1$};
+        \node at (7.5,5.5) {$n_2$};
+        \node at (11.5,5.5) {$n_3$};
+    \end{tikzpicture}
+    }
+    \caption{balblabla}
+    \label{fig:two-layer-transmission}
+\end{figure}
+
+
+\end{document}

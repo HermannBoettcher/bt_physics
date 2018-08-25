@@ -1,0 +1,70 @@
+\documentclass{standalone}
+\usepackage{/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis_Institut_Neel/sty/themeKonstanz}
+
+\begin{document}
+	
+	
+	\begin{tikzpicture} 
+	\def\PrelMin{.86}
+	\def\PrelMax{1}
+	\def\LfMin{0}
+	\def\LfMax{2}
+	\def\TransMin{1e-6}
+	\def\TransMax{1}
+	\def\LineWidth{1pt}
+	% Prel
+	\begin{axis} 
+	[ 
+	/tikz/line join=bevel, 
+	%ymode=log, 
+	axis y line*=left, 
+	line width = 0.5pt, 
+	%	minor x tick num= , 
+	%	minor y tick num= , 
+	xmin = \PrelMin, xmax = \PrelMax, 
+	ymin = \LfMin, ymax = \LfMax, 
+	xlabel = {Relative Pressure $\frac{P}{P_\mathrm{sv}}$}, 
+	ylabel = {Liquid Fraction}, 
+	ytick = {0,0.25,0.50,0.75,1},
+	%	legend entries={Avec,Sans}, 
+	grid,
+	legend style={at={(0,0.5)}, legend columns=1, anchor=north west},
+	%title={Membrane 296b - $\SI{60}{\micro\meter}$}
+	] 
+	% Add plots
+	\addplot[mark=none, color=blue] table [x=Prel,y=liquid_fraction]{295d_cond_2.txt};
+	%\addlegendentry{condensation}
+	\addplot[mark=none, color=blue, dashed] table [x=Prel,y=liquid_fraction]{295d_evap_2.txt};
+	%\addlegendentry{evaporation}
+	\end{axis} 
+	% transmission
+	\begin{axis} 
+	[ 
+	/tikz/line join=bevel, 
+	ymode=log, 
+	axis y line*=right, 
+	line width = 0.5pt, 
+	%	minor x tick num= , 
+	%	minor y tick num= , 
+	xmin = \PrelMin, xmax = \PrelMax, 
+	ymin = \TransMin, ymax = \TransMax, 
+	%xlabel = {Relative Pressure $\frac{P}{P_\mathrm{sv}}$}, 
+	ylabel = {Transmission in \%}, 
+	xtick = {1e-1,1e-2,1e-3,70},
+	ytick = {1,1e-1,1e-2,1e-3},
+	%	legend entries={Avec,Sans}, 
+	grid,
+	legend style={at={(0,0.5)}, legend columns=1, anchor=west},
+	%title={Membrane 296b - $\SI{60}{\micro\meter}$}
+	] 
+	% Add plots
+	\addplot[mark=none, color=blue] table [x=Prel,y=transmission]{295d_cond_2.txt};
+	\addlegendentry{condensation}
+	\addplot[mark=none, color=blue!30] table [x=Prel,y=transmission]{295d_evap_2.txt};
+	\addlegendentry{evaporation}
+	\end{axis} 
+	
+	
+	\end{tikzpicture}
+	
+\end{document}

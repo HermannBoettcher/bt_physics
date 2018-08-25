@@ -1,0 +1,92 @@
+\documentclass[border = 3mm,
+               tikz]{standalone}
+
+\usepackage{tikz}
+\usepackage{siunitx}
+\usepackage{forest}
+\usepackage{pstricks-add}
+\usepackage{cleveref}\usepackage{relsize}
+
+\usetikzlibrary{arrows,shapes,positioning}
+\usetikzlibrary{decorations.markings}
+
+\tikzset{fontscale/.style = {font=\relsize{#1}}
+    }
+\usetikzlibrary{arrows.meta,shapes,positioning}
+\tikzset{
+    full/.style={circle,draw,inner sep=0, minimum size=1mm,fill=black},
+    every node/.style={minimum height=5mm,font=\footnotesize}
+}
+
+\begin{document}
+
+    \pgfdeclarelayer{bg}    % declare background layer
+    \pgfdeclarelayer{bbg}    % declare backbackground layer
+    \pgfsetlayers{bbg,bg,main}  % set the order of the layers (main is the standard layer)
+    \begin{tikzpicture}[pore/.style = {line width = 0.2cm, color = gray},
+                        film/.style = {line width = 0.15cm, color = blue!40},
+                        thick_film/.style = {line width = 0.3cm, color = blue!40},
+                        graph_label/.style = {color = gray, line width = 0.07cm},
+                        emptying_pore/.style = {color = white, line width = 0.07cm, ->}]
+        \tikzstyle arrowstyle=[scale=2]
+        \tikzstyle directed=[postaction={decorate,decoration={markings,
+            mark=at position .65 with {\arrow[arrowstyle]{stealth}}}}]
+        \foreach \Xcoor in {0, 5, 11, 16, 22}
+        \draw[pore] (\Xcoor,-1) -- (\Xcoor + 0.3,-8);
+        \foreach \Xcoor in {3, 8, 14, 19, 25}
+        \draw[pore] (\Xcoor,-1) -- (\Xcoor -  0.3 ,-8);
+        \node[gray] at (1.5,-0.6) [fontscale = 4] {$r$};
+        \draw[graph_label, ->,] (2,-0.6) -- (2.9,-0.6);
+        \draw[graph_label, ->,] (1,-0.6) -- (0.1,-0.6);
+        \node[gray] at (1.5,-8.4) [fontscale = 4] {$r'$};
+        \draw[graph_label, ->,] (2,-8.4) -- (2.5,-8.4);
+        \draw[graph_label, ->,] (1,-8.4) -- (0.5,-8.4);
+        \node[draw = yellow!90, fill = yellow!60, single arrow] at (4, -4.5) {\phantom{arrow}};
+        \node[draw = green!70, fill = green!50, single arrow] at (9, -4.5) {\phantom{arrow}};
+        \node[draw = red!70, fill = red!50, single arrow] at (15, -4.5) {\phantom{arrow}};
+        \node[draw = blue!70, fill = blue!50, single arrow] at (21, -4.5) {\phantom{arrow}};
+        \draw[color = red!50, line width = 0.1cm] (10,0) -- (20,0) -- (20,-9) -- (10,-9) -- cycle;
+        \draw[color = red!60, line width = 0.1cm] (10,0) -- (20,0) -- (20,-9) -- (10,-9) -- cycle; \node[color = red!60] at (15,-10) [fontscale = 4] {equilibrium pressure};
+        \node[color = gray] at (6.5,-9) [fontscale = 4] {spherical meniscus};
+        \begin{pgfonlayer}{bg}    % select the background layer
+            %filled pore
+            \fill[blue!40] (0 + 0.3,-8) -- (3 - 0.3,-8) -- (3,-1) -- (0,-1) -- cycle;
+            %filled pore with meniscus at r
+            \fill[blue!40] (5 + 0.3,-8) -- (8 - 0.3,-8) -- (8,-1) -- (5,-1) -- cycle;
+            \path [name path = upper_meniscus, draw = none, fill = white](5.4,-0.9) arc[start angle = -180, end angle = 0, radius=1.1];
+            \path [name path = lower_meniscus, draw = none, fill = white](5.4 + 0.3,-8.1) arc[start angle = 180, end angle = 0, radius=0.8];
+            %emptying pore
+            \fill[blue!40] (11 + 0.3,-8) -- (14 - 0.3,-8) -- (14,-1) -- (11,-1) -- cycle;
+            \path [name path = upper_meniscus, draw = none, fill = white](11.4,-0.9) arc[start angle = -180, end angle = 0, radius=1.1];
+            \path [name path = lower_meniscus, draw = none, fill = white](11.4 + 0.3,-8.1) arc[start angle = 180, end angle = 0, radius=0.8];
+            \draw[emptying_pore] (12.5,-0.9) -- (12.5,-7);
+            %filmed pore
+            \draw[film] (16.14,-1) -- (16.14 + 0.3,-8);
+            \draw[film] (18.86,-1) -- (18.86 - 0.3,-8);
+        \end{pgfonlayer};
+    \draw[line width = 0.07cm,->, color = gray] (3,-19) -- (3,-12) node[anchor=south] [fontscale = 4] {Liquid fraction};
+    \draw[line width = 0.07cm,->, color = gray] (3,-19) -- (21,-19) node[anchor=west] [fontscale = 4] {Pressure};
+    %x labels
+    \draw[graph_label] (3,-19) -- (3,-19.5) node[anchor=north] [fontscale = 4] {$0$};
+    \draw[graph_label] (10,-19) -- (10,-19.2) node[anchor=north] [fontscale = 4] {$P_\mathrm{eq}(r')$};
+    \draw[graph_label] (11.8,-19) -- (11.8,-20.4) node[anchor=north] [fontscale = 4] {$P_\mathrm{eq}(r)$};
+    \draw[graph_label] (13,-19) -- (13,-19.2) node[anchor=north] [fontscale = 4] {$P_\mathrm{sp}(r')$};
+    \draw[graph_label] (14.2,-19) -- (14.2,-20.4) node[anchor=north] [fontscale = 4] {$P_\mathrm{sp}(r)$};
+    \draw[graph_label] (19,-19) -- (19,-19.2) node[anchor=north] [fontscale = 4] {$P_\mathrm{sv}$};
+    %y labels
+    \draw[graph_label] (3,-19) -- (2.5,-19) node[anchor=east] [fontscale = 4] {$0$};
+    \draw[graph_label] (3,-14) -- (2.8,-14) node[anchor=east] [fontscale = 4] {$1$};
+    %grid
+    \draw[dashed, graph_label] (3,-14) -- (19,-14);
+    \draw[dashed, graph_label] (19,-19) -- (19,-14);
+    \draw[dashed, graph_label] (11.8,-14.36) -- (3,-14.36);
+    \draw[dashed, graph_label] (11.8,-18.56) -- (3,-18.56);
+    \draw[dashed, graph_label] (11.8,-18.56) -- (11.8,-19);
+    %isotherm
+    \draw[line width = 0.1cm, color = blue!90, directed] (11.8,-18.56) -- (3,-19);
+    \draw[line width = 0.1cm, color = red!70, directed] (11.8,-14.36) -- (11.8,-18.56);
+    \draw[line width= 0.1cm, color = green!70, directed] (15,-14.2) -- (11.8,-14.36);
+    \draw[line width = 0.1cm, color = yellow!70, directed] (19,-14) -- (15,-14.2);
+    \end{tikzpicture}
+
+\end{document}
