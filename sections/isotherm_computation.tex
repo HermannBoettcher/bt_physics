@@ -14,15 +14,7 @@
         Furthermore, the variables $P_i$, $\dot{P}_i$, $V_i$, $T_i$, $n_i$ and $\dot{n}_i$, $i\in \{1,2\}$, refer to the values measured inside of the cell, in explanation the red marked part of the system in \cref{fig:setup-bypass}. The raw isotherms of the two experiments are shown in \cref{fig:raw-isotherms}. The plateaus of the yellow curve with membrane inside the cell of the plot versus time  correspond to the dips of the time derivative of the pressure of the versus pressure plot. This can be explained by the hexane condensing inside the membrane's pores at a given pressure due to which the continuing matter flow into the cell does not yield an increase of pressure.
         \medskip
 
-        \begin{figure}[htp]
-            \centering
-            \subfloat[]{\includegraphics[width=\textwidth]{images/t.png}
-            \label{fig:p-over-t}}\\
-            \subfloat[]{\includegraphics[width=\textwidth]{images/p.png}
-            \label{fig:pressure-loop}}
-            \caption{Raw volumetric isotherm data recorded with the experimental setup as explained in \cref{sec:experimental-procedure} for one cycle without a membrane inside the cell and one with a membrane inside the cell. \protect\subref{fig:p-over-t} shows the pressure values over time making the condensation and evaporation plateaus of absorption and desorption of hexane within the membrane's pores visible. \protect\subref{fig:pressure-loop} is the pressure loop which is relevant for the computation of the isotherms. Again, the before mentioned plateaus are visible as dips in the time derivative of the pressure. }
-            \label{fig:raw-isotherms}
-        \end{figure}
+        \subfile{tikz/graphs/295b_membrane_vs_nomembrane/295b_membrane_vs_nomembrane.tex}
 
         Regarding the system with and empty cell, it is clear that the ideal gas law can be used to compute the flow rate of hexane (compare \cref{sec:ideal-gas-law}). By solving for the amount of matter
         \begin{equation*}
@@ -47,12 +39,7 @@
         \end{align}
         \Cref{fig:iso-computation} shows the computation steps visually using the respective plots versus time.
 
-        \begin{figure}[ht]
-            \centering
-            \includegraphics[width=\textwidth]{images/isotherm_comparison_report.png}
-            \caption{Raw data of the isotherm with membrane and interpolation of the reference isotherm without membrane. Also, the substraction of the latter (compare integrand of \cref{eq:ndot-membrane}) is plotted where the area to be integrated for the absorption and respective desorption isotherm is shaded. }
-            \label{fig:iso-computation}
-        \end{figure}
+        \subfile{tikz/graphs/295d_integration_visualization/295d_integration_visualization.tex}
 
         As the temperature of the system is regulated ($T = T_1 = T_2 = \mathrm{const.}$) and because $V = V_1 \approx V_2$ since $V_\mathrm{mem} \ll V_1$, equation \cref{eq:ndot-membrane} yields
         \begin{equation}
@@ -88,13 +75,6 @@
         with the volume of condensed hexane $V_\mathrm{hex}^\mathrm{cond}$ and the membrane's volume $V_\mathrm{mem}$, is the filled fraction of the membrane. Its maximum corresponds to the porosity of the membrane. For the computation please refer to \cref{subsec:porosity}.
 
         For the computation of the introduced physical sizes, the saturated vapor pressure $P_\mathrm{sv}$ must be determined.
-
-        \begin{figure}[ht]
-            \centering
-            \includegraphics[width=\textwidth]{images/prel_isotherm_computation.png}
-            \caption{Isotherm computed using equation \cref{eq:nmembrane}. The pressure axis has been divided by the saturated vapor pressure. }
-            \label{fig:computed-isotherm}
-        \end{figure}
 
 
         \subsection{Determination of the Saturated Vapor Pressure}
@@ -166,12 +146,7 @@
                 The hexane evaporates at equilibrium pressure $P_\mathrm{eq}$, though. That means that assuming the same pore size distribution, funnelization, corregation and constrictions, the pores empty continuously. The theoretical state of the membrane is visualized in \cref{fig:pore-disorder} \protect\subref{fig:disorder-desorption}.
                 \medskip
 
-                \begin{figure}[ht]
-                    \centering
-                    \includegraphics[width=\textwidth]{images/transmission_magnitude.png}
-                    \caption{$P_\mathrm{rel}$ isotherm of membrane 292d. The transmission is not normalized but in arbitrary units plotted on a log scale. Please refer to \cref{subsec:light-transmission-interpretation} for the interpretation of the different magnitudes of the transmission drops for absorption and desorption. }
-                    \label{fig:transmission-drops}
-                \end{figure}
+                \subfile{tikz/graphs/292d_op/292d.tex}
 
                 The difference is that during the condensation process neighboring pores can be in very different states meaning empty and filled, while for evaporation the pores only show different levels of liquid during most of the process. Therefore, the absorption of hexane creates a higher grade of disorder than the desorption and therefore causes a more significant drop of the transmission coefficient (compare \cref{fig:transmission-drops}).
                 \medskip
