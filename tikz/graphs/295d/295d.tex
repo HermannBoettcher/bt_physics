@@ -9,7 +9,7 @@
 	\def\PrelMax{1}
 	\def\LfMin{0}
 	\def\LfMax{2}
-	\def\TransMin{1e-7}
+	\def\TransMin{1e-6}
 	\def\TransMax{1}
 	\def\LineWidth{1pt}
 	% Prel
@@ -32,11 +32,13 @@
 	%title={Membrane 296b - $\SI{60}{\micro\meter}$}
 	] 
 	% Add plots
-	\addplot[mark=none, color=red] table	 [x=Prel,y=liquid_fraction]{294a_liquid_fraction.txt};
-	\addlegendentry{bad opening}
-	\addplot[mark=none, color=blue] table [x=Prel,y=liquid_fraction]{292d_cond_1.txt};
-	\addlegendentry{good opening}
-	\addplot[mark=none, color=blue] table [x=Prel,y=liquid_fraction]{292d_evap_1.txt};
+	\addplot[mark=none, color=blue] table [x=Prel,y=liquid_fraction]{295d_cond_2.txt};
+	%\addlegendentry{condensation}
+	\addplot[mark=none, color=blue, dashed] table [x=Prel,y=liquid_fraction]{295d_evap_2.txt};
+	\addplot[mark=none, color=red] table [x=Prel,y=liquid_fraction]{295a_cond_4.txt};
+	%\addlegendentry{condensation}
+	\addplot[mark=none, color=red, dashed] table [x=Prel,y=liquid_fraction]{295a_evap_4.txt};
+	%\addlegendentry{evaporation}
 	\end{axis} 
 	% transmission
 	\begin{axis} 
@@ -52,19 +54,21 @@
 	%xlabel = {Relative Pressure $\frac{P}{P_\mathrm{sv}}$}, 
 	ylabel = {Transmission in \%}, 
 	xtick = {1e-1,1e-2,1e-3,70},
-	ytick = {1,1e-1,1e-2,1e-3,1e-4},
+	ytick = {1,1e-1,1e-2,1e-3},
 	%	legend entries={Avec,Sans}, 
 	grid,
-	legend style={at={(0,0.7)}, legend columns=1, anchor=north west},
+	legend style={at={(0,0.5)}, legend columns=1, anchor=west},
 	%title={Membrane 296b - $\SI{60}{\micro\meter}$}
 	] 
 	% Add plots
-	\addplot[mark=none, color=orange] table [x=Prel,y=liquid_fraction]{294a_transmission.txt};	
-	\addlegendentry{bad opening}
-	\addplot[mark=none, color=green] table [x=Prel,y=transmission]{292d_cond_1.txt};
-	\addlegendentry{good opening}
-	\addplot[mark=none, color=green] table [x=Prel,y=transmission]{292d_evap_1.txt};
+	\addplot[mark=none, color=red] table [x=Prel,y=transmission]{295a_cond_4.txt};
+	\addlegendentry{closed pores}
+	\addplot[mark=none, color=blue] table [x=Prel,y=transmission]{295d_cond_2.txt};
+	\addlegendentry{open pores}
+	\addplot[mark=none, color=blue, dashed] table [x=Prel,y=transmission]{295d_evap_2.txt};
+	\addplot[mark=none, color=red, dashed] table [x=Prel,y=transmission]{295a_evap_4.txt};
 	\end{axis} 
+	
 	
 	\end{tikzpicture}
 	

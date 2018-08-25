@@ -1,0 +1,90 @@
+\documentclass[../../../thesis.tex]{subfiles}
+
+\begin{document}
+  \begin{figure}[ht]
+    \subfloat[]{
+      \begin{tikzpicture}
+        \def\tMin{-1}
+        \def\tMax{16}
+        \def\PMin{-40]}
+        \def\PMax{60}
+        \def\LineWidth{.5pt}
+        %
+        \begin{axis}[
+          width=0.45*\textwidth,
+          height=0.45*\textwidth,%/tikz/line join=bevel,
+          %ymode=log,
+          %axis y line*=left,
+          line width = 1pt,
+          %	minor x tick num= ,
+          %	minor y tick num= ,
+          xmin = \tMin, xmax = \tMax,
+          ymin = \PMin, ymax = \PMax,
+          xlabel = {Pressure inside the cell $P_\mathrm{cell}$ in $\si{\milli\bar}$},
+          ylabel = {Time derivative $\dot{P}_\mathrm{cell}$ in $\si{\milli\bar\per\hour}$},
+          %	legend entries={Avec,Sans},
+          grid,
+          legend style={at={(1,1)}, legend columns=1, anchor=north east},
+          every axis plot,
+          ]
+          % Add plots
+          \addplot[mark=none, color=blue] table [x=t,y=interpol]{tikz/graphs/295d_integration_visualization/295d_cond_2.txt};
+          \addlegendentry{interpolation}
+          \addplot[mark=none, color=red] table [x=t,y=dPcell]{tikz/graphs/295d_integration_visualization/295d_cond_2.txt};
+          \addlegendentry{membrane}
+          \addplot[name path=interpolation, mark=none, color=green] table [x=t,y=delta_dPcell]{tikz/graphs/295d_integration_visualization/295b_cond_2.txt};
+          \addlegendentry{substraction}
+          \path[name path=xAxis] (\pgfkeysvalueof{/pgfplots/xmin},0) -- (\pgfkeysvalueof{/pgfplots/xmax},0);
+          \addplot[green!30] fill between[of=interpolation and xAxis];
+          \addplot[mark=none, color=blue] table [x=t,y=interpol]{tikz/graphs/295d_integration_visualization/295d_evap_2.txt};
+          \addplot[mark=none, color=red] table [x=t,y=dPcell]{tikz/graphs/295d_integration_visualization/295d_evap_2.txt};
+          \addplot[name path=interpolation, mark=none, color=green] table [x=t,y=delta_dPcell]{tikz/graphs/295d_integration_visualization/295b_evap_2.txt};
+        \end{axis}
+      \end{tikzpicture}
+      \label{subfig:int}
+      }
+    \hfill
+    %\subfloat[]{
+          \begin{tikzpicture}
+            \def\tMin{0}
+            \def\tMax{1}
+            \def\PMin{0]}
+            \def\PMax{8}
+            \def\LineWidth{.5pt}
+            %
+            \begin{axis}[
+              width=0.45*\textwidth,
+              height=0.45*\textwidth,
+              %/tikz/line join=bevel,
+              %ymode=log,
+              %axis y line*=left,
+              line width = 1pt,
+              %	minor x tick num= ,
+              %	minor y tick num= ,
+              xmin = \tMin, xmax = \tMax,
+              ymin = \PMin, ymax = \PMax,
+              xlabel = {Realtive pressure inside the cell $\frac{P_\mathrm{cell}}{P_\mathrm{sv}}$},
+              ylabel = {Condensed amount of hexane $n$ in $\si\mol$},
+              %	legend entries={Avec,Sans},
+              grid,
+              legend style={at={(0,1)}, legend columns=1, anchor=north west},
+              every axis plot,
+              ]
+              % Add plots
+              \addplot[mark=none, color=blue] table [x=Prel,y=mol]{tikz/graphs/295d_integration_visualization/295d_cond_2.txt};
+              \addlegendentry{condensation}
+              \addplot[mark=none, color=blue!50] table [x=Prel,y=mol]{tikz/graphs/295d_integration_visualization/295d_evap_2.txt};
+              \addlegendentry{evaporation}
+            \end{axis}
+          \end{tikzpicture}
+          \label{subfig:iso}
+          }
+          \caption{\protect\subref{subfig:int} shows the raw data of the isotherm
+          with membrane and interpolation of the reference isotherm without membrane.
+          Also, the substraction of the latter (compare integrand of \cref{eq:ndot-membrane})
+          is plotted where the area to be integrated for the absorption and desorption
+          isotherm is shaded light green. The integration according to \cref{eq:nmembrane}
+          results in the isotherm displayed in \protect\subref{subfig:iso}.}
+  \end{figure}
+
+\end{document}

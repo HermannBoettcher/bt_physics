@@ -33,14 +33,17 @@
 	] 
 	% Add plots
 	\addplot[mark=none, color=red] table [x=Prel,y=liquid_fraction]{296a_cond_2.txt};
-	\addlegendentry{$t_\mathrm{float}=\SI{0}{\minute}$}
+	\addlegendentry{$t_\mathrm{im}=\SI{0}{\minute}$}
 	\addplot[mark=none, color=blue] table [x=Prel,y=liquid_fraction]{296c_cond_2.txt};
-	\addlegendentry{$t_\mathrm{float}=\SI{6,5}{\minute}$}
+	\addlegendentry{$t_\mathrm{im}=\SI{6,5}{\minute}$}
 	\addplot[mark=none, color=green] table [x=Prel,y=liquid_fraction]{296d_cond_2.txt};
-	\addlegendentry{$t_\mathrm{float}=\SI{13}{\minute}$}
+	\addlegendentry{$t_\mathrm{im}=\SI{13}{\minute}$}
 	\addplot[mark=none, color=red, dashed] table [x=Prel,y=liquid_fraction]{296a_evap_2.txt};
 	\addplot[mark=none, color=blue, dashed] table [x=Prel,y=liquid_fraction]{296c_evap_2.txt};
 	\addplot[mark=none, color=green, dashed] table [x=Prel,y=liquid_fraction]{296d_evap_2.txt};
+	%\draw[color=magenta] (.925,0.98) -- (.932,0.98); 
+	%\draw[-latex, ultra thick,draw opacity=0, magenta] (.923,0.98) -- (.934,0.98);
+	%\draw[color=magenta] (0.9,0.147) circle(0.003 and 0.04);	
 	\end{axis} 	
 	\end{tikzpicture}
 	

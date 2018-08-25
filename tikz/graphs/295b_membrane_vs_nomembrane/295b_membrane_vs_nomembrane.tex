@@ -1,0 +1,88 @@
+\documentclass[../../../thesis.tex]{subfiles}
+
+\begin{document}
+  \begin{figure}[ht]
+    \subfloat[]{
+      \begin{tikzpicture}
+        \def\tMin{0}
+        \def\tMax{17}
+        \def\PMin{0]}
+        \def\PMax{160}
+        \def\LineWidth{.5pt}
+        %
+        \begin{axis}[
+          width=0.45*\textwidth,
+          height=0.45*\textwidth,
+          %/tikz/line join=bevel,
+          %ymode=log,
+          %axis y line*=left,
+          line width = 1pt,
+          %	minor x tick num= ,
+          %	minor y tick num= ,
+          xmin = \tMin, xmax = \tMax,
+          ymin = \PMin, ymax = \PMax,
+          xlabel = {Normalized time $t$ in $\si\hour$},
+          ylabel = {Pressure inside the cell $P_\mathrm{cell}$ in $\si{\milli\bar}$},
+          %	legend entries={Avec,Sans},
+          grid,
+          legend style={at={(1,0)}, legend columns=1, anchor=south east},
+          every axis plot,
+          ]
+          % Add plots
+          \addplot[mark=none, color=blue] table [x=t,y=Prel]{tikz/graphs/295b_membrane_vs_nomembrane/nomembrane.txt};
+          \addlegendentry{no membrane}
+          \addplot[mark=none, color=red] table [x=t,y=Prel]{tikz/graphs/295b_membrane_vs_nomembrane/membrane.txt};
+          \addlegendentry{membrane}
+        \end{axis}
+      \end{tikzpicture}
+      \label{subfig:vs_time}
+      }
+    \hfill
+    \subfloat[]{
+          \begin{tikzpicture}
+            \def\tMin{-10}
+            \def\tMax{160}
+            \def\PMin{-40]}
+            \def\PMax{60}
+            \def\LineWidth{.5pt}
+            %
+            \begin{axis}[
+              width=0.45*\textwidth,
+              height=0.45*\textwidth,
+              %/tikz/line join=bevel,%/tikz/line join=bevel,
+              %ymode=log,
+              %axis y line*=left,
+              line width = 1pt,
+              %	minor x tick num= ,
+              %	minor y tick num= ,
+              xmin = \tMin, xmax = \tMax,
+              ymin = \PMin, ymax = \PMax,
+              xlabel = {Pressure inside the cell $P_\mathrm{cell}$ in $\si{\milli\bar}$},
+              ylabel = {Time derivative $\dot{P}_\mathrm{cell}$ in $\si{\milli\bar\per\hour}$},
+              %	legend entries={Avec,Sans},
+              grid,
+              legend style={at={(0,0)}, legend columns=1, anchor=south west},
+              every axis plot,
+              ]
+              % Add plots
+              \addplot[mark=none, color=blue] table [x=Prel,y=dPcell]{tikz/graphs/295b_membrane_vs_nomembrane/nomembrane.txt};
+              \addlegendentry{no membrane}
+              \addplot[mark=none, color=red] table [x=Prel,y=dPcell]{tikz/graphs/295b_membrane_vs_nomembrane/membrane.txt};
+              \addlegendentry{membrane}
+            \end{axis}
+          \end{tikzpicture}
+          \label{subfig:vs_pressure}
+          }
+          \caption{Raw volumetric isotherm data recorded with the experimental setup
+          as explained in \cref{sec:experimental-procedure} for one cycle without a
+          membrane inside the cell and one with a membrane inside the cell.
+          \protect\subref{subfig:vs_time} shows the pressure values over time making
+          the condensation and evaporation plateaus of absorption and desorption of
+          hexane within the membrane's pores visible. \protect\subref{subfig:vs_pressure} is
+          the pressure loop which is relevant for the computation of the isotherms.
+          Again, the before mentioned plateaus are visible as dips in the time
+          derivative of the pressure.}
+          \label{}
+  \end{figure}
+
+\end{document}
