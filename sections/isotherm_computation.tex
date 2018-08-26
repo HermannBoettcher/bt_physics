@@ -77,7 +77,7 @@
         For the computation of the introduced physical sizes, the saturated vapor pressure $P_\mathrm{sv}$ must be determined.
 
 
-        \subsection{Determination of the Saturated Vapor Pressure}
+        \subsection{Determination of the saturated vapor pressure}
 
             As the bulk condensation plateau shows a slight drift (compare figure \cref{fig:raw-isotherms}), using the maximum measured pressure $P_\mathrm{cell}$ does not yield the saturated vapor pressure $P_\mathrm{sv}$ but a higher value. In addition, depending on the contamination of the system by air or degassing grease, the measured value for $P_\mathrm{sv}$ shifts due to the partial pressures. To probe the reproducibility of an isotherm loop including the grade of contamination, the maximum measured pressure for different membranes is compared. As the system is opened to replace the membrane in between the isotherms, each cycle is independent. For the change of membrane process please read \cref{sssec:changing-the-sample}. The result of the experiment is that $P_\mathrm{sv}^\mathrm{exp}$ fluctuates by
             \begin{equation}
@@ -115,7 +115,7 @@
             \end{equation*}
 
 
-        \subsection{Light Transmission Evaluation}
+        \subsection{Light transmission evaluation}
         \label{subsec:light-transmission-evaluation}
 
             As mentioned in \cref{sec:exp-setup}, the light transmission setup is independent from the volumetric measurements and also the evaluations do not depend on each other. The light transmission is rather a tool to check on the theory of evaporation and condensation within the membrane using a different approach.
@@ -128,7 +128,7 @@
             The aquired physical size can be interpreted as explained in the following  \cref{subsec:light-transmission-interpretation}.
 
 
-            \subsubsection{Light Transmission Interpretations}
+            \subsubsection{Light transmission interpretations}
             \label{subsec:light-transmission-interpretation}
 
                 \subfile{tikz/transmission_disorder/pore_disorder.tex}
@@ -137,21 +137,23 @@
 
                 Furthermore, due to the disorder created by pore filling and emptying, the transmission drops during the processes. Phenomena occurring on the volumetric measurements can therefore be interpreted corresponding to the measured transmission coefficient.
 
-                Last, an often observed phenomenon is that the transmission drops to lower values for the condensation than for evaporation of a given isotherm. \Cref{fig:transmission-drops} shows an isotherm of membrane 292d (open pores) where this is the case. A possible interpretation is the degree of disorder caused inside the membrane by the respective process. As the membrane contains pores open on both ends, the condensation takes place at spinodal pressure $P_\mathrm{sp}(d_\mathrm{pore})$. Due to the distribution of pore sizes, funnelization, corrugation and constrictions, the pores fill at different pressures $P_\mathrm{sp}^1 \neq P_\mathrm{sp}^2$. At a given pressure
+                Last, an often observed phenomenon is that the transmission drops to lower values for the condensation than for evaporation of a given isotherm. \Cref{fig:292_295_296_transmission} shows an isotherm of membrane 292d (open pores) where this is the case. A possible interpretation is the degree of disorder caused inside the membrane by the respective process. As the membrane contains pores open on both ends, the condensation takes place at spinodal pressure $P_\mathrm{sp}(d_\mathrm{pore})$. Due to the distribution of pore sizes, funnelization, corrugation and constrictions, the pores fill at different pressures $P_\mathrm{sp}^1 \neq P_\mathrm{sp}^2$. At a given pressure
                 \begin{equation*}
                     P_\mathrm{sp}^1 < P < P_\mathrm{sp}^2,
                 \end{equation*}
-                where $P_\mathrm{sp}^1$ shall be the smallest pore diameter to be found on the membrane and $P_\mathrm{sp}^2$ the largest one, the state of the me{}mbrane regarding filled and empty pores is assumed to be comparable to figure \cref{fig:pore-disorder} \protect\subref{fig:disorder-absorption}.
-
-                The hexane evaporates at equilibrium pressure $P_\mathrm{eq}$, though. That means that assuming the same pore size distribution, funnelization, corregation and constrictions, the pores empty continuously. The theoretical state of the membrane is visualized in \cref{fig:pore-disorder} \protect\subref{fig:disorder-desorption}.
+                where $P_\mathrm{sp}^1$ shall correspond to the smallest pore diameter found on the membrane and $P_\mathrm{sp}^2$ the largest one, the state of the me{}mbrane regarding filled and empty pores is assumed to be comparable to figure \cref{fig:disorder-absorption}. The hexane evaporates at equilibrium pressure $P_\mathrm{eq}$, though. That means that, assuming the same pore size distribution, funnelization, corregation and constrictions, the pores empty continuously. The theoretical state of the membrane is visualized in \cref{fig:disorder-desorption}.
                 \medskip
 
-                \subfile{tikz/graphs/292d_op/292d.tex}
-
-                The difference is that during the condensation process neighboring pores can be in very different states meaning empty and filled, while for evaporation the pores only show different levels of liquid during most of the process. Therefore, the absorption of hexane creates a higher grade of disorder than the desorption and therefore causes a more significant drop of the transmission coefficient (compare \cref{fig:transmission-drops}).
+                The difference is that during the condensation process neighboring pores can be in very different states meaning empty and filled, while for evaporation the pores only show different levels of liquid during most of the process. As a result, the absorption of hexane creates a higher grade of disorder than the desorption and therefore causes a more significant drop of the transmission coefficient (compare \cref{subfig:292_trans}).
                 \medskip
 
-                The occurrence of the small peak in between two dips of the evaporation transmission cannot be explained by this theory. Moreover, the later analysed membranes of wafer 295 yield a more even dip distribution and upon reducing the pore diameter using ALD, even the membranes even show the inverse behaviour. ??? ADD THE FIGURE HERE
+                The occurrence of the small peak in between two dips of the evaporation transmission cannot be explained by this theory. Moreover, the later analysed membranes of wafer 295 and 296 yield a more even dip distribution (compare \cref{subfig:295_trans} and \cref{subfig:296_trans}) and upon reducing the pore diameter of 295 using ALD, the membranes even show the inverse behaviour (\cref{subfig:295e200ALD_trans}).
+
+                The first phenomenom could be explained by the pores being less flawed talking corrugations and funneling. The latter assumption is backed by the fact, that the transmission drops of 295d are of smaller magnitude than those of 296b. While both are open pore membranes, membrane 295d is only half as thick as 296b, meaning the pores are only half as long and therefore the influence of the funneling aspect is reduced respectively by half.
+
+                The second one remains unclear though.
+
+                \subfile{tikz/graphs/292_295_296_transmission/292_295_296_transmission.tex}
 
 
 

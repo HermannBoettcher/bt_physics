@@ -2,7 +2,7 @@
 
 \begin{document}
 
-    \section{Analysis of Wafer 292}
+    \section{Analysis of wafer 292}
     \label{sec:wafer292}
 
         Of wafer 292, the membranes 292c and 292d have been measured. The pores were opened by floating as explained in \cref{sssec:barrier-layer-dissolution}. The thickness of the membranes is
@@ -10,9 +10,11 @@
             l_\mathrm{pore}=\SI{60}{\micro\meter}.
         \end{equation}
         Expected is an absorption and desorption isotherm with a hysteresis as explained in \cref{sssec:open-funnelled-pores}.
+        While by theory, the condensation branch is supposed to be steeper than the evaporation branch, the measurements show the opposite.
+        The condensation seems to have a tail to lower pressures.
 
 
-    \section{Analysis of Wafer 296}
+    \section{Analysis of wafer 296}
     \label{sec:wafer296}
 
         The thickness of wafer 296 is
@@ -46,13 +48,15 @@
 
         \begin{figure}[ht]
             \centering
+			spy using outlines={ellipse, magnification=4, connect spies}]
+        \def\PrelMin{.86}
             \includegraphics[width=\textwidth]{images/296a_vs_296c_vs_296d_vs_296e_vs_296f_d_kelvin.png}
             \caption{Comparison of the volumetrically measured membranes of wafer 296 on a \textsc{Kelvin} diameter axis. The solid lines represent the condensation whereas the dashed lines correspond to the evaporation of an isotherm cycle. As 296a is a membrane with closed pores (untouched barrier layer), by comparison it is clearly visible that the rest of the membranes, as expected, have closed pores too.}
             \label{fig:full-comp-w296}
         \end{figure}
 
 
-        \subsection{Floated Membranes 296e and 296f}
+        \subsection{Floated membranes 296e and 296f}
         \label{subsec:floated-membranes}
 
             \begin{figure}[ht]
@@ -67,7 +71,7 @@
             The comparison of the volumetric measurements of the three membranes is shown in \cref{fig:floated-comp-w296}. Even though the wafer has been produced as a whole and the membranes 296e and 296f have only been floated on ??? acid without opening the pores, by theory leaving the pore diameters unchanged, a clear offset in diameter between 296a and the other two membranes is visible. As 296e and 296f are pretty superimposed though and also the shapes of isotherms match according to \cref{sec:wafer296}, no error in the before made interpretations of the pores still being closed can be implied. This leaves only the possibility of the pore diameters being distributed throughout the wafer and hereby throughout the membranes.
 
 
-        \subsection{Immersed Membranes 296c and 296d}
+        \subsection{Immersed membranes 296c and 296d}
         \label{subsec:immersed-membranes}
 
             \subfile{tikz/graphs/immersion_experiment/immersion.tex}
@@ -77,7 +81,7 @@
             \subfile{tikz/wafer_analysis/funnelling_increase.tex}
 
 
-    \section{Analysis of Wafer 295}
+    \section{Analysis of wafer 295}
     \label{sec:wafer295}
 
         Wafer 295 is only
@@ -98,7 +102,7 @@
             $\SI{40}{\nano\meter}$ diameter with a significantly reduced funneling aspect resulting in a rather upright evaporation isotherm. The result is displayed in ???. The absorption and desorption isotherm shows a king at two thirds of the height, which cannot easily be explained. While for straight pores, a straight isotherm rising is expected, the observed kink could speak for a deformation as shown in ???, assuming that it is due to intra pore defects, not inter pore defects. Regarding inter pore defects, a discreet pore diameter variation could cause this shape of isotherm. Again, the reason for such a discreet distribution in pore sizes is not clear.
 
 
-            \subsubsection{Membrane 295a - after Aluminum Dissolution Bath}
+            \subsubsection{Membrane 295a - after aluminum dissolution bath}
 
                 Membrane 295a is measured again after a bath in the ??? acid. The point of this is to see, if the  wafers immersion in the acid when dissolution the remaining aluminum after the anodizing might cause any unexpected defects or pore widening already. As the anodizing of wafer 295 has been conducted with the same parameters as the other wafers before (for instance wafer 296, the pore diameters are expected to be approximately the same. Referring to wafer 296 the pore diameters of
                 \begin{equation*}

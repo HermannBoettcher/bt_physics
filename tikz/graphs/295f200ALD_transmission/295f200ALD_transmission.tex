@@ -1,0 +1,45 @@
+\documentclass[../../../thesis.tex]{subfiles}
+
+\begin{document}
+  \begin{figure}[ht]
+		\centering
+      \begin{tikzpicture}
+          \def\PrelMin{.5}
+  				\def\PrelMax{1}
+  				\def\TransMin{1e-2}
+  				\def\TransMax{1}
+  				\def\LfMin{0}
+  				\def\LfMax{2}
+          %
+  				% transmission
+  				\begin{axis}[
+            width=0.8*\textwidth,
+            height=0.5*\textwidth,
+  					ymode=log,
+  					%axis y line*=right,
+  					line width = 1pt,
+  					%	minor x tick num= ,
+  					%	minor y tick num= ,
+  					xmin = \PrelMin, xmax = \PrelMax,
+  					ymin = \TransMin, ymax = \TransMax,
+  					ylabel = {Transmission $T$},
+  					xlabel = {Relative pressure $P_\mathrm{rel}$},
+  					ytick = {10,1,1e-1,1e-2},
+  					grid,
+            legend style={at={(0,0)}, legend columns=1, anchor=south west},
+  					%title={Membrane 296b - $\SI{60}{\micro\meter}$}
+  					]
+  					% Add plots
+  					\addplot[mark=none, color=red] table [x=Prel,y=transmission]{tikz/graphs/295f200ALD_transmission/295f200ALD_cond_1.txt};
+  					\addlegendentry{$T_\mathrm{cond}$}
+  					\addplot[mark=none, color=red!50] table [x=Prel,y=transmission]{tikz/graphs/295f200ALD_transmission/295f200ALD_evap_1.txt};
+  					\addlegendentry{$T_\mathrm{evap}$}
+  				\end{axis}
+        \end{tikzpicture}
+    \caption{$P_\mathrm{rel}$ isotherms of the membranes 296b \protect\subref{subfig:296_trans} and 295d \protect\subref{subfig:295_trans},
+    both membranes with open pores. Unlike the isotherm of membrane 292d (compare \cref{fig:292d_op_full_iso}), the transmission drops of
+    condensation and evaporation are of the same magnitude.}
+    \label{fig:295_296_transmission}
+  \end{figure}
+
+\end{document}
