@@ -11,7 +11,10 @@
         \end{equation}
         Expected is an absorption and desorption isotherm with a hysteresis as explained in \cref{sssec:open-funnelled-pores}.
         While by theory, the condensation branch is supposed to be steeper than the evaporation branch, the measurements show the opposite.
-        The condensation seems to have a tail to lower pressures.
+        The condensation seems to have a tail to lower pressures. This can be explained by inhomogenuous pore openings. In fact, the membrane's
+        pores were not well opened after the first barrier layer dissolution process (compare \cref{sssec:barrier-layer-dissolution}), as determined
+        from MEB views, and has therefore been opened using a second floating process. That might have cause an increase of the funneling and/ or
+        corrugations and also left some bad open pores.
 
 
     \section{Analysis of wafer 296}
@@ -19,7 +22,7 @@
 
         The thickness of wafer 296 is
         \begin{equation}
-            l^{296}_\mathrm{pore}=SI{60}{\micro\meter}.
+            l^{296}_\mathrm{pore}=\SI{60}{\micro\meter}.
         \end{equation}
         As explained before in \cref{sssec:barrier-layer-dissolution}, this wafer shall be used to further understand the barrier layer dissolution. The goal is to be able to produce the membranes in a more controlled way an to hereby reduce the funneling aspect of the pores. \cref{fig:wafer-296} shows the treatments of the membranes and gives an overview over the conducted measurements. While the membranes 296c and 296d are immersed in ??? acid for
         \begin{align}
@@ -37,38 +40,25 @@
             \end{split}
             \label{eq:t-float}
         \end{align}
-        respectively. Assuming the etch rate to be equal for both sides of the barrier layer, meaning from within the pore and from the outside, the thickness of the barrier layer of 296c and 296e and also of 296d and 296f should be equal after the dissolution. Moreover, all pores should still be closed assuming an etch rate of approximately $\SI{1}{\nano\meter\per\minute}$. The latter should be clearly visible on the volumetric measurements. Furthermore, only the pores of the immersed membranes are expected to be widened. The horizontal etch rate which, according to \cref{sssec:barrier-layer-dissolution} must be different from the one attacking the barrier layer vertically, shall be put a figure to in the run of the evaluations.
+        respectively. Assuming the etch rate to be equal for both sides of the barrier layer, meaning from within the pore and from the outside, the thickness of the barrier layer of 296c and 296e and also of 296d and 296f should be equal after the dissolution. Moreover, all pores should still be closed assuming an etch rate of approximately $\SI{1}{\nano\meter\per\minute}$. The latter should be clearly visible on the volumetric measurements. Furthermore, only the pores of the immersed membranes are expected to be widened. The horizontal etch rate, which according to \cref{sssec:barrier-layer-dissolution} must be different from the one attacking the barrier layer vertically, shall be put a figure to in the run of the evaluations.
 
         \subfile{tikz/wafers/wafer_296_processing_plan.tex}
 
-        \Cref{fig:full-comp-w296} shows a full comparison of the volumetric measurements of the membranes mentioned above. Additionally, membrane 296a is drawn on the graph. Its barrier layer remains untouched making for closed pores. The comparison of the different membranes implies that indeed, all pores are still closed as the shapes of the isotherms of the four treated membranes match the one of 295a and no big diameter variation can be observed. Which cannot be observed though, that is weather the pores already have microscopic openings on the barrier layer side. If that were the case, hexane would condense there at spinodal pressures lower than the equilibrium pressure of the small ends. Hereby, the pores would be left in a closed shape. This case would not be visible on the volumetric measurements as the condensed amount of hexane necessary to close the pores were so small. If the openings were so large already as for the spinodal pressure to be larger than the equilibrium pressure of the small end, that case would be visible on the isotherm because whole pores would fill at higher pressures. Therefore, the latter case can be excluded.
-        ???REFER TO THE THEORY PORE THEORY SECTION HERE ???
+        \Cref{fig:full-comp-w296} shows a full comparison of the volumetric measurements of the membranes mentioned above. Additionally, membrane 296a (closed pores) and 296b before and after the barrier layer dissolution are presented on the graph. So the membranes 296a and 296b cp serve as reference for closed pore membranes, while 296b op serves for open pore membranes. The comparison of the different membranes implies that indeed, all pores are still closed for the four treated membranes as the shapes of their isotherms match the one of 295a and 296b cp while they do not match the one of 296b op. Moreover, no big diameter variation can be observed. Which cannot be observed though, that is weather the pores already have microscopic openings on the barrier layer side. If that were the case, hexane would condense there at spinodal pressures lower than the equilibrium pressure of the small ends. Hereby, the pores would be left in a closed shape. This case would not be visible on the volumetric measurements as the condensed amount of hexane necessary to close the pores were so small. If the openings were so large already as for the spinodal pressure to be larger than the equilibrium pressure of the small end, that case would be visible on the isotherm because whole pores would fill at higher pressures. Therefore, the latter case can be excluded.
 
         Next, the floated and immersed membranes shall be regarded separately.
 
-        \begin{figure}[ht]
-            \centering
-			spy using outlines={ellipse, magnification=4, connect spies}]
-        \def\PrelMin{.86}
-            \includegraphics[width=\textwidth]{images/296a_vs_296c_vs_296d_vs_296e_vs_296f_d_kelvin.png}
-            \caption{Comparison of the volumetrically measured membranes of wafer 296 on a \textsc{Kelvin} diameter axis. The solid lines represent the condensation whereas the dashed lines correspond to the evaporation of an isotherm cycle. As 296a is a membrane with closed pores (untouched barrier layer), by comparison it is clearly visible that the rest of the membranes, as expected, have closed pores too.}
-            \label{fig:full-comp-w296}
-        \end{figure}
+        \subfile{tikz/graphs/296_membranes/296_membranes.tex}
 
 
         \subsection{Floated membranes 296e and 296f}
         \label{subsec:floated-membranes}
 
-            \begin{figure}[ht]
-                \centering
-                \includegraphics[width=\textwidth]{images/296a_vs_296e_vs_296f_d_kelvin.png}
-                \caption{Comparison of 296a, 296e and 296f on a \textsc{Kelvin} diameter axis. }
-                \label{fig:floated-comp-w296}
-            \end{figure}
+            The comparison of the volumetric measurements of the membranes 296e, 296f and for the reference of an untreated membrane 296a are shown in \cref{fig:floated-comp-w296}. Even though the wafer has been produced as a whole and the membranes 296e and 296f have only been floated on ??? acid without opening the pores, by theory leaving the pore diameters unchanged, a clear offset in diameter between 296a and the other two membranes is visible. As 296e and 296f are pretty superimposed though and also the shapes of isotherms match according to \cref{sec:wafer296}, no error in the before made interpretations of the pores still being closed can be implied. This leaves only the possibility of the pore diameters being distributed throughout the wafer and hereby throughout the membranes.
 
-            ??? OPTICAL ANALYSIS STILL MISSING ???
+            As a reminder, all the pores are closed. Regarding the light transmission measurement, the transmission dips of condensation and evaporation are expected to be of the same magnitude as both proccesses occur at equilibrium pressure. Unlike theory, \cref{fig:floated-comp-w296} shows deeper transmission minima for the condensation than it does for the evaporation. This cannot be explained by the theory explained in \cref{subsec:light-transmission-interpretation}. One possible approach could be the corrugations within the single pores that lead to an unreversible absorption and desorption isotherm.
 
-            The comparison of the volumetric measurements of the three membranes is shown in \cref{fig:floated-comp-w296}. Even though the wafer has been produced as a whole and the membranes 296e and 296f have only been floated on ??? acid without opening the pores, by theory leaving the pore diameters unchanged, a clear offset in diameter between 296a and the other two membranes is visible. As 296e and 296f are pretty superimposed though and also the shapes of isotherms match according to \cref{sec:wafer296}, no error in the before made interpretations of the pores still being closed can be implied. This leaves only the possibility of the pore diameters being distributed throughout the wafer and hereby throughout the membranes.
+            \subfile{tikz/graphs/296_a_e_f/296_a_e_f.tex}
 
 
         \subsection{Immersed membranes 296c and 296d}
@@ -76,7 +66,7 @@
 
             \subfile{tikz/graphs/immersion_experiment/immersion.tex}
 
-            \Cref{fig:immersed-comp-w296} compares the volumetric measurements of the immersed membranes 296c and 296d, again adding the untreated membrane 296a. As explained in \cref{sssec:cfp-leo}, condensation and evaporation in a closed funnelled pore occur at equilibrium pressure. Pores that are open on the large end start filling from the bottom and evaporating from the top so, regarding the isotherms in \cref{fig:immersed-comp-w296}, the lower end of the isotherm rising represents the small bottom end of the pores. This lower end of all three isotherms seems to be superimposed while the top end, representing the large open end of the pores, moves to larger diameters for longer immersion times. As the effect seems to occur linearly over the whole length of the pores, the acid seems to be saturating within the pores losing etching power. By \cref{sssec:cfp-leo}, the process can be visually interpreted as shown in ???. Moreover, the increase of the funnelling aspect seems to be linear at least within the first 13 minutes of the immersion as doubling the immersion time yields double the diameter shift on the volumetric isotherm (compare \cref{eq:t-immerse}).
+            \Cref{fig:immersed-comp-w296} compares the volumetric and also the transmission measurements of the immersed membranes 296c and 296d, again adding the untreated membrane 296a. As explained in \cref{sssec:cfp-leo}, condensation and evaporation in a closed funnelled pore occur at equilibrium pressure. Pores that are open on the large end start filling from the bottom and evaporating from the top so, regarding the isotherms in \cref{fig:immersed-comp-w296}, the lower end of the isotherm rising represents the small bottom end of the pores. This lower end of all three isotherms seems to be superimposed while the top end, representing the large open end of the pores, moves to larger diameters for longer immersion times. As the effect seems to occur linearly over the whole length of the pores, the acid seems to be saturating within the pores losing etching power. By \cref{sssec:cfp-leo}, the process can be visually interpreted as a pore straightening as shown in \cref{fig:funneling_increase}. Moreover, the increase of the funnelling aspect seems to be linear at least within the first 13 minutes of the immersion as doubling the immersion time yields double the diameter shift on the volumetric isotherm (compare \cref{eq:t-immerse}).
 
             \subfile{tikz/wafer_analysis/funnelling_increase.tex}
 
@@ -88,31 +78,34 @@
         \begin{equation}
             l^{295}_\mathrm{pore}=\SI{30}{\micro\meter}
         \end{equation}
-        thick. Hereby, the funneling observed upon the previously measured membranes of a thickness of
+        thick. Hereby, the effect of the funneling observed upon the previously measured membranes of a thickness of
         \begin{equation}
             l^{292,293,294,296}_\mathrm{pore}=\SI{60}{\micro\meter}
         \end{equation}
-        is supposed to be reduced. Assuming that the funneling aspect is linear implies a reduction of the effect by half. \Cref{fig:wafer_295} shows the treatments and measurements of the inspected membranes of wafer 295.
+        is expected to be reduced. Assuming that the funneling aspect is linear implies a reduction of the effect by half.
+        Finally, the membranes' pore diameters are reduced using ALD. \Cref{fig:wafer_295} shows the treatments and measurements of the inspected membranes of wafer 295.
 
         \subfile{tikz/wafers/wafer_295_processing_plan.tex}
 
         \subsection{Membrane 295a}
 
             To start with, membrane 295a shall be analysed. It is untreated, meaning that the pores are still closed on one end by the barrier layer. Expected are straight pores of a diameter of approximately
-            $\SI{40}{\nano\meter}$ diameter with a significantly reduced funneling aspect resulting in a rather upright evaporation isotherm. The result is displayed in ???. The absorption and desorption isotherm shows a king at two thirds of the height, which cannot easily be explained. While for straight pores, a straight isotherm rising is expected, the observed kink could speak for a deformation as shown in ???, assuming that it is due to intra pore defects, not inter pore defects. Regarding inter pore defects, a discreet pore diameter variation could cause this shape of isotherm. Again, the reason for such a discreet distribution in pore sizes is not clear.
+            $\SI{40}{\nano\meter}$ diameter with a significantly reduced funneling aspect resulting in a rather upright evaporation isotherm. The result is displayed in \cref{fig:295a}. The absorption and desorption isotherm shows a kink at two thirds of the height, which cannot easily be explained. While for straight pores, a straight isotherm rising is expected, the observed kink could speak for a deformation as shown in \cref{fig:weird_funnelling}, assuming that it is due to intra pore defects, not inter pore defects. Regarding inter pore defects, a discreet pore diameter variation could cause this shape of isotherm. Again, the reason for such a discreet distribution in pore sizes is not clear.
+
+            \subfile{tikz/graphs/295a/295a.tex}
 
 
             \subsubsection{Membrane 295a - after aluminum dissolution bath}
 
-                Membrane 295a is measured again after a bath in the ??? acid. The point of this is to see, if the  wafers immersion in the acid when dissolution the remaining aluminum after the anodizing might cause any unexpected defects or pore widening already. As the anodizing of wafer 295 has been conducted with the same parameters as the other wafers before (for instance wafer 296, the pore diameters are expected to be approximately the same. Referring to wafer 296 the pore diameters of
+                Membrane 295a is measured again after a bath in the acid used for the aluminum dissolution as explained in \cref{sssec:al-dissolution}. The point of this is to see, if the  wafers immersion in the acid when dissolution the remaining aluminum after the anodizing might cause any unexpected defects or pore widening already. As the anodizing of wafer 295 has been conducted with the same parameters as the other wafers before (for instance wafer 296, the pore diameters are expected to be approximately the same. Referring to wafer 296 the pore diameters of
                 \begin{equation*}
                     d_\mathrm{pore}^\mathrm{296a} = \SI{45\pm 5}{\nano\meter}
                 \end{equation*}
-                do not fit the ones results of membrane 295a with
+                do not fit the ones results of membrane 295a with???
                 \begin{equation*}
                     d_\mathrm{pore}^\mathrm{295a} = \SI{55\pm 6}{\nano \meter}.
                 \end{equation*}
-                Finally, the probing of the aluminum dissolution process, which by theory is not supposed to attack the alumina of the membranes and therefore has not been taken a deeper look at, yields the before and after result displayed in \cref{fig:295-al-before-after}. In between the two measurements, the membrane has been immersed for
+                Finally, the probing of the aluminum dissolution process, which by theory is not supposed to attack the alumina of the membranes and therefore has not been taken a deeper look at, yields the before and after result displayed in \cref{fig:295a_al_diss}. In between the two measurements, the membrane has been immersed for
                 \begin{equation*}
                     t_\mathrm{immerse} = \SI{4,5}{\hour}
                 \end{equation*}
@@ -130,12 +123,7 @@
                 \end{equation}
                 Both, the starting points of the condensation rise and of the evaporation drop are shifted in the same way. Moreover, the hysteresis did not increase during the process. These two observations speak for the pore widening being homogeneous and also the corrugations not having increased during the etching. Therefore, the production step of the aluminum dissolution conducted as explained in \cref{sssec:al-dissolution} can be disregarded as a cause of big pore impurities.
 
-                \begin{figure}[ht]
-                    \centering
-                    \includegraphics[width=\textwidth]{images/295a'_vs_295a_d_kelvin.png}
-                    \caption{Comparison of the isotherms recorded for membrane 295a before and after the aluminum dissolution bath. Due to the homogeneous shift of the isotherm one can draw the conclusion that the aluminum dissolution process does not cause severe pore impurities.}
-                    \label{fig:295-al-before-after}
-                \end{figure}
+                \subfigure{tikz/graphs/295a_before_after_al_diss_bath/295a_before_after.tex}
 
 
         \subsection{Membrane 295d, 295e, 295f, 295g}

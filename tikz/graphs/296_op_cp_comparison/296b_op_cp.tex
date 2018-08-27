@@ -1,0 +1,68 @@
+\documentclass[../../../thesis.tex]{subfiles}
+
+\begin{document}
+  \begin{figure}[ht]
+		\centering
+    \begin{tikzpicture}
+        \def\PrelMin{.86}
+				\def\PrelMax{1}
+				\def\TransMin{1e-8}
+				\def\TransMax{10}
+				\def\LfMin{0}
+				\def\LfMax{2}
+        %
+        \begin{axis}[
+          width=0.8*\textwidth,
+          height=0.5*\textwidth,
+          grid,
+					axis y line*=left,
+          legend style={at={(0,0.5)}, legend columns=1, anchor=north west},
+          every axis plot,
+					axis y line*=left,
+					line width = 1pt,
+					%	minor x tick num= ,
+					%	minor y tick num= ,
+					xmin = \PrelMin, xmax = \PrelMax,
+					ymin = \LfMin, ymax = \LfMax,
+					xlabel = {Relative pressure $P_\mathrm{rel}$},
+					ylabel = {Liquid fraction $LF$},
+					ytick = {0,0.25,0.50,0.75,1},
+          ]
+					% Add plots
+					\addplot[mark=none, color=blue] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_op_cp_comparison/296b_cp_cond_1.txt};
+					\addlegendentry{$LF_\mathrm{296b}^\mathrm{ClosedPores}$}
+					\addplot[mark=none, color=red] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_op_cp_comparison/296b_op_cond_1.txt};
+					\addlegendentry{$LF_\mathrm{296b}^\mathrm{OpenPores}$}
+					\addplot[mark=none, color=blue!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_op_cp_comparison/296b_cp_evap_1.txt};
+					\addplot[mark=none, color=red!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_op_cp_comparison/296b_op_evap_1.txt};
+        \end{axis}
+				% transmission
+				\begin{axis}[
+          width=0.8*\textwidth,
+          height=0.5*\textwidth,
+					ymode=log,
+					axis y line*=right,
+					line width = 1pt,
+					%	minor x tick num= ,
+					%	minor y tick num= ,
+					xmin = \PrelMin, xmax = \PrelMax,
+					ymin = \TransMin, ymax = \TransMax,
+					ylabel = {Transmission $T$},
+					ytick = {10,1,1e-1,1e-2,1e-3},
+					grid,
+          legend style={at={(0,0.5)}, legend columns=1, anchor=south west},
+					%title={Membrane 296b - $\SI{60}{\micro\meter}$}
+					]
+					% Add plots
+					\addplot[mark=none, color=blue] table [x=Prel,y=transmission]{tikz/graphs/296_op_cp_comparison/296b_cp_cond_1.txt};
+					\addlegendentry{$LF_\mathrm{296b}^\mathrm{ClosedPores}$}
+					\addplot[mark=none, color=red] table [x=Prel,y=transmission]{tikz/graphs/296_op_cp_comparison/296b_op_cond_1.txt};
+					\addlegendentry{$LF_\mathrm{296b}^\mathrm{OpenPores}$}
+					\addplot[mark=none, color=blue!50] table [x=Prel,y=transmission]{tikz/graphs/296_op_cp_comparison/296b_cp_evap_1.txt};
+					\addplot[mark=none, color=red!50] table [x=Prel,y=transmission]{tikz/graphs/296_op_cp_comparison/296b_op_evap_1.txt};
+				\end{axis}
+    \end{tikzpicture}
+    \label{fig:296b_op_cp_comp}
+    \caption{}
+  \end{figure}
+\end{document}

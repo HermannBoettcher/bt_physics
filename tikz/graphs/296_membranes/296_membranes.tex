@@ -1,0 +1,59 @@
+\documentclass[../../../thesis.tex]{subfiles}
+
+\begin{document}
+  \begin{figure}[ht]
+		\centering
+    \begin{tikzpicture}[
+			spy using outlines={ellipse, magnification=4, connect spies}]
+        \def\PrelMin{.86}
+				\def\PrelMax{1}
+				\def\TransMin{1e-8}
+				\def\TransMax{10}
+				\def\LfMin{0}
+				\def\LfMax{1}
+        %
+        \begin{axis}[
+          width=0.8*\textwidth,
+          height=0.5*\textwidth,
+          grid,
+					%axis y line*=left,
+          legend style={at={(0,1)}, legend columns=1, anchor=north west},
+          every axis plot,
+					%axis y line*=left,
+					line width = 1pt,
+					%	minor x tick num= ,
+					%	minor y tick num= ,
+					xmin = \PrelMin, xmax = \PrelMax,
+					ymin = \LfMin, ymax = \LfMax,
+					xlabel = {Relative pressure $P_\mathrm{rel}$},
+					ylabel = {Liquid fraction $LF$},
+					%ytick = {0,0.25,0.50,0.75,1},
+          ]
+					% Add plots
+					\addplot[mark=none, color=red] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296a_cond_2.txt};
+					\addlegendentry{296a}
+					\addplot[mark=none, color=magenta] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296b_cp_cond_1.txt};
+					\addlegendentry{296b cp}
+					\addplot[mark=none, color=purple] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296c_cond_2.txt};
+					\addlegendentry{296c}
+					\addplot[mark=none, color=orange] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296d_cond_2.txt};
+					\addlegendentry{296d}
+					\addplot[mark=none, color=blue] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296e_cond_2.txt};
+					\addlegendentry{296e}
+					\addplot[mark=none, color=green] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296f_cond_2.txt};
+					\addlegendentry{296f}
+					\addplot[mark=none, color=brown] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296b_op_cond_1.txt};
+					\addlegendentry{296b op}
+					\addplot[mark=none, color=red!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296a_evap_2.txt};
+					\addplot[mark=none, color=magenta!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296b_cp_evap_1.txt};
+					\addplot[mark=none, color=purple!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296c_evap_2.txt};
+					\addplot[mark=none, color=orange!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296d_evap_2.txt};
+					\addplot[mark=none, color=blue!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296e_evap_2.txt};
+					\addplot[mark=none, color=green!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296f_evap_2.txt};
+					\addplot[mark=none, color=brown!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296b_op_evap_1.txt};
+        \end{axis}
+    \end{tikzpicture}
+    \label{fig:full-comp-w296}
+    \caption{}
+  \end{figure}
+\end{document}
