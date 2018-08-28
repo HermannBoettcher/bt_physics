@@ -77,11 +77,6 @@
                     T = \SI{0}{\celsius}
                 \end{equation}
                 as shown in figure \cref{fig:al-dissolution-setup}. The latter transforms the aluminum to copper in a very exothermic reaction (compare section ???). A lot of turbulences are created and thus this step limits either the thickness or the size of the wafers because it can easily break.
-                \medskip
-
-                Furthermore, by measuring an alumina membrane with closed pores, immersing it into the acid \cref{eq:aluminum-dis-acid}, and measuring it one more time after this process, a change in the pore diameter could be detected. Therefore, the acid apparently also attacks alumina and could be a source of corrugation and uncontrolled pore enlarging.
-
-                \subfile{tikz/membrane_production/aluminum_dissolution.tex}
 
 
             \subsubsection{Barrier Layer Dissolution}
@@ -91,46 +86,8 @@
                 \begin{equation}
                     n_\mathrm{\ce{H3O4P}} = \SI{0,2}{\mol\per\l}.
                 \end{equation}
-                Up to the date the internship started, the wafer was floated on phosphoric acid to open the pores on the bottom side as shown in figure \cref{fig:barrier-layer-dissolution-setup}.
-                Following, the pore opening of membrane 295 c shall be inspected.
-                \medskip
+                To dissolve the \textit{barrier layer} and hereby open the pores, the wafers are floated on phosphoric acid as shown in figure \cref{fig:float}. Moreover, some membranes are immersed (compare \cref{fig:immerse}) in the run of the experiments with the same aim of dissolving the \textit{barrier layer}. If not explicitely mentioned though, the dissolution proccess has been conducted by floating for the respective membrane.
 
-                \subfile{tikz/membrane_production/barrier_layer_dissolution.tex}
-
-                After $t_1^{295c}$ of floating on phosphoric acid, white speckles appear on the wafer. As this phenomenon looks similar to the observation made during the absorption process of an isotherm, this can be interpreted as the membrane filling with the acid. Due to the capillary flow rate of phosphoric acid in pores of diameter $d_\mathrm{pore}^{295c}=\SI{40}{\nano\meter}$, a single pore fills within $t_\mathrm{fill}^{295}=\SI{5}{\second}$ ??? quote physical basics ???. That the milky aspects occur over about $\Delta t^{295c} = \SI{3}{\minute}$ implies that some pores fill minutes before others. Therefore, the pore size distribution is increased during this time. The caused distribution in radius can be approximated by the etch rate of the acid.
-                \medskip
-
-                The barrier layer's thickness of wafer 295 is about $d_\mathrm{barrierlayer}^{295c}=\SI{30}{\nano\meter} $ as observed on the MEB views shown in figure ???. As the first milky speckles appear after $t_1^{295c}=\SI{20}{\minute} $, the etch rate is about
-                \begin{equation}
-                    e = \SI{1,5}{\nano\meter\per\minute}. \label{eq:etch-rate}
-                \end{equation}
-                This yields a diameter distribution of
-                \begin{equation}
-                    \Delta d_1^{295c} = \SI{9}{\nano\meter}
-                \end{equation}
-
-                which is only due to the opening process of the pores. Furthermore, the wafers are left floating until the whole upper side is observably covered by a liquid film (compare figure???). This state has been reached after $t_\mathrm{2}^{295c}=\SI{40}{\minute} $ of floating. Thus, by the theory explained above, the pores should widen by up to
-                \begin{equation}
-                    \Delta d_2^{295c} =\SI{60}{\nano\meter}.
-                \end{equation}
-                \medskip
-
-                Summing up the section above, the pore diameters should be distributed around
-                \begin{equation}
-                    d_\mathrm{pore}^\mathrm{295c-theory} = \SI{109}{\nano\meter}.
-                \end{equation}
-                The analysis of the MEB vues of the membrane yield a diameter distribution around
-                \begin{equation}
-                    d_\mathrm{pore}^\mathrm{295c-MEB} = \SI{54}{\nano\meter},
-                \end{equation}
-                though. Thus, at some point there must be a mistake in the interpretation of the observations.
-                \medskip
-
-                Moreover, a problem appears when observing the \textit{barrier layer} dissolution of membrane 296b. Again, the barrier layer's thickness is expected to be $d_\mathrm{barrierlayer}^{296b-expected}=\SI{30}{\nano\meter}$ as no parameters of the anodizing process were changed. By the MEB views, no proper measurements could be conducted due to the charging of the membrane, an larger thickness of $d_\mathrm{barrierlayer}^{296b-actual}\approx\SI{45}{\nano\meter}$. Upon floating the membrane 296 a on oxalic acid though, the milky aspects only appear after $t_1^{296}=\SI{27}{\minute}$. This makes for a theoretical barrier layer thickness of $d_\mathrm{barrierlayer}^{296b-theory}=\SI{40,5}{\nano\meter}$ when relying on the computed etch rate \cref{eq:etch-rate}. Assuming a large error bar on the MEB view analysis of membrane 296b, this is coherent with 295a. As the etching process has been aborted at the milky stage, no clue can be made as to the enlarging of the pore size.
-                \medskip
-
-                To better understand what happens during the opening and to find a systematic way to do it with a minimal pore diameter increment and diameter distribution increment, floating and submerging in phosphoric acid shall be analyzed. The plan is to use wafer 296 to calibrate the respecting etch rates $e_\mathrm{float}$ and $e_\mathrm{sub}$ as shown in figure \cref{fig:barrier-layer-dissolution}.
-                \medskip
 
             \subfile{tikz/membrane_production/production_stages.tex}
 
@@ -138,6 +95,7 @@
         \subsection{Membrane Specifications}
 
             For the experiments, square alumina membranes of
+            DRAW A NICE IMAGE OF A MEMBRANE AND A PORE HERE???
 
 
 \end{document}
