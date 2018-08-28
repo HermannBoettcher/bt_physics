@@ -2,22 +2,21 @@
 
 
 \begin{document}
+\settoggle{externalize}{false}
 \begin{figure}[ht]
     \centering
     \pgfdeclarelayer{bg}    % declare background layer
     \pgfsetlayers{bg,main}  % set the order of the layers (main is the standard layer)
     \begin{tikzpicture}
         \definecolor{copper}{rgb}{0.72, 0.45, 0.2}
-        \tikzfading[name=fade out,
-        inner color=transparent!0, outer color=transparent!100]
         \def\holerad{0.3}
         \def\factor{4}
         \def\xradius{2}
         \def\yradius{2/\factor}
         \def\height{1.05cm}
         \def\xandy{2 and 2/\factor}
-            \tikzset{
-          pics/.cd, %
+        \tikzset{
+          pics/.cd,
           disc/.style ={
             code = {
               %% the foundation
@@ -65,43 +64,101 @@
                 \draw[black!80, opacity=0.05, line width=\i, yshift=-\height]
                 (\start:\xandy) arc (\start:\finish:\xandy); }
             }
-          },%
+          },
           disc bottom/.style = {
             code = {
               \foreach \i/\opacity in {%
-                1/20,2/20,3/20,4/30,5/35,6/40,7/60,8/80,9/100,10/100,11/100,12/100}%
+                1/20,2/20,3/20,4/30,5/35,6/40,7/60,8/80,9/100,10/100,11/100,12/100}{
                 %\fill [red, fill opacity = 1/\opacity, yshift=-0.03cm] (0,-\height)
-                ellipse [x radius = \xradius+\i/40, y radius = \yradius+\i/20/\factor];
+                ellipse [x radius = \xradius+\i/40, y radius = \yradius+\i/20/\factor];}
               \path pic {disc};
             }
           },%
         }
-        %
-        \pgfdeclarelayer{bg}    % declare background layer
-        \pgfsetlayers{bg,main}  % set the order of the layers (main is the
-        \tikzmath{
-        \l = 5.62;
-        \h = 2.5;
-        \d = 0.9;}
-        % procces simages
+        \def\l{5.62};
+        \tikzset{
+          pics/.cd,
+          disc/.style ={
+            code = {
+              %% the foundation
+              \path [fill=black!15] (-\xradius,0) -- (-\xradius,-\height) arc
+              (180:360:\xandy) -- (\xradius,0) arc (0:180:\xandy);%
+              \path [top color=black!25, bottom color=white, opacity=0.2] (0,0) ellipse
+              [x radius=\xradius, y radius =\yradius];%
+              \path [left color=black!25, right color=black!15] (-\xradius,0) --
+              (-\xradius,-\height) arc (180:240:\xandy) -- +(0,\height) arc
+              (240:180:\xandy);%
+              \path [left color=black!15, right color=black!30] (\xradius,0) --
+              (\xradius,-\height) arc (360:320:\xandy) -- +(0,\height) arc
+              (320:360:\xandy);
+              %% rays in front
+              \foreach \col/\r/\shift/\stop/\opacity in {%
+                black/205/25/20/100, %
+                black/295/35/30/100, %
+                black/295/30/30/200, %
+                black/295/25/20/300, %
+                white/245/14/14/100, %
+                white/245/12/12/20, %
+                white/245/10/10/10} {%
+                \foreach \i [evaluate={\opposite=\r-180;}] in {0,1,...,\stop}{%
+                  \fill [\col, fill opacity = 1/\opacity] (\opposite:0.1 and
+                  0.1/\factor) -- (\r+\shift-\i:\xandy) -- ++(0,-\height) arc
+                  (\r+\shift-\i:\r-\shift+\i:\xandy) -- +(0,\height) -- cycle; }}
+              %% rays in back
+              \foreach \r/\shift/\stop/\opacity in {%
+                25/25/20/100, %
+                115/35/3/150,%
+                115/30/23/100} {%
+                \foreach \i [evaluate={\opposite=\r-180;}] in {0,1,...,\stop}{%
+                  \fill [black, fill opacity = 1/\opacity] (\opposite:0.1 and 0.1/\factor) --
+                  (\r+\shift-\i:\xandy) arc (\r+\shift-\i:\r-\shift+\i:\xandy) --
+                  cycle; }}
+              %% masking the four edges in the center
+              \foreach \i in {0.1, 0.2, ..., 0.4}%
+              \fill[black!15, opacity=0.7, path fading=fade out]
+              (0,0) ellipse[x radius=\i, y radius =\i/\factor];
+              %% the light and the dark arcs
+              \foreach \i [evaluate={\start=185+10*\i; \finish=355-10*\i;}]%
+              in {0.1, 0.2, ..., 1.5}{%
+                \draw[white, opacity=0.04, line width=\i, yshift=0.02cm]
+                (\start:\xandy) arc (\start:\finish:\xandy);
+                \draw[black!80, opacity=0.05, line width=\i, yshift=-\height]
+                (\start:\xandy) arc (\start:\finish:\xandy); }
+            }
+          },
+          disc bottom/.style = {
+            code = {
+              \foreach \i/\opacity in {%
+                1/20,2/20,3/20,4/30,5/35,6/40,7/60,8/80,9/100,10/100,11/100,12/100}{
+                %\fill [red, fill opacity = 1/\opacity, yshift=-0.03cm] (0,-\height)
+                ellipse [x radius = \xradius+\i/40, y radius = \yradius+\i/20/\factor];}
+              \path pic {disc};
+            }
+          },%
+        }
+        \def\l{5.62};
+        \def\h{2.5};
+        \def\d{0.9};
+        % proccess images
         \begin{scope}
             \path (3,2.5) pic {disc bottom};
             \foreach \x/\y in {1.7/2, 2.5/1.7, 3.5/1.7, 4.3/2, 2.5/2.3, 3.5/2.3, 3/2}{
                 \begin{scope}[yshift = 0.5cm]
-                    \draw[color=gray](\x,\y)ellipse[x radius=\holerad,y radius=\holerad/\factor];
-                    \clip(\x,\y)ellipse[x radius=\holerad,y radius=\holerad/\factor];
-                    \shade[left color=black,right color=black,middle color=white](\x-1,\y-1)rectangle(\x+1,\y+1);
-                    \draw(\x,\y)ellipse[x radius=\holerad,y radius=\holerad/\factor];
+                  \draw[color=gray](\x,\y)ellipse[x radius=\holerad,y radius=\holerad/\factor];
+                  \clip (\x,\y) ellipse [x radius=\holerad,y radius=\holerad/\factor];
+                  \shade[left color=black,right color=black,middle color=white](\x-1,\y-1)rectangle(\x+1,\y+1);
+                  \draw (\x,\y) ellipse [x radius=\holerad,y radius=\holerad/\factor];
                 \end{scope}}
-            \draw (1.5,3.5) -- (1.5,4.5) node[anchor=south] {blabla acid};
-            \draw (4,2.7) -- (4,4.5) node[anchor=south] {wafer};
+            \draw (1.5,3.5) -- (1.5,4.5) node[anchor=south] {Acid};
+            \draw (4,2.7) -- (4,4.5) node[anchor=south] {Wafer};
             \fill[red!40, opacity = 0.3] (0,0) rectangle (6,4);
             \draw[line width = 2mm, color = gray] (0,5) -- (0,0) -- (6,0) -- (6,5);
         \end{scope}
     \end{tikzpicture}
-    \caption{Setup for the aluminum dissolution step. The wafer is immersed in blabla ??? acid and dissolves aluminum according to section ???.}
+    \caption{Setup for the aluminum dissolution step. The wafer is immersed in acid composed according to \cref{eq:aluminum-dis-acid} which dissolves aluminum according to section ???.}
     \label{fig:al-dissolution-setup}
 \end{figure}
 
+\settoggle{externalize}{true}
 
 \end{document}

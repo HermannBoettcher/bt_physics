@@ -1,3 +1,4 @@
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                       %
 % Vorlage fuer die Erstellung einer Abschlussarbeit     %
@@ -75,6 +76,7 @@
 \usepackage{/home/chajia/Documents/Studies/Physik/Bachelorarbeit/Bachelor_Thesis/sty/themeKonstanz} % Muss immer verwendet werden (Standardpaket)
 %\usepackage{Bachelor_Thesis_Institut_Neel/sty/themeKonstanzStyleAddOn} % Style Add-On für andere Überschriften, NACH dem Standardpaket importieren
 
+\settoggle{externalize}{false}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -86,7 +88,8 @@
 %    \format{<key>}
 %
 % kann das Papierformat angepasst werden.
-%
+%\tikzexternaldisable
+
 % Zur Auswahl stehen folgende Papierformate:
 %
 %   Schlüssel  Beschreibung      Höhe      Breite
@@ -141,6 +144,7 @@
 \department{Fachbereich Physik}
 \supervisorOne{Prof. Dr. Georg Maret}
 \supervisorTwo{Prof. Dr. Pierre-Etienne Wolf}
+
 
 
 
@@ -350,8 +354,8 @@
 %                    angegeben.
 % Diese Thesis-Titelseite ist auf DinA4 Hochformat optimiert!
 
-\thesistitlepage[language=english]{Bachelor Thesis}
 
+%\thesistitlepage[language=english]{Bachelor Thesis}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -442,6 +446,8 @@
 \newpage
 
 \pagenumbering{arabic}
+
+\settoggle{externalize}{true}
 \chapter{Introduction}
 
     \section{Error sources}
@@ -460,22 +466,22 @@
 \label{cha:theory}
 
 
-    %\subfile{sections/chemistry.tex}
-    %\subfile{sections/ideal_gas_law.tex}
-    %\subfile{sections/hexane.tex}
-    %\subfile{sections/laplace_young_equation.tex}
-    %\subfile{sections/kelvin_equation.tex}
-    %\subfile{sections/cond_evap_cyl_pore.tex}
-    %\subfile{sections/optics.tex}
+    \subfile{sections/chemistry.tex}
+    \subfile{sections/ideal_gas_law.tex}
+    \subfile{sections/hexane.tex}
+    \subfile{sections/laplace_young_equation.tex}
+    \subfile{sections/kelvin_equation.tex}
+    \subfile{sections/cond_evap_cyl_pore.tex}
+    \subfile{sections/optics.tex}
 
 
 \chapter{Experimental}
 \label{cha:experimental}
 
-    %\subfile{sections/alumina_membranes.tex}
-    %\subfile{sections/experimental_setup.tex}
-    %\subfile{sections/isotherm_computation.tex}
-    %\subfile{sections/wafer_analysis.tex}
+    \subfile{sections/alumina_membranes.tex}
+    \subfile{sections/experimental_setup.tex}
+    \subfile{sections/isotherm_computation.tex}
+    \subfile{sections/wafer_analysis.tex}
 
 \chapter{Test}
 
@@ -484,14 +490,19 @@
   %\subfile{tikz/graphs/292d_op/292d.tex}
   %\subfile{tikz/graphs/immersion_experiment/immersion.tex}
   %\subfile{tikz/graphs/292_295_296_transmission/292_295_296_transmission.tex}
+  %\subfile{tikz/graphs/296_membranes/296_membranexs.tex}
   %\subfile{tikz/graphs/295f200ALD_transmission/295f200ALD_transmission.tex}
-  %\subfile{tikz/graphs/296_membranes/296_membranes.tex}
   %\subfile{tikz/graphs/296_a_e_f/296_a_e_f.tex}
   %\subfile{tikz/wafer_analysis/weird_pore_funnelling.tex}
   %\subfile{tikz/graphs/295a_before_after_al_diss_bath/295a_before_after.tex}
   %\subfile{tikz/graphs/295_d_e_f_g/295_d_e_f_g.tex}
   %\subfile{tikz/graphs/296_op_cp_comparison/296b_op_cp.tex}
-  \subfile{tikz/graphs/295b_op_cp_comparison/295b_op_cp.tex}
+  %\subfile{tikz/graphs/295_op_cp_comparison/295b_op_cp.tex}
+  %\subfile{tikz/membrane_production/anodizing.tex}
+  %\subfile{tikz/membrane_production/barrier_layer_dissolution.tex}
+  %\subfile{tikz/membrane_production/aluminum_dissolution.tex}
+  %\subfile{tikz/membrane_production/production_stages.tex}
+  %\subfile{tikz/membrane_production/immersion.tex}
 
 
 \begin{thebibliography}{[MB91a]}

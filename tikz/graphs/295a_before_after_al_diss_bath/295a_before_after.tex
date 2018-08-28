@@ -7,11 +7,12 @@
         \def\PrelMin{.86}
 				\def\PrelMax{1}
 				\def\TransMin{1e-8}
-				\def\TransMax{10}
+				\def\TransMax{1}
 				\def\LfMin{0}
 				\def\LfMax{2}
         %
         \begin{axis}[
+          /tikz/line join=bevel,
           width=0.8*\textwidth,
           height=0.5*\textwidth,
           grid,
@@ -40,6 +41,7 @@
         \end{axis}
 				% transmission
 				\begin{axis}[
+          /tikz/line join=bevel,
           width=0.8*\textwidth,
           height=0.5*\textwidth,
 					ymode=log,
@@ -59,7 +61,7 @@
 					% Add plots
 					\addplot[mark=none, color=red] table [x=Prel,y=transmission]{tikz/graphs/295a_before_after_al_diss_bath/295a_cond_4.txt};
 					\addlegendentry{$T_\mathrm{cond}^\mathrm{before}$}
-					\addplot[mark=none, color=red!50] table [x=Prel,y=transmission]{tikz/graphs/295a_before_after_al_diss_bath/295a_cond_4.txt};
+					\addplot[mark=none, color=red!50] table [x=Prel,y=transmission]{tikz/graphs/295a_before_after_al_diss_bath/295a_evap_4.txt};
 					\addlegendentry{$T_\mathrm{evap}^\mathrm{before}$}
 					\addplot[mark=none, color=blue] table [x=Prel,y=transmission]{tikz/graphs/295a_before_after_al_diss_bath/295a_al_bath_cond_2.txt};
 					\addlegendentry{$T_\mathrm{cond}^\mathrm{after}$}
@@ -68,6 +70,6 @@
 				\end{axis}
     \end{tikzpicture}
     \label{fig:295a_al_diss}
-    \caption{}
+    \caption{Comparison of the isotherms of membrane 295a (closed pores) before an after a $\SI{4,5}{\hour}$ bath in aluminum dissoling acid (compare \cref{sssec:al-dissolution}). A small but homogenous shift of the isotherm to higher pressures is clearly visible. This implies that the acid does not only attack aluminum but also alumina.}
   \end{figure}
 \end{document}

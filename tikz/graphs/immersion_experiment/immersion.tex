@@ -12,6 +12,7 @@
 				\def\LfMax{2}
         %
         \begin{axis}[
+          /tikz/line join=bevel,
           width=0.8*\textwidth,
           height=0.5*\textwidth,
           grid,
@@ -47,6 +48,7 @@
         \spy[size=4.4cm, height=2cm] on (spypoint2) in node[fill=white] at (magnifyglass2);
 				% transmission
 				\begin{axis}[
+          /tikz/line join=bevel,
           width=0.8*\textwidth,
           height=0.5*\textwidth,
 					ymode=log,
@@ -58,7 +60,7 @@
 					ymin = \TransMin, ymax = \TransMax,
 					ylabel = {Transmission $T$},
 					ytick = {1,1e-1,1e-2,1e-3},
-					grid,
+          ymajorgrids=true,
           legend style={at={(0,0.5)}, legend columns=1, anchor=south west},
 					%title={Membrane 296b - $\SI{60}{\micro\meter}$}
 					]
@@ -74,7 +76,7 @@
           \addplot[mark=none, color=orange!50] table [x=Prel,y=transmission]{tikz/graphs/immersion_experiment/296d_evap_2.txt};
 				\end{axis}
     \end{tikzpicture}
-    \label{fig:292d_op_full_iso}
+    \label{fig:immersed-comp-w296}
     \caption{$P_\mathrm{rel}$ isotherm of membrane 292d. The transmission is not
 		normalized but in arbitrary units plotted on a log scale. Please refer to
 		\cref{subsec:light-transmission-interpretation} for the interpretation of the

@@ -1,0 +1,68 @@
+\documentclass[../../../thesis.tex]{subfiles}
+
+\begin{document}
+  \begin{figure}[ht]
+		\centering
+    \begin{tikzpicture}
+        \def\PrelMin{.86}
+				\def\PrelMax{1}
+				\def\TransMin{1e-8}
+				\def\TransMax{10}
+				\def\LfMin{0}
+				\def\LfMax{2}
+        %
+        \begin{axis}[
+          width=0.8*\textwidth,
+          height=0.5*\textwidth,
+          grid,
+					axis y line*=left,
+          legend style={at={(0,0.5)}, legend columns=1, anchor=north west},
+          every axis plot,
+					axis y line*=left,
+					line width = 1pt,
+					%	minor x tick num= ,
+					%	minor y tick num= ,
+					xmin = \PrelMin, xmax = \PrelMax,
+					ymin = \LfMin, ymax = \LfMax,
+					xlabel = {Relative pressure $P_\mathrm{rel}$},
+					ylabel = {Liquid fraction $LF$},
+					ytick = {0,0.25,0.50,0.75,1},
+          ]
+					% Add plots
+					\addplot[mark=none, color=blue] table [x=Prel,y=liquid_fraction]{tikz/graphs/292d_op/292d_cond_1.txt};
+					\addlegendentry{$LF_\mathrm{cond}$}
+					\addplot[mark=none, color=blue!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/292d_op/292d_evap_1.txt};
+					\addlegendentry{$LF_\mathrm{evap}$}
+        \end{axis}
+				% transmission
+				\begin{axis}[
+          width=0.8*\textwidth,
+          height=0.5*\textwidth,
+					ymode=log,
+					axis y line*=right,
+					line width = 1pt,
+					%	minor x tick num= ,
+					%	minor y tick num= ,
+					xmin = \PrelMin, xmax = \PrelMax,
+					ymin = \TransMin, ymax = \TransMax,
+					ylabel = {Transmission $T$},
+					xtick = {1e-1,1e-2,1e-3},
+					ytick = {10,1,1e-1,1e-2,1e-3},
+					grid,
+          legend style={at={(0,0.5)}, legend columns=1, anchor=south west},
+					%title={Membrane 296b - $\SI{60}{\micro\meter}$}
+					]
+					% Add plots
+					\addplot[mark=none, color=red] table [x=Prel,y=transmission]{tikz/graphs/292d_op/292d_cond_1.txt};
+					\addlegendentry{$T_\mathrm{cond}$}
+					\addplot[mark=none, color=red!50] table [x=Prel,y=transmission]{tikz/graphs/292d_op/292d_evap_1.txt};
+					\addlegendentry{$T_\mathrm{evap}$}
+				\end{axis}
+    \end{tikzpicture}
+    \label{fig:292d_op_full_iso}
+    \caption{$P_\mathrm{rel}$ isotherm of membrane 292d. The transmission is not
+		normalized but in arbitrary units plotted on a log scale. Please refer to
+		\cref{subsec:light-transmission-interpretation} for the interpretation of the
+		different magnitudes of the transmission drops for absorption and desorption.}
+  \end{figure}
+\end{document}

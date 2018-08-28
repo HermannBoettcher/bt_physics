@@ -2,21 +2,20 @@
 
 
 \begin{document}
+
 \begin{figure}[ht]
     \centering
-    \pgfdeclarelayer{bg}    % declare background layer
-    \pgfsetlayers{bg,main}  % set the order of the layers (main is the standard layer)
     \begin{tikzpicture}
+        \pgfdeclarelayer{bg}    % declare background layer
+        \pgfsetlayers{bg,main}  % set the order of the layers (main is the standard layer)
         \definecolor{copper}{rgb}{0.72, 0.45, 0.2}
-        \tikzfading[name=fade out,
-        inner color=transparent!0, outer color=transparent!100]
         \def\holerad{0.3}
         \def\factor{4}
         \def\xradius{2}
         \def\yradius{2/\factor}
         \def\height{1.05cm}
         \def\xandy{2 and 2/\factor}
-            \tikzset{
+        \tikzset{
           pics/.cd, %
           disc/.style ={
             code = {
@@ -70,21 +69,13 @@
             code = {
               \foreach \i/\opacity in {%
                 1/20,2/20,3/20,4/30,5/35,6/40,7/60,8/80,9/100,10/100,11/100,12/100}%
-                %\fill [red, fill opacity = 1/\opacity, yshift=-0.03cm] (0,-\height)
+                \fill [red, fill opacity = 1/\opacity, yshift=-0.03cm] (0,-\height)
                 ellipse [x radius = \xradius+\i/40, y radius = \yradius+\i/20/\factor];
               \path pic {disc};
             }
           },%
         }
-        %
-        \pgfdeclarelayer{bg}    % declare background layer
-        \pgfsetlayers{bg,main}  % set the order of the layers (main is the
-        \tikzmath{
-        \l = 5.62;
-        \h = 2.5;
-        \d = 0.9;}
-        % procces simages
-        \begin{scope}
+        % proccess images
             \begin{scope}[xshift = 1cm, yshift = 1cm]
                 \shade[top color = gray!50, bottom color = gray!80] (0,0) rectangle (2.5,6);
                 \shade[top color = gray!50, bottom color = gray!80] (2.5,0) rectangle (3,6);
@@ -96,12 +87,12 @@
                 \clip (1.1,1) arc(-90:90:0.5 and 2) -- (1,5) arc(90:270:0.5 and 2) -- (1.1,1);
                 \path[transform shape, rotate = 90] (3,-1) pic {disc bottom};
                 \begin{pgfonlayer}{bg}
-                \shade[top color = gray!20, bottom color = gray!40] (0,0) rectangle (2.5,6);
-                \shade[left color = gray!20, right color = gray!40] (2.5,0) rectangle (3,6);
-                \shade[left color = copper!50, right color = copper!90] (3,0) rectangle (3.5,6);
-                \draw[top color=copper!80, bottom color=copper!40, draw = none] (1.9,6) rectangle (2.1,7);
-                \draw[right color=copper!80, left color=copper!40, draw = none] (2.1,7.1) rectangle (-0.7,6.9);
-                \draw[left color=copper!80, right color=copper!40, draw = none] (-0.6,7.5) rectangle (-0.8,6.5);
+                  \shade[top color = gray!20, bottom color = gray!40] (0,0) rectangle (2.5,6);
+                  \shade[left color = gray!20, right color = gray!40] (2.5,0) rectangle (3,6);
+                  \shade[left color = copper!50, right color = copper!90] (3,0) rectangle (3.5,6);
+                  \draw[top color=copper!80, bottom color=copper!40, draw = none] (1.9,6) rectangle (2.1,7);
+                  \draw[right color=copper!80, left color=copper!40, draw = none] (2.1,7.1) rectangle (-0.7,6.9);
+                  \draw[left color=copper!80, right color=copper!40, draw = none] (-0.6,7.5) rectangle (-0.8,6.5);
                 \end{pgfonlayer}
             \end{scope}
             \fill[blue!40, opacity = 0.3] (0,0) rectangle (10.5,6.5);
@@ -113,11 +104,9 @@
             \draw (9.2,8.5) -- (8,8);
             \draw (6.3,6.8) -- (5.8,6.8) node[anchor = east] {Insulation};
             \draw (7,5.5) -- (7,7.3) node[anchor = south] {wafer};
-        \end{scope}
     \end{tikzpicture}
     \caption{Setup for the anodizing of the membrane production. The aluminum wafer functions as anode while a platinum plate makes for the  cathode. The oxalic acid is stired during the whole process. }
     \label{fig:anodizing}
 \end{figure}
-
 
 \end{document}

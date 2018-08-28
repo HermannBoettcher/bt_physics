@@ -13,6 +13,7 @@
 				\def\LfMax{2}
         %
         \begin{axis}[
+          /tikz/line join=bevel,
           width=0.8*\textwidth,
           height=0.5*\textwidth,
           grid,
@@ -41,10 +42,11 @@
 					\addplot[mark=none, color=green!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_a_e_f/296f_evap_2.txt};
         \end{axis}
         \begin{axis}[
+          /tikz/line join=bevel,
           width=0.8*\textwidth,
           height=0.5*\textwidth,
 					ymode=log,
-          grid,
+          ymajorgrids=true,
 					%axis y line*=left,
           legend style={at={(0,.5)}, legend columns=1, anchor=south west},
           every axis plot,

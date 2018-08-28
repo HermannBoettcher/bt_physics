@@ -11,6 +11,7 @@
         \def\LineWidth{.5pt}
         %
         \begin{axis}[
+          /tikz/line join=bevel,
           width=0.45*\textwidth,
           height=0.45*\textwidth,%/tikz/line join=bevel,
           %ymode=log,
@@ -41,7 +42,7 @@
           \addplot[name path=interpolation, mark=none, color=green] table [x=t,y=delta_dPcell]{tikz/graphs/295d_integration_visualization/295b_evap_2.txt};
         \end{axis}
       \end{tikzpicture}
-      \label{subfig:int}
+      \label{fig:iso-computation}
       }
     \hfill
     \subfloat[]{
@@ -53,6 +54,7 @@
             \def\LineWidth{.5pt}
             %
             \begin{axis}[
+              /tikz/line join=bevel,
               width=0.45*\textwidth,
               height=0.45*\textwidth,
               %/tikz/line join=bevel,
@@ -77,14 +79,14 @@
               \addlegendentry{evaporation}
             \end{axis}
           \end{tikzpicture}
-          \label{subfig:iso}
+          \label{fig:iso}
           }
-          \caption{\protect\subref{subfig:int} shows the raw data of the isotherm
+          \caption{\protect\subref{fig:iso-computation} shows the raw data of the isotherm
           with membrane and interpolation of the reference isotherm without membrane.
           Also, the substraction of the latter (compare integrand of \cref{eq:ndot-membrane})
           is plotted where the area to be integrated for the absorption and desorption
           isotherm is shaded light green. The integration according to \cref{eq:nmembrane}
-          results in the isotherm displayed in \protect\subref{subfig:iso}.}
+          results in the isotherm displayed in \protect\subref{gif:iso}.}
   \end{figure}
 
 \end{document}

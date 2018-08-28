@@ -11,11 +11,9 @@
         \def\LineWidth{.5pt}
         %
         \begin{axis}[
+          /tikz/line join=bevel,
           width=0.45*\textwidth,
           height=0.45*\textwidth,
-          %/tikz/line join=bevel,
-          %ymode=log,
-          %axis y line*=left,
           line width = 1pt,
           %	minor x tick num= ,
           %	minor y tick num= ,
@@ -47,11 +45,9 @@
             \def\LineWidth{.5pt}
             %
             \begin{axis}[
+              /tikz/line join=bevel,
               width=0.45*\textwidth,
               height=0.45*\textwidth,
-              %/tikz/line join=bevel,%/tikz/line join=bevel,
-              %ymode=log,
-              %axis y line*=left,
               line width = 1pt,
               %	minor x tick num= ,
               %	minor y tick num= ,
@@ -82,7 +78,7 @@
           the pressure loop which is relevant for the computation of the isotherms.
           Again, the before mentioned plateaus are visible as dips in the time
           derivative of the pressure.}
-          \label{}
+          \label{fig:raw-isotherms}
   \end{figure}
 
 \end{document}

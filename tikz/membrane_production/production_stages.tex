@@ -6,8 +6,6 @@
         \centering
         \subfloat[]{
             \begin{tikzpicture}
-                \tikzfading[name=fade out,
-                inner color=transparent!0, outer color=transparent!100]
                 \def\l{7.2};
                 \def\h{5};
                 \def\d{0.8};
@@ -23,8 +21,6 @@
         \hfill
         \subfloat[]{
             \begin{tikzpicture}
-                \tikzfading[name=fade out,
-                inner color=transparent!0, outer color=transparent!100]
                 \def\l{7.2};
                 \def\h{5};
                 \def\d{0.6};
@@ -102,12 +98,9 @@
         \\
         \subfloat[]{
             \begin{tikzpicture}
-                \tikzfading[name=fade out,
-                inner color=transparent!0, outer color=transparent!100]
-                \tikzmath{
-                \l = 7.2;
-                \h = 4;
-                \d = 0.6;}
+                \def\l{7.2};
+                \def\h{4};
+                \def\d{0.6};
                 \begin{scope}
                     \clip (0.02,0) rectangle (\l - 0.02,\h);
                     \fill[gray] (0,0) rectangle (\l,\h);
@@ -122,12 +115,9 @@
         \hfill
         \subfloat[]{
             \begin{tikzpicture}
-                \tikzfading[name=fade out,
-                inner color=transparent!0, outer color=transparent!100]
-                \tikzmath{
-                \l = 7.2;
-                \h = 4;
-                \d = 0.6;}
+                \def\l{7.2};
+                \def\h{4};
+                \def\d{0.6};
                 \begin{scope}
                 \clip (0.02,0) rectangle (\l - 0.02,\h);
                 \fill[gray] (0,0) rectangle (\l,\h);
@@ -148,12 +138,9 @@
         \\
         \subfloat[]{
             \begin{tikzpicture}
-                \tikzfading[name=fade out,
-                inner color=transparent!0, outer color=transparent!100]
-                \tikzmath{
-                \l = 7.2;
-                \h = 3.5;
-                \d = 0.6;}
+                \def\l{7.2};
+                \def\h{3.5};
+                \def\d{0.6};
                 \begin{scope}
                 \clip (0.02,0) rectangle (\l - 0.02,\h);
                 %\fill[gray] (0,0) rectangle (\l,\h);
@@ -168,7 +155,6 @@
         \hfill
         \subfloat[]{
             \begin{tikzpicture}
-                \tikzfading[name=fade out, inner color=transparent!0, outer color=transparent!100]
                 \def\l{7.2};
                 \def\h{3.5};
                 \def\d{0.6};

@@ -12,6 +12,7 @@
 \usepackage{bm}
 \newcommand{\uvec}[1]{\boldsymbol{\hat{\textbf{#1}}}}
 
+\usepackage{shellesc}
 \usepackage[mode=buildnew]{standalone}% requires -shell-escape
 \usepackage[decimalsymbol=comma, per-mode=fraction]{siunitx}
 \sisetup{mode=text}
@@ -39,8 +40,6 @@
 \WarningFilter{scrreprt}{LaTeX Font Warning}
 
 
-
-
 % Farben
 \usepackage{xcolor}
 
@@ -51,15 +50,22 @@
 \geometry{paperheight=29.7cm, paperwidth=21.0cm, left=2.5cm, right=2.5cm, bottom=2cm, top=2.5cm, headheight=12pt, headsep=0.8cm, footskip=22pt}%
 
 % Codierung
-\usepackage[T1]{fontenc}
+%\usepackage[T1]{fontspec}
 %\usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
+%\usepackage[english]{babel}
 
 % Absolute Positionierung der Textfelder inkl. Uni Konstanz Logo
 \usepackage[absolute, overlay]{textpos}
 
 % Unterstreichungen (Anpassen der Dicke und der Farbe)
 \usepackage{soul}
+\usepackage{etoolbox}
+\providetoggle{externalize}
+\newcommand{\notexternal}{%
+  \iftoggle{externalize}{\tikzset{external/export next=false}}{}
+}
+
+\iftoggle{externalize}{\tikzexternalize[prefix=figures-compiled/]}{}
 
 % Fuer das Merken und Markieren Element, sowie Überschriften
 \usepackage{tikz}
@@ -70,6 +76,11 @@
 \usetikzlibrary{spy}
 \expandafter\def\csname ver@etex.sty\endcsname{3000/12/31}
 \usepgfplotslibrary{fillbetween}
+\usetikzlibrary{external}
+\tikzexternalize[prefix=tikzpictures/]
+\settoggle{externalize}{false}
+\tikzfading[name=fade out, inner color=transparent!0, outer color=transparent!100]
+
 
 % Fuer If-Then-Else
 \usepackage{ifthen}
@@ -529,6 +540,7 @@
 \ifthenelse{\equal{\keynone}{\titlegraphic}}%
 {%
 	\begin{textblock*}{\paperwidth}(-0.5cm, \paperheight * 1/4 + 0.6cm)%
+  \tikzexternaldisable
 	\begin{tikzpicture}%
 	\draw [schwarz10, fill=schwarz10, line width=0mm] (0,0) -- (\paperwidth-2.5cm,0) -- (\paperwidth-2.5cm,\paperheight - 12.2cm) -- (0,\paperheight - 12.2cm) -- (0,0);%
 	\end{tikzpicture}%
@@ -781,6 +793,7 @@ Konstanz, \jahr%
 %
 % EINE KOMMENTIERUNG DER FOLGENDEN ZEILEN FOLGT AUS ZEITLICHEN GRÜNDEN
 % ERST IN DER NÄCHSTEN VERSION
+\tikzexternaldisable
 \begin{tikzpicture}
 \tikzstyle{nodestylenormal}=[anchor=west, color=black, inner sep=0mm]%
 \tikzstyle{nodestyleright}=[anchor=east, color=black, inner sep=0mm]%
@@ -937,6 +950,7 @@ Konstanz, \jahr%
 
 \newcommand{\seeblauunderline}[1]{%
 \settowidth{\bluelinewidth}{#1}%
+\tikzexternaldisable
 \begin{tikzpicture}[remember picture,overlay]%
 \draw [seeblau100, fill=seeblau100, line width=0.10\currentfontsize] (0,-0.62ex) -- (\bluelinewidth,-0.62ex);%
 \node [anchor=base west] at (-0.8ex,0) {#1};%
@@ -1034,6 +1048,7 @@ Konstanz, \jahr%
 
 \newcommand{\merken}[3]{%
 \setlength{\merkenlength}{#1}%
+\tikzexternaldisable
 \begin{tikzpicture}%
 \tikzstyle{nodestyle}=[align=left, color=white, overlay, inner sep=0mm]%
 \draw [seeblau100, fill=seeblau100] (0,\merkenlength) -- (\merkenlength,\merkenlength) -- (\merkenlength,0) -- (0,0) -- (0,\merkenlength);%
@@ -1252,6 +1267,7 @@ Konstanz, \jahr%
 \setlength{\blockcolumnwidth}{\blockwidth - \templength}%
 \setlength{\blockcolumnwidth}{\blockcolumnwidth / \value{columnnumber}}%
 \setlength{\tempboxthick}{\commandkey{thick}}%
+\tikzexternaldisable
 \begin{tikzpicture}%
 \tikzstyle{nodestyle}=[align=left, overlay, inner sep=0mm, anchor=north west]%
 \tikzstyle{arrowstyle}=[arrows={-Straight Barb[]}]%
@@ -1543,6 +1559,7 @@ Konstanz, \jahr%
 % ERST IN DER NÄCHSTEN VERSION
 
 \newkeycommand{\cdline}[color=seeblau100, thick=\boxlinewidth, mode=horizontal, arrowleft=false, arrowright=false][1]{%
+\tikzexternaldisable
 \begin{tikzpicture}%
 \tikzstyle{linestyle}=[color=\commandkey{color}, line width=\commandkey{thick}]%
 \ifthenelse{\equal{\commandkey{arrowleft}}{true}}{%
@@ -1636,6 +1653,7 @@ Konstanz, \jahr%
 % ERST IN DER NÄCHSTEN VERSION
 
 \newkeycommand{\cdbracket}[color=seeblau100, thick=\boxlinewidth, mode=left, arrowleft=false, arrowright=false, arrowmiddle=false][2]{%
+\tikzexternaldisable
 \begin{tikzpicture}%
 \tikzstyle{linestyle}=[color=\commandkey{color}, line width=\commandkey{thick}]%
 \ifthenelse{\equal{\commandkey{arrowleft}}{true}}{%
@@ -2127,3 +2145,5 @@ Konstanz, \jahr%
 \fancyfoot[L]{\small\hfill\thepage}%
 }{}%
 }
+
+\settoggle{externalize}{true}
