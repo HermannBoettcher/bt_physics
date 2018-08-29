@@ -3,6 +3,7 @@
 \begin{document}
   \begin{figure}[ht]
 		\centering
+    \tikzsetnextfilename{295a}
     \begin{tikzpicture}
         \def\PrelMin{.86}
 				\def\PrelMax{1}
@@ -30,7 +31,7 @@
 					ytick = {0,0.25,0.50,0.75,1},
           ]
 					% Add plots
-					\addplot[mark=none, color=blue] table [x=Prel,y=liquid_fraction]{tikz/graphs/295a/295a_evap_4.txt};
+					\addplot[mark=none, color=blue] table [x=Prel,y=liquid_fraction]{tikz/graphs/295a/295a_cond_4.txt};
 					\addlegendentry{$LF_\mathrm{cond}$}
 					\addplot[mark=none, color=blue!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/295a/295a_evap_4.txt};
 					\addlegendentry{$LF_\mathrm{evap}$}
@@ -55,7 +56,7 @@
 					%title={Membrane 296b - $\SI{60}{\micro\meter}$}
 					]
 					% Add plots
-					\addplot[mark=none, color=red] table [x=Prel,y=transmission]{tikz/graphs/295a/295a_evap_4.txt};
+					\addplot[mark=none, color=red] table [x=Prel,y=transmission]{tikz/graphs/295a/295a_cond_4.txt};
 					\addlegendentry{$T_\mathrm{cond}$}
 					\addplot[mark=none, color=red!50] table [x=Prel,y=transmission]{tikz/graphs/295a/295a_evap_4.txt};
 					\addlegendentry{$T_\mathrm{evap}$}

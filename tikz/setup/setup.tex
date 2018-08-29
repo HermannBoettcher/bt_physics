@@ -6,6 +6,7 @@
     \centering
     \pgfdeclarelayer{bg}    % declare background layer
     \pgfsetlayers{bg,main}  % set the order of the layers (main is the standard layer)
+    \tikzsetnextfilename{setup_nobypass}
     \begin{tikzpicture}
         %objects
         \draw[fill = white] decorate[decoration={snake},decorate] {(0,2) -- (2,2)} -- (2,1) -- (0,1) -- (0,2);

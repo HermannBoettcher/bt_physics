@@ -3,6 +3,7 @@
 \begin{document}
   \begin{figure}[ht]
     \subfloat[]{
+    \tikzsetnextfilename{integration_visualization}
       \begin{tikzpicture}
         \def\tMin{-1}
         \def\tMax{16}
@@ -46,11 +47,12 @@
       }
     \hfill
     \subfloat[]{
+    \tikzsetnextfilename{example_isotherm}
           \begin{tikzpicture}
             \def\tMin{0}
             \def\tMax{1}
             \def\PMin{0]}
-            \def\PMax{9}
+            \def\PMax{10}
             \def\LineWidth{.5pt}
             %
             \begin{axis}[

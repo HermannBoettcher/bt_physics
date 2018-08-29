@@ -1,0 +1,4 @@
+tikzpictures/292d.pdf: tikz/graphs/292d_op/292d_cond_1.txt
+tikzpictures/292d.pdf: tikz/graphs/292d_op/292d_evap_1.txt
+tikzpictures/292d.pdf: tikz/graphs/292d_op/292d_cond_1.txt
+tikzpictures/292d.pdf: tikz/graphs/292d_op/292d_evap_1.txt

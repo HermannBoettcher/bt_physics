@@ -1,0 +1,2 @@
+tikzpictures/295f200ALD_transmission.pdf: tikz/graphs/292_295_296_transmission/295f200ALD_cond_1.txt
+tikzpictures/295f200ALD_transmission.pdf: tikz/graphs/292_295_296_transmission/295f200ALD_evap_1.txt

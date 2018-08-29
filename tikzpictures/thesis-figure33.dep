@@ -1,2 +1,0 @@
-tikzpictures/thesis-figure33.pdf: tikz/graphs/292_295_296_transmission/292d_cond_1.txt
-tikzpictures/thesis-figure33.pdf: tikz/graphs/292_295_296_transmission/292d_evap_1.txt

@@ -2,11 +2,11 @@
 
 
 \begin{document}
-\settoggle{externalize}{false}
 \begin{figure}[ht]
     \centering
     \pgfdeclarelayer{bg}    % declare background layer
     \pgfsetlayers{bg,main}  % set the order of the layers (main is the standard layer)
+    \tikzsetnextfilename{aluminum_dissolution}
     \begin{tikzpicture}
         \definecolor{copper}{rgb}{0.72, 0.45, 0.2}
         \def\holerad{0.3}
@@ -159,6 +159,5 @@
     \label{fig:al-dissolution-setup}
 \end{figure}
 
-\settoggle{externalize}{true}
 
 \end{document}

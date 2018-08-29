@@ -1,2 +1,0 @@
-tikzpictures/thesis-figure31.pdf: tikz/graphs/295b_membrane_vs_nomembrane/nomembrane.txt
-tikzpictures/thesis-figure31.pdf: tikz/graphs/295b_membrane_vs_nomembrane/membrane.txt

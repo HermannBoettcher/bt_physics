@@ -6,6 +6,7 @@
     \centering
     \pgfdeclarelayer{bg}    % declare background layer
     \pgfsetlayers{bg,main}  % set the order of the layers (main is the standard layer)
+    \tikzsetnextfilename{wafer_296_processing_plan}
     \begin{tikzpicture}
         \fill[rectangle,yellow!50] (0,0) rectangle (3,-1) node[pos=.5, color=black,align=center]{Wafer 296\\ $d=\SI{30}{\micro\meter}$};
         \fill[rectangle,red!50] (0,-1.5) rectangle (1,-2.5) node[pos=.5,color=black,align=center] {a\\ \faLineChart};

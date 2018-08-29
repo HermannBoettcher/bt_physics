@@ -3,6 +3,7 @@
 \begin{document}
   \begin{figure}[ht]
 		\centering
+    \tikzsetnextfilename{296_a_c_d}
     \begin{tikzpicture}[spy using outlines={ellipse, magnification=4, connect spies}]
         \def\PrelMin{.86}
 				\def\PrelMax{1}
@@ -12,7 +13,7 @@
 				\def\LfMax{2}
         %
         \begin{axis}[
-          /tikz/line join=bevel,
+          line join=bevel,
           width=0.8*\textwidth,
           height=0.5*\textwidth,
           grid,
@@ -48,7 +49,7 @@
         \spy[size=4.4cm, height=2cm] on (spypoint2) in node[fill=white] at (magnifyglass2);
 				% transmission
 				\begin{axis}[
-          /tikz/line join=bevel,
+          line join=bevel,
           width=0.8*\textwidth,
           height=0.5*\textwidth,
 					ymode=log,
