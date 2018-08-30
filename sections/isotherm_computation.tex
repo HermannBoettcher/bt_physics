@@ -2,6 +2,7 @@
 
 \begin{document}
     \section{Computing the isotherms}
+    \label{sec:isotherm_computation}
 
         To compute the isotherms from the recorded data the experiment needs to the conducted not only with a membrane inside of the cell, but also with an empty cell. From here on, the following indices shall be used:
         \begin{align*}
@@ -44,7 +45,7 @@
         As the temperature of the system is regulated ($T = T_1 = T_2 = \mathrm{const.}$) and because $V = V_1 \approx V_2$ since $V_\mathrm{mem} \ll V_1$, equation \cref{eq:ndot-membrane} yields
         \begin{equation}
             n_2^\mathrm{membrane} = \frac{V}{RT}\int_0^{t_2}\left(\dot{P}_1(t_1') - \dot{P}_2(t_2')\right) \mathrm{d}t_2'.
-            \label{eq:nmembrane}
+            \label{eq:nmembrane-1}
         \end{equation}
         Important at this point is the dependency of $\dot{P}_1(t_1)$ on $t_1)$ while the integration is over $t_2$.
 
@@ -53,7 +54,9 @@
             n = \frac{V}{RT} \sum \left( \dot{P}_1 ( P_1 = P_2) - \dot{P}_2(P_2) \right) \cdot \Delta t
             \label{eq:nmembrane}
         \end{equation}
-        yields the molar amount of hexane condensed inside the membrane. Figure \cref{fig:computed-isotherm} shows the result of the integration \cref{eq:nmembrane} for membrane 296d. It is a absorption and desorption isotherm for hexane inside the porous alumina membrane. The bulk condensation and evaporation is not visible, as it is also recorded with the reference isotherm without membrane inside the cell.
+        yields the molar amount of hexane condensed inside the membrane. Figure \cref{fig:iso} shows the result of the integration \cref{eq:nmembrane} for membrane 296d. It is a absorption and desorption isotherm for hexane inside the porous alumina membrane. The bulk condensation and evaporation is not visible, as it is also recorded with the reference isotherm without membrane inside the cell.
+
+        What stings the eye is that the sharp rise of the condensation branch does not start at the liquid fraction $LF=0$. The same goes for the evaporation branch. It only drops to a liquid fraction value $LF>0$ and then decreases superimposed with the condensation branch. While is would be reasonable to renormalize the graph so only the mentioned sharp rise and drop are relevant for the isotherm as this part is where the pores fill or empty at spinodal or equilibrium pressure (\cref{sec:cond_evap_theory}), it is not done here. The reason for this is that the initial rise of the isotherms is assumed to be due to the build up of a film on the membranes surfaces. This is part of the theory of condensation and evaporation in confinement even though the film is ignored in the basic \textsc{Kelvin} equation (\cref{sec:kelvin-equation}). ???MAKE A COMPUTATION AS TO HOW MANY MOLES OF LIQUID ARE EXPECTED FOR THE FILMS ON ONE SINGLE MEMBRANE???
         \medskip
 
         Moreover, the plots

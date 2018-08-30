@@ -2,7 +2,7 @@
 
 \begin{document}
     \section{Kelvin Equation}
-\label{sec:kelvin-equation}
+    \label{sec:kelvin-equation}
 
     To get to Kelvin equation from Laplace young equation one uses the equality of chemical potentials $\mu_{Liquid}(P_{liquid}) = \mu_{Gas}(P_{gas})$!!!
 
@@ -20,10 +20,10 @@
 
     The \textsc{Kelvin} equation is given by
     \begin{equation}
-        RT\cdot \ln \left(\frac{p_\mathrm{v}}{p_\mathrm{sat}}\right) = \gamma V_m\cdot \left( \frac{1}{r_1} + \frac{1}{r_2}\right),
+        RT\cdot \ln \left(\frac{p_\mathrm{v}}{p_\mathrm{sv}}\right) = \gamma V_m\cdot \left( \frac{1}{r_1} + \frac{1}{r_2}\right),
         \label{eq:kelvin}
     \end{equation}
-    with the gas constant $R$, the temperature $T$, $p_\mathrm{v}$ the vapor pressure and $p_\mathrm{sat}$ the saturated vapor pressure. Furthermore, $\gamma $ is the surface tension, $V_m$ the molar volume and $r_i$, $i\in \{1,2\}$, are the radii defining the curvature of the meniscus that forms the surface of the liquid.
+    with the gas constant $R$, the temperature $T$, $p_\mathrm{v}$ the vapor pressure and $p_\mathrm{sv}$ the saturated vapor pressure. Furthermore, $\gamma $ is the surface tension, $V_m$ the molar volume and $r_i$, $i\in \{1,2\}$, are the radii defining the curvature of the meniscus that forms the surface of the liquid.
 
     The conducted experiment makes use of samples with cylindrical pores. Thus, the volume's radii become
     \begin{equation*}
@@ -37,8 +37,8 @@
     \end{equation*}
     for a hemispheric meniscus. Plugging these radii into equation \cref{eq:kelvin} yields the respecting \textsc{Kelvin} equations for a cylindrical volume
     \begin{align}
-        RT\cdot \ln{\left(\frac{p_\mathrm{v}^\mathrm{cyl}}{p_\mathrm{sat}}\right)} &= \frac{\gamma V_m}{r^\mathrm{cyl}} < 0 \label{eq:kelvin-eq-cyl}   \\
-        RT\cdot \ln{\left(\frac{p_\mathrm{v}^\mathrm{hsp}}{p_\mathrm{sat}}\right)} &= 2\cdot \frac{\gamma V_m}{r^\mathrm{hsp}} < 0
+        RT\cdot \ln{\left(\frac{p_\mathrm{v}^\mathrm{cyl}}{p_\mathrm{sv}}\right)} &= \frac{\gamma V_m}{r^\mathrm{cyl}} < 0 \label{eq:kelvin-eq-cyl}   \\
+        RT\cdot \ln{\left(\frac{p_\mathrm{v}^\mathrm{hsp}}{p_\mathrm{sv}}\right)} &= 2\cdot \frac{\gamma V_m}{r^\mathrm{hsp}} < 0
         \label{eq:kelvin-eq-hsp}
     \end{align}
     and thus,
@@ -50,6 +50,12 @@
         r^\mathrm{cyl} &= \frac{\gamma V_m}{RT} / \ln{\left(\frac{p_k^\mathrm{cyl}}{p_v}\right)}  \\
         r^\mathrm{hsp} &= 2\cdot \frac{\gamma V_m}{RT} / \ln{\left(\frac{p_k^\mathrm{hsp}}{p_v}\right)} = 2\cdot r^\mathrm{cyl}.
     \end{align}
-    Here, the factor of $2$ between the two conversions is of much importance for the understanding of the theory of condensation and evaporation in cylindrical pores.
-\end{document}
+    Here, the factor of $2$ between the two conversions is of much importance for the understanding of the theory of condensation and evaporation in cylindrical pores. The conversion is illustrated in \cref{fig:kelvin_equation_plot} for a cylindrical and a spherical meniscus (respectively the equilibrium and the spinodal mechanism). In the course of this report, the isotherms will be displayed on a
+    \begin{equation}
+      P_\mathrm{rel}=\frac{P_\mathrm{v}}{P_\mathrm{sv}}
+    \end{equation}
+    axis. Nevertheless, a lot of the analysis will be done talking pore diameters. In doubt, please refer to \cref{fig:kelvin_equation_plot} for a conversion.
 
+    \subfile{tikz/kelvin_equation/kelvin_equation_plot.tex}
+
+\end{document}

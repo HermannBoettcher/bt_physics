@@ -2,13 +2,13 @@
 
 \begin{document}
 
-    \section{Experimental Setup}
+    \section{Experimental setup}
     \label{sec:exp-setup}
 
-        The experimental setup consists of two independent parts. To record isotherms, the core of the experiment is the volumetric measurement conducted in the setup explained in \cref{subsec:volumetric-setup}. Furthermore, there is a light transmission setup and a camera setup that can be chosen from for a given experiment. Both setups are used to monitor what is really happening inside the membrane. While the camera setup provides for a visual interpretation of the occurrences, the data acquired by the light transmission measurement is more precise to put in context with the volumetric isotherms.
+        The experimental setup consists of two independent parts. To record isotherms, the core of the experiment is the volumetric measurement conducted in the setup explained in \cref{subsec:volumetric-setup}. In addition to that, there are a light transmission setup and a camera setup that can be set up one at a time. Both setups are used to monitor what happens during the absorption and desorption isotherms using optics. While the camera setup provides for a visual interpretation of the occurrences, the data acquired by the light transmission measurement is used to measure the heterogenities of the proccesses and put it in context with the volumetric isotherms.
 
 
-        \subsection{Volumetric Setup}
+        \subsection{Volumetric setup}
         \label{subsec:volumetric-setup}
 
             The initial volumetric setup is sketched in \cref{fig:setup}. A thermostatted bath by \textsc{Lauda} functions as a reservoir of bulk hexane and is connected to the rest the experiment via a valve. Behind the valve lies a cross leading to a pressure gauge $P_\mathrm{res}$, via another valve to a primary pump (void), and via a \textsc{Pfeiffer} microvalve to the cell containing the sample membrane. This branch is also connected to a pressure gauge $P_\mathrm{cell}$. The microvalve is the key part of the experiment as it allows for the extremely low flow rates that are necessary for the conducted experiment (\cref{sec:experimental-procedure}). Furthermore, the temperature of the cell and that of the thermostatted bath are monitored by the thermometers $T_\mathrm{cell}$ and $T_\mathrm{res}$.
@@ -30,18 +30,32 @@
             using the \textsc{Lauda}.
 
 
-            \subsubsection{Cell Temperature Regulation}
+            \subsubsection{Cell temperature regulation}
             \label{subsec:tcell-regulation}
 
                 The cell itself is made of a copper ring which is sealed on both sides using sapphire windows. Making use of indium O-rings, the windows are pressed onto the the copper ring by two aluminum rings. This circular cell is designed so it can be mounted to a second copper construction which is connected to a \textsc{Peltier} heat pump and a heater. Moreover, two thermometers installed - one for the temperature regulation feedback loop and one for the output value. While the power of the \textsc{Peltier} is fixed, the heater's power output is controlled by the feedback loop. From the microvalve to the pressure gauge $P_\mathrm{cell}$, the setup is packed in styrofoam for thermal insulation from the room temperature and also to minimize the gradient inside this part of the setup. At first, the regulation has been run via a regular computer. As this led to breakdowns of the regulation for short periods of time multiple times per hour,  the regulation was then externalized to an \textsc{raspberry pi}. It regulates the temperature to $T_\mathrm{cell}=\SI{19.000(5)}{\celsius}$.
 
 
-            \subsubsection{Pressure Gauges}
+            \subsubsection{Pressure gauges}
 
                 Because of its high resolution, at first, a \textsc{Keller} S21 ??? pressure gauge was used for $P_\mathrm{cell}$. As its construction contains a porous O'ring that could be identified as the source of degassing inside the system, the gauge has been swapped for a \textsc{Wika} ??? which exposes only metallic parts to the system. $P_\mathrm{res}$ uses the same model of pressure gauge.
 
 
-    \section{Experimental Procedure}
+            \subsection{Laser transmission setup}
+            \label{subsec:laser_transmission_setup}
+
+              The laser transmission setup is sketched out in \cref{fig:laser_transmission_setup}. In the path of the initial laser beam, a collimator and a diaphragm are placed before the cell. After being \textsc{Rayleigh} scattered by the membrane (please refer to \cref{subsec:light-transmission-evaluation} for explanatinos), the beam then passes another diaphragm and a collecting lense before hitting the photodiode.
+
+              \subfile{tikz/setup/laser_transmission_setup.tex}
+
+
+            \subsection{Camera setup}
+            \label{subsec:camera-setup}
+
+              To record images of the membranes during the absoprtion and desorption isotherms, a camera is installed and focused on the alumina membrane. A ???MODEL??? is used without any further optical instruments.
+
+
+    \section{Experimental procedure}
             \label{sec:experimental-procedure}
 
                 To start an experiment (here also referred to as an isotherm) the valve $U_1$ is closed while $U_2$ and the \textsc{Pfeiffer} microvalve $U_\mathrm{PV}$ are fully opened. This allows the primary pump, which experimentally realizes the void, to pump the system. As the condensation of hexane inside the sample starts at a pressure of about $\SI{150}{\milli\bar}$, it is not import to reach low pressures in this step. On the other hand the pumping is used to clean the system of air which unavoidably enters the system when places the membrane inside the cell (or removing it from of the cell).
@@ -62,23 +76,15 @@
                 \subfile{tikz/setup/setup_bypass.tex}
 
 
-                The red volume of the system, which is the one of interest for the isotherm computation, is calibrated using the method explained in section \cref{subsec:boyle-mariotte}. Its volume is
+                The green volume of the system, which is the one of interest for the isotherm computation, is calibrated using the method explained in section \cref{subsec:boyle-mariotte}. Its volume is
                 \begin{equation}
                     V_\mathrm{cell}=\SI{8,27}{\centi\meter\cubic}.
                 \end{equation}
 
 
-            \subsubsection{Changing the Sample}
+            \subsubsection{Changing the membrane}
             \label{sssec:changing-the-sample}
 
-                To change the sample, the copper cell must be opened
-
-
-        \subsection{Light Transmission Setup}
-        \label{subsec:transmission-setup}
-
-
-        \subsection{Camera Setup}
-        \label{subsec:camera-setup}
+                To change the sample, the copper cell must be opened and therefore detached from the reset of the system. After placing the membrane to be measured inside the cell, the latter is then reconnected to the system. As a result, the inside of the cell is at atmospheric pressure. Before the bypass was installed, to pump the cell, the \textsc{Pfeiffer} microvalve had to be opened. Using the small opening also used for the isotherms would have made for an unbearably long pumping process. For an approximation please refer to \cref{subfig:vs_time} in \cref{sec:isotherm_computation} where hexane is pumped from the system. As the evaluation of the volumetric measurements depends strongly on the opening of the \textsc{Pfeiffer} microvalve which is not guaranteed to reopen without a hysteresis even if the same voltage as before is applied, the bypass has been installed to create a way to pump the system without touching the \textsc{Pfeiffer}'s opening. From this point on, the contamination of the cell with degasing grease and the VCR connectors, that do leak to a certain degree are the most prominent hazards of the membrane changing process.
 
 \end{document}

@@ -8,7 +8,7 @@
       \begin{tikzpicture}
           \def\PrelMin{.86}
   				\def\PrelMax{1}
-  				\def\TransMin{1e-3}
+  				\def\TransMin{1e-4}
   				\def\TransMax{10}
   				\def\LfMin{0}
   				\def\LfMax{2}
@@ -16,8 +16,8 @@
   				% transmission
   				\begin{axis}[
             /tikz/line join=bevel,
-            width=0.8*\textwidth,
-            height=0.5*\textwidth,
+            width=0.45*\textwidth,
+            height=0.45*\textwidth,
   					ymode=log,
   					%axis y line*=right,
   					line width = 1pt,
@@ -27,7 +27,7 @@
   					ymin = \TransMin, ymax = \TransMax,
   					ylabel = {Transmission $T$},
   					xlabel = {Relative pressure $P_\mathrm{rel}$},
-  					ytick = {10,1,1e-1,1e-2},
+  					ytick = {10,1,1e-1,1e-2,1e-3,1e-4},
   					grid,
             legend style={at={(0,0)}, legend columns=1, anchor=south west},
   					%title={Membrane 296b - $\SI{60}{\micro\meter}$}
@@ -40,14 +40,14 @@
   				\end{axis}
         \end{tikzpicture}
         \label{subfig:292_trans}}
-    \\
+    \hfill
     \subfloat[]{
     \tikzsetnextfilename{296_transmission}
       \begin{tikzpicture}
           \def\PrelMin{.86}
   				\def\PrelMax{1}
   				\def\TransMin{1e-3}
-  				\def\TransMax{10}
+  				\def\TransMax{1}
   				\def\LfMin{0}
   				\def\LfMax{2}
           %
@@ -79,14 +79,14 @@
         \end{tikzpicture}
         \label{subfig:296_trans}
     }
-    \hfill
+    \\
     \subfloat[]{
     \tikzsetnextfilename{295_transmission}
       \begin{tikzpicture}
           \def\PrelMin{.86}
   				\def\PrelMax{1}
   				\def\TransMin{1e-3}
-  				\def\TransMax{10}
+  				\def\TransMax{1}
   				\def\LfMin{0}
   				\def\LfMax{2}
           %
@@ -102,7 +102,7 @@
   					%	minor y tick num= ,
   					xmin = \PrelMin, xmax = \PrelMax,
   					ymin = \TransMin, ymax = \TransMax,
-  					ylabel = {Transmission in $T$},
+  					ylabel = {Transmission $T$},
   					xlabel = {Relative pressure $P_\mathrm{rel}$},
   					ytick = {10,1,1e-1,1e-2,1e-3},
   					grid,
@@ -118,7 +118,7 @@
         \end{tikzpicture}
         \label{subfig:295_trans}
     }
-    \\
+    \hfill
     \subfloat[]{
     \tikzsetnextfilename{295f200ALD_transmission}
       \begin{tikzpicture}
@@ -132,8 +132,8 @@
   				% transmission
   				\begin{axis}[
             /tikz/line join=bevel,
-            width=0.8*\textwidth,
-            height=0.5*\textwidth,
+            width=0.45*\textwidth,
+            height=0.45*\textwidth,
   					ymode=log,
   					%axis y line*=right,
   					line width = 1pt,

@@ -64,12 +64,15 @@
                 Due to this new surface structure, the second anodizing yields a wafer with a top layer of alumina penetrated by parallel, hexagonally arranged pores. Again, the \textit{barrier layer} of alumina separates the pores from the bulk aluminum as illustrated in figure \cref{fig:second-anodizing}. Increasing the time of the second anodizing increases the length of the pores $l_\mathrm{pore}$ and hereby the thickness of the final wafer. As the second anodizing is carried out under the same conditions as the first, the pore size $d_\mathrm{pore}$ is the same in both production steps.
 
 
+                \subfile{tikz/membrane_production/production_stages.tex}
+
+
             \subsubsection{Aluminum Dissolution}
             \label{sssec:al-dissolution}
 
                 To dissolve the remaining aluminum on the bottom side of the wafer, it is immersed in an acid composed of
                 \begin{equation}
-                    \SI{27,2}{\gram}\ce{CuCl2} + \SI{0,2}{\l}\ce{HCL}(\SI{37}{\percent} + \SI{0,8}{\l}\ce{H2O}
+                    \SI{27,2}{\gram}\ce{CuCl2} + \SI{0,2}{\l}\ce{HCL}(\SI{37}{\percent}) + \SI{0,8}{\l}\ce{H2O}
                     \label{eq:aluminum-dis-acid}
                 \end{equation}
                 at a temperature of
@@ -77,6 +80,8 @@
                     T = \SI{0}{\celsius}
                 \end{equation}
                 as shown in figure \cref{fig:al-dissolution-setup}. The latter transforms the aluminum to copper in a very exothermic reaction (compare section ???). A lot of turbulences are created and thus this step limits either the thickness or the size of the wafers because it can easily break.
+
+                \subfile{tikz/membrane_production/aluminum_dissolution.tex}
 
 
             \subsubsection{Barrier Layer Dissolution}
@@ -88,8 +93,7 @@
                 \end{equation}
                 To dissolve the \textit{barrier layer} and hereby open the pores, the wafers are floated on phosphoric acid as shown in figure \cref{fig:float}. Moreover, some membranes are immersed (compare \cref{fig:immerse}) in the run of the experiments with the same aim of dissolving the \textit{barrier layer}. If not explicitely mentioned though, the dissolution proccess has been conducted by floating for the respective membrane.
 
-
-            \subfile{tikz/membrane_production/production_stages.tex}
+                \subfile{tikz/membrane_production/barrier_layer_dissolution.tex}
 
 
         \subsection{Membrane Specifications}

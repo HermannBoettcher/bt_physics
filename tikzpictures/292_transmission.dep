@@ -1,2 +1,4 @@
 tikzpictures/292_transmission.pdf: tikz/graphs/292_295_296_transmission/292d_cond_1.txt
 tikzpictures/292_transmission.pdf: tikz/graphs/292_295_296_transmission/292d_evap_1.txt
+tikzpictures/292_transmission.pdf: tikz/graphs/292_295_296_transmission/292d_cond_1.txt
+tikzpictures/292_transmission.pdf: tikz/graphs/292_295_296_transmission/292d_evap_1.txt

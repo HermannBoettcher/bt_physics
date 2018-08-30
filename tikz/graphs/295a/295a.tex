@@ -7,8 +7,8 @@
     \begin{tikzpicture}
         \def\PrelMin{.86}
 				\def\PrelMax{1}
-				\def\TransMin{1e-8}
-				\def\TransMax{10}
+				\def\TransMin{1e-4}
+				\def\TransMax{1}
 				\def\LfMin{0}
 				\def\LfMax{2}
         %
@@ -50,7 +50,7 @@
 					ymin = \TransMin, ymax = \TransMax,
 					ylabel = {Transmission $T$},
 					xtick = {1e-1,1e-2,1e-3},
-					ytick = {10,1,1e-1,1e-2,1e-3},
+					ytick = {10,1,1e-1,1e-2},
 					grid,
           legend style={at={(0,0.5)}, legend columns=1, anchor=south west},
 					%title={Membrane 296b - $\SI{60}{\micro\meter}$}
@@ -62,7 +62,7 @@
 					\addlegendentry{$T_\mathrm{evap}$}
 				\end{axis}
     \end{tikzpicture}
-    \label{fig:295a}
     \caption{}
+    \label{fig:295a}
   \end{figure}
 \end{document}

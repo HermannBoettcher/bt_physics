@@ -1,0 +1,3 @@
+tikzpictures/296_a_c_d_zoom_bottom.pdf: tikz/graphs/immersion_experiment/296a_cond_2.txt
+tikzpictures/296_a_c_d_zoom_bottom.pdf: tikz/graphs/immersion_experiment/296c_cond_2.txt
+tikzpictures/296_a_c_d_zoom_bottom.pdf: tikz/graphs/immersion_experiment/296d_cond_2.txt

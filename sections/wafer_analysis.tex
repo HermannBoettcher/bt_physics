@@ -61,7 +61,7 @@
       though. Thus, at some point there must be a mistake in the interpretation of the observations.
       \medskip
 
-      The idea behind the following experiments with waver 296 is to better understand what happens during the \textit{barrier layer} dissolution process and to find a systematic way to open the pores with a minimal pore diameter increment and diameter distribution increment. Floating and immersing single membranes in phosphoric acid shall lead to a calibration of the respecting etch rates $e_\mathrm{float}$ and $e_\mathrm{immerse}$.
+      The idea behind the following experiments with waver 296 is to better understand what happens during the \textit{barrier layer} dissolution process and to find a systematic way to open the pores with a minimal pore diameter increment and diameter distribution increment. Floating and immersing single membranes in phosphoric acid shall lead to a calibration of the respecting etch rates $e_\mathrm{\parallel pores}$ and $e_\mathrm{\bot pores}$.
       \medskip
 
       The thickness of wafer 296 is
@@ -71,16 +71,16 @@
       As explained before in \cref{sssec:barrier-layer-dissolution}, this wafer shall be used to further understand the barrier layer dissolution. The goal is to be able to produce the membranes in a more controlled way an to hereby reduce the funneling aspect of the pores. \cref{fig:wafer-296} shows the treatments of the membranes and gives an overview over the conducted measurements. While the membranes 296c and 296d are immersed in phosphoric acid for
       \begin{align}
           \begin{split}
-              t^\mathrm{296c}_\mathrm{immerse}=\SI{6,5}{\minute},    \\
-              t^\mathrm{296d}_\mathrm{immerse}=\SI{13}{\minute},
+              t^\mathrm{296c}_\mathrm{im}=\SI{6,5}{\minute},    \\
+              t^\mathrm{296d}_\mathrm{im}=\SI{13}{\minute},
           \end{split}
           \label{eq:t-immerse}
       \end{align}
       296e and 296f are only floated on the acid on the barrier layer side for
       \begin{align}
           \begin{split}
-              t^\mathrm{296e}_\mathrm{float}=\SI{13}{\minute}, \\
-              t^\mathrm{296f}_\mathrm{float}=\SI{26}{\minute}
+              t^\mathrm{296e}_\mathrm{fl}=\SI{13}{\minute}, \\
+              t^\mathrm{296f}_\mathrm{fl}=\SI{26}{\minute}
           \end{split}
           \label{eq:t-float}
       \end{align}
@@ -110,7 +110,24 @@
 
           \subfile{tikz/graphs/immersion_experiment/immersion.tex}
 
-          \Cref{fig:immersed-comp-w296} compares the volumetric and also the transmission measurements of the immersed membranes 296c and 296d, again adding the untreated membrane 296a. As explained in \cref{sssec:cfp-leo}, condensation and evaporation in a closed funnelled pore occur at equilibrium pressure. Pores that are open on the large end start filling from the bottom and evaporating from the top so, regarding the isotherms in \cref{fig:immersed-comp-w296}, the lower end of the isotherm rising represents the small bottom end of the pores. This lower end of all three isotherms seems to be superimposed while the top end, representing the large open end of the pores, moves to larger diameters for longer immersion times. As the effect seems to occur linearly over the whole length of the pores, the acid seems to be saturating within the pores losing etching power. By \cref{sssec:cfp-leo}, the process can be visually interpreted as a pore straightening as shown in \cref{fig:funneling_increase}. Moreover, the increase of the funnelling aspect seems to be linear at least within the first 13 minutes of the immersion as doubling the immersion time yields double the diameter shift on the volumetric isotherm (compare \cref{eq:t-immerse}).
+          \Cref{fig:immersed-comp-w296} compares the volumetric and also the transmission measurements of the immersed membranes 296c and 296d, again adding the untreated membrane 296a. As explained in \cref{sssec:cfp-leo}, condensation and evaporation in a closed funnelled pore occur at equilibrium pressure. Pores that are open on the large end start filling from the bottom and evaporating from the top so, regarding the isotherms in \cref{fig:immersed-comp-w296}, the lower end of the isotherm rising represents the small bottom end of the pores. This lower end of all three isotherms seems to be superimposed while the top end, representing the large open end of the pores, moves to larger diameters for longer immersion times. As the effect seems to occur linearly over the whole length of the pores, the acid seems to be saturating within the pores losing etching power. By \cref{sssec:cfp-leo}, the process can be visually interpreted as a pore straightening as shown in \cref{fig:funneling_increase}. Moreover, the increase of the funnelling aspect seems to be linear at least within the first 13 minutes of the immersion as doubling the immersion time yields double the diameter shift on the volumetric isotherm (compare \cref{eq:t-immerse}). For instance, \cref{tbl:etch_rate} shows the diameter increase of the pores due to the immersion of the membranes in phosphoric acid. Using this data along with the assumption of a linear etch rate gradient along the length of the pore, the respective etch rate can be plotted as shown in \cref{fig:etch_rate_plot}. Here, the parameter $h$ is used as the height within a vertical pore, where $h=\SI{60}{\micro\meter}$ refers to the open top end of a $\SI{60}{\micro\meter}$ long pore that is closed on the bottom side.
+
+          \begin{table}
+            \caption{Diameter reduction per minute of immersion derived from the isotherms of the membranes 296a, 296c, 296d.}
+            \label{tbl:etch_rate}
+            \selectfontsize{10pt}
+            \begin{tabu} {X[r]X[r]X[r]}
+              \unitoprule \\
+              \textbf{$t_\mathrm{im} [\si{\minute}]$} & \textbf{$\Delta d_{h=\SI{60}{\micro\meter}} [\si{\nano\meter}]$} & \textbf{$\Delta d_{h=\SI{0}{\micro\meter}} [\si{\nano\meter}]$} \\
+              \unimidrule \\
+              0 &0  &0 \\
+              6,5 &3  &0  \\
+              13  &6  &0  \\
+              \unitoprule \\
+            \end{tabu}
+          \end{table}
+
+          As for the transmission isotherms, the shifts of the beginning of the condensation dip and also the end of the evaporation dips correspond to the interpretation explained above. Ob the other hand, the magnitude difference of the three isotherms' dips cannot be explained, neither interpreted at this point.
 
           \subfile{tikz/wafer_analysis/funnelling_increase.tex}
 
@@ -191,10 +208,10 @@
 
               \begin{figure}[htp]
                 \centering
-                \subfloat[]{%\includegraphics{images/AAM_295_PO_g_Al_06.tif}
+                \subfloat[]{\includegraphics [width=0.45\textwidth]{images/295g_pores_al_side.jpg}
                 \label{fig:MEB_295g_al_side}}
                 \hfill
-                \subfloat[]{%\includegraphics{images/AAM_295_PO_g_Al_06.tif}
+                \subfloat[]{\includegraphics[width=0.45\textwidth]{images/295g_pores_sol_side.jpg}
                 \label{fig:MEB_295g_sol_side}}
                 \caption{MEB images of membrane 295g of aluminum \protect\subref{fig:MEB_295g_al_side} and solution side \protect\subref{fig:MEB_295g_al_side}. The measurements of the pore diameters were done immediately using the \textsc{Zeiss} software of the microscope.}
                 \label{fig:MEB_295g}

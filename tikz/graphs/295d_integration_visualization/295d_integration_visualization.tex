@@ -9,7 +9,7 @@
         \def\tMax{16}
         \def\PMin{-40]}
         \def\PMax{60}
-        \def\LineWidth{.5pt}
+        \def\LineWidth{1pt}
         %
         \begin{axis}[
           /tikz/line join=bevel,
@@ -30,17 +30,17 @@
           every axis plot,
           ]
           % Add plots
-          \addplot[mark=none, color=blue] table [x=t,y=interpol]{tikz/graphs/295d_integration_visualization/295d_cond_2.txt};
+          \addplot[mark=none, color=blue] table [x=t,y=interpol]{tikz/graphs/295d_integration_visualization/296b_op_cond_1.txt};
           \addlegendentry{interpolation}
-          \addplot[mark=none, color=red] table [x=t,y=dPcell]{tikz/graphs/295d_integration_visualization/295d_cond_2.txt};
+          \addplot[mark=none, color=red] table [x=t,y=dPcell]{tikz/graphs/295d_integration_visualization/296b_op_evap_1.txt};
           \addlegendentry{membrane}
-          \addplot[name path=interpolation, mark=none, color=green] table [x=t,y=delta_dPcell]{tikz/graphs/295d_integration_visualization/295b_cond_2.txt};
+          \addplot[name path=interpolation, mark=none, color=green] table [x=t,y=delta_dPcell]{tikz/graphs/295d_integration_visualization/296b_op_cond_1.txt};
           \addlegendentry{substraction}
           \path[name path=xAxis] (\pgfkeysvalueof{/pgfplots/xmin},0) -- (\pgfkeysvalueof{/pgfplots/xmax},0);
           \addplot[green!30] fill between[of=interpolation and xAxis];
-          \addplot[mark=none, color=blue] table [x=t,y=interpol]{tikz/graphs/295d_integration_visualization/295d_evap_2.txt};
-          \addplot[mark=none, color=red] table [x=t,y=dPcell]{tikz/graphs/295d_integration_visualization/295d_evap_2.txt};
-          \addplot[name path=interpolation, mark=none, color=green] table [x=t,y=delta_dPcell]{tikz/graphs/295d_integration_visualization/295b_evap_2.txt};
+          \addplot[mark=none, color=blue] table [x=t,y=interpol]{tikz/graphs/295d_integration_visualization/296b_op_evap_1.txt};
+          \addplot[mark=none, color=red] table [x=t,y=dPcell]{tikz/graphs/295d_integration_visualization/296b_op_evap_1.txt};
+          \addplot[name path=interpolation, mark=none, color=green] table [x=t,y=delta_dPcell]{tikz/graphs/295d_integration_visualization/296b_op_evap_1.txt};
         \end{axis}
       \end{tikzpicture}
       \label{fig:iso-computation}
@@ -52,8 +52,8 @@
             \def\tMin{0}
             \def\tMax{1}
             \def\PMin{0]}
-            \def\PMax{10}
-            \def\LineWidth{.5pt}
+            \def\PMax{14}
+            \def\LineWidth{1pt}
             %
             \begin{axis}[
               /tikz/line join=bevel,
@@ -75,9 +75,9 @@
               every axis plot,
               ]
               % Add plots
-              \addplot[mark=none, color=blue] table [x=Prel,y=mol]{tikz/graphs/295d_integration_visualization/295d_cond_2.txt};
+              \addplot[mark=none, color=blue] table [x=Prel,y=mol]{tikz/graphs/295d_integration_visualization/296b_op_cond_1.txt};
               \addlegendentry{condensation}
-              \addplot[mark=none, color=blue!50] table [x=Prel,y=mol]{tikz/graphs/295d_integration_visualization/295d_evap_2.txt};
+              \addplot[mark=none, color=blue!50] table [x=Prel,y=mol]{tikz/graphs/295d_integration_visualization/296b_op_evap_1.txt};
               \addlegendentry{evaporation}
             \end{axis}
           \end{tikzpicture}
@@ -88,7 +88,7 @@
           Also, the substraction of the latter (compare integrand of \cref{eq:ndot-membrane})
           is plotted where the area to be integrated for the absorption and desorption
           isotherm is shaded light green. The integration according to \cref{eq:nmembrane}
-          results in the isotherm displayed in \protect\subref{gif:iso}.}
+          results in the isotherm displayed in \protect\subref{fig:iso}.}
   \end{figure}
 
 \end{document}

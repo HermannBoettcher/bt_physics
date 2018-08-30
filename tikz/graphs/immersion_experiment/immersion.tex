@@ -3,84 +3,159 @@
 \begin{document}
   \begin{figure}[ht]
 		\centering
-    \tikzsetnextfilename{296_a_c_d}
-    \begin{tikzpicture}[spy using outlines={ellipse, magnification=4, connect spies}]
-        \def\PrelMin{.86}
-				\def\PrelMax{1}
-				\def\TransMin{1e-8}
-				\def\TransMax{10}
-				\def\LfMin{0}
-				\def\LfMax{2}
-        %
-        \begin{axis}[
-          line join=bevel,
-          width=0.8*\textwidth,
-          height=0.5*\textwidth,
-          grid,
-					axis y line*=left,
-          legend style={at={(0,0.5)}, legend columns=1, anchor=north west},
-          every axis plot,
-					axis y line*=left,
-					line width = 1pt,
-					%	minor x tick num= ,
-					%	minor y tick num= ,
-					xmin = \PrelMin, xmax = \PrelMax,
-					ymin = \LfMin, ymax = \LfMax,
-					xlabel = {Relative pressure $P_\mathrm{rel}$},
-					ylabel = {Liquid fraction $LF$},
-					ytick = {0,0.25,0.50,0.75,1},
-          ]
-					% Add plots
-					\addplot[mark=none, color=red] table [x=Prel,y=liquid_fraction]{tikz/graphs/immersion_experiment/296a_cond_2.txt};
-					\addlegendentry{$LF_{t_\mathrm{immerse}=\SI{0}{\minute}}$}
-					\addplot[mark=none, color=purple] table [x=Prel,y=liquid_fraction]{tikz/graphs/immersion_experiment/296c_cond_2.txt};
-					\addlegendentry{$LF_{t_\mathrm{immerse}=\SI{6,5}{\minute}}$}
-					\addplot[mark=none, color=orange] table [x=Prel,y=liquid_fraction]{tikz/graphs/immersion_experiment/296d_cond_2.txt};
-					\addlegendentry{$LF_{t_\mathrm{immerse}=\SI{13}{\minute}}$}
-					\addplot[mark=none, color=red!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/immersion_experiment/296a_evap_2.txt};
-					\addplot[mark=none, color=purple!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/immersion_experiment/296c_evap_2.txt};
-					\addplot[mark=none, color=orange!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/immersion_experiment/296d_evap_2.txt};
-					\coordinate (spypoint1) at (axis cs:.9,0.16);
-  				\coordinate (magnifyglass1) at (axis cs:.96,.3);
-					\coordinate (spypoint2) at (axis cs:.9304,.95);
-  				\coordinate (magnifyglass2) at (axis cs:.97,1.35);
-        \end{axis}
-        \spy[size=2.5cm, height=1.5cm] on (spypoint1) in node[fill=white] at (magnifyglass1);
-        \spy[size=4.4cm, height=2cm] on (spypoint2) in node[fill=white] at (magnifyglass2);
-				% transmission
-				\begin{axis}[
-          line join=bevel,
-          width=0.8*\textwidth,
-          height=0.5*\textwidth,
-					ymode=log,
-					axis y line*=right,
-					line width = 1pt,
-					%	minor x tick num= ,
-					%	minor y tick num= ,
-					xmin = \PrelMin, xmax = \PrelMax,
-					ymin = \TransMin, ymax = \TransMax,
-					ylabel = {Transmission $T$},
-					ytick = {1,1e-1,1e-2,1e-3},
-          ymajorgrids=true,
-          legend style={at={(0,0.5)}, legend columns=1, anchor=south west},
-					%title={Membrane 296b - $\SI{60}{\micro\meter}$}
-					]
-					% Add plots
-          \addplot[mark=none, color=red] table [x=Prel,y=transmission]{tikz/graphs/immersion_experiment/296a_cond_2.txt};
-          \addlegendentry{$T_{t_\mathrm{immerse}=\SI{0}{\minute}}$}
-          \addplot[mark=none, color=purple] table [x=Prel,y=transmission]{tikz/graphs/immersion_experiment/296c_cond_2.txt};
-          \addlegendentry{$T_{t_\mathrm{immerse}=\SI{6,5}{\minute}}$}
-          \addplot[mark=none, color=orange] table [x=Prel,y=transmission]{tikz/graphs/immersion_experiment/296d_cond_2.txt};
-          \addlegendentry{$T_{t_\mathrm{immerse}=\SI{13}{\minute}}$}
-          \addplot[mark=none, color=red!50] table [x=Prel,y=transmission]{tikz/graphs/immersion_experiment/296a_evap_2.txt};
-          \addplot[mark=none, color=purple!50] table [x=Prel,y=transmission]{tikz/graphs/immersion_experiment/296c_evap_2.txt};
-          \addplot[mark=none, color=orange!50] table [x=Prel,y=transmission]{tikz/graphs/immersion_experiment/296d_evap_2.txt};
-				\end{axis}
-    \end{tikzpicture}
-    \label{fig:immersed-comp-w296}
-    \caption{$P_\mathrm{rel}$ isotherm of membrane 292d. The transmission is not
-		normalized but in arbitrary units plotted on a log scale. Please refer to
-		\cref{subsec:light-transmission-interpretation} for the interpretation of the
-		different magnitudes of the transmission drops for absorption and desorption.}
+    \subfloat[]{
+      \tikzsetnextfilename{296_a_c_d}
+      \begin{tikzpicture}[spy using outlines={ellipse, magnification=4, connect spies}]
+          \def\PrelMin{.86}
+  				\def\PrelMax{1}
+  				\def\TransMin{1e-6}
+  				\def\TransMax{1}
+  				\def\LfMin{0}
+  				\def\LfMax{2}
+          %
+          \begin{axis}[
+            line join=bevel,
+            width=0.8*\textwidth,
+            height=0.5*\textwidth,
+            grid,
+  					axis y line*=left,
+            legend style={at={(0,0.5)}, legend columns=1, anchor=north west},
+            every axis plot,
+  					axis y line*=left,
+  					line width = 1pt,
+  					%	minor x tick num= ,
+  					%	minor y tick num= ,
+  					xmin = \PrelMin, xmax = \PrelMax,
+  					ymin = \LfMin, ymax = \LfMax,
+  					xlabel = {Relative pressure $P_\mathrm{rel}$},
+  					ylabel = {Liquid fraction $LF$},
+  					ytick = {0,0.25,0.50,0.75,1},
+            ]
+  					% Add plots
+  					\addplot[mark=none, color=red] table [x=Prel,y=liquid_fraction]{tikz/graphs/immersion_experiment/296a_cond_2.txt};
+  					\addlegendentry{$LF_{t_\mathrm{im}=\SI{0}{\minute}}^\mathrm{cond}$}
+  					\addplot[mark=none, color=purple] table [x=Prel,y=liquid_fraction]{tikz/graphs/immersion_experiment/296c_cond_2.txt};
+  					\addlegendentry{$LF_{t_\mathrm{im}=\SI{6,5}{\minute}}^\mathrm{cond}$}
+  					\addplot[mark=none, color=orange] table [x=Prel,y=liquid_fraction]{tikz/graphs/immersion_experiment/296d_cond_2.txt};
+  					\addlegendentry{$LF_{t_\mathrm{im}=\SI{13}{\minute}}^\mathrm{cond}$}
+  					\addplot[mark=none, color=red!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/immersion_experiment/296a_evap_2.txt};
+  					%\addlegendentry{$LF_{t_\mathrm{im}=\SI{0}{\minute}}^\mathrm{evap}$}
+  					\addplot[mark=none, color=purple!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/immersion_experiment/296c_evap_2.txt};
+  					%\addlegendentry{$LF_{t_\mathrm{im}=\SI{6,5}{\minute}}^\mathrm{evap}$}
+  					\addplot[mark=none, color=orange!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/immersion_experiment/296d_evap_2.txt};
+  					%\addlegendentry{$LF_{t_\mathrm{im}=\SI{13}{\minute}}^\mathrm{evap}$}
+  					\coordinate (spypoint1) at (axis cs:.916,0.15);
+    				\coordinate (magnifyglass1) at (axis cs:.96,.3);
+  					\coordinate (spypoint2) at (axis cs:.9304,.95);
+    				\coordinate (magnifyglass2) at (axis cs:.97,1.35);
+          \end{axis}
+          \spy[size=2.5cm, height=1.5cm] on (spypoint1) in node[fill=white] at (magnifyglass1);
+          \spy[size=4.4cm, height=2cm] on (spypoint2) in node[fill=white] at (magnifyglass2);
+  				% transmission
+  				\begin{axis}[
+            line join=bevel,
+            width=0.8*\textwidth,
+            height=0.5*\textwidth,
+  					ymode=log,
+  					axis y line*=right,
+  					line width = 1pt,
+  					%	minor x tick num= ,
+  					%	minor y tick num= ,
+  					xmin = \PrelMin, xmax = \PrelMax,
+  					ymin = \TransMin, ymax = \TransMax,
+  					ylabel = {Transmission $T$},
+  					ytick = {1,1e-1,1e-2,1e-3},
+            ymajorgrids=true,
+            legend style={at={(0,0.5)}, legend columns=1, anchor=south west},
+  					%title={Membrane 296b - $\SI{60}{\micro\meter}$}
+  					]
+  					% Add plots
+            \addplot[mark=none, color=red] table [x=Prel,y=transmission]{tikz/graphs/immersion_experiment/296a_cond_2.txt};
+            \addlegendentry{$T_{t_\mathrm{im}=\SI{0}{\minute}}^\mathrm{cond}$}
+            \addplot[mark=none, color=purple] table [x=Prel,y=transmission]{tikz/graphs/immersion_experiment/296c_cond_2.txt};
+            \addlegendentry{$T_{t_\mathrm{im}=\SI{6,5}{\minute}}^\mathrm{cond}$}
+            \addplot[mark=none, color=orange] table [x=Prel,y=transmission]{tikz/graphs/immersion_experiment/296d_cond_2.txt};
+            \addlegendentry{$T_{t_\mathrm{im}=\SI{13}{\minute}}^\mathrm{cond}$}
+            \addplot[mark=none, color=red!50] table [x=Prel,y=transmission]{tikz/graphs/immersion_experiment/296a_evap_2.txt};
+            %\addlegendentry{$T_{t_\mathrm{im}=\SI{0}{\minute}}^\mathrm{evap}$}
+            \addplot[mark=none, color=orange!50] table [x=Prel,y=transmission]{tikz/graphs/immersion_experiment/296d_evap_2.txt};
+            \addplot[mark=none, color=purple!50] table [x=Prel,y=transmission]{tikz/graphs/immersion_experiment/296c_evap_2.txt};
+            %\addlegendentry{$T_{t_\mathrm{im}=\SI{6,5}{\minute}}^\mathrm{evap}$}
+            %\addlegendentry{$T_{t_\mathrm{im}=\SI{13}{\minute}}^\mathrm{evap}$}
+  				\end{axis}
+      \end{tikzpicture}
+      \label{fig:immersed-comp-w296}
+    }
+    \\
+    \subfloat[]{
+      \tikzsetnextfilename{296_a_c_d_zoom_top}
+      \begin{tikzpicture}
+          \def\dMin{50}
+  				\def\dMax{60}
+  				\def\LfMin{.75}
+  				\def\LfMax{1}
+          %
+          \begin{axis}[
+            line join=bevel,
+            width=0.4*\textwidth,
+            height=0.4*\textwidth,
+            grid,
+            legend style={at={(1,0)}, legend columns=1, anchor=south east},
+            every axis plot,
+  					line width = 1pt,
+  					xmin = \dMin, xmax = \dMax,
+  					ymin = \LfMin, ymax = \LfMax,
+  					xlabel = {Pore diameter $d_\mathrm{pores}$ in $\si{\nano\meter}$},
+  					ylabel = {Liquid fraction $LF$},
+  					%ytick = {0,0.25,0.50,0.75,1},
+            ]
+  					\addplot[mark=none, color=red!50] table [x=r_kelvin,y=liquid_fraction]{tikz/graphs/immersion_experiment/296a_evap_2.txt};
+  					\addlegendentry{$LF_{t_\mathrm{im}=\SI{0}{\minute}}^\mathrm{cond}$}
+  					\addplot[mark=none, color=purple!50] table [x=r_kelvin,y=liquid_fraction]{tikz/graphs/immersion_experiment/296c_evap_2.txt};
+  					\addlegendentry{$LF_{t_\mathrm{im}=\SI{6,5}{\minute}}^\mathrm{cond}$}
+  					\addplot[mark=none, color=orange!50] table [x=r_kelvin,y=liquid_fraction]{tikz/graphs/immersion_experiment/296d_evap_2.txt};
+  					\addlegendentry{$LF_{t_\mathrm{im}=\SI{13}{\minute}}^\mathrm{cond}$}
+          \end{axis}
+      \end{tikzpicture}
+      \label{fig:immersion_evap_zoom}
+    }
+    \hfill
+    \subfloat[]{
+      \tikzsetnextfilename{296_a_c_d_zoom_bottom}
+      \begin{tikzpicture}
+          \def\dMin{40}
+  				\def\dMax{50}
+  				\def\LfMin{0}
+  				\def\LfMax{.25}
+          %
+          \begin{axis}[
+            line join=bevel,
+            width=0.4*\textwidth,
+            height=0.4*\textwidth,
+            grid,
+            yticklabel style={
+              /pgf/number format/precision=3,
+              /pgf/number format/fixed},
+  					%axis y line*=left,
+            legend style={at={(1,0)}, legend columns=1, anchor=south east},
+            every axis plot,
+  					line width = 1pt,
+  					xmin = \dMin, xmax = \dMax,
+  					ymin = \LfMin, ymax = \LfMax,
+  					xlabel = {Pore diameter $d_\mathrm{pores}$ in $\si{\nano\meter}$},
+  					ylabel = {Liquid fraction $LF$},
+  					%ytick = {0,0.25,0.50,0.75,1},
+            ]
+  					\addplot[mark=none, color=red] table [x=r_kelvin,y=liquid_fraction]{tikz/graphs/immersion_experiment/296a_cond_2.txt};
+  					\addlegendentry{$LF_{t_\mathrm{im}=\SI{0}{\minute}}^\mathrm{cond}$}
+  					\addplot[mark=none, color=purple] table [x=r_kelvin,y=liquid_fraction]{tikz/graphs/immersion_experiment/296c_cond_2.txt};
+  					\addlegendentry{$LF_{t_\mathrm{im}=\SI{6,5}{\minute}}^\mathrm{cond}$}
+  					\addplot[mark=none, color=orange] table [x=r_kelvin,y=liquid_fraction]{tikz/graphs/immersion_experiment/296d_cond_2.txt};
+  					\addlegendentry{$LF_{t_\mathrm{im}=\SI{13}{\minute}}^\mathrm{cond}$}
+          \end{axis}
+      \end{tikzpicture}
+      \label{fig:immersion_cond_zoom}
+    }
+    \caption{\protect\subref{fig:immersed-comp-w296} shows the isotherms of the immersion experiment conducted using wafer 296. The shift to larger pressures of the beginning of the evaporation branch and the unmoving beginning of the condensation branch are clearly visible. \protect\subref{fig:immersion_evap_zoom} and \protect\subref{fig:immersion_cond_zoom} are higher resolution plots of the relevant areas of the evaporation and respectively condensation branch of the isotherm on a pore diameter scale.  For interpretations please refer to \cref{subsec:immersed-membranes}. ???EXPLAIN WHY EVAP START AND COND START ARE THE SPOTS TO LOOK AT ???}
   \end{figure}
 \end{document}

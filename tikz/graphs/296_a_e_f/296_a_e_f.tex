@@ -8,7 +8,7 @@
 			spy using outlines={ellipse, magnification=4, connect spies}]
         \def\PrelMin{.86}
 				\def\PrelMax{1}
-				\def\TransMin{1e-8}
+				\def\TransMin{1e-7}
 				\def\TransMax{1}
 				\def\LfMin{0}
 				\def\LfMax{2}
@@ -33,14 +33,17 @@
           ]
 					% Add plots
 					\addplot[mark=none, color=red] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_a_e_f/296a_cond_2.txt};
-					\addlegendentry{$LF_\mathrm{296a}$}
+					\addlegendentry{$LF_{t_\mathrm{fl}=\SI{0}{\minute}}^\mathrm{cond}$}
 					\addplot[mark=none, color=blue] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_a_e_f/296e_cond_2.txt};
-					\addlegendentry{$LF_\mathrm{296e}$}
+					\addlegendentry{$LF_{t_\mathrm{fl}=\SI{13}{\minute}}^\mathrm{cond}$}
 					\addplot[mark=none, color=green] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_a_e_f/296f_cond_2.txt};
-					\addlegendentry{$LF_\mathrm{296f}$}
+					\addlegendentry{$LF_{t_\mathrm{fl}=\SI{26}{\minute}}^\mathrm{cond}$}
 					\addplot[mark=none, color=red!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_a_e_f/296a_evap_2.txt};
+					%\addlegendentry{$LF_{t_\mathrm{fl}=\SI{0}{\minute}}^\mathrm{evap}$}
 					\addplot[mark=none, color=blue!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_a_e_f/296e_evap_2.txt};
+					%\addlegendentry{$LF_{t_\mathrm{fl}=\SI{13}{\minute}}^\mathrm{evap}$}
 					\addplot[mark=none, color=green!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_a_e_f/296f_evap_2.txt};
+					%\addlegendentry{$LF_{t_\mathrm{fl}=\SI{26}{\minute}}^\mathrm{evap}$}
         \end{axis}
         \begin{axis}[
           /tikz/line join=bevel,
@@ -63,14 +66,17 @@
           ]
 					% Add plots
 					\addplot[mark=none, color=red] table [x=Prel,y=transmission]{tikz/graphs/296_a_e_f/296a_cond_2.txt};
-					\addlegendentry{$T_\mathrm{296a}$}
+					\addlegendentry{$T_{t_\mathrm{fl}=\SI{0}{\minute}}^\mathrm{cond}$}
 					\addplot[mark=none, color=blue] table [x=Prel,y=transmission]{tikz/graphs/296_a_e_f/296e_cond_2.txt};
-					\addlegendentry{$T_\mathrm{296e}$}
+					\addlegendentry{$T_{t_\mathrm{fl}=\SI{13}{\minute}}^\mathrm{cond}$}
 					\addplot[mark=none, color=green] table [x=Prel,y=transmission]{tikz/graphs/296_a_e_f/296f_cond_2.txt};
-					\addlegendentry{$T_\mathrm{296f}$}
+					\addlegendentry{$T_{t_\mathrm{fl}=\SI{26}{\minute}}^\mathrm{cond}$}
 					\addplot[mark=none, color=red!50] table [x=Prel,y=transmission]{tikz/graphs/296_a_e_f/296a_evap_2.txt};
-					\addplot[mark=none, color=blue!50] table [x=Prel,y=transmission]{tikz/graphs/296_a_e_f/296e_evap_2.txt};
+					%\addlegendentry{$T_{t_\mathrm{fl}=\SI{0}{\minute}}^\mathrm{evap}$}
+					\addplot[mark=none, color=blue!50] table [x=Prel,y=transmission]{tikz/graphs/296_a_e_f/296a_evap_2.txt};
+					%\addlegendentry{$T_{t_\mathrm{fl}=\SI{13}{\minute}}^\mathrm{evap}$}
 					\addplot[mark=none, color=green!50] table [x=Prel,y=transmission]{tikz/graphs/296_a_e_f/296f_evap_2.txt};
+					%\addlegendentry{$T_{t_\mathrm{fl}=\SI{26}{\minute}}^\mathrm{evap}$}
         \end{axis}
     \end{tikzpicture}
     \label{fig:full-comp-w296}
