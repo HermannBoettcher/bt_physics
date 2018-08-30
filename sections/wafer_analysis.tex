@@ -2,6 +2,14 @@
 
 \begin{document}
 
+    \section{Analysis overview}
+    \label{sec:analysis-overeview}
+
+      As the analysis of the measured membranes is not presented in chronological order but wafer by wafer, an idea of the thoughts behind the conducted experiments and also of the chronology shall be given in the following.
+
+
+      To start with, at the beginning of the internship the state of the art was membrane 292d. After having troubles with not well opened pores due to the \textit{barrier layer} dissolution, the membrane has been opened by floating two times resultung in well opened pores. Recapping previously conducted measurements and analysis, the conclusion was that the \textit{barrier layer} dissolution process is not understood sufficiently. Therefore, the decision was made to use wafer 296 to probe this membrane production step. Moreover, at this time, the funnellization of the pores was assumed to be clear. Wafer 295 had therefore been produced, which is only half as thick as the previously produced wafers. Very early during the conducted experiments it became clear, that the opening and closing of the \textsc{Pfeiffer} microvalve leads to uncalculable errors due to a hysteresis of the opening voltage. To solve this, the bypass was installed. After the open pore membranes of wafer 295 turned out to be very sharp, the decision was made to try reducing the pores diameter using atomic layer deposition. As this happened at a the same time as the \textit{barrier layer} dissolution experiments of wafer 296, the latter were dropped in favor of the before mentioned ALD experiments after running into troubles with the imaging using electron beam microscopy.  Alongside all these measurements, due to some isotherm measurements that were not at all understood, the volume of the cell was calibrated to be able to measure the amount of matter condensed within the pores of the membranes. the collaboration with laboratories (???) in Paris yielded the idea to
+
     \section{Analysis of wafer 292}
     \label{sec:wafer292}
 
@@ -218,10 +226,22 @@
               \end{figure}
 
 
-
-
-
         \subsection{Membrane 295c}
+        \label{subsec:295c}
+
+          Membrane 295c is expected to show the same properties as the other open pore membranes of wafer 295. The recorded isotherm is displayed in \cref{fig:295c}. In contrast to the expectations, the isotherm shows a three step condensation branch while the evaporation branch consists of a single drop. An evaporation at high pressures that consists of a single sharp drop implies that all pores are distributed around a single diameter. As a consequence, the isotherm is plotted over pore diameters $d_\mathrm{pore}$ using \textsc{Kelvin} equation (\cref{sec:kelvin-equation}) for closed pores and open pores seperately and superimposed in one coordinate system (\cref{fig:295c-op-cp}). As the black circle tries to focus on, the first small rise at low pressures translates to the same pore diameter as the second one does for open pore analysis. This hints at a small population of closed pores on the wafer. In fact, the MEB images of the aluminum side of membrane 295c shown in \cref{fig:295c-meb} actually do show areas of none open pores which fill at equilibrium pressure which is coherent with the before amd assumptions based on the volumetric isotherms. Moreover, regarding the laser transmission signal, another phenomena implying pores filling at equilibrium pressure an be found. As amplified in \cref{fig:295c}, the transmission drops at about the same pressure as the first liquid fraction rise finishes and stays at this lower value until the occurence of the spinodal condensation where it drops farther. This drop can be explained by some pores filling and scattering light as a result as before explained in \cref{subsec:light-transmission-interpretation} referring to \cref{fig:disorder-absorption}.
+
+          As for the third rise of the volumetric isotherm's condensation branch, it can be explained by pore size distribution of open pores with two peaks. 
+
+          \subfile{tikz/graphs/295c/295c.tex}
+
+          \begin{figure}
+            \subfloat[]{\includegraphics[width=0.45\textwidth]{images/295c_al.jpg}
+            \hfill
+            \subfloat[]{\includegraphics[width=0.45\textwidth]{images/295c_al_2.jpg}
+            \caption{MEB images of the aluminum side of membrane 295c. Areas of none open pores are clearly visible.}
+            \label{fig:295c-meb}
+          \end{figure}
 
 
 

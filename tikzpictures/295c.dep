@@ -1,0 +1,4 @@
+tikzpictures/295c.pdf: tikz/graphs/295c/295c_cond_2.txt
+tikzpictures/295c.pdf: tikz/graphs/295c/295c_evap_2.txt
+tikzpictures/295c.pdf: tikz/graphs/295c/295c_cond_2.txt
+tikzpictures/295c.pdf: tikz/graphs/295c/295c_evap_2.txt
