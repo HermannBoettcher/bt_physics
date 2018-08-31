@@ -11,110 +11,171 @@
       \section{Isotherm computation}
       \label{sec:isotherm-computation}
 
-        To compute the isotherms from the recorded data the experiment needs to the conducted not only with a membrane inside of the cell, but also with an empty cell. From here on, the following indices shall be used:
-        \begin{align*}
-            \begin{split}
-                &1 \longrightarrow \textrm{no membrane} \\
-                &2 \longrightarrow \textrm{membrane}.
-                \label{eq:index_assignments}
-            \end{split}
-        \end{align*}
-        Furthermore, the variables $P_i$, $\dot{P}_i$, $V_i$, $T_i$, $n_i$ and $\dot{n}_i$, $i\in \{1,2\}$, refer to the values measured inside of the cell, in explanation the red marked part of the system in \cref{fig:setup-bypass}. The raw isotherms of the two experiments are shown in \cref{fig:raw-isotherms}. The plateaus of the yellow curve with membrane inside the cell of the plot versus time  correspond to the dips of the time derivative of the pressure of the versus pressure plot. This can be explained by the hexane condensing inside the membrane's pores at a given pressure due to which the continuing matter flow into the cell does not yield an increase of pressure.
-        \medskip
-
-        \subfile{tikz/graphs/295b_membrane_vs_nomembrane/295b_membrane_vs_nomembrane.tex}
-
-        Regarding the system with and empty cell, it is clear that the ideal gas law can be used to compute the flow rate of hexane (compare \cref{sec:ideal-gas-law}). By solving for the amount of matter
-        \begin{equation*}
-            n_1 = \frac{P_1V_1}{RT_1},
-        \end{equation*}
-        taking into account that the temperature of the cell is regulated at $T_1$ and the volume $V_1$ is constant, the flow of matter becomes
-        \begin{equation*}
-            \dot{n}_1 = \frac{V_1}{RT_1}\cdot \dot{P}_1.
-            \label{eq:n1}
-        \end{equation*}
-        Furthermore, the flow of matter for the system with a membrane inside the cell can be interpreted as the sum of the flow into the membrane $\dot{n}_2^\mathrm{mem}$ and the flow into the system volume excluding the membrane $\dot{n}_2^\mathrm{cell}$. This can be rewritten yielding
-        \begin{equation*}
-            \dot{n}_2^\mathrm{mem} = \dot{n}_2 - \dot{n}_2^\mathrm{cell},
-        \end{equation*}
-        where $\dot{n}^\mathrm{cell}_2$ obeys ideal gas law. Using the fact that the flow through the \textsc{Pfeiffer} valve only depends on the pressure difference $\Delta P_i = P_i^\mathrm{tank} - P_i^\mathrm{cell}$, assuming that $P_1^\mathrm{tank} = P_2^\mathrm{tank}$ leads to
-        \begin{align}
-            \begin{split}
-                \dot{n}_2^\mathrm{mem}(P_2) &= \dot{n}_1(P_2) - \dot{n}_2^\mathrm{cell}(P_2)\\
-                &=\frac{V_1}{RT_1}\cdot \dot{P}_1(P_2) - \frac{V_2}{RT_2}\cdot \dot{P}_2(P_2)
-            \end{split}
-            \label{eq:ndot-membrane}
-        \end{align}
-        \Cref{fig:iso-computation} shows the computation steps visually using the respective plots versus time.
-
-        \subfile{tikz/graphs/295d_integration_visualization/295d_integration_visualization.tex}
-
-        As the temperature of the system is regulated ($T = T_1 = T_2 = \mathrm{const.}$) and because $V = V_1 \approx V_2$ since $V_\mathrm{mem} \ll V_1$, equation \cref{eq:ndot-membrane} yields
-        \begin{equation}
-            n_2^\mathrm{membrane} = \frac{V}{RT}\int_0^{t_2}\left(\dot{P}_1(t_1') - \dot{P}_2(t_2')\right) \mathrm{d}t_2'.
-            \label{eq:nmembrane-1}
-        \end{equation}
-        Important at this point is the dependency of $\dot{P}_1(t_1)$ on $t_1)$ while the integration is over $t_2$.
-
-        As the experimental setup yields discreet values at given time intervals $\Delta t$, the data evaluation makes use of a sum rather than an integration.
-        \begin{equation}
-            n = \frac{V}{RT} \sum \left( \dot{P}_1 ( P_1 = P_2) - \dot{P}_2(P_2) \right) \cdot \Delta t
-            \label{eq:nmembrane}
-        \end{equation}
-        yields the molar amount of hexane condensed inside the membrane. Figure \cref{fig:iso} shows the result of the integration \cref{eq:nmembrane} for membrane 296d. It is a absorption and desorption isotherm for hexane inside the porous alumina membrane. The bulk condensation and evaporation is not visible, as it is also recorded with the reference isotherm without membrane inside the cell.
-
-        What stings the eye is that the sharp rise of the condensation branch does not start at the liquid fraction $LF=0$. The same goes for the evaporation branch. It only drops to a liquid fraction value $LF>0$ and then decreases superimposed with the condensation branch. While is would be reasonable to renormalize the graph so only the mentioned sharp rise and drop are relevant for the isotherm as this part is where the pores fill or empty at spinodal or equilibrium pressure (\cref{sec:cond_evap_theory}), it is not done here. The reason for this is that the initial rise of the isotherms is assumed to be due to the build up of a film on the membranes surfaces. This is part of the theory of condensation and evaporation in confinement even though the film is ignored in the basic \textsc{Kelvin} equation (\cref{sec:kelvin-equation}). ???MAKE A COMPUTATION AS TO HOW MANY MOLES OF LIQUID ARE EXPECTED FOR THE FILMS ON ONE SINGLE MEMBRANE???
-        \medskip
-
-        Moreover, the plots
-        \begin{equation}
-            i \quad \mathrm{over} \quad j,\quad i\in \{n,LF,FF\}, \quad j\in \{P_\mathrm{cell},P_\mathrm{rel},D_\mathrm{kelvin}\}
-        \end{equation}
-        are of interest, where
-        \begin{equation}
-            P_\mathrm{rel} = \frac{P_\mathrm{cell}}{P_\mathrm{sv}^\mathrm{exp}},
-        \end{equation}
-        with the saturated vapor pressure $P_\mathrm{sv}$.
-        \begin{equation}
-            LF = \frac{n}{n_\mathrm{max}}
-        \end{equation}
-        is the liquid fraction of hexane condensed inside the pores of the membrane using the total maximum amount of condensed hexane $n_\mathrm{max}$ and last,
-        \begin{equation}
-            FF = \frac{V_\mathrm{hex}^\mathrm{cond}}{V_\mathrm{mem}}
-        \end{equation}
-        with the volume of condensed hexane $V_\mathrm{hex}^\mathrm{cond}$ and the membrane's volume $V_\mathrm{mem}$, is the filled fraction of the membrane. Its maximum corresponds to the porosity of the membrane. For the computation please refer to \cref{subsec:porosity}.
-
-        For the computation of the introduced physical sizes, the saturated vapor pressure $P_\mathrm{sv}$ must be determined.
-
+        In the following, evaluation of the recorded raw data is presented for volumetric (\cref{subsec:volumetric-computation}) and for the optical measurements (\cref{subsec:optical-computation}).
 
 
         \subsection{Volumetric isotherm}
         \label{subsec:volumetric-computation}
 
 
+          To compute the isotherms from the recorded data the experiment needs to the conducted not only with a membrane inside of the cell, but also with an empty cell. From here on, the following indices shall be used:
+          \begin{align*}
+              \begin{split}
+                  &1 \longrightarrow \textrm{no membrane} \\
+                  &2 \longrightarrow \textrm{membrane}.
+                  \label{eq:index_assignments}
+              \end{split}
+          \end{align*}
+          Furthermore, the variables $P_i$, $\dot{P}_i$, $V_i$, $T_i$, $n_i$ and $\dot{n}_i$, $i\in \{1,2\}$, refer to the values measured inside of the cell, in explanation the red marked part of the system in \cref{fig:setup-bypass}. The raw isotherms of the two experiments are shown in \cref{fig:raw-isotherms}. The plateaus of the yellow curve with membrane inside the cell of the plot versus time  correspond to the dips of the time derivative of the pressure of the versus pressure plot. This can be explained by the hexane condensing inside the membrane's pores at a given pressure due to which the continuing matter flow into the cell does not yield an increase of pressure.
+          \medskip
+
+          \subfile{tikz/graphs/295b_membrane_vs_nomembrane/295b_membrane_vs_nomembrane.tex}
+
+          Regarding the system with and empty cell, it is clear that the ideal gas law can be used to compute the flow rate of hexane (compare \cref{sec:ideal-gas-law}). By solving for the amount of matter
+          \begin{equation*}
+              n_1 = \frac{P_1V_1}{RT_1},
+          \end{equation*}
+          taking into account that the temperature of the cell is regulated at $T_1$ and the volume $V_1$ is constant, the flow of matter becomes
+          \begin{equation*}
+              \dot{n}_1 = \frac{V_1}{RT_1}\cdot \dot{P}_1.
+              \label{eq:n1}
+          \end{equation*}
+          Furthermore, the flow of matter for the system with a membrane inside the cell can be interpreted as the sum of the flow into the membrane $\dot{n}_2^\mathrm{mem}$ and the flow into the system volume excluding the membrane $\dot{n}_2^\mathrm{cell}$. This can be rewritten yielding
+          \begin{equation*}
+              \dot{n}_2^\mathrm{mem} = \dot{n}_2 - \dot{n}_2^\mathrm{cell},
+          \end{equation*}
+          where $\dot{n}^\mathrm{cell}_2$ obeys ideal gas law. Using the fact that the flow through the \textsc{Pfeiffer} valve only depends on the pressure difference $\Delta P_i = P_i^\mathrm{tank} - P_i^\mathrm{cell}$, assuming that $P_1^\mathrm{tank} = P_2^\mathrm{tank}$ leads to
+          \begin{align}
+              \begin{split}
+                  \dot{n}_2^\mathrm{mem}(P_2) &= \dot{n}_1(P_2) - \dot{n}_2^\mathrm{cell}(P_2)\\
+                  &=\frac{V_1}{RT_1}\cdot \dot{P}_1(P_2) - \frac{V_2}{RT_2}\cdot \dot{P}_2(P_2)
+              \end{split}
+              \label{eq:ndot-membrane}
+          \end{align}
+          \Cref{fig:iso-computation} shows the computation steps visually using the respective plots versus time.
+
+          \subfile{tikz/graphs/295d_integration_visualization/295d_integration_visualization.tex}
+
+          As the temperature of the system is regulated ($T = T_1 = T_2 = \mathrm{const.}$) and because $V = V_1 \approx V_2$ since $V_\mathrm{mem} \ll V_1$, equation \cref{eq:ndot-membrane} yields
+          \begin{equation}
+              n_2^\mathrm{membrane} = \frac{V}{RT}\int_0^{t_2}\left(\dot{P}_1(t_1') - \dot{P}_2(t_2')\right) \mathrm{d}t_2'.
+              \label{eq:nmembrane-1}
+          \end{equation}
+          Important at this point is the dependency of $\dot{P}_1(t_1)$ on $t_1)$ while the integration is over $t_2$.
+
+          As the experimental setup yields discreet values at given time intervals $\Delta t$, the data evaluation makes use of a sum rather than an integration.
+          \begin{equation}
+              n = \frac{V}{RT} \sum \left( \dot{P}_1 ( P_1 = P_2) - \dot{P}_2(P_2) \right) \cdot \Delta t
+              \label{eq:nmembrane}
+          \end{equation}
+          yields the molar amount of hexane condensed inside the membrane. Figure \cref{fig:iso} shows the result of the integration \cref{eq:nmembrane} for membrane 296d. It is a absorption and desorption isotherm for hexane inside the porous alumina membrane. The bulk condensation and evaporation is not visible, as it is also recorded with the reference isotherm without membrane inside the cell.
+
+          What stings the eye is that the sharp rise of the condensation branch does not start at the liquid fraction $LF=0$. The same goes for the evaporation branch. It only drops to a liquid fraction value $LF>0$ and then decreases superimposed with the condensation branch. While is would be reasonable to renormalize the graph so only the mentioned sharp rise and drop are relevant for the isotherm as this part is where the pores fill or empty at spinodal or equilibrium pressure (\cref{sec:cond_evap_theory}), it is not done here. The reason for this is that the initial rise of the isotherms is assumed to be due to the build up of a film on the membranes surfaces. This is part of the theory of condensation and evaporation in confinement even though the film is ignored in the basic \textsc{Kelvin} equation (\cref{sec:kelvin-equation}). ???MAKE A COMPUTATION AS TO HOW MANY MOLES OF LIQUID ARE EXPECTED FOR THE FILMS ON ONE SINGLE MEMBRANE???
+          \medskip
+
+          Moreover, the plots
+          \begin{equation}
+              i \quad \mathrm{over} \quad j,\quad i\in \{n,LF,FF\}, \quad j\in \{P_\mathrm{cell},P_\mathrm{rel},D_\mathrm{kelvin}\}
+          \end{equation}
+          are of interest, where
+          \begin{equation}
+              P_\mathrm{rel} = \frac{P_\mathrm{cell}}{P_\mathrm{sv}^\mathrm{exp}},
+          \end{equation}
+          with the saturated vapor pressure $P_\mathrm{sv}$.
+          \begin{equation}
+              LF = \frac{n}{n_\mathrm{max}}
+          \end{equation}
+          is the liquid fraction of hexane condensed inside the pores of the membrane using the total maximum amount of condensed hexane $n_\mathrm{max}$ and last,
+          \begin{equation}
+              FF = \frac{V_\mathrm{hex}^\mathrm{cond}}{V_\mathrm{mem}}
+          \end{equation}
+          with the volume of condensed hexane $V_\mathrm{hex}^\mathrm{cond}$ and the membrane's volume $V_\mathrm{mem}$, is the filled fraction of the membrane. Its maximum corresponds to the porosity of the membrane. For the computation please refer to \cref{subsec:porosity}.
+
+          For the computation of the introduced physical sizes, the saturated vapor pressure $P_\mathrm{sv}$ must be determined.
+
+
           \subsubsection{Porosity}
           \label{sssec:porosity}
+
+            Equation \cref{eq:nmembrane} gives the molar amount of hexane $n_\mathrm{hex}$ condensed inside the membrane's pores. Furthermore, for the given pressures $\SIrange{0}{160}{\milli\bar}$ hexane in its liquid form can be regarded as incompressible and therefore the hexane's volume be computed via
+            \begin{equation*}
+                V_\mathrm{hex} = n_\mathrm{hex} \cdot V_\mathrm{mol, hex}.
+            \end{equation*}.
+            The thickness $l_\mathrm{pore}$ of the membrane is easily determinable via MEB views since its magnitude is micrometers. Finally, the area $A_\mathrm{mem}$ of the measured samples is derived from a photo taken using binoculars.
+
+            Using these information the porosity $\phi$ of a given membrane is given by
+            \begin{equation}
+                \phi = 1 - \frac{V_\mathrm{hex}}{V_\mathrm{mem}} ,
+                \label{eq:porosity}
+            \end{equation}
+            with the membrane's volume
+            \begin{equation*}
+                V_\mathrm{mem} = A_\mathrm{mem} \cdot l_\mathrm{pore}.
+            \end{equation*}
 
 
           \subsubsection{Determination of the saturated vapor pressure}
           \label{sssec:determination-sat-vapor-pressure}
 
+            As the bulk condensation plateau shows a slight drift (compare figure \cref{fig:raw-isotherms}), using the maximum measured pressure $P_\mathrm{cell}$ does not yield the saturated vapor pressure $P_\mathrm{sv}$ but a higher value. In addition, depending on the contamination of the system by air or degassing grease, the measured value for $P_\mathrm{sv}$ shifts due to the partial pressures. To probe the reproducibility of an isotherm loop including the grade of contamination, the  node[anchor=south]maximum measured pressure for different membranes is compared. As the system is opened to replace the membrane in between the isotherms, each cycle is independent. For the change of membrane process please read \cref{sssec:changing-the-sample}. The result of the experiment is that $P_\mathrm{sv}^\mathrm{exp}$ fluctuates by
+            \begin{equation}
+                \delta P_\mathrm{sv}^\mathrm{exp} = \pm \SI{0,5}{\milli\bar}.
+                \label{eq:delta-Psat}
+            \end{equation}
+            As the relevant plateau of condensation and evaporation inside the pores of the membrane occur at about
+            \begin{equation}
+                P_\mathrm{plateaus} = \SI{140}{\milli\bar},
+            \end{equation}
+            $\delta P_\mathrm{sv}^\mathrm{exp}$ translates to an error of about
+            \begin{equation}
+                \delta P_\mathrm{rel} \le \pm 0,005.
+                \label{eq:delta-Prel}
+            \end{equation}
 
 
           \subsubsection{Diameter error using Kelvin equation}
 
-
+            \textsc{Gaussian} error propagation to check the precision of the experiment.
 
 
         \subsection{Optical measurements}
         \label{subsec:optical-computation}
 
+          As mentioned in \cref{sec:exp-setup}, the light transmission setup is independent from the volumetric measurements and also the evaluations do not depend on each other. The light transmission is rather a tool to check on the theory of evaporation and condensation within the membrane using a different approach.
+          \medskip
+
+          To compute the transmission coefficient of a membrane, it is measured in dry state using the same transmission setup as during the volumetric experiment yielding $T_\mathrm{mem}^\mathrm{dry}$. Then, the first measured intensity value $I_0$ of a given isotherm is assigned to the dry coefficient as at this point no hexane is condensed inside of the membranes pores yet. From there on, each intensity measurement is translated to a transmission coefficient according to
+          \begin{equation}
+              T(t) = T_\mathrm{mem}^\mathrm{dry} \cdot \frac{I_0}{I(t)}.
+          \end{equation}
+          The aquired physical size can be interpreted as explained in the following  \cref{subsec:light-transmission-interpretation}.
+
+          As a forword shall be mentioned that the observed transmission drops' magnitude cannot be explained by simple media transmissions as explained in \cref{subsec:two_interface_trans}. Even counting multiple transitions for a diagonal transmission of a membrane, the regular transmission is not a sufficient explanation as the filled state of a membrane should by that theory be less transmitting than the empty state whereas the opposite is observed. To explain the phenomena, \textsc{Rayleigh} scattering and index matching, which are explained in \cref{sec:rayleigh-scattering} and \cref{sec:index-matching} respectively, must be taken into account.
+
 
       \section{Conducted measurements}
       \label{sec:conducted-measurements}
 
-        Genereal: From one wafer we can test different things as we have 12 membranes. Wafer produced as awhole so membranes should be equivalent. ADD THE CIRCLE HERE!!!
+        Genereal: From one wafer we can test different things as we have 12 membranes. Wafer produced as a whole so membranes should be equivalent. ADD THE CIRCLE HERE!!!
+        \medskip
 
+        Membranes of four different wafers produced according to \cref{subsec:membrane-production} have been measured. The wafers specifications are noted in \cref{tbl:wafer-specifications}. For the wafers 295 and 296, the membranes' namescorrespond to certain positions of the wafer as shown in ???.
+
+        \begin{table}[htb]
+          \caption{Wafer specifications. The wafers thickness $l_\mathrm{pore}$, floating time $t_\mathrm{float}$ of the \textit{barrier layer} dissolution process and pore diameter dispersion $\Delta d_\mathrm{pore}^\mathrm{MEB}$ measured by electron beam microscopy are noted. The latter two parameters apply to the open pore membranes of the respective wafer.}
+          \label{tbl:wafer-specifications}
+          \selectfontsize{10pt}
+          \begin{tabu} {X[r]X[r]X[r]X[r]}
+            \unitoprule \\
+            \textbf{Wafer} & \textbf{$l_\mathrm{pore}$ $[\si{\micro\meter}]$} & \textbf{$t_\mathrm{float}$ $[\si{\minute}]$} & \textbf{$\Delta d_\mathrm{pore}^\mathrm{MEB}$ $[\si{\nano\meter}]$} \\
+            \unimidrule \\
+            292 &60  &0   & \\
+            294 &60  &0   &  \\
+            295 &60  &35  &  \\
+            296 &30  &40  &7   \\
+            \unitoprule \\
+          \end{tabu}
+        \end{table}
 
 
         %\subfile{tikz/wafers/wafer_296_processing_plan.tex}
