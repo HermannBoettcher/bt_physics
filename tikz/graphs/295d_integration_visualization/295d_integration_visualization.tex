@@ -14,17 +14,12 @@
         \begin{axis}[
           /tikz/line join=bevel,
           width=0.45*\textwidth,
-          height=0.45*\textwidth,%/tikz/line join=bevel,
-          %ymode=log,
-          %axis y line*=left,
+          height=0.45*\textwidth,
           line width = 1pt,
-          %	minor x tick num= ,
-          %	minor y tick num= ,
           xmin = \tMin, xmax = \tMax,
           ymin = \PMin, ymax = \PMax,
           xlabel = {Pressure inside the cell $P_\mathrm{cell}$ in $\si{\milli\bar}$},
           ylabel = {Time derivative $\dot{P}_\mathrm{cell}$ in $\si{\milli\bar\per\hour}$},
-          %	legend entries={Avec,Sans},
           grid,
           legend style={at={(1,1)}, legend columns=1, anchor=north east},
           every axis plot,
@@ -52,7 +47,7 @@
             \def\tMin{0}
             \def\tMax{1}
             \def\PMin{0]}
-            \def\PMax{14}
+            \def\PMax{17}
             \def\LineWidth{1pt}
             %
             \begin{axis}[
