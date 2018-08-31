@@ -1,7 +1,7 @@
 \documentclass[../../../thesis.tex]{subfiles}
 
 \begin{document}
-  \begin{figure}[ht]
+  \begin{figure}[tb]
 		\centering
     \subfloat[]{
       \tikzsetnextfilename{295c}
@@ -56,8 +56,8 @@
   					\addlegendentry{$T_\mathrm{cond}$}
   					\addplot[mark=none, color=red!50] table [x=Prel,y=transmission]{tikz/graphs/295c/295c_evap_2.txt};
   					\addlegendentry{$T_\mathrm{evap}$}
-  					\coordinate (spypoint1) at (axis cs:0.94,0.65);
-    				\coordinate (magnifyglass1) at (axis cs:0.90,.1);
+  					\coordinate (spypoint1) at (axis cs:0.94,0.6);
+    				\coordinate (magnifyglass1) at (axis cs:0.9,.1);
   				\end{axis}
           \spy[size=5cm, height=1.5cm] on (spypoint1) in node[fill=white] at (magnifyglass1);
       \end{tikzpicture}
