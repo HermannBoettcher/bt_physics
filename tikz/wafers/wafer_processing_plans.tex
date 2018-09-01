@@ -1,0 +1,88 @@
+\documentclass[../../thesis.tex]{subfiles}
+
+\begin{document}
+
+\begin{figure}[htpb]
+    \centering
+    \pgfdeclarelayer{bg}    % declare background layer
+    \pgfdeclarelayer{bbg}    % declare background layer
+    \pgfsetlayers{bbg,bg,main}  % set the order of the layers (main is the standard layer)
+    \subfloat[]{
+    \tikzsetnextfilename{wafer_295_processing_plan}
+      \begin{tikzpicture}
+          \fill[rectangle,yellow!50] (0,0) rectangle (3,-1) node[pos=.5, color=black,align=center]{Wafer 295\\ $d=\SI{30}{\micro\meter}$};
+          \fill[rectangle,red!50] (0,-1.5) rectangle (1,-2.5) node[pos=.5,color=black,align=center] {a\\ \faLineChart};
+          \fill[rectangle,red!50] (1.5,-1.5) rectangle (2.5,-2.5) node[pos=.5,color=black,align=center] {b\\ \faLineChart};
+          \fill[rectangle,red!50] (3,-1.5) rectangle (7.5,-2.5) node[pos=.5,color=black,align=center] {c, d, e, f, g, h, i, j, k, l};
+          \fill[rectangle,green!50] (0,-3) rectangle (1.5,-4) node[pos=.5,color=black,align=center] {b'\\ \faLineChart};
+          \fill[rectangle,green!50] (2,-3) rectangle (3.5,-4) node[pos=.5,color=black,align=center] {e'\\ \faLineChart};
+          \fill[rectangle,green!50] (4,-3) rectangle (5.5,-4) node[pos=.5,color=black,align=center] {f'\\ \faLineChart};
+          \fill[rectangle,green!50] (6,-3) rectangle (7.5,-4) node[pos=.5,color=black,align=center] {d'\\ \faLineChart\space\space\hfill\faBinoculars};
+          \fill[rectangle,green!50] (8,-3) rectangle (9.5,-4) node[pos=.5,color=black,align=center] {g'\\ \faLineChart\space\space\hfill\faBinoculars};
+          \fill[rectangle,green!50] (10,-3) rectangle (11.5,-4) node[pos=.5,color=black,align=center] {c'\\ \faLineChart};
+          \fill[rectangle,green!50] (12,-3) rectangle (14,-4) node[pos=.5,color=black,align=center] {h', i', j', k', l'};
+          \fill[rectangle,blue!20] (2,-4.5) rectangle (3.5,-6) node[pos=.5,color=black,align=center] {e''\\ 100 ALD\\ \faLineChart\hfill\faBinoculars};
+          \fill[rectangle,blue!20] (2,-6.5) rectangle (3.5,-8) node[pos=.5,color=black,align=center] {e'''\\ 200 ALD\\ \faLineChart};
+          \fill[rectangle,blue!20] (4,-6.5) rectangle (5.5,-8) node[pos=.5,color=black,align=center] {f''\\ 200 ALD\\ \faLineChart\hfill\faBinoculars};
+          \fill[rectangle,blue!20] (6,-8.5) rectangle (7.5,-10) node[pos=.5,color=black,align=center] {d''\\ 250 ALD\\ \faLineChart\hfill\faBinoculars};
+          \begin{pgfonlayer}{bg}
+              \draw (1.5,-1)--(1.5,-1.25)--(5.25,-1.25)--(5.25,-1.5);
+              \draw (1.5,-1.25)--(0.5,-1.25)--(0.5,-1.5);
+              \draw (2,-1.25)--(2,-1.5);
+              \draw (2,-2.5)--(2,-2.75)--(.75,-2.75)--(.75,-3);
+              \draw (5.25,-2.5)--(5.25,-2.75)--(13,-2.75)--(13,-3);
+              \draw (5.25,-2.75)--(3,-2.75);
+              \draw (10.75,-3)--(10.75,-2.75);
+              \draw (8.75,-2.75)--(8.75,-3);
+              \draw (3.75,-2.75)--(2.75,-2.75)--(2.75,-3);
+              \draw (4.75,-2.75)--(4.75,-3);
+              \draw (4.75,-3.5)--(4.75,-6.5);
+              \draw (2.75,-4)--(2.75,-6.5);
+              \draw (6.75,-4)--(6.75,-8.5);
+          \end{pgfonlayer}
+          \begin{pgfonlayer}{bbg}
+              \draw[dashed] (0,-2) -- (14.5,-2) node[anchor=west,align=center] {closed\\pores};
+              \draw[dashed] (0,-3.5) -- (14.5,-3.5) node[anchor=west,align=center] {open\\ pores};
+              \draw[dashed] (2,-7.25) -- (14.5,-7.25) node[anchor=west,align=center] {atomic\\layer\\deposition};
+              \draw[dashed] (2,-5.25) -- (13.5,-5.25) -- (14.5,-7.25);
+              \draw[dashed] (6,-9.25) -- (13.5,-9.25) -- (14.5,-7.25);
+          \end{pgfonlayer}
+      \end{tikzpicture}
+      \label{fig:w295-processing-plan}
+    }
+    \\
+    \subfloat[]{
+      \tikzsetnextfilename{wafer_296_processing_plan}
+      \begin{tikzpicture}
+          \fill[rectangle,yellow!50] (0,0) rectangle (3,-1) node[pos=.5, color=black,align=center]{Wafer 296\\ $d=\SI{30}{\micro\meter}$};
+          \fill[rectangle,red!50] (0,-1.5) rectangle (1,-2.5) node[pos=.5,color=black,align=center] {b\\ \faLineChart};
+          \fill[rectangle,red!50] (1.5,-1.5) rectangle (2.5,-2.5) node[pos=.5,color=black,align=center] {a\\ \faLineChart};
+          \fill[rectangle,red!50] (3,-1.5) rectangle (7.5,-2.5) node[pos=.5,color=black,align=center] {c, d, e, f, g, h, i, j, k, l};
+          \fill[rectangle,red!50] (1.5,-3) rectangle (4.5,-4.5) node[pos=.5,color=black,align=center] {c'\\$t_\mathrm{immerse}=\SI{6,5}{\minute}$\\\ \faLineChart\hfill\faBinoculars};
+          \fill[rectangle,red!50] (5,-3) rectangle (8,-4.5) node[pos=.5,color=black,align=center] {d'\\$t_\mathrm{immerse}=\SI{13}{\minute}$\\ \faLineChart\hfill\faBinoculars};
+          \fill[rectangle,red!50] (8.5,-3) rectangle (11,-4.5) node[pos=.5,color=black,align=center] {e'\\$t_\mathrm{float}=\SI{13}{\minute}$\\ \faLineChart\hfill\faBinoculars};
+          \fill[rectangle,red!50] (11.5,-3) rectangle (14,-4.5) node[pos=.5,color=black,align=center] {f'\\ $t_\mathrm{float}=\SI{26}{\minute}$\\ \faLineChart\hfill\faBinoculars};
+          \fill[rectangle,green!50] (0,-5) rectangle (1,-6) node[pos=.5,color=black,align=center] {b'\\\faLineChart};
+          \begin{pgfonlayer}{bg}
+              \draw (1.5,-1)--(1.5,-1.25)--(5.25,-1.25)--(5.25,-1.5);
+              \draw (2,-1.5)--(2,-1.25);
+              \draw (1.5,-1.25)--(0.5,-1.25)--(0.5,-1.5);
+              \draw (5.25,-2.5)--(5.25,-2.75)--(12.75,-2.75)--(12.75,-3);
+              \draw (5.25,-2.75)--(3,-2.75)--(3,-3);
+              \draw (6.5,-2.75)--(6.5,-3);
+              \draw (9.75,-2.75)--(9.75,-3);
+              \draw (.5,-2.5)--(.5,-5);
+          \end{pgfonlayer}
+          \begin{pgfonlayer}{bbg}
+              \draw[dashed] (.5,-2) -- (14.5,-2) -- (15,-2.875) node[anchor=west,align=center] {closed\\pores};
+              \draw[dashed] (3,-3.75) -- (14.5,-3.75) -- (15,-2.875);
+              \draw[dashed] (.5,-5.5) -- (15,-5.5) node[anchor=west,align=center] {open\\pores};
+          \end{pgfonlayer}
+      \end{tikzpicture}
+      \label{fig:w296-processing-plan}
+    }
+    \caption{Wafer 295 and 296 processing scheme. While a \faLineChart\space signifies a recorded isotherm, the \faBinoculars\space means MEB pictures have been taken. Red marks pores closed on one end, green pores open on both ends. The processed wafers are immersed in phosphoric acid for $t_\mathrm{immerse}$ or floated on for $t_\mathrm{float}$.}
+    \label{fig:wafer-processing-plans}
+\end{figure}
+
+\end{document}

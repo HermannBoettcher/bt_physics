@@ -1,8 +1,8 @@
-tikzpictures/295b_op_cp.pdf: tikz/graphs/295_op_cp_comparison/295a_cond_4.txt
-tikzpictures/295b_op_cp.pdf: tikz/graphs/295_op_cp_comparison/295e_cond_1.txt
-tikzpictures/295b_op_cp.pdf: tikz/graphs/295_op_cp_comparison/295a_evap_4.txt
-tikzpictures/295b_op_cp.pdf: tikz/graphs/295_op_cp_comparison/295e_evap_1.txt
-tikzpictures/295b_op_cp.pdf: tikz/graphs/295_op_cp_comparison/295a_cond_4.txt
-tikzpictures/295b_op_cp.pdf: tikz/graphs/295_op_cp_comparison/295e_cond_1.txt
-tikzpictures/295b_op_cp.pdf: tikz/graphs/295_op_cp_comparison/295a_evap_4.txt
-tikzpictures/295b_op_cp.pdf: tikz/graphs/295_op_cp_comparison/295e_evap_1.txt
+tikzpictures/295b_op_cp.pdf: tikz/graphs/cp_op_comp/295b_cond_1.txt
+tikzpictures/295b_op_cp.pdf: tikz/graphs/cp_op_comp/295b_evap_1.txt
+tikzpictures/295b_op_cp.pdf: tikz/graphs/cp_op_comp/295b_op_cond_1.txt
+tikzpictures/295b_op_cp.pdf: tikz/graphs/cp_op_comp/295b_op_evap_1.txt
+tikzpictures/295b_op_cp.pdf: tikz/graphs/cp_op_comp/295b_cond_1.txt
+tikzpictures/295b_op_cp.pdf: tikz/graphs/cp_op_comp/295b_evap_1.txt
+tikzpictures/295b_op_cp.pdf: tikz/graphs/cp_op_comp/295b_op_cond_1.txt
+tikzpictures/295b_op_cp.pdf: tikz/graphs/cp_op_comp/295b_op_evap_1.txt

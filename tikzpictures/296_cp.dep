@@ -1,0 +1,16 @@
+tikzpictures/296_cp.pdf: tikz/graphs/wafer_inhomogeneities/296a_cond_2.txt
+tikzpictures/296_cp.pdf: tikz/graphs/wafer_inhomogeneities/296a_evap_2.txt
+tikzpictures/296_cp.pdf: tikz/graphs/wafer_inhomogeneities/296b_cp_cond_1.txt
+tikzpictures/296_cp.pdf: tikz/graphs/wafer_inhomogeneities/296b_cp_evap_1.txt
+tikzpictures/296_cp.pdf: tikz/graphs/wafer_inhomogeneities/296e_cond_2.txt
+tikzpictures/296_cp.pdf: tikz/graphs/wafer_inhomogeneities/296e_evap_2.txt
+tikzpictures/296_cp.pdf: tikz/graphs/wafer_inhomogeneities/296f_cond_2.txt
+tikzpictures/296_cp.pdf: tikz/graphs/wafer_inhomogeneities/296f_evap_2.txt
+tikzpictures/296_cp.pdf: tikz/graphs/wafer_inhomogeneities/296a_cond_2.txt
+tikzpictures/296_cp.pdf: tikz/graphs/wafer_inhomogeneities/296a_evap_2.txt
+tikzpictures/296_cp.pdf: tikz/graphs/wafer_inhomogeneities/296b_cp_cond_1.txt
+tikzpictures/296_cp.pdf: tikz/graphs/wafer_inhomogeneities/296b_cp_evap_1.txt
+tikzpictures/296_cp.pdf: tikz/graphs/wafer_inhomogeneities/296e_cond_2.txt
+tikzpictures/296_cp.pdf: tikz/graphs/wafer_inhomogeneities/296e_evap_2.txt
+tikzpictures/296_cp.pdf: tikz/graphs/wafer_inhomogeneities/296f_cond_2.txt
+tikzpictures/296_cp.pdf: tikz/graphs/wafer_inhomogeneities/296f_evap_2.txt

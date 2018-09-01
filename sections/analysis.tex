@@ -159,7 +159,9 @@
         Genereal: From one wafer we can test different things as we have 12 membranes. Wafer produced as a whole so membranes should be equivalent. ADD THE CIRCLE HERE!!!
         \medskip
 
-        Membranes of four different wafers produced according to \cref{subsec:membrane-production} have been measured. The wafers specifications are noted in \cref{tbl:wafer-specifications}. For the wafers 295 and 296, the membranes' namescorrespond to certain positions of the wafer as shown in ???.
+        Membranes of four different wafers produced according to \cref{subsec:membrane-production} have been measured. The wafers specifications are noted in \cref{tbl:wafer-specifications}. As multiple membranes in the same state of the same wafer yielded different results, the position of the single membranes on the wafer were are taken note for newly produced wafers. Therefore, for the wafers 295 and 296, the membranes' names correspond to the positions shown in \cref{fig:membrane-distribution}. Furthermore, all conducted measurements on the membranes in different states are noted on \cref{fig:wafer-processing-plans}.
+
+        \subfile{tikz/wafers/membrane_distribution.tex}
 
         \begin{table}[htb]
           \caption{Wafer specifications. The wafers thickness $l_\mathrm{pore}$, floating time $t_\mathrm{float}$ of the \textit{barrier layer} dissolution process and pore diameter dispersion $\Delta d_\mathrm{pore}^\mathrm{MEB}$ measured by electron beam microscopy are noted. The latter two parameters apply to the open pore membranes of the respective wafer.}
@@ -177,14 +179,21 @@
           \end{tabu}
         \end{table}
 
-
-        %\subfile{tikz/wafers/wafer_296_processing_plan.tex}
-
-        %\subfile{tikz/wafers/wafer_295_processing_plan.tex}
+        \subfile{tikz/wafers/wafer_processing_plans.tex}
 
 
-      \section{Inhomogeineities on one wafer}
+      \section{Inhomogeneities on one wafer}
       \label{sec:wafer-inhomogeneities}
+
+        To start with, the wafers shall be tested for inhomogeneities. Therefore, isotherms of one wafer's membranes which are in the same technical state, meaning they have undergone exactly the same treatments, asrae compared. This is done for both, closed pore membranes and open pore membranes. Because opening the membranes' pores involves one more production step, here, closed pore membranes are regarded first.
+
+        \Cref{fig:inhomogeneities-cp} shows a comparison of closed pore membranes for wafer 295 and 296. Even though the membranes 296e' and 296f' had already been treated using phosphoric acid at the time of the measurements, the pores are still assumed to be closed as will be explained in \cref{sec:comparison-cp-op}.
+
+        While for both wafers, with one exception being membrane 295c, the overall shape of the different membranes' volumetric isotherms matches, they are distributed along a short distance of the $P_\mathrm{rel}$-axis. As long as the shapes and also the size of the hysteresis match, this can be explained by a differing pore size distribution for the different membranes. NEED DIAMETER CONVERSION FOR THIS??? Membrane 295c shall not be analysed at this point as it will be dealt with in detail in \cref{sec:theory-and-defects}. Moreover, also the transmission measuremens yield optical signals of similar shapes. Unclear at this point is the variation in magnitude that can be extreme for some membranes as the example of 296f' compared to 296b shows.
+
+        \subfile{tikz/graphs/wafer_inhomogeneities/inhomogeneities_cp.tex}
+
+        \subfile{tikz/graphs/wafer_inhomogeneities/inhomogeneities_op.tex}
 
 
       \section{Comparison of closed and open pores}
@@ -195,6 +204,61 @@
         Hysteresis for closed: corrugations
 
         Hysteresis difference: Coherent with theory
+        \medskip
+
+        This section shall serve to determine a systematic change of the isotherm by the \textit{barrier layer} dissolution process which opens the pores on the bottom side. Moreover, the coherence with theory shall be regarded. \Cref{fig:op-cp-comp} shows the comparisons of closed pore and open pore membranes of the wafers 295 and 296. For both, closed and open pore measurements, the same membranes are used before and after the \textit{barrier layer} dissolution to leave no doubt as to the inhomogeneities of the wafers.
+
+        \subfile{tikz/graphs/cp_op_comp/cp_op_comp.tex}
+
+        Firstly, in reference to the model explained in \cref{sec:cond_evap_theory}, the occurence of a hysteresis for the volumetric isotherm of a closed pore membrane must be explained. The answer to that question has already been given by (???cite bruschi???): It occurs due to intra pore corrugations. The modulation of the diameter along the pore's length corresponds to a varying equilibrium pressure. This makes for a non vertical isotherm.
+
+        Next,the difference between the isotherms for closed and open pores is regarded. Clearly, the size of the hysteresis increases. This tendency is coherent with theory as the latter predicts a hysteresis for open pores but as mentioned above, none for closed pores. Moreover, the evaporation branch of the open pore isotherm is shifted towards higher pressures as compared to the closed pore isotherm. That implies an increase of the pore diameter upon dissolving the \textit{barrier layer}. What stings the eye of the attentive reader is that the evaporation branch also becomes more sharp for the open pores.
+
+        An explanation of the latter two phenomena can be taken from the production step of the \textit{barrier layer} dissolution. As displayed in \cref{fig:milky-aspects}, the wafer at some point becomes milky. Comparing these milky aspects to images taken during the condensation process of an isotherm as displayed in ??? leads to the conclusion, that at this point some of the pores start filling or are already filled with phosphoric acid. This phenomena lasting for a couple of minutes is followed by fifteen more minutes of floating until the wafer is completely covered by acid that flowed through the now open pores (compare \cref{fig:filmed-membrane}). That means during at least
+        \begin{equation}
+          t_\mathrm{filled}=\SI{15}{\minute}
+        \end{equation}
+        the pores are filled by phosphoric acid. That at the end of the process, the wafer is covered by a clearly visible layer of acid, means that there must be some flux of acid through the pores. On the other hand, taking into account the sharpening evaporation branch of the volumetric isotherms implies either a sharpening pore size distribution or a decrease of the funnellization or corrugation aspect of the pores.
+
+        By linking the occuring milky aspects to the filling of only some of the pores, meaning not all pores fill at the same time but over a span of
+        \begin{equation}
+          t_\mathrm{milky}=\SI{3}{\minute},
+        \end{equation}
+        implies that the pore size distribution should rather be increased than decreased. Excluding this point only leaves corrugations and funnellization as explanations for the sharpening isotherms. As there is no reason to believe that an etching process could flatten a corrugated surface though, the straightening of the pores is more likely. Moreover, this inverse funnelling could be explained by the acid saturating along the axis of the pores. The theory of inverse funnelling is probed by experiments that will be analysed in \cref{subsec:inverse-funnelling}.
+
+        \begin{figure}[htpb]
+          \centering
+          \subfloat[]{\includegraphics[width=0.45\textwidth]{images/milky_aspects.JPG}
+          \label{fig:milky-aspects}}
+          \hfill
+          \subfloat[]{\includegraphics[width=0.45\textwidth]{images/filmed_membrane.JPG}
+          \label{fig:filmed-membrane}}
+          \caption{Images taken of wafer 295 during the \textit{barrier layer} dissolution process. \protect\subref{fig:milky-aspects} shows milky aspects that appear after approximately twenty minutes while \protect\subref{fig:filmed-membrane} has been taken just before removing the wafer from the acid. At this point the whole surface of the wafer is covered by phosphoric acid that passed through the pores.}
+          \label{fig:barrier-layer-diss-images}
+        \end{figure}
+
+        As the thickness of the \textit{barrier layer} of wafer 292 has been determined to be
+        \begin{equation}
+          d_\mathrm{barrier-layer}=\SI{30}{\nano\meter}
+        \end{equation}
+        though, the theory introduced above raises questions regarding the etch rate of phosphoric acid on alumina. That the milky aspects appeared after
+        \begin{equation}
+          t_\mathrm{float}^\mathrm{292}=\SI{20}{\minute}
+        \end{equation}
+        ,which is the time after which the \textit{barrier layer} is assumed to be etched off the wafer, makes for an etch rate of
+        \begin{equation}
+          e=\SI{1,5}{\nano\meter\per\minute}.
+        \end{equation}
+        During the fifteen minutes etching of filled pores, this would make an increase of pore diameters of
+        \begin{equation}
+          \Delta d_\mathrm{pore}=\SI{22,5}{\nano\meter}
+        \end{equation}
+        disregarding the acid saturation within the pores. Nevertheless, even regarding the saturation, the bottom end of the pores that is exposed to the bulk acid reservoir should be widened dramatically which is not observed on either electron beam microscopy images nor the volumetric measurements. Further analysis on the difference of the etch rate parallel to the pore axis $e_\mathrm{\parallel}$ and perpendicular to the axis $e_\mathrm{perp}$ follows in \cref{subsec:etch-rate-difference}.
+
+        Firstly, . As expected from \cref{sec:cond_evap_theory}, the hysteresis is much larger for open pores than it is for closed pores.
+        \medskip
+
+        \Cref{fig:full-comp-w296} shows a full comparison of the volumetric measurements of the membranes mentioned above. Additionally, membrane 296a (closed pores) and 296b before and after the barrier layer dissolution are presented on the graph. So the membranes 296a and 296b cp serve as reference for closed pore membranes, while 296b op serves for open pore membranes. The comparison of the different membranes yields a significant difference of the hysteresis' size of 296b op and all other membranes, which show a much smaller hysteresis. As the size of the hysteresis for the rest of the membranes is approcimately uniform and the variation of the condensation and evaporation pressures are only slighty shifted, this implies that indeed, all membranes except 296b op contain pores open only on one end. Which cannot be observed though, that is weather the pores already have microscopic openings on the barrier layer side. If that were the case, hexane would condense there at spinodal pressures lower than the equilibrium pressure of the small ends. Hereby, the pores would be left in a closed shape. This case would not be visible on the volumetric measurements as the condensed amount of hexane necessary to close the pores were so small. If the openings were so large already as for the spinodal pressure to be larger than the equilibrium pressure of the small end, that case would be visible on the isotherm because whole pores would fill at higher pressures. Therefore, the latter case can be excluded.
 
 
         \subsection{Bad open pores}
@@ -203,6 +267,17 @@
 
 
         \subsection{Inverse funnelling}
+        \label{subsec:inverse-funnelling}
+
+          Understanding the inverse funnelling becomes one of the main goals of the experimens with wafer 296 as it might be used to correct the shapes of the pores of a given membrane. Therefore, immersion experiments where two closed pore membranes are immersed in phosphoric acid for
+          \bein{equation}
+            \begin{split}
+              t^\mathrm{296c}_\mathrm{im}=\SI{6,5}{\minute},    \\
+              t^\mathrm{296d}_\mathrm{im}=\SI{13}{\minute},
+            \end{split}
+            \label{eq:immersion-times}
+          \end{equation}
+          and then the shapes of the volumetric isotherms compared to each other and addition with an untreated closed pore membrane. Focus lies on the shape of the isotherms. Small shifts in diameters are of no interest as the inhomogeneity of the pore size distributions of a wafer has been proven already.
 
                 \subsubsection{Immersion experiment}
                 \label{subsec:immersion-experiment}
@@ -217,6 +292,7 @@
 
 
         \subsection{Etch rate difference}
+        \label{subsec:etch-rate-difference}
 
                 Introduce the conducted experiments shortly.
 
@@ -224,6 +300,9 @@
                 \label{subsec:pore-opening-pore-widening}
 
                   Use the example of 292d to explain that the etch rate along the pore axis must be different from the radial one. Conclusion: etch rate offset!S
+
+
+                          As a way to not increase the distribution of pore diameters on a given wafer, the idea of floating the wafer on acid for a time just short enough to not open any pores, followed by its full immersion in acid has been developed. As to not increase the pores diameter by too much regardless of the acids saturation, the immediate immersion of the whole wafer wihtout prefloating discarded. Again, the acid's etch rate on the \textit{barrier layer} is a prerequisite and shall be deduced in \cref{subsec:etch-rate-difference}.
 
 
                 \subsubsection{Floating experiment}

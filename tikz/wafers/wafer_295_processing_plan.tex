@@ -4,8 +4,9 @@
 \begin{figure}[ht]
     \centering
     \pgfdeclarelayer{bg}    % declare background layer
-    \pgfsetlayers{bg,main}  % set the order of the layers (main is the standard layer)
-    \tikzsetnextfilename{wafer_295_processing_plan}
+    \pgfdeclarelayer{bbg}    % declare background layer
+    \pgfsetlayers{bbg,bg,main}  % set the order of the layers (main is the standard layer)
+    %\tikzsetnextfilename{wafer_295_processing_plan}
     \begin{tikzpicture}
         \fill[rectangle,yellow!50] (0,0) rectangle (3,-1) node[pos=.5, color=black,align=center]{Wafer 295\\ $d=\SI{30}{\micro\meter}$};
         \fill[rectangle,red!50] (0,-1.5) rectangle (1,-2.5) node[pos=.5,color=black,align=center] {a\\ \faLineChart};
@@ -36,6 +37,13 @@
             \draw (4.75,-3.5)--(4.75,-6.5);
             \draw (2.75,-4)--(2.75,-6.5);
             \draw (6.75,-4)--(6.75,-8.5);
+        \end{pgfonlayer}
+        \begin{pgfonlayer}{bbg}
+            \draw[dashed] (0,-2) -- (14.5,-2) node[anchor=west,align=center] {closed\\pores};
+            \draw[dashed] (0,-3.5) -- (14.5,-3.5) node[anchor=west,align=center] {open\\ pores};
+            \draw[dashed] (2,-7.25) -- (14.5,-7.25) node[anchor=west,align=center] {atomic\\layer\\deposition};
+            \draw[dashed] (2,-5.25) -- (13.5,-5.25) -- (14.5,-7.25);
+            \draw[dashed] (6,-9.25) -- (13.5,-9.25) -- (14.5,-7.25);
         \end{pgfonlayer}
     \end{tikzpicture}
     \caption{Wafer 295 processing scheme. While a \faLineChart\space signifies a recorded isotherm, the \faBinoculars\space means MEB pictures have been taken. Red marks pores closed on one end, green pores open on both ends. The blue marked membranes have undergone $n$ cycles of ALD depositing.}

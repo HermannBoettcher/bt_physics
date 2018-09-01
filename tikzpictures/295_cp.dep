@@ -1,0 +1,8 @@
+tikzpictures/295_cp.pdf: tikz/graphs/wafer_inhomogeneities/295a_cond_4.txt
+tikzpictures/295_cp.pdf: tikz/graphs/wafer_inhomogeneities/295a_evap_4.txt
+tikzpictures/295_cp.pdf: tikz/graphs/wafer_inhomogeneities/295b_cond_1.txt
+tikzpictures/295_cp.pdf: tikz/graphs/wafer_inhomogeneities/295b_evap_1.txt
+tikzpictures/295_cp.pdf: tikz/graphs/wafer_inhomogeneities/295a_cond_4.txt
+tikzpictures/295_cp.pdf: tikz/graphs/wafer_inhomogeneities/295a_evap_4.txt
+tikzpictures/295_cp.pdf: tikz/graphs/wafer_inhomogeneities/295b_cond_1.txt
+tikzpictures/295_cp.pdf: tikz/graphs/wafer_inhomogeneities/295b_evap_1.txt
