@@ -1,7 +1,7 @@
 \documentclass[../../../thesis.tex]{subfiles}
 
 \begin{document}
-  \begin{figure}[htpb]
+  \begin{figure}[tpb]
 		\centering
     \subfloat[]{
       \tikzsetnextfilename{296b_op_cp}
@@ -23,8 +23,6 @@
             every axis plot,
   					axis y line*=left,
   					line width = 1pt,
-  					%	minor x tick num= ,
-  					%	minor y tick num= ,
   					xmin = \PrelMin, xmax = \PrelMax,
   					ymin = \LfMin, ymax = \LfMax,
   					xlabel = {Relative pressure $P_\mathrm{rel}$},
@@ -49,15 +47,12 @@
   					ymode=log,
   					axis y line*=right,
   					line width = 1pt,
-  					%	minor x tick num= ,
-  					%	minor y tick num= ,
   					xmin = \PrelMin, xmax = \PrelMax,
   					ymin = \TransMin, ymax = \TransMax,
   					ylabel = {Transmission $T$},
-  					ytick = {10,1,1e-1,1e-2,1e-3},
-  					grid,
+  					ytick = {1,1e-1,1e-2,1e-3},
+            ymajorgrids=true,
             legend style={at={(0,0.5)}, legend columns=1, anchor=south west},
-  					%title={Membrane 296b - $\SI{60}{\micro\meter}$}
   					]
   					% Add plots
   					\addplot[mark=none, color=red] table [x=Prel,y=transmission]{tikz/graphs/cp_op_comp/296b_cp_cond_1.txt};
@@ -70,7 +65,7 @@
   					\addlegendentry{$T_\mathrm{evap}^\mathrm{296b'}$}
   				\end{axis}
       \end{tikzpicture}
-      \label{fig:296b_op_cp_comp}
+      \label{fig:296b-op-cp-comp}
     }
     \\
     \subfloat[]{
@@ -121,7 +116,7 @@
 					ymin = \TransMin, ymax = \TransMax,
 					ylabel = {Transmission $T$},
 					ytick = {10,1,1e-1,1e-2,1e-3},
-					grid,
+          ymajorgrids=true,
           legend style={at={(0,0.5)}, legend columns=2, anchor=south west},
 					]
 					% Add plots
@@ -134,9 +129,10 @@
           \addplot[mark=none, color=blue!50] table [x=Prel,y=transmission]{tikz/graphs/cp_op_comp/295b_op_evap_1.txt};
           \addlegendentry{$T_\mathrm{evap}^\mathrm{295b'}$}
 				\end{axis}
-    \end{tikzpicture}
-    \label{fig:295b_op_cp_comp}}
-    \caption{}
+      \end{tikzpicture}
+      \label{fig:295b-op-cp-comp}
+    }
+    \caption{Comparison of the isotherms of membranes with closed pores to those with open pores. \protect\subref{fig:296b-op-cp-comp} shows membranes of wafer 296, while \protect\subref{fig:295b-op-cp-comp} displays those of wafer 295. The increase of size of the hysteresis is clearly observable.}
     \label{fig:op-cp-comp}
   \end{figure}
 \end{document}

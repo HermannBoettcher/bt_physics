@@ -1,0 +1,8 @@
+tikzpictures/295_d_g.pdf: tikz/graphs/295_d_g/295d_cond_2.txt
+tikzpictures/295_d_g.pdf: tikz/graphs/295_d_g/295d_evap_2.txt
+tikzpictures/295_d_g.pdf: tikz/graphs/295_d_g/295g_cond_1.txt
+tikzpictures/295_d_g.pdf: tikz/graphs/295_d_g/295g_evap_1.txt
+tikzpictures/295_d_g.pdf: tikz/graphs/295_d_g/295d_cond_2.txt
+tikzpictures/295_d_g.pdf: tikz/graphs/295_d_g/295d_evap_2.txt
+tikzpictures/295_d_g.pdf: tikz/graphs/295_d_g/295g_cond_1.txt
+tikzpictures/295_d_g.pdf: tikz/graphs/295_d_g/295g_evap_1.txt

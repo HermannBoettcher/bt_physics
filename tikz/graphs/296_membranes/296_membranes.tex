@@ -1,78 +1,13 @@
 \documentclass[../../../thesis.tex]{subfiles}
 
 \begin{document}
-  \begin{figure}[ht]
+  \begin{figure}[htpb]
 		\centering
-    \subfloat[]{
-    \tikzsetnextfilename{296b_op_cp}
-    \begin{tikzpicture}
-        \def\PrelMin{.86}
-				\def\PrelMax{1}
-				\def\TransMin{1e-6}
-				\def\TransMax{1}
-				\def\LfMin{0}
-				\def\LfMax{2}
-        %
-        \begin{axis}[
-          /tikz/line join=bevel,
-          width=0.8*\textwidth,
-          height=0.5*\textwidth,
-          grid,
-					axis y line*=left,
-          legend style={at={(0,0.5)}, legend columns=1, anchor=north west},
-          every axis plot,
-					axis y line*=left,
-					line width = 1pt,
-					%	minor x tick num= ,
-					%	minor y tick num= ,
-					xmin = \PrelMin, xmax = \PrelMax,
-					ymin = \LfMin, ymax = \LfMax,
-					xlabel = {Relative pressure $P_\mathrm{rel}$},
-					ylabel = {Liquid fraction $LF$},
-					ytick = {0,0.25,0.50,0.75,1},
-          ]
-					% Add plots
-					\addplot[mark=none, color=blue] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_op_cp_comparison/296b_cp_cond_1.txt};
-					\addlegendentry{$LF_\mathrm{296b}^\mathrm{ClosedPores}$}
-					\addplot[mark=none, color=red] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_op_cp_comparison/296b_op_cond_1.txt};
-					\addlegendentry{$LF_\mathrm{296b}^\mathrm{OpenPores}$}
-					\addplot[mark=none, color=blue!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_op_cp_comparison/296b_cp_evap_1.txt};
-					\addplot[mark=none, color=red!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_op_cp_comparison/296b_op_evap_1.txt};
-        \end{axis}
-				% transmission
-				\begin{axis}[
-          /tikz/line join=bevel,
-          width=0.8*\textwidth,
-          height=0.5*\textwidth,
-					ymode=log,
-					axis y line*=right,
-					line width = 1pt,
-					%	minor x tick num= ,
-					%	minor y tick num= ,
-					xmin = \PrelMin, xmax = \PrelMax,
-					ymin = \TransMin, ymax = \TransMax,
-					ylabel = {Transmission $T$},
-					ytick = {1,1e-1,1e-2,1e-3},
-          legend style={at={(0,0.5)}, legend columns=1, anchor=south west},
-          ymajorgrids=true,
-					]
-					% Add plots
-					\addplot[mark=none, color=blue] table [x=Prel,y=transmission]{tikz/graphs/296_op_cp_comparison/296b_cp_cond_1.txt};
-					\addlegendentry{$LF_\mathrm{296b}^\mathrm{ClosedPores}$}
-					\addplot[mark=none, color=red] table [x=Prel,y=transmission]{tikz/graphs/296_op_cp_comparison/296b_op_cond_1.txt};
-					\addlegendentry{$LF_\mathrm{296b}^\mathrm{OpenPores}$}
-					\addplot[mark=none, color=blue!50] table [x=Prel,y=transmission]{tikz/graphs/296_op_cp_comparison/296b_cp_evap_1.txt};
-					\addplot[mark=none, color=red!50] table [x=Prel,y=transmission]{tikz/graphs/296_op_cp_comparison/296b_op_evap_1.txt};
-				\end{axis}
-    \end{tikzpicture}
-    \label{fig:296b_op_cp_comp}}
-    \\
-    \subfloat[]{
       \tikzsetnextfilename{296_full_comp}
       \begin{tikzpicture}[
   			spy using outlines={ellipse, magnification=4, connect spies}]
           \def\PrelMin{.86}
-  				\def\PrelMax{1}
+  				\def\PrelMax{.97}
   				\def\TransMin{1e-8}
   				\def\TransMax{10}
   				\def\LfMin{0}
@@ -83,13 +18,10 @@
             width=0.8*\textwidth,
             height=0.5*\textwidth,
             grid,
-  					%axis y line*=left,
-            legend style={at={(0,1)}, legend columns=1, anchor=north west},
+            legend style={at={(0,1)}, legend columns=2, anchor=north west},
             every axis plot,
   					%axis y line*=left,
   					line width = 1pt,
-  					%	minor x tick num= ,
-  					%	minor y tick num= ,
   					xmin = \PrelMin, xmax = \PrelMax,
   					ymin = \LfMin, ymax = \LfMax,
   					xlabel = {Relative pressure $P_\mathrm{rel}$},
@@ -97,29 +29,36 @@
             ]
   					% Add plots
   					\addplot[mark=none, color=red] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296a_cond_2.txt};
-  					\addlegendentry{296a}
-  					\addplot[mark=none, color=magenta] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296b_cp_cond_1.txt};
-  					\addlegendentry{296b cp}
-  					\addplot[mark=none, color=purple] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296c_cond_2.txt};
-  					\addlegendentry{296c}
-  					\addplot[mark=none, color=orange] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296d_cond_2.txt};
-  					\addlegendentry{296d}
-  					\addplot[mark=none, color=blue] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296e_cond_2.txt};
-  					\addlegendentry{296e}
-  					\addplot[mark=none, color=green] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296f_cond_2.txt};
-  					\addlegendentry{296f}
-  					\addplot[mark=none, color=brown] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296b_op_cond_1.txt};
-  					\addlegendentry{296b op}
+  					\addlegendentry{$LF_\mathrm{cond}^\mathrm{296a}$}
   					\addplot[mark=none, color=red!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296a_evap_2.txt};
+  					\addlegendentry{$LF_\mathrm{evap}^\mathrm{296a}$}
+  					\addplot[mark=none, color=magenta] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296b_cp_cond_1.txt};
+  					\addlegendentry{$LF_\mathrm{cond}^\mathrm{296b'}$}
   					\addplot[mark=none, color=magenta!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296b_cp_evap_1.txt};
+  					\addlegendentry{$LF_\mathrm{evap}^\mathrm{296b'}$}
+  					\addplot[mark=none, color=purple] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296c_cond_2.txt};
+  					\addlegendentry{$LF_\mathrm{cond}^\mathrm{296c'}$}
   					\addplot[mark=none, color=purple!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296c_evap_2.txt};
+  					\addlegendentry{$LF_\mathrm{evap}^\mathrm{296c'}$}
+  					\addplot[mark=none, color=orange] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296d_cond_2.txt};
+  					\addlegendentry{$LF_\mathrm{cond}^\mathrm{296d'}$}
   					\addplot[mark=none, color=orange!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296d_evap_2.txt};
+  					\addlegendentry{$LF_\mathrm{evap}^\mathrm{296d'}$}
+  					\addplot[mark=none, color=blue] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296e_cond_2.txt};
+  					\addlegendentry{$LF_\mathrm{cond}^\mathrm{296e'}$}
   					\addplot[mark=none, color=blue!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296e_evap_2.txt};
+  					\addlegendentry{$LF_\mathrm{evap}^\mathrm{296e'}$}
+  					\addplot[mark=none, color=green] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296f_cond_2.txt};
+  					\addlegendentry{$LF_\mathrm{cond}^\mathrm{296f'}$}
   					\addplot[mark=none, color=green!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296f_evap_2.txt};
+  					\addlegendentry{$LF_\mathrm{evap}^\mathrm{296f'}$}
+  					\addplot[mark=none, color=brown] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296b_op_cond_1.txt};
+  					\addlegendentry{$LF_\mathrm{cond}^\mathrm{296b'}$}
   					\addplot[mark=none, color=brown!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_membranes/296b_op_evap_1.txt};
+  					\addlegendentry{$LF_\mathrm{evap}^\mathrm{296b'}$}
           \end{axis}
       \end{tikzpicture}
-      \label{fig:full-comp-w296}}
-    \caption{To start with, \protect\subref{fig:296_op_cp_comp} shows a comparison of membrane 296b before and after the \textit{barrier layer} dissolution process. Clearly visible is the much larger hysteresis for the open pores. These isotherms, along with the rest of the measured membranes of wafer 296 are plotted in \protect\subref{fig:full-comp-296}. The comparison of the isotherms yields that, as expected, only membrane 296b op contains pores open on both sides. For more detailed explanations please read \cref{subsec:296-open-vs-close}.}
+    \caption{Full comparison of the closed pore membranes of wafer 296 with the open pore membrane 296b'. For interpretation please refer to \cref{sec:comparison-cp-op}.}
+    \label{fig:full-comp-w296}
   \end{figure}
 \end{document}

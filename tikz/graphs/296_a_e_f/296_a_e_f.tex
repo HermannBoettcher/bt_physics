@@ -1,13 +1,12 @@
 \documentclass[../../../thesis.tex]{subfiles}
 
 \begin{document}
-  \begin{figure}[ht]
+  \begin{figure}[tpb]
 		\centering
-    \tikzsetnextfilename{296_a_e_f}
-    \begin{tikzpicture}[
-			spy using outlines={ellipse, magnification=4, connect spies}]
+    \tikzsetnextfilename{296_floating}
+    \begin{tikzpicture}
         \def\PrelMin{.86}
-				\def\PrelMax{1}
+				\def\PrelMax{.95}
 				\def\TransMin{1e-7}
 				\def\TransMax{1}
 				\def\LfMin{0}
@@ -19,12 +18,9 @@
           height=0.5*\textwidth,
           grid,
 					axis y line*=left,
-          legend style={at={(0,.5)}, legend columns=1, anchor=north west},
+          legend style={at={(0,.5)}, legend columns=2, anchor=north west},
           every axis plot,
-					%axis y line*=left,
 					line width = 1pt,
-					%	minor x tick num= ,
-					%	minor y tick num= ,
 					xmin = \PrelMin, xmax = \PrelMax,
 					ymin = \LfMin, ymax = \LfMax,
 					xlabel = {Relative pressure $P_\mathrm{rel}$},
@@ -33,17 +29,17 @@
           ]
 					% Add plots
 					\addplot[mark=none, color=red] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_a_e_f/296a_cond_2.txt};
-					\addlegendentry{$LF_{t_\mathrm{fl}=\SI{0}{\minute}}^\mathrm{cond}$}
-					\addplot[mark=none, color=blue] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_a_e_f/296e_cond_2.txt};
-					\addlegendentry{$LF_{t_\mathrm{fl}=\SI{13}{\minute}}^\mathrm{cond}$}
-					\addplot[mark=none, color=green] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_a_e_f/296f_cond_2.txt};
-					\addlegendentry{$LF_{t_\mathrm{fl}=\SI{26}{\minute}}^\mathrm{cond}$}
+					\addlegendentry{$LF_\mathrm{cond}^{t_\mathrm{fl}=\SI{0}{\minute}}$}
 					\addplot[mark=none, color=red!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_a_e_f/296a_evap_2.txt};
-					%\addlegendentry{$LF_{t_\mathrm{fl}=\SI{0}{\minute}}^\mathrm{evap}$}
+					\addlegendentry{$LF_\mathrm{evap}^{t_\mathrm{fl}=\SI{0}{\minute}}$}
+					\addplot[mark=none, color=blue] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_a_e_f/296e_cond_2.txt};
+					\addlegendentry{$LF_\mathrm{cond}^{t_\mathrm{fl}=\SI{13}{\minute}}$}
 					\addplot[mark=none, color=blue!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_a_e_f/296e_evap_2.txt};
-					%\addlegendentry{$LF_{t_\mathrm{fl}=\SI{13}{\minute}}^\mathrm{evap}$}
+					\addlegendentry{$LF_\mathrm{evap}^{t_\mathrm{fl}=\SI{13}{\minute}}$}
+					\addplot[mark=none, color=green] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_a_e_f/296f_cond_2.txt};
+					\addlegendentry{$LF_\mathrm{cond}^{t_\mathrm{fl}=\SI{26}{\minute}}$}
 					\addplot[mark=none, color=green!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/296_a_e_f/296f_evap_2.txt};
-					%\addlegendentry{$LF_{t_\mathrm{fl}=\SI{26}{\minute}}^\mathrm{evap}$}
+					\addlegendentry{$LF_\mathrm{evap}^{t_\mathrm{fl}=\SI{26}{\minute}}$}
         \end{axis}
         \begin{axis}[
           /tikz/line join=bevel,
@@ -51,35 +47,31 @@
           height=0.5*\textwidth,
 					ymode=log,
           ymajorgrids=true,
-					%axis y line*=left,
-          legend style={at={(0,.5)}, legend columns=1, anchor=south west},
+          legend style={at={(0,.5)}, legend columns=2, anchor=south west},
           every axis plot,
 					axis y line*=right,
 					line width = 1pt,
-					%	minor x tick num= ,
-					%	minor y tick num= ,
 					xmin = \PrelMin, xmax = \PrelMax,
 					ymin = \TransMin, ymax = \TransMax,
 					ylabel = {Transmission $T$},
 					ytick = {1,1e-1,1e-2,1e-3},
-          xtick = {},
           ]
 					% Add plots
 					\addplot[mark=none, color=red] table [x=Prel,y=transmission]{tikz/graphs/296_a_e_f/296a_cond_2.txt};
-					\addlegendentry{$T_{t_\mathrm{fl}=\SI{0}{\minute}}^\mathrm{cond}$}
-					\addplot[mark=none, color=blue] table [x=Prel,y=transmission]{tikz/graphs/296_a_e_f/296e_cond_2.txt};
-					\addlegendentry{$T_{t_\mathrm{fl}=\SI{13}{\minute}}^\mathrm{cond}$}
-					\addplot[mark=none, color=green] table [x=Prel,y=transmission]{tikz/graphs/296_a_e_f/296f_cond_2.txt};
-					\addlegendentry{$T_{t_\mathrm{fl}=\SI{26}{\minute}}^\mathrm{cond}$}
+					\addlegendentry{$T_\mathrm{cond}^{t_\mathrm{fl}=\SI{0}{\minute}}$}
 					\addplot[mark=none, color=red!50] table [x=Prel,y=transmission]{tikz/graphs/296_a_e_f/296a_evap_2.txt};
-					%\addlegendentry{$T_{t_\mathrm{fl}=\SI{0}{\minute}}^\mathrm{evap}$}
-					\addplot[mark=none, color=blue!50] table [x=Prel,y=transmission]{tikz/graphs/296_a_e_f/296a_evap_2.txt};
-					%\addlegendentry{$T_{t_\mathrm{fl}=\SI{13}{\minute}}^\mathrm{evap}$}
+					\addlegendentry{$T_\mathrm{evap}^{t_\mathrm{fl}=\SI{0}{\minute}}$}
+					\addplot[mark=none, color=blue] table [x=Prel,y=transmission]{tikz/graphs/296_a_e_f/296e_cond_2.txt};
+					\addlegendentry{$T_\mathrm{cond}^{t_\mathrm{fl}=\SI{13}{\minute}}$}
+					\addplot[mark=none, color=blue!50] table [x=Prel,y=transmission]{tikz/graphs/296_a_e_f/296e_evap_2.txt};
+					\addlegendentry{$T_\mathrm{evap}^{t_\mathrm{fl}=\SI{13}{\minute}}$}
+					\addplot[mark=none, color=green] table [x=Prel,y=transmission]{tikz/graphs/296_a_e_f/296f_cond_2.txt};
+					\addlegendentry{$T_\mathrm{cond}^{t_\mathrm{fl}=\SI{26}{\minute}}$}
 					\addplot[mark=none, color=green!50] table [x=Prel,y=transmission]{tikz/graphs/296_a_e_f/296f_evap_2.txt};
-					%\addlegendentry{$T_{t_\mathrm{fl}=\SI{26}{\minute}}^\mathrm{evap}$}
+					\addlegendentry{$T_\mathrm{evap}^{t_\mathrm{fl}=\SI{26}{\minute}}$}
         \end{axis}
     \end{tikzpicture}
+    \caption{Comparison of the isotherms measured for the membranes 296a, 296e' and 296f'. While the pore diameters are marginally smaller for the membranes 296e' and 296f' than they are for 296a, the overall picture is equivalent. It makes for closed pores (or constricted open pores as explained in \cref{sec:comparison-cp-op}) with the same funnelling aspect.}
     \label{fig:w296-floating-experiment}
-    \caption{Comparison of the isotherms measured for the membranes 296a, 296e and 296f. While the pore diameters are marginally smaller for the membranes 296e and 296f than they are for 296a, the overall picture is equivalent. It makes for closed pores with the same funnelling aspect.}
   \end{figure}
 \end{document}
