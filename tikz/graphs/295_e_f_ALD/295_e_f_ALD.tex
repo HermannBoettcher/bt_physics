@@ -1,0 +1,66 @@
+\documentclass[../../../thesis.tex]{subfiles}
+
+\begin{document}
+  \begin{figure}[htpb]
+		\centering
+      \tikzsetnextfilename{295_e_f_ALD}
+      \begin{tikzpicture}
+          \def\PrelMin{.86}
+  				\def\PrelMax{.97}
+  				\def\TransMin{1e-8}
+  				\def\TransMax{10}
+  				\def\LfMin{0}
+  				\def\LfMax{1}
+          %
+          \begin{axis}[
+            /tikz/line join=bevel,
+            width=0.8*\textwidth,
+            height=0.5*\textwidth,
+            grid,
+            legend style={at={(0,1)}, legend columns=2, anchor=north west},
+            every axis plot,
+  					%axis y line*=left,
+  					line width = 1pt,
+  					xmin = \PrelMin, xmax = \PrelMax,
+  					ymin = \LfMin, ymax = \LfMax,
+  					xlabel = {Relative pressure $P_\mathrm{rel}$},
+  					ylabel = {Liquid fraction $LF$},
+            ]
+  					% Add plots
+  					\addplot[mark=none, color=red] table [x=Prel,y=liquid_fraction]{tikz/graphs/295_e_f_ALD/295e200ALD_cond_1.txt};
+  					\addlegendentry{$LF_\mathrm{cond}^\mathrm{295e'''}$}
+  					\addplot[mark=none, color=red!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/295_e_f_ALD/295e200ALD_evap_1.txt};
+  					\addlegendentry{$LF_\mathrm{evap}^\mathrm{295e'''}$}
+  					\addplot[mark=none, color=magenta] table [x=Prel,y=liquid_fraction]{tikz/graphs/295_e_f_ALD/295f200ALD_cond_1.txt};
+  					\addlegendentry{$LF_\mathrm{cond}^\mathrm{295f''}$}
+  					\addplot[mark=none, color=magenta!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/295_e_f_ALD/295f200ALD_evap_1.txt};
+  					\addlegendentry{$LF_\mathrm{evap}^\mathrm{295f''}$}
+          \end{axis}
+          \begin{axis}[
+            /tikz/line join=bevel,
+            width=0.8*\textwidth,
+            height=0.5*\textwidth,
+            legend style={at={(0,1)}, legend columns=2, anchor=north west},
+            every axis plot,
+  					axis y line*=right,
+  					line width = 1pt,
+  					xmin = \PrelMin, xmax = \PrelMax,
+  					ymin = \LfMin, ymax = \LfMax,
+  					ylabel = {Transmission $T$},
+            ymajorgrids=true,
+            ]
+  					% Add plots
+  					\addplot[mark=none, color=red] table [x=Prel,y=transmission]{tikz/graphs/295_e_f_ALD/295e200ALD_cond_1.txt};
+  					\addlegendentry{$T_\mathrm{cond}^\mathrm{295e'''}$}
+  					\addplot[mark=none, color=red!50] table [x=Prel,y=transmission]{tikz/graphs/295_e_f_ALD/295e200ALD_evap_1.txt};
+  					\addlegendentry{$T_\mathrm{evap}^\mathrm{295e'''}$}
+  					\addplot[mark=none, color=magenta] table [x=Prel,y=transmission]{tikz/graphs/295_e_f_ALD/295f200ALD_cond_1.txt};
+  					\addlegendentry{$T_\mathrm{cond}^\mathrm{295f''}$}
+  					\addplot[mark=none, color=magenta!50] table [x=Prel,y=transmission]{tikz/graphs/295_e_f_ALD/295f200ALD_evap_1.txt};
+  					\addlegendentry{$T_\mathrm{evap}^\mathrm{295f''}$}
+          \end{axis}
+      \end{tikzpicture}
+    \caption{Full comparison of the closed pore membranes of wafer 296 with the open pore membrane 296b'. For interpretation please refer to \cref{sec:comparison-cp-op}.}
+    \label{fig:295-e-f-ald}
+  \end{figure}
+\end{document}

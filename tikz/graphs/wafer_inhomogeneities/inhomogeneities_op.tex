@@ -23,8 +23,6 @@
             every axis plot,
   					axis y line*=left,
   					line width = 1pt,
-  					%	minor x tick num= ,
-  					%	minor y tick num= ,
   					xmin = \PrelMin, xmax = \PrelMax,
   					ymin = \LfMin, ymax = \LfMax,
   					xlabel = {Relative pressure $P_\mathrm{rel}$},
@@ -49,16 +47,13 @@
   					ymode=log,
   					axis y line*=right,
   					line width = 1pt,
-  					%	minor x tick num= ,
-  					%	minor y tick num= ,
   					xmin = \PrelMin, xmax = \PrelMax,
   					ymin = \TransMin, ymax = \TransMax,
   					ylabel = {Transmission $T$},
   					xtick = {1e-1,1e-2,1e-3},
   					ytick = {10,1,1e-1,1e-2,1e-3},
-  					grid,
+            ymajorgrids=true,
             legend style={at={(0,0.5)}, legend columns=2, anchor=south west},
-  					%title={Membrane 296b - $\SI{60}{\micro\meter}$}
   					]
   					% Add plots
   					\addplot[mark=none, color=blue] table [x=Prel,y=transmission]{tikz/graphs/wafer_inhomogeneities/292c_cond_3.txt};

@@ -1,0 +1,162 @@
+\documentclass[../../../thesis.tex]{subfiles}
+
+\begin{document}
+  \begin{figure}[tpb]
+		\centering
+    \subfloat[]{
+      \tikzsetnextfilename{295e_ALD_p}
+      \begin{tikzpicture}
+          \def\PrelMin{.65}
+  				\def\PrelMax{.98}
+  				\def\TransMin{1e-7}
+  				\def\TransMax{1}
+  				\def\LfMin{0}
+  				\def\LfMax{2}
+          %
+          \begin{axis}[
+            /tikz/line join=bevel,
+            width=0.8\textwidth,
+            height=0.5*\textwidth,
+            grid,
+  					axis y line*=left,
+            legend style={at={(0,0.5)}, legend columns=2, anchor=north west},
+            every axis plot,
+  					axis y line*=left,
+  					line width = 1pt,
+  					xmin = \PrelMin, xmax = \PrelMax,
+  					ymin = \LfMin, ymax = \LfMax,
+  					xlabel = {Relative pressure $P_\mathrm{rel}$},
+  					ylabel = {Liquid fraction $LF$},
+  					ytick = {0,0.25,0.50,0.75,1},
+            ]
+  					% Add plots
+  					\addplot[mark=none, color=red] table [x=Prel,y=liquid_fraction]{tikz/graphs/295e_ALD/295e_cond_1.txt};
+  					\addlegendentry{$LF_\mathrm{cond}^\mathrm{295e'}$}
+  					\addplot[mark=none, color=red!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/295e_ALD/295e_evap_1.txt};
+  					\addlegendentry{$LF_\mathrm{evap}^\mathrm{295e'}$}
+  					\addplot[mark=none, color=blue] table [x=Prel,y=liquid_fraction]{tikz/graphs/295e_ALD/295e100ALD_cond_1.txt};
+  					\addlegendentry{$LF_\mathrm{cond}^\mathrm{295e''}$}
+  					\addplot[mark=none, color=blue!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/295e_ALD/295e100ALD_evap_1.txt};
+  					\addlegendentry{$LF_\mathrm{evap}^\mathrm{295e''}$}
+  					\addplot[mark=none, color=green] table [x=Prel,y=liquid_fraction]{tikz/graphs/295e_ALD/295e200ALD_cond_1.txt};
+  					\addlegendentry{$LF_\mathrm{cond}^\mathrm{295e'''}$}
+  					\addplot[mark=none, color=green!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/295e_ALD/295e200ALD_evap_1.txt};
+  					\addlegendentry{$LF_\mathrm{evap}^\mathrm{295e'''}$}
+          \end{axis}
+  				% transmission
+  				\begin{axis}[
+            /tikz/line join=bevel,
+            width=0.8*\textwidth,
+            height=0.5*\textwidth,
+  					ymode=log,
+  					axis y line*=right,
+  					line width = 1pt,
+  					xmin = \PrelMin, xmax = \PrelMax,
+  					ymin = \TransMin, ymax = \TransMax,
+  					ylabel = {Transmission $T$},
+  					ytick = {10,1,1e-1,1e-2,1e-3},
+            ymajorgrids=true,
+            legend style={at={(0,0.5)}, legend columns=2, anchor=south west},
+  					]
+  					% Add plots
+  					\addplot[mark=none, color=red] table [x=Prel,y=transmission]{tikz/graphs/295e_ALD/295e_cond_1.txt};
+  					\addlegendentry{$T_\mathrm{cond}^\mathrm{295e'}$}
+  					\addplot[mark=none, color=red!50] table [x=Prel,y=transmission]{tikz/graphs/295e_ALD/295e_evap_1.txt};
+  					\addlegendentry{$T_\mathrm{evap}^\mathrm{295e'}$}
+  					\addplot[mark=none, color=blue] table [x=Prel,y=transmission]{tikz/graphs/295e_ALD/295e100ALD_cond_1.txt};
+  					\addlegendentry{$T_\mathrm{cond}^\mathrm{295e''}$}
+  					\addplot[mark=none, color=blue!50] table [x=Prel,y=transmission]{tikz/graphs/295e_ALD/295e100ALD_evap_1.txt};
+  					\addlegendentry{$T_\mathrm{evap}^\mathrm{295e''}$}
+  					\addplot[mark=none, color=green] table [x=Prel,y=transmission]{tikz/graphs/295e_ALD/295e200ALD_cond_1.txt};
+  					\addlegendentry{$T_\mathrm{cond}^\mathrm{295e'''}$}
+  					\addplot[mark=none, color=green!50] table [x=Prel,y=transmission]{tikz/graphs/295e_ALD/295e200ALD_evap_1.txt};
+  					\addlegendentry{$T_\mathrm{evap}^\mathrm{295e'''}$}
+  				\end{axis}
+      \end{tikzpicture}
+      \label{fig:295e-ald}
+    }
+    \\
+    \subfloat[]{
+      \tikzsetnextfilename{295e_ALD_kelvin}
+      \begin{tikzpicture}
+          \def\rKelvinMin{10}
+  				\def\rKelvinMax{70}
+  				\def\TransMin{1e-7}
+  				\def\TransMax{1}
+  				\def\LfMin{0}
+  				\def\LfMax{2}
+          %
+          \begin{axis}[
+            /tikz/line join=bevel,
+            width=0.8\textwidth,
+            height=0.5*\textwidth,
+            grid,
+  					axis y line*=left,
+            legend style={at={(0,0.5)}, legend columns=2, anchor=north west},
+            every axis plot,
+  					axis y line*=left,
+  					line width = 1pt,
+  					xmin = \rKelvinMin, xmax = \rKelvinMax,
+  					ymin = \LfMin, ymax = \LfMax,
+  					xlabel = {Pore diameter $d_\mathrm{pore}^\mathrm{Kelvin}$ in $\si{\nano\meter}$},
+  					ylabel = {Liquid fraction $LF$},
+  					ytick = {0,0.25,0.50,0.75,1},
+            ]
+  					% Add plots
+  					\addplot[mark=none, color=red] table [x=r_kelvin,y=liquid_fraction]{tikz/graphs/295e_ALD/295e_cond_1.txt};
+  					\addlegendentry{$LF_\mathrm{cond}^\mathrm{295e'}$}
+  					\addplot[mark=none, color=red!50] table [x=r_kelvin,y=liquid_fraction]{tikz/graphs/295e_ALD/295e_evap_1.txt};
+  					\addlegendentry{$LF_\mathrm{evap}^\mathrm{295e'}$}
+  					\addplot[mark=none, color=blue] table [x=r_kelvin,y=liquid_fraction]{tikz/graphs/295e_ALD/295e100ALD_cond_1.txt};
+  					\addlegendentry{$LF_\mathrm{cond}^\mathrm{295e''}$}
+  					\addplot[mark=none, color=blue!50] table [x=r_kelvin,y=liquid_fraction]{tikz/graphs/295e_ALD/295e100ALD_evap_1.txt};
+  					\addlegendentry{$LF_\mathrm{evap}^\mathrm{295e''}$}
+  					%\addplot[mark=none, color=green] table [x=r_kelvin,y=liquid_fraction]{tikz/graphs/295e_ALD/295e200ALD_cond_1.txt};
+  					%\addlegendentry{$LF_\mathrm{cond}^\mathrm{295e'''}$}
+  					%\addplot[mark=none, color=green!50] table [x=r_kelvin,y=liquid_fraction]{tikz/graphs/295e_ALD/295e200ALD_cond_1.txt};
+  					%\addlegendentry{$LF_\mathrm{evap}^\mathrm{295e'''}$}
+          \end{axis}
+  				% transmission
+  				\begin{axis}[
+            /tikz/line join=bevel,
+            width=0.8*\textwidth,
+            height=0.5*\textwidth,
+  					ymode=log,
+  					axis y line*=right,
+  					line width = 1pt,
+  					xmin = \rKelvinMin, xmax = \rKelvinMax,
+  					ymin = \TransMin, ymax = \TransMax,
+  					ylabel = {Transmission $T$},
+  					ytick = {10,1,1e-1,1e-2,1e-3},
+            ymajorgrids=true,
+            legend style={at={(0,0.5)}, legend columns=2, anchor=south west},
+  					]
+  					% Add plots
+  					\addplot[mark=none, color=red] table [x=r_kelvin,y=transmission]{tikz/graphs/295e_ALD/295e_cond_1.txt};
+  					\addlegendentry{$T_\mathrm{cond}^\mathrm{295e'}$}
+  					\addplot[mark=none, color=red!50] table [x=r_kelvin,y=transmission]{tikz/graphs/295e_ALD/295e_evap_1.txt};
+  					\addlegendentry{$T_\mathrm{evap}^\mathrm{295e'}$}
+  					\addplot[mark=none, color=blue] table [x=r_kelvin,y=transmission]{tikz/graphs/295e_ALD/295e100ALD_cond_1.txt};
+  					\addlegendentry{$T_\mathrm{cond}^\mathrm{295e''}$}
+  					\addplot[mark=none, color=blue!50] table [x=r_kelvin,y=transmission]{tikz/graphs/295e_ALD/295e100ALD_evap_1.txt};
+  					\addlegendentry{$T_\mathrm{evap}^\mathrm{295e''}$}
+  					%\addplot[mark=none, color=green] table [x=r_kelvin,y=transmission]{tikz/graphs/295e_ALD/295e200ALD_cond_1.txt};
+  					%\addlegendentry{$T_\mathrm{cond}^\mathrm{295e'''}$}
+  					%\addplot[mark=none, color=green!50] table [x=r_kelvin,y=transmission]{tikz/graphs/295e_ALD/295e200ALD_cond_1.txt};
+  					%\addlegendentry{$T_\mathrm{evap}^\mathrm{295e'''}$}
+            \addplot[color=orange, mark=none, dashed]
+            coordinates {
+            (67,0)
+            (67,2)};
+            \addplot[color=magenta, mark=none, dashed]
+            coordinates {
+            (47,0)
+            (47,2)};
+  				\end{axis}
+      \end{tikzpicture}
+      \label{fig:295e-ald-kelvin}
+    }
+    \caption{Comparison of membrane 295e' in initial open pore state and after 100 and 200 cycles of ALD over relative pressure axis in \protect\subref{fig:295e-ald}. While the shape of the isotherm does not cange for the first 100 cycles, the result after the second 100 cycles is drastic. \protect\subref{fig:295e-ald-kelvin} shows the comparison of intial state membrane 295e' and 100 cycles of ALD membrane 295e'' on a \textsc{Kelvin} diameter axis. For analysis please read \cref{sec:ald-experiments}.}
+    \label{fig:295e-ald}
+  \end{figure}
+\end{document}

@@ -1,0 +1,170 @@
+\documentclass[../../../thesis.tex]{subfiles}
+
+\begin{document}
+  \begin{figure}[htpb]
+		\centering
+    \subfloat[]{
+    \tikzsetnextfilename{295_296_funnelling_cp}
+      \begin{tikzpicture}
+          \def\rKelvinMin{30}
+  				\def\rKelvinMax{80}
+  				\def\TransMin{1e-4}
+  				\def\TransMax{1}
+  				\def\LfMin{0}
+  				\def\LfMax{2}
+          %
+          \begin{axis}[
+            /tikz/line join=bevel,
+            width=0.8\textwidth,
+            height=0.5*\textwidth,
+            grid,
+  					axis y line*=left,
+            legend style={at={(0,0.5)}, legend columns=2, anchor=north west},
+            every axis plot,
+  					axis y line*=left,
+  					line width = 1pt,
+  					xmin = \rKelvinMin, xmax = \rKelvinMax,
+  					ymin = \LfMin, ymax = \LfMax,
+  					xlabel = {Pore diameter $d_\mathrm{pore}^\mathrm{Kelvin}$ in $\si{\nano\meter}$},
+  					ylabel = {Liquid fraction $LF$},
+  					ytick = {0,0.25,0.50,0.75,1},
+            ]
+  					% Add plots
+  					\addplot[mark=none, color=red] table [x=r_kelvin,y=liquid_fraction]{tikz/graphs/295_296_funnelling/295a_cond_4.txt};
+  					\addlegendentry{$LF_\mathrm{cond}^\mathrm{295a}$}
+  					\addplot[mark=none, color=red!50] table [x=r_kelvin,y=liquid_fraction]{tikz/graphs/295_296_funnelling/295a_evap_4.txt};
+  					\addlegendentry{$LF_\mathrm{evap}^\mathrm{295a}$}
+  					\addplot[mark=none, color=blue] table [x=r_kelvin,y=liquid_fraction]{tikz/graphs/295_296_funnelling/296b_cp_cond_1.txt};
+  					\addlegendentry{$LF_\mathrm{cond}^\mathrm{296b}$}
+  					\addplot[mark=none, color=blue!50] table [x=r_kelvin,y=liquid_fraction]{tikz/graphs/295_296_funnelling/296b_cp_evap_1.txt};
+  					\addlegendentry{$LF_\mathrm{evap}^\mathrm{296b}$}
+            \addplot[color=magenta, mark=none, dashed]
+            coordinates {
+            (37,0)
+            (37,2)};
+            \addplot[color=magenta, mark=none, dashed]
+            coordinates {
+            (54,0)
+            (54,2)};
+            \addplot[color=orange, mark=none, dashed]
+            coordinates {
+            (48,0)
+            (48,2)};
+            \addplot[color=orange, mark=none, dashed]
+            coordinates {
+            (63,0)
+            (63,2)};
+          \end{axis}
+  				% transmission
+  				\begin{axis}[
+            /tikz/line join=bevel,
+            width=0.8*\textwidth,
+            height=0.5*\textwidth,
+  					ymode=log,
+  					axis y line*=right,
+  					line width = 1pt,
+  					xmin = \rKelvinMin, xmax = \rKelvinMax,
+  					ymin = \TransMin, ymax = \TransMax,
+  					ylabel = {Transmission $T$},
+  					ytick = {10,1,1e-1,1e-2},
+            ymajorgrids=true,
+            legend style={at={(0,0.5)}, legend columns=2, anchor=south west},
+  					]
+  					% Add plots
+  					\addplot[mark=none, color=red] table [x=r_kelvin,y=transmission]{tikz/graphs/295_296_funnelling/295a_cond_4.txt};
+  					\addlegendentry{$T_\mathrm{cond}^\mathrm{295a}$}
+  					\addplot[mark=none, color=red!50] table [x=r_kelvin,y=transmission]{tikz/graphs/295_296_funnelling/295a_evap_4.txt};
+  					\addlegendentry{$T_\mathrm{evap}^\mathrm{295a}$}
+  					\addplot[mark=none, color=blue] table [x=r_kelvin,y=transmission]{tikz/graphs/295_296_funnelling/296b_cp_cond_1.txt};
+  					\addlegendentry{$T_\mathrm{cond}^\mathrm{296b}$}
+  					\addplot[mark=none, color=blue!50] table [x=r_kelvin,y=transmission]{tikz/graphs/295_296_funnelling/296b_cp_evap_1.txt};
+  					\addlegendentry{$T_\mathrm{evap}^\mathrm{296b}$}
+  				\end{axis}
+      \end{tikzpicture}
+      \label{fig:295-296-funnelling-op}
+    }
+    \\
+    \subfloat[]{
+    \tikzsetnextfilename{295_296_funnelling_op}
+      \begin{tikzpicture}
+          \def\rKelvinMin{25}
+  				\def\rKelvinMax{70}
+  				\def\TransMin{1e-8}
+  				\def\TransMax{1}
+  				\def\LfMin{0}
+  				\def\LfMax{2}
+          %
+          \begin{axis}[
+            /tikz/line join=bevel,
+            width=0.8*\textwidth,
+            height=0.5*\textwidth,
+            grid,
+  					axis y line*=left,
+            legend style={at={(0,0.5)}, legend columns=2, anchor=north west},
+            every axis plot,
+  					axis y line*=left,
+  					line width = 1pt,
+  					xmin = \rKelvinMin, xmax = \rKelvinMax,
+  					ymin = \LfMin, ymax = \LfMax,
+  					xlabel = {Pore diameter $d_\mathrm{pore}^\mathrm{Kelvin}$},
+  					ylabel = {Liquid fraction $LF$},
+  					ytick = {0,0.25,0.50,0.75,1},
+            ]
+  					% Add plots
+  					\addplot[mark=none, color=red] table [x=r_kelvin,y=liquid_fraction]{tikz/graphs/295_296_funnelling/295g_cond_1.txt};
+  					\addlegendentry{$LF_\mathrm{cond}^\mathrm{295g'}$}
+  					\addplot[mark=none, color=red!50] table [x=r_kelvin,y=liquid_fraction]{tikz/graphs/295_296_funnelling/295g_evap_1.txt};
+  					\addlegendentry{$LF_\mathrm{evap}^\mathrm{295g'}$}
+  					\addplot[mark=none, color=blue] table [x=r_kelvin,y=liquid_fraction]{tikz/graphs/295_296_funnelling/296b_op_cond_1.txt};
+  					\addlegendentry{$LF_\mathrm{cond}^\mathrm{296b'}$}
+  					\addplot[mark=none, color=blue!50] table [x=r_kelvin,y=liquid_fraction]{tikz/graphs/295_296_funnelling/296b_op_evap_1.txt};
+  					\addlegendentry{$LF_\mathrm{evap}^\mathrm{296b'}$}
+            \addplot[color=magenta, mark=none, dashed]
+            coordinates {
+            (46,0)
+            (46,2)};
+            \addplot[color=magenta, mark=none, dashed]
+            coordinates {
+            (59,0)
+            (59,2)};
+            \addplot[color=orange, mark=none, dashed]
+            coordinates {
+            (56,0)
+            (56,2)};
+            \addplot[color=orange, mark=none, dashed]
+            coordinates {
+            (65,0)
+            (65,2)};
+          \end{axis}
+  				% transmission
+  				\begin{axis}[
+            /tikz/line join=bevel,
+            width=0.8*\textwidth,
+            height=0.5*\textwidth,
+  					ymode=log,
+  					axis y line*=right,
+  					line width = 1pt,
+  					xmin = \rKelvinMin, xmax = \rKelvinMax,
+  					ymin = \TransMin, ymax = \TransMax,
+  					ylabel = {Transmission $T$},
+  					ytick = {10,1,1e-1,1e-2,1e-3},
+            ymajorgrids=true,
+            legend style={at={(0,0.5)}, legend columns=2, anchor=south west},
+  					]
+  					% Add plots
+  					\addplot[mark=none, color=red] table [x=r_kelvin,y=transmission]{tikz/graphs/295_296_funnelling/295g_cond_1.txt};
+  					\addlegendentry{$T_\mathrm{cond}^\mathrm{295g'}$}
+  					\addplot[mark=none, color=red!50] table [x=r_kelvin,y=transmission]{tikz/graphs/295_296_funnelling/295g_evap_1.txt};
+  					\addlegendentry{$T_\mathrm{evap}^\mathrm{295g'}$}
+  					\addplot[mark=none, color=blue] table [x=r_kelvin,y=transmission]{tikz/graphs/295_296_funnelling/296b_op_cond_1.txt};
+  					\addlegendentry{$T_\mathrm{cond}^\mathrm{296b'}$}
+  					\addplot[mark=none, color=blue!50] table [x=r_kelvin,y=transmission]{tikz/graphs/295_296_funnelling/296b_op_evap_1.txt};
+  					\addlegendentry{$T_\mathrm{evap}^\mathrm{296b'}$}
+  				\end{axis}
+      \end{tikzpicture}
+      \label{fig:295-296-funnelling-op}
+    }
+    \caption{}
+    \label{fig:205-296-funnelling}
+  \end{figure}
+\end{document}

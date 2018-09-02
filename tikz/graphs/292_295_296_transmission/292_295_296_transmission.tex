@@ -21,8 +21,6 @@
   					ymode=log,
   					%axis y line*=right,
   					line width = 1pt,
-  					%	minor x tick num= ,
-  					%	minor y tick num= ,
   					xmin = \PrelMin, xmax = \PrelMax,
   					ymin = \TransMin, ymax = \TransMax,
   					ylabel = {Transmission $T$},
@@ -30,16 +28,15 @@
   					ytick = {10,1,1e-1,1e-2,1e-3,1e-4},
   					grid,
             legend style={at={(0,0)}, legend columns=1, anchor=south west},
-  					%title={Membrane 296b - $\SI{60}{\micro\meter}$}
   					]
   					% Add plots
   					\addplot[mark=none, color=red] table [x=Prel,y=transmission]{tikz/graphs/292_295_296_transmission/292d_cond_1.txt};
-  					\addlegendentry{$T_\mathrm{cond}$}
+  					\addlegendentry{$T_\mathrm{cond}^\mathrm{292d}$}
   					\addplot[mark=none, color=red!50] table [x=Prel,y=transmission]{tikz/graphs/292_295_296_transmission/292d_evap_1.txt};
-  					\addlegendentry{$T_\mathrm{evap}$}
+  					\addlegendentry{$T_\mathrm{evap}^\mathrm{292d}$}
   				\end{axis}
         \end{tikzpicture}
-        \label{subfig:292_trans}}
+        \label{fig:292-trans}}
     \hfill
     \subfloat[]{
     \tikzsetnextfilename{296_transmission}
@@ -72,12 +69,12 @@
   					]
   					% Add plots
   					\addplot[mark=none, color=red] table [x=Prel,y=transmission]{tikz/graphs/292_295_296_transmission/296b_op_cond_1.txt};
-  					\addlegendentry{$T_\mathrm{cond}$}
+  					\addlegendentry{$T_\mathrm{cond}^\mathrm{296b''}$}
   					\addplot[mark=none, color=red!50] table [x=Prel,y=transmission]{tikz/graphs/292_295_296_transmission/296b_op_evap_1.txt};
-  					\addlegendentry{$T_\mathrm{evap}$}
+  					\addlegendentry{$T_\mathrm{evap}^\mathrm{292b''}$}
   				\end{axis}
         \end{tikzpicture}
-        \label{subfig:296_trans}
+        \label{fig:296-trans}
     }
     \\
     \subfloat[]{
@@ -111,12 +108,12 @@
   					]
   					% Add plots
   					\addplot[mark=none, color=red] table [x=Prel,y=transmission]{tikz/graphs/292_295_296_transmission/295d_cond_2.txt};
-  					\addlegendentry{$T_\mathrm{cond}$}
+  					\addlegendentry{$T_\mathrm{cond}^\mathrm{295d'}$}
   					\addplot[mark=none, color=red!50] table [x=Prel,y=transmission]{tikz/graphs/292_295_296_transmission/295d_evap_2.txt};
-  					\addlegendentry{$T_\mathrm{evap}$}
+  					\addlegendentry{$T_\mathrm{evap}^\mathrm{295d'}$}
   				\end{axis}
         \end{tikzpicture}
-        \label{subfig:295_trans}
+        \label{fig:295-trans}
     }
     \hfill
     \subfloat[]{
@@ -135,10 +132,7 @@
             width=0.45*\textwidth,
             height=0.45*\textwidth,
   					ymode=log,
-  					%axis y line*=right,
   					line width = 1pt,
-  					%	minor x tick num= ,
-  					%	minor y tick num= ,
   					xmin = \PrelMin, xmax = \PrelMax,
   					ymin = \TransMin, ymax = \TransMax,
   					ylabel = {Transmission $T$},
@@ -150,16 +144,16 @@
   					]
   					% Add plots
   					\addplot[mark=none, color=red] table [x=Prel,y=transmission]{tikz/graphs/292_295_296_transmission/295f200ALD_cond_1.txt};
-  					\addlegendentry{$T_\mathrm{cond}$}
+  					\addlegendentry{$T_\mathrm{cond}^\mathrm{295f''}$}
   					\addplot[mark=none, color=red!50] table [x=Prel,y=transmission]{tikz/graphs/292_295_296_transmission/295f200ALD_evap_1.txt};
-  					\addlegendentry{$T_\mathrm{evap}$}
+  					\addlegendentry{$T_\mathrm{evap}^\mathrm{29f''}$}
   				\end{axis}
         \end{tikzpicture}
-        \label{fig:295f200ALD_trans}}
-    \caption{$P_\mathrm{rel}$ transmission isotherms of the membranes 292d \protect\subref{subfig:292_trans}, 296b \protect\subref{subfig:296_trans}, 295d \protect\subref{subfig:295_trans},
-    and 295f 200ALD \protect\subref{fig:295f200ALD_trans}. All membranes have open pores. Unlike the isotherm of membrane 292d, the transmission drops of
+        \label{fig:295f200ALD-trans}}
+    \caption{$P_\mathrm{rel}$ transmission isotherms of the membranes 292d \protect\subref{fig:292-trans}, 296b' \protect\subref{fig:296-trans}, 295d' \protect\subref{fig:295-trans},
+    and 295f'' \protect\subref{fig:295f200ALD-trans}. All membranes have open pores. Unlike the isotherm of membrane 292d, the transmission drops of
     condensation and evaporation are of the same magnitude. The magnitudes of condensation and evaporation dip are reversed in respect to membrane 292d for membrane 295f 200ALD.}
-    \label{fig:292_295_296_transmission}
+    \label{fig:292-295-296-transmission}
   \end{figure}
 
 \end{document}

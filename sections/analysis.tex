@@ -2,8 +2,6 @@
 
 \begin{document}
 
-
-
     \chapter{Analysis}
     \label{ch:analysis}
 
@@ -185,13 +183,13 @@
       \section{Inhomogeneities on one wafer}
       \label{sec:wafer-inhomogeneities}
 
+        \subfile{tikz/graphs/wafer_inhomogeneities/inhomogeneities_cp.tex}
+
         To start with, the wafers shall be tested for inhomogeneities. Therefore, isotherms of one wafer's membranes which are in the same technical state, meaning they have undergone exactly the same treatments, asrae compared. This is done for both, closed pore membranes and open pore membranes. Because opening the membranes' pores involves one more production step, here, closed pore membranes are regarded first.
 
         \Cref{fig:inhomogeneities-cp} shows a comparison of closed pore membranes for wafer 295 and 296. Even though the membranes 296e' and 296f' had already been treated using phosphoric acid at the time of the measurements, the pores are still assumed to be closed as will be explained in \cref{sec:comparison-cp-op}.
 
         While for both wafers, with one exception being membrane 295c, the overall shape of the different membranes' volumetric isotherms matches, they are distributed along a short distance of the $P_\mathrm{rel}$-axis. As long as the shapes and also the size of the hysteresis match, this can be explained by a differing pore size distribution for the different membranes. NEED DIAMETER CONVERSION FOR THIS??? Membrane 295c shall not be analysed at this point as it will be dealt with in detail in \cref{sec:theory-and-defects}. Moreover, also the transmission measuremens yield optical signals of similar shapes. Unclear at this point is the variation in magnitude that can be extreme for some membranes as the example of 296f' compared to 296b shows.
-
-        \subfile{tikz/graphs/wafer_inhomogeneities/inhomogeneities_cp.tex}
 
         \subfile{tikz/graphs/wafer_inhomogeneities/inhomogeneities_op.tex}
 
@@ -357,7 +355,7 @@
               \end{equation}
               After, measurements are conducted and the results compared to membrane 296a, which is an untreated membrane in closed pore state, for a reference (\cref{fig:w296-floating-experiment}). While a slight shift in diameter between the floated membranes and the untreated one is visible, this is assumed not to be due to the treatments but rather due to the inhomogeneity of a given wafer. Moreover, the shapes of the isotherm do not show any significant slopewise deviation. Still, as explained before, the membranes could include pores badly open on the \textit{barrier layer} side. Anyways, to probe the thickness of the \textit{barrier layer}, electron beam microscopy is used and along with the cross section, the two sides of the membranes are imaged. Due to the drift that could not be resolve, the attempt to measure the thickness of the \textit{barrier layer} did not work out well as can be seen on \cref{fig:296e-barrier-layer}. On the other hand, the views of the aluminum side of 295e' (\cref{fig:296e-al-side}) confirm that the pores of the membrane remain closed on the bottom side.
 
-              \begin{figure}[htpb]
+              \begin{figure}[htb]
                 \centering
                 \subfloat[]{\includegraphics[width=0.45\textwidth]{images/296e_barrier_layer.jpg}
                 \label{fig:296e-barrier-layer}}
@@ -370,9 +368,89 @@
 
 
         \subsection{Do thinner membranes improve things?}
-        \label{sec:thinner-membranes}
+        \label{subsec:thinner-membranes}
 
           Compare 295 and 296. Talk about the sharpness of both, the volumetric and the optical isotherm. Also speak about the rather broad isotherm for closed pores of 295 which is not understood. Use diameter translation by Kelvin law!!
+          \medskip
+
+          Wafer 295 is only
+          \begin{equation}
+              l^{295}_\mathrm{pore}=\SI{30}{\micro\meter}
+          \end{equation}
+          thick. Hereby, the effect of the funnelling observed upon the previously measured membranes of a thickness of
+          \begin{equation}
+              l^{292,293,294,296}_\mathrm{pore}=\SI{60}{\micro\meter}
+          \end{equation}
+          is expected to be reduced. Assuming that the funneling aspect is linear implies a reduction of the effect by half which should lead to a sharper evaporation branch.
+
+          \subfile{tikz/graphs/295_296_funnelling/295_296_funnelling.tex}
+
+          \Cref{fig:295-296-funnelling-cp} shows the comparison of the membranes 295a and 296b on a \textsc{Kelvin} diameter axis. Both membranes' pores are closed by the \textit{barrier layer} on the bottom side. In contrast to expectations, the evaporation branches show a similar spread
+          \begin{align}
+            \begin{split}
+              \Delta d_\mathrm{evap}^\mathrm{295a}=\SI{15}{\nano\meter} \\
+              \Delta d_\mathrm{evap}^\mathrm{296b}=\SI{17}{\nano\meter}.
+            \end{split}
+          \end{align}
+          To determine the latter, the volumetric isotherms' rise and also the transmission drops have been regarded. At this point, assuming some uncertainty also due to the slightly different values derivable from optics and volumetrics, the funnelling aspect seems unchanged by moving to thinner membranes. But, looking at the condensation branches of the volumetric isotherms could bring clarity. While the condensation branch of membrane 296b shows approximately the same slope and shape as its evaporation branch, for membrane 295a this is not true. The latter membrane's condensation branch spreads out over about $\SI{25}{\nano\meter}$ so it is much broader than its evaporation branch. This can only be explained by severe corrugations within the pores as straight funnelling should not cause any differences in shape between the condensation and evaporation branches according to \cref{sec:cond_evap_theory}. The transmission signals match in magnitude for both membranes while it is much sharper for the thinner one. As a first guess, this could be interpreted as a sign more less flawed or even less corrugated pores, though that would contradict the before made analysis. In conclusion, from the closed pore isotherms no conclusion can be drawn as to how the funnelling aspect is affected by reducing the membrane thickness.
+
+          \Cref{fig:295-296-funnelling-op} then shows the isotherm comparison of the open pore membranes 295g' and 296b'. For these isotherms, the condensation does match the evaporation branch shapewise. The spread of the evaporation is
+          \begin{align}
+            \begin{split}
+              \Delta d_\mathrm{evap}^\mathrm{295g'}=\SI{9}{\nano\meter} \\
+              \Delta d_\mathrm{evap}^\mathrm{296b'}=\SI{13}{\nano\meter}.
+            \end{split}
+          \end{align}
+          Again, the transmission drops for the thirty micrometer membrane 295g' are more sharp but within the same magnitude as those of 296b'. A difference in funnelling seems more probable from this measurement even though, the bottom line is that no precise conclusion can be drawn from the measurements at this point.
+
+          For more calrity, electron beam microscopy is used to check the difference of the diameters on solution and aluminum side. \Cref{fig:meb-funnelling} shows the images for the membranes 295g' and 296b' which state a diameter offset of about
+          \begin{align}
+            \begin{split}
+              \Delta d_\mathrm{sem}^\mathrm{295g'}=\SI{6}{\nano\meter}, \\
+              \Delta d_\mathrm{sem}^\mathrm{295g'}=\SI{6}{\nano\meter}.
+            \end{split}
+          \end{align}
+          So the SEM images show the same tendency as the volumetric and optical measurements.
+          \medskip
+
+          \begin{figure}[htb]
+            \centering
+            \subfloat[]{\includegraphics[width=0.45\textwidth]{images/296g_sol_side.jpg}
+            \label{fig:295g-sol-side}}
+            \hfill
+            \subfloat[]{\includegraphics[width=0.45\textwidth]{images/296g_al_side.jpg}
+            \label{fig:295g-al-side}}
+            \caption{Electron beam microscopy images of membrane 295g' with measurements of the pore diameters on the solution side \protect\subref{fig:295g-sol-side} and aluminum side \protect\subref{fig:295g-al-side}.}
+            \label{fig:meb-funnelling}
+          \end{figure}
+
+          To conclude with, even though the effect is not as significant as expected, thinner membranes indeed do improve the pore quality.
+
+
+        \subsection{Transmission signal not well understood}
+
+          To begin with it must be mentioned here, that all open pore membranes measured before the wafers 295 and 296 have shown the same transmission characteristics in regard of the significant magnitude difference of the condensation and evaporation isotherm branch which can be seen on \cref{subfig:292-trans}. Therefore, a theory to explain this phenomenom were developed. The prominent one at the beginning of the conducted experiments mentioned in this report shall be explained in the following.
+
+          \subfile{tikz/graphs/292_295_296_transmission/292_295_296_transmission.tex}
+
+          Firstly, a completely filled membrane should always yield a higher transmission coefficient $T$ than it would in its dry state according to the theory of index matching explained in \cref{sec:index-matching}. This fact serves as a tool to optically detect membranes that do not fill completely due to constrictions which by experience show a weaker tranmission after the condensation process is complete than they did before. Furthermore, due to the disorder created by pore filling and emptying, the transmission drops during the processes. Phenomena occurring on the volumetric measurements can therefore be linked to the measured transmission coefficient.
+
+          Moreover, the phenomenom of the transmission dropping to lower values for the condensation than for evaporation branch of a given isotherm has been repeatedly observed on open pore membranes. An example is given by membrane 292d's isotherm whcih is displayed in \cref{fig:292-trans}. At this point it must be mentioned that all open pore membranes measured before the wafers 295 and 296 have shown this same transmission characteristics. As interpretation serves the degree of disorder caused inside the membrane by the respective process. As the membrane contains pores open on both ends, the condensation occurs at spinodal pressure $P_\mathrm{sp}(d_\mathrm{pore})$. Due to the distribution of pore sizes, funnelization, corrugation and constrictions, the pores fill at different pressures $P_\mathrm{sp}^1 \neq P_\mathrm{sp}^2$. At a given pressure
+          \begin{equation*}
+              P_\mathrm{sp}^1 < P < P_\mathrm{sp}^2,
+          \end{equation*}
+          where $P_\mathrm{sp}^1$ shall correspond to the smallest pore diameter found on the membrane and $P_\mathrm{sp}^2$ the largest one, the state of the me{}mbrane regarding filled and empty pores is assumed to be comparable to figure \cref{fig:disorder-absorption}. The hexane evaporates at equilibrium pressure $P_\mathrm{eq}$, though. That means that, assuming the same pore size distribution, funnelization, corregation and constrictions, the pores empty continuously. The theoretical state of the membrane is visualized in \cref{fig:disorder-desorption}.
+
+          The difference is given by the most significant contrasts between neighboring pores during the condensation process, in explanation empty and filled pores, for spinodal condensation, while for evaporation at equilibrium pressure the pores only show different levels of liquid during most of the process. As a result, the absorption of hexane creates a higher grade of disorder than the desorption and therefore causes a more significant drop of the transmission coefficient (compare \cref{fig:292-trans}).
+          \medskip
+
+          The splitting of the evaporation drop into two dips seperated by a small local maximum cannot be explained by this theory, nor by any other means mentioned in this report. Moreover, the later analysed membranes of wafer 295 and 296 yield a more even dip distribution (compare \cref{fig:295-trans} and \cref{fig:296-trans}) and upon reducing the pore diameter of 295 using ALD, the membranes even show the inverse behaviour (\cref{fig:295f200ALD-trans}).
+
+          In connection with the sharper isotherms, the first phenomenom could be explained by the pores being less flawed talking corrugations and funneling. The latter assumption is backed by the fact, that the transmission drops of 295d are of smaller magnitude than those of 296b. While both are open pore membranes, membrane 295d is only half as thick as 296b, meaning the pores are only half as long and therefore the influence of the funneling aspect is reduced as will be explained in \cref{subsec:thinner-membranes}.
+
+          The second phenomenom of the deeper evaporation dip remains unclear though.
+
+          \subfile{tikz/transmission_disorder/pore_disorder.tex}
 
 
       \section{Pore quality linked to transmission drop and hysteresis}
@@ -395,14 +473,51 @@
 
 
       \section{Pore size reduction using atomic layer deposition}
+      \label{sec:ald-experiments}
+
+        Finally, as the open pore membranes of wafer 295 prove to be very good in the sense of producing very sharp isotherms and showing similar diameters, the goal of sub ten nanometer pore diameters is resumed. The pore diameters are reduced using atomic layer deposition (ALD). \Cref{fig:wafer_295} shows the treatments and measurements of the inspected membranes of wafer 295.
+
+        \subsection{Atomic layer deposition effectively reduces pore diameters}
+        \label{subsec:ald-reduces-diameters}
+
+          The first important question is if ALD works to serve as a diameter reduction at all. Therefore, on membrane 295e' 100 cycles of ALD are conducted and the membrane then probed using the experimental setup and SEM. The measurement results are shown in \cref{fig:295e-ald}. While the result for the first 100 cycles of ALD matches expectations perfectly, the second 100 cycles give a very different impression, though, and its result's discussion shall be postponed in favor of the analysis of 295e' and 295e'' at this point.
+
+          \subfile{tikz/graphs/295e_ALD/295e_ALD.tex}
+
+          Firstly, the shape of the volumetric isotherm does not change for membrane 295e'' in comparison to 295e'. It is only shifted towards lower pressures. Only the hysteresis increases by a little bit which can be explained by the logarithmic context of realtive pressure to pore diameters though. Regarding the isotherms of 295e' and 295e'' on a \textsc{Kelvin} diameter axis as shown in \cref{fig:295e-ald-kelvin}, the change of the hysteresis disappears and the evaporation branches show the same spread for both membranes. Furthermore, the diameter reduction by 100 cycles of ALD according to the isotherms is
+          \begin{equation}
+            \Delta d_\mathrm{pore}^\mathrm{295e'\rightarrow 295e''}=\SI{20}{\nano\meter}
+          \end{equation}
+          which makes for
+          \begin{equation}
+            \Delta =\SI{0,2}{\nano\meter}
+          \end{equation}
+          diameter reduction per ALD cycle. This value matchs the expectations of
+          \begin{equation}
+            \Delta = \SI{0,2}{\nano\meter}
+          \end{equation}
+          per cycle as explained in ???.
+
+          The tranmission measurements also yield very sharp drops for the membranes 295e' and 295''. One phenomon, which has not been observed before, is that the evaporation transmission drop of membrane 295e'' is deeper than its condensation transmission drop. This does not go together with the theory for the before observed inverse phenomenom as explaine in ???. Up to this point, no explanation could be found for the observation.
+
+
+        \subsection{Diameter reduction by atomic layer deposition is reproducible}
+        \label{subsec:diameter-reduction-reproducible}
+
+          Next, membrane 295e''' and 295f'' must be compared to probe the reproducibility of the pore diameter reduction using atomic layer deposition. As on the one hand the membranes 295e' and 295f' yielded equivalent measurement results as can be seen in \cref{fig:295-op} and on the other hand both, 295e''' and 295f'', have undergone 200 cycles of ALD in total, their measurements should produce very similar results.
+
+
+        \subsection{Atomic layer deposition parameters need improvement}
+        \label{parameters-need-improvement}
+
+          Last, reducing the pores' diameters using a given number of cycles of ALD yields the same results for a deposition in one single run (200 cycles of ALD) and for one conducted in multiple stages (100 + 100 cycles of ALD).
 
 
       \section{Isotherms proves powerful to detect and characterize defects}
       \label{sec:theory-and-defects}
 
       Bring up membrane 293 (constricted pore ends) and membrane 295c (closed pores).
-
-
+      MAYBE PUT THIS IN THE CONCLUSIONS CHAPTER???
 
 
 \end{document}

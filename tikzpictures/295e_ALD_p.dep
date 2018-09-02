@@ -1,0 +1,12 @@
+tikzpictures/295e_ALD_p.pdf: tikz/graphs/295e_ALD/295e_cond_1.txt
+tikzpictures/295e_ALD_p.pdf: tikz/graphs/295e_ALD/295e_evap_1.txt
+tikzpictures/295e_ALD_p.pdf: tikz/graphs/295e_ALD/295e100ALD_cond_1.txt
+tikzpictures/295e_ALD_p.pdf: tikz/graphs/295e_ALD/295e100ALD_evap_1.txt
+tikzpictures/295e_ALD_p.pdf: tikz/graphs/295e_ALD/295e200ALD_cond_1.txt
+tikzpictures/295e_ALD_p.pdf: tikz/graphs/295e_ALD/295e200ALD_evap_1.txt
+tikzpictures/295e_ALD_p.pdf: tikz/graphs/295e_ALD/295e_cond_1.txt
+tikzpictures/295e_ALD_p.pdf: tikz/graphs/295e_ALD/295e_evap_1.txt
+tikzpictures/295e_ALD_p.pdf: tikz/graphs/295e_ALD/295e100ALD_cond_1.txt
+tikzpictures/295e_ALD_p.pdf: tikz/graphs/295e_ALD/295e100ALD_evap_1.txt
+tikzpictures/295e_ALD_p.pdf: tikz/graphs/295e_ALD/295e200ALD_cond_1.txt
+tikzpictures/295e_ALD_p.pdf: tikz/graphs/295e_ALD/295e200ALD_evap_1.txt

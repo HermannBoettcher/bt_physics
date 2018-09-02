@@ -1,0 +1,8 @@
+tikzpictures/295_296_funnelling_op.pdf: tikz/graphs/295_296_funnelling/295g_cond_1.txt
+tikzpictures/295_296_funnelling_op.pdf: tikz/graphs/295_296_funnelling/295g_evap_1.txt
+tikzpictures/295_296_funnelling_op.pdf: tikz/graphs/295_296_funnelling/296b_op_cond_1.txt
+tikzpictures/295_296_funnelling_op.pdf: tikz/graphs/295_296_funnelling/296b_op_evap_1.txt
+tikzpictures/295_296_funnelling_op.pdf: tikz/graphs/295_296_funnelling/295g_cond_1.txt
+tikzpictures/295_296_funnelling_op.pdf: tikz/graphs/295_296_funnelling/295g_evap_1.txt
+tikzpictures/295_296_funnelling_op.pdf: tikz/graphs/295_296_funnelling/296b_op_cond_1.txt
+tikzpictures/295_296_funnelling_op.pdf: tikz/graphs/295_296_funnelling/296b_op_evap_1.txt
