@@ -428,6 +428,7 @@
 
 
         \subsection{Transmission signal not well understood}
+        \label{subsec:transmission-mysteria}
 
           To begin with it must be mentioned here, that all open pore membranes measured before the wafers 295 and 296 have shown the same transmission characteristics in regard of the significant magnitude difference of the condensation and evaporation isotherm branch which can be seen on \cref{subfig:292-trans}. Therefore, a theory to explain this phenomenom were developed. The prominent one at the beginning of the conducted experiments mentioned in this report shall be explained in the following.
 
@@ -477,12 +478,12 @@
 
         Finally, as the open pore membranes of wafer 295 prove to be very good in the sense of producing very sharp isotherms and showing similar diameters, the goal of sub ten nanometer pore diameters is resumed. The pore diameters are reduced using atomic layer deposition (ALD). \Cref{fig:wafer_295} shows the treatments and measurements of the inspected membranes of wafer 295.
 
+        \subfile{tikz/graphs/295e_ALD/295e_ALD.tex}
+
         \subsection{Atomic layer deposition effectively reduces pore diameters}
         \label{subsec:ald-reduces-diameters}
 
           The first important question is if ALD works to serve as a diameter reduction at all. Therefore, on membrane 295e' 100 cycles of ALD are conducted and the membrane then probed using the experimental setup and SEM. The measurement results are shown in \cref{fig:295e-ald}. While the result for the first 100 cycles of ALD matches expectations perfectly, the second 100 cycles give a very different impression, though, and its result's discussion shall be postponed in favor of the analysis of 295e' and 295e'' at this point.
-
-          \subfile{tikz/graphs/295e_ALD/295e_ALD.tex}
 
           Firstly, the shape of the volumetric isotherm does not change for membrane 295e'' in comparison to 295e'. It is only shifted towards lower pressures. Only the hysteresis increases by a little bit which can be explained by the logarithmic context of realtive pressure to pore diameters though. Regarding the isotherms of 295e' and 295e'' on a \textsc{Kelvin} diameter axis as shown in \cref{fig:295e-ald-kelvin}, the change of the hysteresis disappears and the evaporation branches show the same spread for both membranes. Furthermore, the diameter reduction by 100 cycles of ALD according to the isotherms is
           \begin{equation}
@@ -498,7 +499,7 @@
           \end{equation}
           per cycle as explained in ???.
 
-          The tranmission measurements also yield very sharp drops for the membranes 295e' and 295''. One phenomon, which has not been observed before, is that the evaporation transmission drop of membrane 295e'' is deeper than its condensation transmission drop. This does not go together with the theory for the before observed inverse phenomenom as explaine in ???. Up to this point, no explanation could be found for the observation.
+          The tranmission measurements also yield very sharp drops for the membranes 295e' and 295''. One phenomon, which has not been observed before, is that the evaporation transmission drop of membrane 295e'' is deeper than its condensation transmission drop. This does not go together with the theory for the before observed inverse phenomenom as explaind in \cref{subsec:transmission-mysteria}. Up to this point, no explanation could be found for the observation.
 
 
         \subsection{Diameter reduction by atomic layer deposition is reproducible}
@@ -506,11 +507,43 @@
 
           Next, membrane 295e''' and 295f'' must be compared to probe the reproducibility of the pore diameter reduction using atomic layer deposition. As on the one hand the membranes 295e' and 295f' yielded equivalent measurement results as can be seen in \cref{fig:295-op} and on the other hand both, 295e''' and 295f'', have undergone 200 cycles of ALD in total, their measurements should produce very similar results.
 
+          The measured data is plotted in \cref{fig:295-e-f-ald}. While the overall picture of the two membranes seems to match, clearly there is a shift towards lower pressures visible for membrane 295f''. Anyways, the membranes used for this comparison both show isotherms that do not match expectations and imply that the atomic layer deposition did not work out properly. As, according to \cref{subsec:ald-reduces-diameters}, it works for only 100 cycles and also the result seems independent of the ALD process being interrupted during the full 200 cycles, leads to the conclusion that something is off for smaller diameters which will be further analysed in the following section. Talking reproducibility, a tendency towards yes is justifiable but needs to be confirmed through further experiments.
 
-        \subsection{Atomic layer deposition parameters need improvement}
-        \label{parameters-need-improvement}
+          \subfile{tikz/graphs/295_e_f_ALD/295_e_f_ALD.tex}
 
-          Last, reducing the pores' diameters using a given number of cycles of ALD yields the same results for a deposition in one single run (200 cycles of ALD) and for one conducted in multiple stages (100 + 100 cycles of ALD).
+          \subsection{Atomic layer deposition parameters need improvement}
+          \label{parameters-need-improvement}
+
+            \subfile{tikz/graphs/295_e_f_ALD/295e_200ALD.tex}
+
+            In the following, the transition from membrane 295e'' to 295e''' using 100 layers of ALD shall be tried to understood. \Cref{fig:fig:295-e-200ald} shows the measured isotherms over a relative pressure axis. The condensation in two steps together with a one step evaporation hint at a population of closed or constricted pores. Therefore, the isotherms are plotted on a \textsc{Kelvin} diameter axis in \cref{fig:295-e-200ald-kelvin} twice, once using the conversion for open pores (cylindrical meniscus) and once that closed pores (spherical meniscus). A black circle marks where the two steps of the isotherm's condensation branch superimpose on the same diameter range as a result. Moreover, another circle marks the corresponding transmission drops. They are both shifted towards higher pore diameters in comparison to the volumetric signals of condensation, but still, they are aligned on top of each other. These observations back the suspicion of closed or constricted pores.
+            \medskip
+
+            \subfile{tikz/graphs/295_e_f_ALD/295f_200ALD.tex}
+
+            Already in \cref{subsec:diameter-reduction-reproducible}, the similarity between the results of the membranes 295e''' and 295f'' has been analysed. For the sake of completeness, the same analysis as for membrane 295e''' shall be done here. Again, the two step condensation together with the single step evaporation hint at closed or constriced pores. Using \textsc{Kelvin} equation to convert the relative pressure to diameters for closed and open pores yields the same superposition as observed for membrane 295e''', again marked by black circles for volumetrics and optics. In addition to the volumetric and the transmission measurements, for membrane 295f'' SEM images have been taken.
+
+            ??? KELVIN IS NOT RELYABLE AT THESE LOW DIAMETERS - RATHER TRUST EVAPORATION -> constricted pore ends ! CHECK FOR CONDENSED LIQUID AND COMPARE TO EXPOECTATION!!!
+
+            \begin{figure}[tb]
+              \centering
+              \subfloat[]{
+                \includegraphics[width=0.45\textwidth]{images/295f_200ALD_sol_side.jpg}
+                \label{fig:295f-200ald-sol-side}
+              }
+              \hfill
+              \subfloat[]{
+                \includegraphics[width=0.45\textwidth]{images/295f_200ALD_al_side.jpg}
+                \label{fig:295f-200ald-al-side}
+              }
+              \\
+              \subfloat{
+                \includegraphics[width=0.9\textwidth]{images/295_gradient.jpg}
+                \label{fig:295f-gradient}
+              }
+              \caption{Electron beam microscopy images of membrane 295f'''. While}
+              \label{fig:295f-200ALD-sem}
+            \end{figure}
 
 
       \section{Isotherms proves powerful to detect and characterize defects}
