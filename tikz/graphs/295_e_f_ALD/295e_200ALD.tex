@@ -31,7 +31,7 @@
   					% Add plots
   					\addplot[mark=none, color=red] table [x=Prel,y=liquid_fraction]{tikz/graphs/295_e_f_ALD/295e200ALD_cond_1.txt};
   					\addlegendentry{$LF_\mathrm{cond}^\mathrm{295e'''}$}
-  					\addplot[mark=none, color=red!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/295_e_f_ALD/295e200ALD_evap_1.txt};
+  					\addplot[mark=none, color=green!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/295_e_f_ALD/295e200ALD_evap_1.txt};
   					\addlegendentry{$LF_\mathrm{evap}^\mathrm{295e'''}$}
           \end{axis}
           \begin{axis}[
@@ -52,7 +52,7 @@
   					% Add plots
   					\addplot[mark=none, color=red] table [x=Prel,y=transmission]{tikz/graphs/295_e_f_ALD/295e200ALD_cond_1.txt};
   					\addlegendentry{$T_\mathrm{cond}^\mathrm{295e'''}$}
-  					\addplot[mark=none, color=red!50] table [x=Prel,y=transmission]{tikz/graphs/295_e_f_ALD/295e200ALD_evap_1.txt};
+  					\addplot[mark=none, color=green!50] table [x=Prel,y=transmission]{tikz/graphs/295_e_f_ALD/295e200ALD_evap_1.txt};
   					\addlegendentry{$T_\mathrm{evap}^\mathrm{295e'''}$}
           \end{axis}
       \end{tikzpicture}
@@ -116,7 +116,7 @@
   					\addlegendentry{$T_\mathrm{cond,op}^\mathrm{295e'''}$}
   					\addplot[mark=none, color=green!50] table [x=r_kelvin,y=transmission]{tikz/graphs/295_e_f_ALD/295e200ALD_evap_1.txt};
   					\addlegendentry{$T_\mathrm{evap,cp/op}^\mathrm{295e'''}$}
-  					\coordinate (roi) at (axis cs:35,0.4);
+  					\coordinate (roi) at (axis cs:35,0.25);
           \end{axis}
           \draw (roi) ellipse (1.8cm and .7cm);
       \end{tikzpicture}

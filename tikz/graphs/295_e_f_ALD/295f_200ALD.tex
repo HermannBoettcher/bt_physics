@@ -31,14 +31,14 @@
   					% Add plots
   					\addplot[mark=none, color=red] table [x=Prel,y=liquid_fraction]{tikz/graphs/295_e_f_ALD/295f200ALD_cond_1.txt};
   					\addlegendentry{$LF_\mathrm{cond}^\mathrm{295f''}$}
-  					\addplot[mark=none, color=red!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/295_e_f_ALD/295f200ALD_evap_1.txt};
+  					\addplot[mark=none, color=green!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/295_e_f_ALD/295f200ALD_evap_1.txt};
   					\addlegendentry{$LF_\mathrm{evap}^\mathrm{295f''}$}
           \end{axis}
           \begin{axis}[
             /tikz/line join=bevel,
             width=0.8*\textwidth,
             height=0.5*\textwidth,
-            legend style={at={(1,.5)}, legend columns=1, anchor=south east},
+            legend style={at={(0,.5)}, legend columns=1, anchor=south west},
             every axis plot,
   					axis y line*=right,
   					line width = 1pt,
@@ -52,7 +52,7 @@
   					% Add plots
   					\addplot[mark=none, color=red] table [x=Prel,y=transmission]{tikz/graphs/295_e_f_ALD/295f200ALD_cond_1.txt};
   					\addlegendentry{$T_\mathrm{cond}^\mathrm{295f''}$}
-  					\addplot[mark=none, color=red!50] table [x=Prel,y=transmission]{tikz/graphs/295_e_f_ALD/295f200ALD_evap_1.txt};
+  					\addplot[mark=none, color=green!50] table [x=Prel,y=transmission]{tikz/graphs/295_e_f_ALD/295f200ALD_evap_1.txt};
   					\addlegendentry{$T_\mathrm{evap}^\mathrm{295f''}$}
           \end{axis}
       \end{tikzpicture}
@@ -63,7 +63,7 @@
       \tikzsetnextfilename{295_f_200ALD_kelvin}
       \begin{tikzpicture}
           \def\rMin{0}
-  				\def\rMax{50}
+  				\def\rMax{40}
   				\def\TransMin{1e-4}
   				\def\TransMax{1}
   				\def\LfMin{0}
@@ -85,16 +85,18 @@
   					ytick = {0,0.25,0.50,0.75,1},
             ]
   					% Add plots
-  					\addplot[mark=none, color=red] table [x=r_kelvin,y=liquid_fraction]{tikz/graphs/295_e_f_ALD/295f200ALD_cond_1.txt};
-  					\addlegendentry{$LF_\mathrm{cond}^\mathrm{295f''}$}
-  					\addplot[mark=none, color=red!50] table [x=r_kelvin,y=liquid_fraction]{tikz/graphs/295_e_f_ALD/295f200ALD_evap_1.txt};
-  					\addlegendentry{$LF_\mathrm{evap}^\mathrm{295f''}$}
+  					\addplot[mark=none, color=red] table [x=r_kelvin,y=liquid_fraction]{tikz/graphs/295_e_f_ALD/295f200ALD_cp_cond_1.txt};
+  					\addlegendentry{$T_\mathrm{cond,cp}^\mathrm{295f''}$}
+  					\addplot[mark=none, color=blue] table [x=r_kelvin,y=liquid_fraction]{tikz/graphs/295_e_f_ALD/295f200ALD_cond_1.txt};
+  					\addlegendentry{$LF_\mathrm{cond,op}^\mathrm{295f''}$}
+  					\addplot[mark=none, color=green!50] table [x=r_kelvin,y=liquid_fraction]{tikz/graphs/295_e_f_ALD/295f200ALD_evap_1.txt};
+  					\addlegendentry{$LF_\mathrm{evap,cp/op}^\mathrm{295f''}$}
           \end{axis}
           \begin{axis}[
             /tikz/line join=bevel,
             width=0.8*\textwidth,
             height=0.5*\textwidth,
-            legend style={at={(1,.5)}, legend columns=1, anchor=south east},
+            legend style={at={(0,.5)}, legend columns=1, anchor=south west},
             every axis plot,
   					axis y line*=right,
   					line width = 1pt,
@@ -106,10 +108,12 @@
   					ytick = {1,1e-1,1e-2},
             ]
   					% Add plots
-  					\addplot[mark=none, color=red] table [x=r_kelvin,y=transmission]{tikz/graphs/295_e_f_ALD/295f200ALD_cond_1.txt};
-  					\addlegendentry{$T_\mathrm{cond}^\mathrm{295f''}$}
-  					\addplot[mark=none, color=red!50] table [x=r_kelvin,y=transmission]{tikz/graphs/295_e_f_ALD/295f200ALD_evap_1.txt};
-  					\addlegendentry{$T_\mathrm{evap}^\mathrm{295f''}$}
+  					\addplot[mark=none, color=red] table [x=r_kelvin,y=transmission]{tikz/graphs/295_e_f_ALD/295f200ALD_cp_cond_1.txt};
+  					\addlegendentry{$T_\mathrm{cond,cp}^\mathrm{295f''}$}
+  					\addplot[mark=none, color=blue] table [x=r_kelvin,y=transmission]{tikz/graphs/295_e_f_ALD/295f200ALD_cond_1.txt};
+  					\addlegendentry{$T_\mathrm{cond,op}^\mathrm{295f''}$}
+  					\addplot[mark=none, color=green!50] table [x=r_kelvin,y=transmission]{tikz/graphs/295_e_f_ALD/295f200ALD_evap_1.txt};
+  					\addlegendentry{$T_\mathrm{evap,cp/op}^\mathrm{295f''}$}
           \end{axis}
       \end{tikzpicture}
     \label{fig:295-e-200ald-kelvin}

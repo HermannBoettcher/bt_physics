@@ -1,13 +1,13 @@
 \documentclass[../../../thesis.tex]{subfiles}
 
 \begin{document}
-  \begin{figure}[hpbt]
+  \begin{figure}[pbt]
 		\centering
     \tikzsetnextfilename{295d_250ALD}
     \begin{tikzpicture}
         \def\PrelMin{.5}
 				\def\PrelMax{1}
-				\def\TransMin{1e-6}
+				\def\TransMin{1e-2}
 				\def\TransMax{1}
 				\def\LfMin{0}
 				\def\LfMax{2}
@@ -31,7 +31,7 @@
 					% Add plots
 					\addplot[mark=none, color=red] table [x=Prel,y=liquid_fraction]{tikz/graphs/295d_ALD/295d250ALD_cond_1.txt};
 					\addlegendentry{$LF_\mathrm{cond}^\mathrm{295d''}$}
-					\addplot[mark=none, color=red!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/295d_ALD/295d250ALD_evap_1.txt};
+					\addplot[mark=none, color=blue!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/295d_ALD/295d250ALD_evap_1.txt};
 					\addlegendentry{$LF_\mathrm{evap}^\mathrm{295d''}$}
         \end{axis}
 				% transmission
@@ -46,14 +46,14 @@
 					ymin = \TransMin, ymax = \TransMax,
 					ylabel = {Transmission $T$},
 					xtick = {1e-1,1e-2,1e-3},
-					ytick = {1,1e-1,1e-2,1e-3},
+					ytick = {1,1e-1},
           ymajorgrids=true,
           legend style={at={(0,0.5)}, legend columns=1, anchor=south west},
 					]
 					% Add plots
 					\addplot[mark=none, color=red] table [x=Prel,y=transmission]{tikz/graphs/295d_ALD/295d250ALD_cond_1.txt};
 					\addlegendentry{$T_\mathrm{cond}^\mathrm{295d''}$}
-					\addplot[mark=none, color=red!50] table [x=Prel,y=transmission]{tikz/graphs/295d_ALD/295d250ALD_evap_1.txt};
+					\addplot[mark=none, color=blue!50] table [x=Prel,y=transmission]{tikz/graphs/295d_ALD/295d250ALD_evap_1.txt};
 					\addlegendentry{$T_\mathrm{evap}^\mathrm{295d''}$}
 				\end{axis}
     \end{tikzpicture}

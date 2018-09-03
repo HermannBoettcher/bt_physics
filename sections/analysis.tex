@@ -159,7 +159,7 @@
         Genereal: From one wafer we can test different things as we have 12 membranes. Wafer produced as a whole so membranes should be equivalent. ADD THE CIRCLE HERE!!!
         \medskip
 
-        Membranes of four different wafers produced according to \cref{subsec:membrane-production} have been measured. The wafers specifications are noted in \cref{tbl:wafer-specifications}. As multiple membranes in the same state of the same wafer yielded different results, the position of the single membranes on the wafer were are taken note for newly produced wafers. Therefore, for the wafers 295 and 296, the membranes' names correspond to the positions shown in \cref{fig:membrane-distribution}. Furthermore, all conducted measurements on the membranes in different states are noted on \cref{fig:wafer-processing-plans}.
+        Membranes of four different wafers produced according to \cref{subsec:membrane-production} have been measured. \Cref{tbl:wafer-specifications} summarizes the specifications of the different wafers. As multiple membranes in the same state of the same wafer yielded different results, the position of the single membranes on the wafer were are taken note for newly produced wafers. Therefore, for the wafers 295 and 296, the membranes' names correspond to the positions shown in \cref{fig:membrane-distribution}. Furthermore, all conducted measurements on the membranes in different states are noted on \cref{fig:wafer-processing-plans}.
 
         \subfile{tikz/wafers/membrane_distribution.tex}
 
@@ -256,7 +256,7 @@
           \end{figure}
 
 
-            \subsubsection{Immersion experiment}
+            \subsubsection{Funnellization of closed pores increased by immersion in phosphoric acid}
             \label{subsec:immersion-experiment}
 
               Derive and explain etch rate gradient and influence on the pores' shape.
@@ -322,7 +322,7 @@
             \begin{equation}
               t_\mathrm{float}^\mathrm{292}=\SI{20}{\minute},
             \end{equation}
-            milky aspects as shown in \cref{fig:milky-aspects} appeared. As the latter are assumed to imply that the \textit{barrier layer} is etched off the wafer, this makes for an etch rate of
+            milky aspects as shown in \cref{fiFloating experimentg:milky-aspects} appeared. As the latter are assumed to imply that the \textit{barrier layer} is etched off the wafer, this makes for an etch rate of
             \begin{equation}
               e=\SI{1,5}{\nano\meter\per\minute}.
               \label{eq:etch-rate-barrier-layer}
@@ -338,7 +338,7 @@
             As a way to not increase the distribution of pore diameters on a given wafer, the idea of floating the wafer on acid for a time just short enough to not open any pores, followed by its full immersion in acid has been developed. As to not increase the pores diameter by too much regardless of the acids saturation, the immediate immersion of the whole wafer wihtout prefloating discarded. Again, the acid's etch rate on the \textit{barrier layer} is a prerequisite and shall be deduced in \cref{subsec:etch-rate-difference}.
 
 
-            \subsubsection{Floating experiment}
+            \subsubsection{Etch rate of phosphoric acid on alumina not clear}
             \label{subsec:floating-experiment}
 
               Explan that the shapes of the isotherms are correct, but that no real conlusion could be made due to the bad MEB views.
@@ -480,6 +480,7 @@
 
         \subfile{tikz/graphs/295e_ALD/295e_ALD.tex}
 
+
         \subsection{Atomic layer deposition effectively reduces pore diameters}
         \label{subsec:ald-reduces-diameters}
 
@@ -521,23 +522,7 @@
 
             \subfile{tikz/graphs/295_e_f_ALD/295f_200ALD.tex}
 
-            Already in \cref{subsec:diameter-reduction-reproducible}, the similarity between the results of the membranes 295e''' and 295f'' has been analysed. For the sake of completeness, the same analysis as for membrane 295e''' shall be done here. Again, the two step condensation together with the single step evaporation hint at closed or constriced pores. Using \textsc{Kelvin} equation to convert the relative pressure to diameters for closed and open pores yields the same superposition as observed for membrane 295e''', again marked by black circles for volumetrics and optics. In addition to the volumetric and the transmission measurements, for membrane 295f'' SEM images have been taken. \Cref{fig:295f-200ald-sol-side} and \cref{fig:295f-200ald-al-side} show the solution and aluminum side of the membrane. The pore diameters of
-            \begin{equation}
-              \begin{split}
-                  d_\mathrm{pore,SEM}^\mathrm{295d'',Sol}=\SI{27}{\nano\meter}, \\
-                  d_\mathrm{pore,SEM}^\mathrm{295d'',Al}=\SI{27}{\nano\meter}
-              \end{split}
-            \end{equation}
-            approximately match the diameters derived from the condensation branches of the volumetric isotherms whereas the evaporation branch would imply pore diameters of about
-            \begin{equation}
-              d_\mathrm{pore,evap}^\mathrm{295d''}=\SI{10}{\nano\meter}.
-            \end{equation}
-            Up to this point though, the evaporation branch has been assumed to be more precise for measuring the pore diameters as it only depends on equilibrium pressure.
-
-            ??? KELVIN IS NOT RELYABLE AT THESE LOW DIAMETERS - RATHER TRUST EVAPORATION -> constricted pore ends ! CHECK FOR CONDENSED LIQUID AND COMPARE TO EXPOECTATION!!!
-            \medskip
-
-            \begin{figure}[tb]
+            \begin{figure}[tpb]
               \centering
               \subfloat[]{
                 \includegraphics[width=0.45\textwidth]{images/295f_200ALD_sol_side.jpg}
@@ -557,11 +542,49 @@
               \label{fig:295f-200ALD-sem}
             \end{figure}
 
-            Finally, \cref{fig:295d-200ALD} shows the isotherm data for membrane 295d''.
+            Already in \cref{subsec:diameter-reduction-reproducible}, the similarity between the results of the membranes 295e''' and 295f'' has been analysed. For the sake of completeness, the same analysis as for membrane 295e''' shall be done here. Again, the two step condensation together with the single step evaporation hint at closed or constriced pores. Using \textsc{Kelvin} equation to convert the relative pressure to diameters for closed and open pores yields the same superposition as observed for membrane 295e''', again marked by black circles for volumetrics and optics. In addition to the volumetric and the transmission measurements, for membrane 295f'' SEM images have been taken. \Cref{fig:295f-200ald-sol-side} and \cref{fig:295f-200ald-al-side} show the solution and aluminum side of the membrane. The pore diameters of
+            \begin{equation}
+              \begin{split}
+                  d_\mathrm{pore,SEM}^\mathrm{295d'',Sol}=\SI{27}{\nano\meter}, \\
+                  d_\mathrm{pore,SEM}^\mathrm{295d'',Al}=\SI{27}{\nano\meter}
+              \end{split}
+            \end{equation}
+            approximately match the diameters derived from the condensation branches of the volumetric isotherms whereas the evaporation branch would imply pore diameters of about
+            \begin{equation}
+              d_\mathrm{pore,evap}^\mathrm{295d''}=\SI{10}{\nano\meter}.
+            \end{equation}
+            Up to this point though, the evaporation branch has been assumed to be more precise for measuring the pore diameters as it only depends on equilibrium pressure.
+
+            ??? KELVIN IS NOT RELYABLE AT THESE LOW DIAMETERS - RATHER TRUST EVAPORATION -> constricted pore ends ! CHECK FOR CONDENSED LIQUID AND COMPARE TO EXPOECTATION!!!
+            \medskip
+
+            Finally, \cref{fig:295d-200ALD} shows the isotherm data for membrane 295d''. While there is still a volumetric signal visible, its pressurewise position does not match expectations as the deposit of 250 layers should make for smaller pores than the 200 layer on the membranes 295e''' and 295f''. Therefore, the signal might very well just be due to noise of the measurements. On the other hand, Also the transmission signal shows a drop. The signal does not rise again even at saturated vapor pressure though. The latter observation implies constricted pores that do not fill at all.
+
+            \subfile{tikz/graphs/295d_ALD/295d_250ALD.tex}
 
 
       \section{Isotherms proves powerful to detect and characterize defects}
       \label{sec:theory-and-defects}
+
+        \subfile{tikz/graphs/295c/295c.tex}
+
+        Throughout the data evaluation, the volumetric measurements along with the laser transmission prove extremely sensitive to detect pore defect like closed pores, where they should be open, constrictions at the pore ends, corrugations or even funnellization. As a last example, membrane 295c' shall be analysed and the result applied to the other membranes of wafer 295.
+
+        Expectations are that membrane 295c' shows the same properties as the other open pore membranes of wafer 295 as they were all floated on phosphoric acid still attached to the initial wafer except for 295b'. \Cref{fig:295c} displays its isotherm. In contrast to expectations, the isotherm shows a three step condensation branch while the evaporation branch consists of a single drop. An evaporation at high pressures that consists of a single sharp drop implies that all pores are distributed around a single diameter. As a consequence, the isotherm is plotted over pore diameters $d_\mathrm{pore}$ using \textsc{Kelvin} equation (\cref{sec:kelvin-equation}) for closed pores and open pores seperately and superimposed in one coordinate system (\cref{fig:295c-op-cp}). As the black circle tries to focus on, the first small rise at low pressures translates to the same pore diameter as the second one does for open pore analysis. This hints at a small population of closed pores on the wafer. In fact, the MEB images of the aluminum side of membrane 295c shown in \cref{fig:295c-meb} actually do show areas of none open pores which fill at equilibrium pressure which is coherent with the before made assumptions based on the volumetric isotherms. Moreover, regarding the laser transmission signal, another phenomenom implying pores filling at equilibrium pressure an be found. As amplified in \cref{fig:295c}, the transmission drops at about the same pressure as the first liquid fraction rise finishes and stays at this lower value until the occurence of the spinodal condensation where it drops farther. This drop can be explained by some pores filling and scattering light as a result as before explained in \cref{subsec:light-transmission-interpretation} referring to \cref{fig:disorder-absorption}.
+
+        As for the third rise of the volumetric isotherm's condensation branch, it can be explained by pore size distribution of open pores with two peaks. As there is no known reason for this kind of distribution, this explanations seems unlikely though. At this point, no other interpretation has been concluded with. 
+
+
+
+        \begin{figure}[htpb]
+          \subfloat[]{\includegraphics[width=0.45\textwidth]{images/295c_al.jpg}}
+          \hfill
+          \subfloat[]{\includegraphics[width=0.45\textwidth]{images/295c_al_2.jpg}}
+          \caption{MEB images of the aluminum side of membrane 295c. Areas of none open pores are clearly visible.}
+          \label{fig:295c-meb}
+        \end{figure}
+
+      \medskip
 
       Bring up membrane 293 (constricted pore ends) and membrane 295c (closed pores).
       MAYBE PUT THIS IN THE CONCLUSIONS CHAPTER???
