@@ -1,0 +1,8 @@
+tikzpictures/296b_cp.pdf: tikz/graphs/closed_pore_isotherm/296b_op_cond_1.txt
+tikzpictures/296b_cp.pdf: tikz/graphs/closed_pore_isotherm/296b_op_evap_1.txt
+tikzpictures/296b_cp.pdf: tikz/graphs/closed_pore_isotherm/296b_cp_cond_1.txt
+tikzpictures/296b_cp.pdf: tikz/graphs/closed_pore_isotherm/296b_cp_evap_1.txt
+tikzpictures/296b_cp.pdf: tikz/graphs/closed_pore_isotherm/296b_op_cond_1.txt
+tikzpictures/296b_cp.pdf: tikz/graphs/closed_pore_isotherm/296b_op_evap_1.txt
+tikzpictures/296b_cp.pdf: tikz/graphs/closed_pore_isotherm/296b_cp_cond_1.txt
+tikzpictures/296b_cp.pdf: tikz/graphs/closed_pore_isotherm/296b_cp_evap_1.txt

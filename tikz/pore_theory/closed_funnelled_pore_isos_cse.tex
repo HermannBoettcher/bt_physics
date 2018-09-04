@@ -30,10 +30,14 @@
             \draw (0.4,-0.3) -- (0 + 0.2,-0.3);
             \draw (1,-0.3) -- (1.4 - 0.2,-0.3);
             \node at (0.7,-0.3) {$d'$};
-            \node[draw = orange!70, fill = orange!50, MyArrow] at (2.05, 2) {\phantom{arrow}};
-            \node[draw = green!70, fill = green!50, MyArrow] at (4.85, 2) {\phantom{arrow}};
-            \node[draw = red!70, fill = red!50, MyArrow] at (8.35, 2) {\phantom{arrow}};
-            \node[draw = blue!70, fill = blue!50, MyArrow] at (11.85, 2) {\phantom{arrow}};
+            \node[draw = orange!70, fill = orange!50, MyArrow] at (2.1, 2.5) {\phantom{arrow}};
+            \node[draw = orange!70, fill = orange!50, MyArrow,rotate=180] at (2.1, 1.5) {\phantom{arrow}};
+            \node[draw = green!70, fill = green!50, MyArrow] at (4.9, 2.5) {\phantom{arrow}};
+            \node[draw = green!70, fill = green!50, MyArrow,rotate=180] at (4.9, 1.5) {\phantom{arrow}};
+            \node[draw = red!70, fill = red!50, MyArrow] at (8.4, 2.5) {\phantom{arrow}};
+            \node[draw = red!70, fill = red!50, MyArrow, rotate=180] at (8.4, 1.5) {\phantom{arrow}};
+            \node[draw = blue!70, fill = blue!50, MyArrow] at (11.9, 1.5) {\phantom{arrow}};
+            \node[draw = blue!70, fill = blue!50, MyArrow, rotate=180] at (11.9, 1.5) {\phantom{arrow}};
             %
             \draw[color = red!60, line width = 0.05cm] (5.6,-0.2) -- (11.2,-0.2) -- (11.2,3.7) -- (5.6,3.7) -- cycle;
             \node at (8.4,-0.6) {Equilibrium pressure};
@@ -61,12 +65,16 @@
             \node at (6,-0.7) {Pressure};
             %yellow
             \draw[color = orange, directed] (0,0) -- (4,0.2);
+            \draw[color = orange, directed] (4,0.2)--(0,0);
             %green
             \draw[color = green, directed] (4,0.2) -- (6.5,0.275);
+            \draw[color = green, directed] (6.5,0.275)--(4,0.2);
             %red
             \draw[color = red, directed] (6.5,0.275) -- (8,3.35);
+            \draw[color = red, directed] (8,3.35)--(6.5,0.275);
             %blue
             \draw[color = blue, directed] (8,3.35) -- (11,3.5);
+            \draw[color = blue, directed] (11,3.5)--(8,3.35);
             %DASHED
             \draw[dashed] (11,0) -- (11,3.5);  %psat
             \draw[dashed] (9,0) -- (9,0.15);  %psp

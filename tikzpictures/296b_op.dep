@@ -1,0 +1,4 @@
+tikzpictures/296b_op.pdf: tikz/graphs/open_pore/296b_op_cond_1.txt
+tikzpictures/296b_op.pdf: tikz/graphs/open_pore/296b_op_evap_1.txt
+tikzpictures/296b_op.pdf: tikz/graphs/open_pore/296b_op_cond_1.txt
+tikzpictures/296b_op.pdf: tikz/graphs/open_pore/296b_op_evap_1.txt

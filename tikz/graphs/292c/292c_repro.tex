@@ -1,0 +1,57 @@
+\documentclass[../../../thesis.tex]{subfiles}
+
+\begin{document}
+  \begin{figure}[htb]
+		\centering
+    \tikzsetnextfilename{292c}
+    \begin{tikzpicture}
+        \def\PrelMin{.86}
+				\def\PrelMax{1}
+				\def\TransMin{1e-6}
+				\def\TransMax{1}
+				\def\LfMin{0}
+				\def\LfMax{1}
+        %
+        \begin{axis}[
+          /tikz/line join=bevel,
+          width=0.8*\textwidth,
+          height=0.5*\textwidth,
+          grid,
+					axis y line*=left,
+          legend style={at={(1,0)}, legend columns=2, anchor=south east},
+          every axis plot,
+					axis y line*=left,
+					line width = 1pt,
+					xmin = \PrelMin, xmax = \PrelMax,
+					ymin = \LfMin, ymax = \LfMax,
+					xlabel = {Relative pressure $P_\mathrm{rel}$},
+					ylabel = {Liquid fraction $LF$},
+					ytick = {0,0.25,0.50,0.75,1},
+          ]
+					% Add plots
+					\addplot[mark=none, color=red] table [x=Prel,y=liquid_fraction]{tikz/graphs/292c/292c_cond_2.txt};
+					\addlegendentry{$LF_\mathrm{cond}^\mathrm{292c,1}$}
+					\addplot[mark=none, color=red!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/292c/292c_evap_2.txt};
+					\addlegendentry{$LF_\mathrm{evap}^\mathrm{292c,1}$}
+					\addplot[mark=none, color=blue] table [x=Prel,y=liquid_fraction]{tikz/graphs/292c/292c_cond_3.txt};
+					\addlegendentry{$LF_\mathrm{cond}^\mathrm{292c,2}$}
+					\addplot[mark=none, color=blue!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/292c/292c_evap_3.txt};
+					\addlegendentry{$LF_\mathrm{evap}^\mathrm{292c,2}$}
+					\addplot[mark=none, color=green] table [x=Prel,y=liquid_fraction]{tikz/graphs/292c/292c_cond_4.txt};
+					\addlegendentry{$LF_\mathrm{cond}^\mathrm{292c,3}$}
+					\addplot[mark=none, color=green!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/292c/292c_evap_4.txt};
+					\addlegendentry{$LF_\mathrm{evap}^\mathrm{292c,3}$}
+					\addplot[mark=none, color=orange] table [x=Prel,y=liquid_fraction]{tikz/graphs/292c/292c_cond_5.txt};
+					\addlegendentry{$LF_\mathrm{cond}^\mathrm{292c,4}$}
+					\addplot[mark=none, color=orange!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/292c/292c_evap_5.txt};
+					\addlegendentry{$LF_\mathrm{evap}^\mathrm{292c,4}$}
+					\addplot[mark=none, color=violet] table [x=Prel,y=liquid_fraction]{tikz/graphs/292c/292c_cond_11.txt};
+					\addlegendentry{$LF_\mathrm{cond}^\mathrm{292c,5}$}
+					\addplot[mark=none, color=violet!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/292c/292c_evap_11.txt};
+					\addlegendentry{$LF_\mathrm{evap}^\mathrm{292c,5}$}
+        \end{axis}
+    \end{tikzpicture}
+    \label{fig:292c-repro}
+    \caption{Reproducibility test comparing multiple isotherms measured for the same membrane 292c.}
+  \end{figure}
+\end{document}

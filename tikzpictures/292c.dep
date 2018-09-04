@@ -1,0 +1,10 @@
+tikzpictures/292c.pdf: tikz/graphs/292c/292c_cond_2.txt
+tikzpictures/292c.pdf: tikz/graphs/292c/292c_evap_2.txt
+tikzpictures/292c.pdf: tikz/graphs/292c/292c_cond_3.txt
+tikzpictures/292c.pdf: tikz/graphs/292c/292c_evap_3.txt
+tikzpictures/292c.pdf: tikz/graphs/292c/292c_cond_4.txt
+tikzpictures/292c.pdf: tikz/graphs/292c/292c_evap_4.txt
+tikzpictures/292c.pdf: tikz/graphs/292c/292c_cond_5.txt
+tikzpictures/292c.pdf: tikz/graphs/292c/292c_evap_5.txt
+tikzpictures/292c.pdf: tikz/graphs/292c/292c_cond_11.txt
+tikzpictures/292c.pdf: tikz/graphs/292c/292c_evap_11.txt

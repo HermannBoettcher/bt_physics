@@ -1,0 +1,70 @@
+\documentclass[../../../thesis.tex]{subfiles}
+
+\begin{document}
+  \begin{figure}[htb]
+		\centering
+    \tikzsetnextfilename{294}
+    \begin{tikzpicture}
+        \def\PrelMin{.86}
+				\def\PrelMax{1}
+				\def\TransMin{1e-6}
+				\def\TransMax{1}
+				\def\LfMin{0}
+				\def\LfMax{2}
+        %
+        \begin{axis}[
+          /tikz/line join=bevel,
+          width=0.8*\textwidth,
+          height=0.5*\textwidth,
+          grid,
+					axis y line*=left,
+          legend style={at={(0,.5)}, legend columns=2, anchor=north west},
+          every axis plot,
+					axis y line*=left,
+					line width = 1pt,
+					xmin = \PrelMin, xmax = \PrelMax,
+					ymin = \LfMin, ymax = \LfMax,
+					xlabel = {Relative pressure $P_\mathrm{rel}$},
+					ylabel = {Liquid fraction $LF$},
+					ytick = {0,0.25,0.50,0.75,1},
+          ]
+					% Add plots
+					\addplot[mark=none, color=red] table [x=Prel,y=liquid_fraction]{tikz/graphs/294_bad_open_pores/cond_lf.txt};
+					\addlegendentry{$LF_\mathrm{cond}^\mathrm{294cp}$}
+					\addplot[mark=none, color=red!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/294_bad_open_pores/evap_lf.txt};
+					\addlegendentry{$LF_\mathrm{evap}^\mathrm{294cp}$}
+					\addplot[mark=none, color=blue] table [x=Prel,y=liquid_fraction]{tikz/graphs/294_bad_open_pores/evap_lf_cp.txt};
+					\addlegendentry{$LF_\mathrm{cond}^\mathrm{294op}$}
+					\addplot[mark=none, color=blue!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/294_bad_open_pores/cond_lf_cp.txt};
+					\addlegendentry{$LF_\mathrm{evap}^\mathrm{294op}$}
+        \end{axis}
+        %
+        \begin{axis}[
+          /tikz/line join=bevel,
+          width=0.8*\textwidth,
+          height=0.5*\textwidth,
+          ymode=log,
+          axis y line*=right,
+          line width = 1pt,
+          xmin = \PrelMin, xmax = \PrelMax,
+          ymin = \TransMin, ymax = \TransMax,
+          ylabel = {Transmission $T$},
+          ytick = {1e-1,1e-2},
+          ymajorgrids=true,
+          legend style={at={(0,0.5)}, legend columns=1, anchor=south west},
+          ]
+					% Add plots
+					\addplot[mark=none, color=red] table [x=Prel,y=transmission]{tikz/graphs/294_bad_open_pores/cond_trans.txt};
+					\addlegendentry{$T_\mathrm{cond}^\mathrm{294cp}$}
+					\addplot[mark=none, color=red!50] table [x=Prel,y=transmission]{tikz/graphs/294_bad_open_pores/evap_trans.txt};
+					\addlegendentry{$T_\mathrm{evap}^\mathrm{294cp}$}
+					\addplot[mark=none, color=blue] table [x=Prel,y=transmission]{tikz/graphs/294_bad_open_pores/cond_trans_cp.txt};
+					\addlegendentry{$T_\mathrm{cond}^\mathrm{294op}$}
+					\addplot[mark=none, color=blue!50] table [x=Prel,y=transmission]{tikz/graphs/294_bad_open_pores/evap_trans_cp.txt};
+					\addlegendentry{$T_\mathrm{evap}^\mathrm{294op}$}
+        \end{axis}
+    \end{tikzpicture}
+    \label{fig:294-bad-open-pores}
+    \caption{Bad open pores illustrated by the comparison of a closed pore isotherm and a open pore isotherm of membrane 294a.}
+  \end{figure}
+\end{document}

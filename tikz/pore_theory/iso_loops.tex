@@ -30,42 +30,34 @@
             \node at (6,-0.7) {Pressure};
             %straight evap
             \draw[color = blue, postaction={decorate,decoration={markings,
-            mark=at position .3 with {\arrow[arrowstyle]{stealth}}}}] (11,3.5) -- (9.5,3.425) -- (8,3.35) -- (8,0.4) -- (0,0);
+            mark=at position .25 with {\arrow[arrowstyle]{stealth}}}}] (11,3.5) -- (9,3.4) -- (9,0.45) -- (0,0);
             %straight cond
             \draw[color = blue, postaction={decorate,decoration={markings,
-            mark=at position .65 with {\arrow[arrowstyle]{stealth}}}}] (0,0) -- (4,0.2) -- (8,0.4) -- (8,3.35) -- (11,3.5);
+            mark=at position .7 with {\arrow[arrowstyle]{stealth}}}}] (0,0) -- (9,0.45) -- (9,3.4) -- (11,3.5);
             %funnelled 1 cond
             \draw[color = red, postaction={decorate,decoration={markings,
-            mark=at position .6 with {\arrow[arrowstyle]{stealth}}}}] (0,0) -- (4,0.2) -- (6.5,0.325) -- (8,3.35) -- (11,3.5);
+            mark=at position .65 with {\arrow[arrowstyle]{stealth}}}}] (0,0) -- (7.25,0.3625) -- (9,3.4) -- (11,3.5);
             %funnelled 1 evap
             \draw[color = red, postaction={decorate,decoration={markings,
-            mark=at position .35 with {\arrow[arrowstyle]{stealth}}}}] (11,3.5) -- (9.5,3.425) -- (8,3.35) -- (6.5,0.325) -- (0,0);
-            %funnelled 2 cond
-            \draw[color = orange, postaction={decorate,decoration={markings,
-            mark=at position .68 with {\arrow[arrowstyle]{stealth}}}}] (0,0) -- (4,0.2) -- (8,0.4) -- (8,3.35) -- (11,3.5);
-            %funnelled 2 evap
-            \draw[color = orange, postaction={decorate,decoration={markings,
-            mark=at position .45 with {\arrow[arrowstyle]{stealth}}}}] (11,3.5) -- (9.5,3.425) -- (6.5,3.275) -- (6.5,0.325) -- (0,0);
+            mark=at position .3 with {\arrow[arrowstyle]{stealth}}}}] (11,3.5) -- (9,3.4) -- (7.25,0.3625) -- (0,0);
             %DASHED
             \draw[dashed] (11,0) -- (11,3.5);  %psat
             \draw[dashed] (9,0) -- (9,0.15);  %psp
             \draw[dashed] (8,0) -- (8,0.15);  %peq
-            \draw[dashed] (8,3.5) -- (8,3.35);  %psp
-            \draw[dashed] (6.5,3.5) -- (6.5,3.35);  %peq
+            \draw[dashed] (8.5,3.5) -- (8.5,3.35);  %psp
+            \draw[dashed] (7.25,3.5) -- (7.25,3.35);  %peq
             %labels
             \node at (-0.2,-0.3) {$0$};
             \node at (-0.2,3.5) {$1$};
             \node at (11,-0.3) {$P_\mathrm{sv}$};
             \node at (8,-0.3) {$P_\mathrm{eq}(d)$};
             \node at (9,-0.3) {$P_\mathrm{sp}(d)$};
-            \node at (6.5,3.8) {$P_\mathrm{eq}(d')$};
-            \node at (8,3.8) {$P_\mathrm{sp}(d')$};
+            \node at (7.25,3.8) {$P_\mathrm{eq}(d')$};
+            \node at (8.5,3.8) {$P_\mathrm{sp}(d')$};
             \draw[color=gray, line width=1mm] (0.5,3) -- (0.5,2.5) -- (0.8,2.5) -- (0.8,3);
             \draw[color=blue] (1,2.75) -- (1.5,2.75);
             \draw[color=gray, line width=1mm] (0.5,2.3) -- (0.55,1.8) -- (0.75,1.8) -- (0.8,2.3);
             \draw[color=red] (1,2.05) -- (1.5,2.05);
-            \draw[color=gray, line width=1mm] (0.55,1.6) -- (0.5,1.1) -- (0.8,1.1) -- (0.75,1.6);
-            \draw[color=orange] (1,1.35) -- (1.5,1.35);
         \end{scope}
     \end{tikzpicture}} \\
     \subfloat[Cylindrical pore open on both ends.]{
@@ -92,30 +84,31 @@
             \node at (6,-0.7) {Pressure};
             %cond funnel
             \draw[color = red, postaction={decorate,decoration={markings,
-            mark=at position .65 with {\arrow[arrowstyle]{stealth}}}}] (0,0) -- (4,0.2) -- (8,0.4) -- (8,3.35) -- (11,3.5);
+            mark=at position .65 with {\arrow[arrowstyle]{stealth}}}}] (0,0) -- (8.5,0.425) -- (8.5,3.375) -- (11,3.5);
             %evap funnel
             \draw[color = red, postaction={decorate,decoration={markings,
-            mark=at position .45 with {\arrow[arrowstyle]{stealth}}}}] (11,3.5) -- (9.5,3.425) -- (8,3.35) -- (6.5,0.325) -- (0,0);
+            mark=at position .4 with {\arrow[arrowstyle]{stealth}}}}] (11,3.5) -- (8,3.35) -- (7.25,0.3625) -- (0,0);
             %cond straight
             \draw[color = blue, postaction={decorate,decoration={markings,
-            mark=at position .70 with {\arrow[arrowstyle]{stealth}}}}] (0,0) -- (4,0.2) -- (9,0.45) -- (9,3.40) -- (11,3.5);
+            mark=at position .70 with {\arrow[arrowstyle]{stealth}}}}] (0,0) -- (9,0.45) -- (9,3.40) -- (11,3.5);
             %evap straight
             \draw[color = blue, postaction={decorate,decoration={markings,
-            mark=at position .32 with {\arrow[arrowstyle]{stealth}}}}] (11,3.5) -- (9.5,3.425) -- (8,3.35) -- (8,0.40) -- (0,0);
+            mark=at position .32 with {\arrow[arrowstyle]{stealth}}}}] (11,3.5) -- (8,3.35) -- (8,0.4) -- (8,0.40) -- (0,0);
             %DASHED
             \draw[dashed] (11,0) -- (11,3.5);  %psat
             \draw[dashed] (9,0) -- (9,0.15);  %psp
             \draw[dashed] (8,0) -- (8,0.15);  %peq
-            \draw[dashed] (8,3.5) -- (8,3.35);  %psp
-            \draw[dashed] (6.5,3.5) -- (6.5,3.35);  %peq
+            \draw[dashed] (8.5,3.5) -- (8.5,3.35);  %psp
+            \draw[dashed] (7.25,3.5) -- (7.25,3.35);  %peq
+            %labels
             %labels
             \node at (-0.2,-0.3) {$0$};
             \node at (-0.2,3.5) {$1$};
             \node at (11,-0.3) {$P_\mathrm{sv}$};
             \node at (8,-0.3) {$P_\mathrm{eq}(d)$};
             \node at (9,-0.3) {$P_\mathrm{sp}(d)$};
-            \node at (6.5,3.8) {$P_\mathrm{eq}(d')$};
-            \node at (8,3.8) {$P_\mathrm{sp}(d')$};
+            \node at (7.25,3.8) {$P_\mathrm{eq}(d')$};
+            \node at (8.5,3.8) {$P_\mathrm{sp}(d')$};
             \draw[color=gray, line width=1mm] (0.5,3) -- (0.5,2.5);
             \draw[color=gray, line width=1mm] (0.8,3) -- (0.8,2.5);
             \draw[color=blue] (1,2.75) -- (1.5,2.75);
