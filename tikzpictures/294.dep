@@ -1,8 +1,8 @@
-tikzpictures/294.pdf: tikz/graphs/294_bad_open_pores/cond_lf.txt
-tikzpictures/294.pdf: tikz/graphs/294_bad_open_pores/evap_lf.txt
-tikzpictures/294.pdf: tikz/graphs/294_bad_open_pores/evap_lf_cp.txt
-tikzpictures/294.pdf: tikz/graphs/294_bad_open_pores/cond_lf_cp.txt
-tikzpictures/294.pdf: tikz/graphs/294_bad_open_pores/cond_trans.txt
-tikzpictures/294.pdf: tikz/graphs/294_bad_open_pores/evap_trans.txt
-tikzpictures/294.pdf: tikz/graphs/294_bad_open_pores/cond_trans_cp.txt
-tikzpictures/294.pdf: tikz/graphs/294_bad_open_pores/evap_trans_cp.txt
+tikzpictures/294.pdf: tikzpictures/294.pgf-plot.table
+tikzpictures/294.pdf: tikzpictures/294.pgf-plot.table
+tikzpictures/294.pdf: tikzpictures/294.pgf-plot.table
+tikzpictures/294.pdf: tikzpictures/294.pgf-plot.table
+tikzpictures/294.pdf: tikzpictures/294.pgf-plot.table
+tikzpictures/294.pdf: tikzpictures/294.pgf-plot.table
+tikzpictures/294.pdf: tikzpictures/294.pgf-plot.table
+tikzpictures/294.pdf: tikzpictures/294.pgf-plot.table

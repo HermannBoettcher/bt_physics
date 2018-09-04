@@ -7,7 +7,7 @@
     \begin{tikzpicture}
         \def\PrelMin{.86}
 				\def\PrelMax{1}
-				\def\TransMin{1e-6}
+				\def\TransMin{1e-8}
 				\def\TransMax{1}
 				\def\LfMin{0}
 				\def\LfMax{2}
@@ -18,7 +18,7 @@
           height=0.5*\textwidth,
           grid,
 					axis y line*=left,
-          legend style={at={(0,.5)}, legend columns=2, anchor=north west},
+          legend style={at={(0,.5)}, legend columns=1, anchor=north west},
           every axis plot,
 					axis y line*=left,
 					line width = 1pt,
@@ -29,14 +29,18 @@
 					ytick = {0,0.25,0.50,0.75,1},
           ]
 					% Add plots
-					\addplot[mark=none, color=red] table [x=Prel,y=liquid_fraction]{tikz/graphs/294_bad_open_pores/cond_lf.txt};
-					\addlegendentry{$LF_\mathrm{cond}^\mathrm{294cp}$}
-					\addplot[mark=none, color=red!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/294_bad_open_pores/evap_lf.txt};
-					\addlegendentry{$LF_\mathrm{evap}^\mathrm{294cp}$}
-					\addplot[mark=none, color=blue] table [x=Prel,y=liquid_fraction]{tikz/graphs/294_bad_open_pores/evap_lf_cp.txt};
-					\addlegendentry{$LF_\mathrm{cond}^\mathrm{294op}$}
-					\addplot[mark=none, color=blue!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/294_bad_open_pores/cond_lf_cp.txt};
-					\addlegendentry{$LF_\mathrm{evap}^\mathrm{294op}$}
+          \addplot +[no markers, raw gnuplot, line width = 1pt,red]
+          gnuplot{plot "tikz/graphs/294_bad_open_pores/PNO_OuvertSol.qgra.text" index 0;};
+          \addlegendentry{$LF_\mathrm{cond}^\mathrm{294cp}$}
+          \addplot +[no markers, raw gnuplot, line width = 1pt,red!50]
+          gnuplot{plot "tikz/graphs/294_bad_open_pores/PNO_OuvertSol.qgra.text" index 1;};
+          \addlegendentry{$LF_\mathrm{evap}^\mathrm{294cp}$}
+          \addplot +[no markers, raw gnuplot, line width = 1pt,blue]
+          gnuplot{plot "tikz/graphs/294_bad_open_pores/PO.qgra.text" index 0;};
+          \addlegendentry{$LF_\mathrm{cond}^\mathrm{294op}$}
+          \addplot +[no markers, raw gnuplot, line width = 1pt,blue!50]
+          gnuplot{plot "tikz/graphs/294_bad_open_pores/PO.qgra.text" index 1;};
+          \addlegendentry{$LF_\mathrm{evap}^\mathrm{294op}$}
         \end{axis}
         %
         \begin{axis}[
@@ -49,19 +53,23 @@
           xmin = \PrelMin, xmax = \PrelMax,
           ymin = \TransMin, ymax = \TransMax,
           ylabel = {Transmission $T$},
-          ytick = {1e-1,1e-2},
+          ytick = {1e-1,1e-2,1e-3,1e-4},
           ymajorgrids=true,
           legend style={at={(0,0.5)}, legend columns=1, anchor=south west},
           ]
 					% Add plots
-					\addplot[mark=none, color=red] table [x=Prel,y=transmission]{tikz/graphs/294_bad_open_pores/cond_trans.txt};
-					\addlegendentry{$T_\mathrm{cond}^\mathrm{294cp}$}
-					\addplot[mark=none, color=red!50] table [x=Prel,y=transmission]{tikz/graphs/294_bad_open_pores/evap_trans.txt};
-					\addlegendentry{$T_\mathrm{evap}^\mathrm{294cp}$}
-					\addplot[mark=none, color=blue] table [x=Prel,y=transmission]{tikz/graphs/294_bad_open_pores/cond_trans_cp.txt};
-					\addlegendentry{$T_\mathrm{cond}^\mathrm{294op}$}
-					\addplot[mark=none, color=blue!50] table [x=Prel,y=transmission]{tikz/graphs/294_bad_open_pores/evap_trans_cp.txt};
-					\addlegendentry{$T_\mathrm{evap}^\mathrm{294op}$}
+          \addplot +[no markers, raw gnuplot, line width = 1pt,red]
+          gnuplot{plot "tikz/graphs/294_bad_open_pores/PNO_OuvertSol.qgra.text" using ($1):($2*0.45) index 2;};
+          \addlegendentry{$T_\mathrm{cond}^\mathrm{294cp}$}
+          \addplot +[no markers, raw gnuplot, line width =1pt,red!50]
+          gnuplot{plot "tikz/graphs/294_bad_open_pores/PNO_OuvertSol.qgra.text" using ($1):($2*0.45) index 3;};
+          \addlegendentry{$T_\mathrm{evap}^\mathrm{294cp}$}
+          \addplot +[no markers, raw gnuplot, line width = 1pt,blue]
+          gnuplot{plot "tikz/graphs/294_bad_open_pores/PO.qgra.text" using ($1):($2*0.45) index 2;};
+          \addlegendentry{$T_\mathrm{cond}^\mathrm{294op}$}
+          \addplot +[no markers, raw gnuplot, line width =1pt,blue!50]
+          gnuplot{plot "tikz/graphs/294_bad_open_pores/PO.qgra.text" using ($1):($2*0.45) index 3;};
+          \addlegendentry{$T_\mathrm{evap}^\mathrm{294op}$}
         \end{axis}
     \end{tikzpicture}
     \label{fig:294-bad-open-pores}
