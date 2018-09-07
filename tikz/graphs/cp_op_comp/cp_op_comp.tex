@@ -1,80 +1,15 @@
 \documentclass[../../../thesis.tex]{subfiles}
 
 \begin{document}
-  \begin{figure}[tpb]
+  \begin{figure}[p]
 		\centering
     \subfloat[]{
-      \tikzsetnextfilename{296b_op_cp}
-      \begin{tikzpicture}
-          \def\PrelMin{.86}
-  				\def\PrelMax{1}
-  				\def\TransMin{1e-8}
-  				\def\TransMax{10}
-  				\def\LfMin{0}
-  				\def\LfMax{2}
-          %
-          \begin{axis}[
-            /tikz/line join=bevel,
-            width=0.8*\textwidth,
-            height=0.5*\textwidth,
-            grid,
-  					axis y line*=left,
-            legend style={at={(0,0.5)}, legend columns=2, anchor=north west},
-            every axis plot,
-  					axis y line*=left,
-  					line width = 1pt,
-  					xmin = \PrelMin, xmax = \PrelMax,
-  					ymin = \LfMin, ymax = \LfMax,
-  					xlabel = {Relative pressure $P_\mathrm{rel}$},
-  					ylabel = {Liquid fraction $LF$},
-  					ytick = {0,0.25,0.50,0.75,1},
-            ]
-  					% Add plots
-  					\addplot[mark=none, color=red] table [x=Prel,y=liquid_fraction]{tikz/graphs/cp_op_comp/296b_cp_cond_1.txt};
-  					\addlegendentry{$LF_\mathrm{cond}^\mathrm{296b}$}
-  					\addplot[mark=none, color=red!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/cp_op_comp/296b_cp_evap_1.txt};
-  					\addlegendentry{$LF_\mathrm{evap}^\mathrm{296b}$}
-  					\addplot[mark=none, color=blue] table [x=Prel,y=liquid_fraction]{tikz/graphs/cp_op_comp/296b_op_cond_1.txt};
-  					\addlegendentry{$LF_\mathrm{cond}^\mathrm{296b'}$}
-  					\addplot[mark=none, color=blue!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/cp_op_comp/296b_op_evap_1.txt};
-  					\addlegendentry{$LF_\mathrm{evap}^\mathrm{296b'}$}
-          \end{axis}
-  				% transmission
-  				\begin{axis}[
-            /tikz/line join=bevel,
-            width=0.8*\textwidth,
-            height=0.5*\textwidth,
-  					ymode=log,
-  					axis y line*=right,
-  					line width = 1pt,
-  					xmin = \PrelMin, xmax = \PrelMax,
-  					ymin = \TransMin, ymax = \TransMax,
-  					ylabel = {Transmission $T$},
-  					ytick = {1,1e-1,1e-2,1e-3},
-            ymajorgrids=true,
-            legend style={at={(0,0.5)}, legend columns=1, anchor=south west},
-  					]
-  					% Add plots
-  					\addplot[mark=none, color=red] table [x=Prel,y=transmission]{tikz/graphs/cp_op_comp/296b_cp_cond_1.txt};
-  					\addlegendentry{$T_\mathrm{cond}^\mathrm{296b}$}
-  					\addplot[mark=none, color=red!50] table [x=Prel,y=transmission]{tikz/graphs/cp_op_comp/296b_cp_evap_1.txt};
-  					\addlegendentry{$T_\mathrm{evap}^\mathrm{296b}$}
-  					\addplot[mark=none, color=blue] table [x=Prel,y=transmission]{tikz/graphs/cp_op_comp/296b_op_cond_1.txt};
-  					\addlegendentry{$T_\mathrm{cond}^\mathrm{296b'}$}
-  					\addplot[mark=none, color=blue!50] table [x=Prel,y=transmission]{tikz/graphs/cp_op_comp/296b_op_evap_1.txt};
-  					\addlegendentry{$T_\mathrm{evap}^\mathrm{296b'}$}
-  				\end{axis}
-      \end{tikzpicture}
-      \label{fig:296b-op-cp-comp}
-    }
-    \\
-    \subfloat[]{
-    \tikzsetnextfilename{295b_op_cp}
+    \tikzsetnextfilename{op_cp_comp}
     \begin{tikzpicture}
         \def\PrelMin{.86}
 				\def\PrelMax{1}
 				\def\TransMin{1e-8}
-				\def\TransMax{10}
+				\def\TransMax{1}
 				\def\LfMin{0}
 				\def\LfMax{2}
         %
@@ -84,7 +19,7 @@
           height=0.5*\textwidth,
           grid,
 					axis y line*=left,
-          legend style={at={(0,0.5)}, legend columns=2, anchor=north west},
+          legend style={at={(0,.5)}, legend columns=2, anchor=north west},
           every axis plot,
 					axis y line*=left,
 					line width = 1pt,
@@ -95,30 +30,94 @@
 					ytick = {0,0.25,0.50,0.75,1},
           ]
 					% Add plots
-          \addplot[mark=none, color=red] table [x=Prel,y=liquid_fraction]{tikz/graphs/cp_op_comp/295b_cond_1.txt};
-          \addlegendentry{$LF_\mathrm{cond}^\mathrm{295b}$}
-          \addplot[mark=none, color=red!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/cp_op_comp/295b_evap_1.txt};
-          \addlegendentry{$T_\mathrm{evap}^\mathrm{295b}$}
-          \addplot[mark=none, color=blue] table [x=Prel,y=liquid_fraction]{tikz/graphs/cp_op_comp/295b_op_cond_1.txt};
-          \addlegendentry{$T_\mathrm{cond}^\mathrm{295b'}$}
-          \addplot[mark=none, color=blue!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/cp_op_comp/295b_op_evap_1.txt};
-          \addlegendentry{$T_\mathrm{evap}^\mathrm{295b'}$}
+          \addplot[mark=none, color=red] table [x=Prel,y=liquid_fraction]{tikz/graphs/cp_op_comp/296b_cp_cond_1.txt};
+          \addlegendentry{$LF_\mathrm{cond}^\mathrm{296b}$}
+          \addplot[mark=none, color=red!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/cp_op_comp/296b_cp_evap_1.txt};
+          \addlegendentry{$LF_\mathrm{evap}^\mathrm{296b}$}
+          \addplot[mark=none, color=blue] table [x=Prel,y=liquid_fraction]{tikz/graphs/cp_op_comp/296b_op_cond_1.txt};
+          \addlegendentry{$LF_\mathrm{cond}^\mathrm{296b'}$}
+          \addplot[mark=none, color=blue!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/cp_op_comp/296b_op_evap_1.txt};
+          \addlegendentry{$LF_\mathrm{evap}^\mathrm{296b'}$}
         \end{axis}
-				% transmission
-				\begin{axis}[
+        %
+        \begin{axis}[
           /tikz/line join=bevel,
           width=0.8*\textwidth,
           height=0.5*\textwidth,
-					ymode=log,
-					axis y line*=right,
-					line width = 1pt,
-					xmin = \PrelMin, xmax = \PrelMax,
-					ymin = \TransMin, ymax = \TransMax,
-					ylabel = {Transmission $T$},
-					ytick = {10,1,1e-1,1e-2,1e-3},
+          ymode=log,
+          axis y line*=right,
+          line width = 1pt,
+          xmin = \PrelMin, xmax = \PrelMax,
+          ymin = \TransMin, ymax = \TransMax,
+          ylabel = {Transmission $T$},
+          ytick = {1e-1,1e-2,1e-3,1e-4},
           ymajorgrids=true,
           legend style={at={(0,0.5)}, legend columns=2, anchor=south west},
-					]
+          ]
+					% Add plots
+          \addplot[mark=none, color=red] table [x=Prel,y=transmission]{tikz/graphs/cp_op_comp/296b_cp_cond_1.txt};
+          \addlegendentry{$T_\mathrm{cond}^\mathrm{296b}$}
+          \addplot[mark=none, color=red!50] table [x=Prel,y=transmission]{tikz/graphs/cp_op_comp/296b_cp_evap_1.txt};
+          \addlegendentry{$T_\mathrm{evap}^\mathrm{296b}$}
+          \addplot[mark=none, color=blue] table [x=Prel,y=transmission]{tikz/graphs/cp_op_comp/296b_op_cond_1.txt};
+          \addlegendentry{$T_\mathrm{cond}^\mathrm{296b'}$}
+          \addplot[mark=none, color=blue!50] table [x=Prel,y=transmission]{tikz/graphs/cp_op_comp/296b_op_evap_1.txt};
+          \addlegendentry{$T_\mathrm{evap}^\mathrm{296b'}$}
+        \end{axis}
+    \end{tikzpicture}
+    \label{fig:296b-op-cp-comp}}
+    \\
+    \subfloat[]{
+    \tikzsetnextfilename{295_op_cp_comp}
+    \begin{tikzpicture}
+        \def\PrelMin{.86}
+				\def\PrelMax{1}
+				\def\TransMin{1e-8}
+				\def\TransMax{1}
+				\def\LfMin{0}
+				\def\LfMax{2}
+        %
+        \begin{axis}[
+          /tikz/line join=bevel,
+          width=0.8*\textwidth,
+          height=0.5*\textwidth,
+          grid,
+					axis y line*=left,
+          legend style={at={(0,.5)}, legend columns=2, anchor=north west},
+          every axis plot,
+					axis y line*=left,
+					line width = 1pt,
+					xmin = \PrelMin, xmax = \PrelMax,
+					ymin = \LfMin, ymax = \LfMax,
+					xlabel = {Transmission $T$},
+					ylabel = {Liquid fraction $LF$},
+					ytick = {0,0.25,0.50,0.75,1},
+          ]
+					% Add plots
+          \addplot[mark=none, color=red] table [x=Prel,y=liquid_fraction]{tikz/graphs/cp_op_comp/295b_cond_1.txt};
+          \addlegendentry{$LF_\mathrm{cond}^\mathrm{295b}$}
+          \addplot[mark=none, color=red!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/cp_op_comp/295b_evap_1.txt};
+          \addlegendentry{$LF_\mathrm{evap}^\mathrm{295b}$}
+          \addplot[mark=none, color=blue] table [x=Prel,y=liquid_fraction]{tikz/graphs/cp_op_comp/295b_op_cond_1.txt};
+          \addlegendentry{$LF_\mathrm{cond}^\mathrm{295b'}$}
+          \addplot[mark=none, color=blue!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/cp_op_comp/295b_op_evap_1.txt};
+          \addlegendentry{$LF_\mathrm{evap}^\mathrm{295b'}$}
+        \end{axis}
+        %
+        \begin{axis}[
+          /tikz/line join=bevel,
+          width=0.8*\textwidth,
+          height=0.5*\textwidth,
+          ymode=log,
+          axis y line*=right,
+          line width = 1pt,
+          xmin = \PrelMin, xmax = \PrelMax,
+          ymin = \TransMin, ymax = \TransMax,
+          ylabel = {Transmission $T$},
+          ytick = {1e-1,1e-2,1e-3,1e-4},
+          ymajorgrids=true,
+          legend style={at={(0,0.5)}, legend columns=2, anchor=south west},
+          ]
 					% Add plots
           \addplot[mark=none, color=red] table [x=Prel,y=transmission]{tikz/graphs/cp_op_comp/295b_cond_1.txt};
           \addlegendentry{$T_\mathrm{cond}^\mathrm{295b}$}
@@ -128,10 +127,9 @@
           \addlegendentry{$T_\mathrm{cond}^\mathrm{295b'}$}
           \addplot[mark=none, color=blue!50] table [x=Prel,y=transmission]{tikz/graphs/cp_op_comp/295b_op_evap_1.txt};
           \addlegendentry{$T_\mathrm{evap}^\mathrm{295b'}$}
-				\end{axis}
-      \end{tikzpicture}
-      \label{fig:295b-op-cp-comp}
-    }
+        \end{axis}
+    \end{tikzpicture}
+    \label{fig:295b-op-cp-comp}}
     \caption{Comparison of the isotherms of membranes with closed pores to those with open pores. \protect\subref{fig:296b-op-cp-comp} shows membranes of wafer 296, while \protect\subref{fig:295b-op-cp-comp} displays those of wafer 295. The increase of size of the hysteresis is clearly observable.}
     \label{fig:op-cp-comp}
   \end{figure}

@@ -18,7 +18,7 @@
           line width = 1pt,
           xmin = \tMin, xmax = \tMax,
           ymin = \PMin, ymax = \PMax,
-          xlabel = {Pressure inside the cell $P_\mathrm{cell}$ in $\si{\milli\bar}$},
+          xlabel = {Normalized time $t$ in $\si\hour$},
           ylabel = {Time derivative $\dot{P}_\mathrm{cell}$ in $\si{\milli\bar\per\hour}$},
           grid,
           legend style={at={(1,1)}, legend columns=1, anchor=north east},
@@ -45,7 +45,7 @@
     \tikzsetnextfilename{example_isotherm}
           \begin{tikzpicture}
             \def\tMin{0}
-            \def\tMax{1}
+            \def\tMax{155}
             \def\PMin{0]}
             \def\PMax{17}
             \def\LineWidth{1pt}
@@ -58,17 +58,17 @@
               line width = 1pt,
               xmin = \tMin, xmax = \tMax,
               ymin = \PMin, ymax = \PMax,
-              xlabel = {Realtive pressure inside the cell $\frac{P_\mathrm{cell}}{P_\mathrm{sv}}$},
-              ylabel = {Condensed amount of hexane $n$ in $\si\mol$},
+              xlabel = {Pressure inside the cell $P_\mathrm{cell}$},
+              ylabel = {Condensed amount of hexane $n$ in $\si{\micro\mol}$},
               %	legend entries={Avec,Sans},
               grid,
               legend style={at={(0,1)}, legend columns=1, anchor=north west},
               every axis plot,
               ]
               % Add plots
-              \addplot[mark=none, color=blue] table [x=Prel,y=mol]{tikz/graphs/295d_integration_visualization/296b_op_cond_1.txt};
+              \addplot[mark=none, color=blue] table [x=Pcell,y=mol]{tikz/graphs/295d_integration_visualization/296b_op_cond_1.txt};
               \addlegendentry{condensation}
-              \addplot[mark=none, color=blue!50] table [x=Prel,y=mol]{tikz/graphs/295d_integration_visualization/296b_op_evap_1.txt};
+              \addplot[mark=none, color=blue!50] table [x=Pcell,y=mol]{tikz/graphs/295d_integration_visualization/296b_op_evap_1.txt};
               \addlegendentry{evaporation}
             \end{axis}
           \end{tikzpicture}

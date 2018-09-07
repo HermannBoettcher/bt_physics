@@ -1,0 +1,8 @@
+tikzpictures/op_cp_comp.pdf: tikz/graphs/cp_op_comp/296b_cp_cond_1.txt
+tikzpictures/op_cp_comp.pdf: tikz/graphs/cp_op_comp/296b_cp_evap_1.txt
+tikzpictures/op_cp_comp.pdf: tikz/graphs/cp_op_comp/296b_op_cond_1.txt
+tikzpictures/op_cp_comp.pdf: tikz/graphs/cp_op_comp/296b_op_evap_1.txt
+tikzpictures/op_cp_comp.pdf: tikz/graphs/cp_op_comp/296b_cp_cond_1.txt
+tikzpictures/op_cp_comp.pdf: tikz/graphs/cp_op_comp/296b_cp_evap_1.txt
+tikzpictures/op_cp_comp.pdf: tikz/graphs/cp_op_comp/296b_op_cond_1.txt
+tikzpictures/op_cp_comp.pdf: tikz/graphs/cp_op_comp/296b_op_evap_1.txt

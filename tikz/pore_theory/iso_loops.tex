@@ -59,7 +59,8 @@
             \draw[color=gray, line width=1mm] (0.5,2.3) -- (0.55,1.8) -- (0.75,1.8) -- (0.8,2.3);
             \draw[color=red] (1,2.05) -- (1.5,2.05);
         \end{scope}
-    \end{tikzpicture}} \\
+    \end{tikzpicture}
+    \label{fig:closed-pore-loops}} \\
     \subfloat[Cylindrical pore open on both ends.]{
     \tikzsetnextfilename{iso_loops_2}
     \begin{tikzpicture}[every node/.style = {font = \small},
@@ -116,8 +117,9 @@
             \draw[color=gray, line width=1mm] (0.8,2.3) -- (0.75,1.8);
             \draw[color=red] (1,2.05) -- (1.5,2.05);
         \end{scope}
-    \end{tikzpicture}}
-    \caption{Absorption and desorption isotherm loops for various kinds of cylindrical pores. For the funnelled pores it is $d>d'$.}
+    \end{tikzpicture}
+    \label{fig:open-pore-loops}}
+    \caption{Absorption and desorption isotherm loops for closed pores \protect\subref{fig:closed-pore-loops} and open pores \protect\subref{fig:open-pore-loops}. For the funnelled pores it is $d>d'$.}
     \label{fig:iso-loops}
 \end{figure}
 \end{document}

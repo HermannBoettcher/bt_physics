@@ -1,0 +1,30 @@
+\documentclass[../../thesis.tex]{subfiles}
+
+\begin{document}
+\begin{figure}[tb]
+    \centering
+      \tikzsetnextfilename{temp_p_hexane}
+      \begin{tikzpicture}
+          \begin{axis}[
+            /tikz/line join=bevel,
+            width=0.8*\textwidth,
+            height=0.5*\textwidth,
+            legend style={at={(0,.5)}, legend columns=1, anchor=south west},
+            every axis plot,
+  					line width = 1pt,
+  					xmin = 15, xmax = 25,
+  					%ymin = 140, ymax = 200,
+  					xlabel = {Temperature $T_\mathrm{bath}$ in $\si{\celsius}$},
+  					ylabel = {Vapor pressure $P_\mathrm{v}$ in $\si{\milli\bar}$},
+            grid
+            ]
+  					% Add plots
+            \addplot[red, domain=15:25] {10^(4.00266 - 1171.53/(-48.784+x+273.15))*1000};
+            % PV=nRT -> P=nRT/V
+          \end{axis}
+      \end{tikzpicture}
+    \caption{Vapor pressure of hexane according to \textsc{Antoine} equation (\cref{eq:antoine-equation}) using the \textsc{Antoine} equation parameter \cref{eq:antoine-parameters} for hexane.}
+    \label{fig:antoine}
+  \end{figure}
+
+\end{document}

@@ -12,8 +12,7 @@
         \draw[fill = white] decorate[decoration={snake},decorate] {(0,2) -- (2,2)} -- (2,1) -- (0,1) -- (0,2);
         \node at (1,1.5) {$T_\mathrm{res}$};
         \node at (1,0.5) {Reservoir};
-        \draw (0,2) -- (0,3);
-        \draw (2,2) -- (2,3);
+        \draw (0,1) rectangle (2,3);
         \draw (4,3) -- (5,4) -- (5,3) -- (4,4) -- cycle node[anchor=north] {$V_1$};
         \draw (6,1) -- (7,2) -- (7,1) -- (6,2) -- cycle node[anchor=north] {$V_2$};
         \draw (8,3) -- (9,4) -- (9,3) -- (8,4) -- cycle;
@@ -29,7 +28,7 @@
         \node at (8.5,4.5) {\textsc{Pfeiffer} microvalve};
         %pipes
         \begin{pgfonlayer}{bg}    % select the background layer
-            \draw (1,3.5) -- (1,1.5);
+            \draw (1,3.5) -- (1,2.5);
             \draw (1,3.5) -- (4,3.5);
             \draw (5,3.5) -- (8,3.5);
             \draw (9,3.5) -- (11,3.5);
@@ -40,7 +39,7 @@
             \draw (6.5,5.5) -- (pres);
         \end{pgfonlayer}
     \end{tikzpicture}
-    \caption{Experiment setup with bypass which allows to pump the whole system without changing the opening of the \textsc{Pfeiffer} microvalve. The temperatures within the reservoir and the cell are measured by the thermometers $T_\mathrm{res}$ and $T_\mathrm{cell}$. Furthermore, $P_\mathrm{res}$ and $P_\mathrm{cell}$ are the two installed pressure gauges. The void is experimentally realized by a primary pump.}
+    \caption{Experiment setup. The temperatures within the reservoir and the cell are measured by the thermometers $T_\mathrm{res}$ and $T_\mathrm{cell}$. Furthermore, $P_\mathrm{res}$ and $P_\mathrm{cell}$ are the two installed pressure gauges. The void is experimentally realized by a primary pump.}
     \label{fig:setup}
 \end{figure}
 \end{document}

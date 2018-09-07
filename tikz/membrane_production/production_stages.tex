@@ -108,7 +108,7 @@
                     \clip (0.02,0) rectangle (\l - 0.02,\h);
                     \fill[gray] (0,0) rectangle (\l,\h);
                     \foreach \i in {1,3,...,11}{
-                        \fill[white] (- 4 / 3 * \d + \i * \d, \h + 0.1) arc (180:360:\d / 3 * 4);}
+                        \fill[white] (- 4 / 3 * \d + \i * \d, \h + 0.1) arc (180:360:\d / 3 * 4)--cycle;}
                     \draw[color=orange,<->] (0.6,0) -- (0.6,\h+0.1-0.8);
                     \node[color=orange] at (1.1,\h/2) {$d_\mathrm{Al}'$};
                     \node[color=red] at (6,3) {$\ce{Al}$};
@@ -173,7 +173,8 @@
                 \end{scope}
             \end{tikzpicture}
             \label{fig:barrier-layer-dissolution}}
-        \caption{Production stages of the membrane production. It starts with a wafer of bulk aluminum (dark gray) \protect\subref{fig:bulk-al} which is then anodized yielding \protect\subref{fig:first-anodizing}, where light gray represents alumina. The latter is then dissolved producing a bulk aluminum wafer with hexagonally arranged hollows \protect\subref{fig:al-dissolution-1}. By the second anodizing straight parallel pores are created \protect\subref{fig:second-anodizing}. After dissolving the remaining aluminum \protect\subref{fig:al-dissolution-2} the barrier layer etched to open the pores \protect\subref{fig:barrier-layer-dissolution}. For the variable specifications please refer to section \ref{subsec:membrane-production}.}
+        \caption{Production stages of the membrane production. It starts with a wafer of bulk aluminum (dark gray) \protect\subref{fig:bulk-al} which is then anodized yielding \protect\subref{fig:first-anodizing}, where light gray represents alumina. The latter is then dissolved producing a bulk aluminum wafer with hexagonally arranged hollows \protect\subref{fig:al-dissolution-1}. By the second anodizing, straight parallel pores are created \protect\subref{fig:second-anodizing}. After dissolving the remaining aluminum \protect\subref{fig:al-dissolution-2}, the barrier layer etched to open the pores \protect\subref{fig:barrier-layer-dissolution}. The initial aluminum wafer's thickness is $d_{\ce{Al}}=\SI{1}{\milli\meter}$, the \textit{barrier layer} thickness $d_\mathrm{barrier-layer}$ is $\SI{30}{\nano\meter}$
+        to $\SI{60}{\nano\meter}$, the pore diameters $d_\mathrm{pore}=\SI{10}{\nano\meter}$ to $\SI{100}{\nano\meter}$ and the pore length or membrane thickness $l_\mathrm{pore}=\SI{30}{\micro\meter}$ to $\SI{60}{\micro\meter}$.}
         \label{fig:membrane-production}
     \end{figure}
 

@@ -9,7 +9,7 @@
           \def\PrelMin{.86}
   				\def\PrelMax{1}
   				\def\TransMin{1e-4}
-  				\def\TransMax{10}
+  				\def\TransMax{1}
   				\def\LfMin{0}
   				\def\LfMax{2}
           %
@@ -30,9 +30,11 @@
             legend style={at={(0,0)}, legend columns=1, anchor=south west},
   					]
   					% Add plots
-  					\addplot[mark=none, color=red] table [x=Prel,y=transmission]{tikz/graphs/292_295_296_transmission/292d_cond_1.txt};
+            \addplot +[no markers, raw gnuplot, line width = 1pt,red]
+            gnuplot{plot "tikz/graphs/292_295_296_transmission/292d_cond_1.txt" using ($1):($2*0.45) index 2;};
   					\addlegendentry{$T_\mathrm{cond}^\mathrm{292d}$}
-  					\addplot[mark=none, color=red!50] table [x=Prel,y=transmission]{tikz/graphs/292_295_296_transmission/292d_evap_1.txt};
+            \addplot +[no markers, raw gnuplot, line width = 1pt,red]
+            gnuplot{plot "tikz/graphs/292_295_296_transmission/292d_evap_1.txt" using ($1):($2*0.45) index 2;};
   					\addlegendentry{$T_\mathrm{evap}^\mathrm{292d}$}
   				\end{axis}
         \end{tikzpicture}

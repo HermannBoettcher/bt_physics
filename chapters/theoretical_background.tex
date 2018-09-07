@@ -8,9 +8,7 @@
     \section{Closed and open cylindrical pores}
     \label{sec:cp-op}
 
-      For simplification, in the follwing, the term \textit{closed pore} will refer to a cylindrical pore that is closed on one end, whereas an \textit{open pore} is open on both ends. Due to production processes, closed funnelled pores are alaways closed on the small end leaving the end with the larger diameter open.
-      ADD IMAGE???
-
+      For simplification, in the following, the term \textit{closed pore} will refer to a cylindrical pore that is closed on one end, whereas an \textit{open pore} is open on both ends. Due to production processes, closed funnelled pores are always closed on the small end leaving the end with the larger diameter open.
 
     \section{Kelvin equation}
     \label{sec:kelvin-equation}
@@ -19,12 +17,12 @@
       \begin{equation*}
         P_\mathrm{l}-P_\mathrm{v}=-\gamma\underbrace{\left(\frac{1}{R_1}+\frac{1}{R_2}\right)}_{\coloneqq\zeta}
       \end{equation*}
-      with the pressure inside the liquid $P_\mathrm{l}$, pressure inside the vapor $P_\mathrm{v}$, surface tension $\gamma$ and meniscus radii $R_1$, $R_2$ which makes $\zeta$ the meniscus curvature ???.
+      with the pressure inside the liquid $P_\mathrm{l}$, pressure inside the vapor $P_\mathrm{v}$, surface tension $\gamma$ and meniscus radii $R_1$, $R_2$ and $\zeta$ the meniscus mean curvature.
       Connecting this with the phase equilibrium
       \begin{equation*}
         \mu_\mathrm{l}(P_\mathrm{l})=\mu_\mathrm{v}(P_\mathrm{v}),
       \end{equation*}
-      where $\mu_\mathrm{l}$ is the chemical potential wihtin the liquid, $\mu_\mathrm{v}$ the one within the vapor, determines the vapor and the liquid pressure. For an incompressible liquid and a perfect vapor the phase equilibrium becomes
+      where $\mu_\mathrm{l}$ is the chemical potential wihtin the liquid, $\mu_\mathrm{v}$ the one within the vapor, determines the vapor and the liquid pressure. For an incompressible liquid and a perfect vapor, the phase equilibrium becomes
       \begin{align*}
         \mu_\mathrm{l}(P_\mathrm{l}) &= \mu_\mathrm{l}(P_\mathrm{sv})+V_\mathrm{mol}^\mathrm{l}(P_\mathrm{l}-P_\mathrm{sv}),  \\
         \mu_\mathrm{v}(P_\mathrm{v}) &= \mu_\mathrm{v}(P_\mathrm{sv})+RT\ln\underbrace{\left( \frac{P_\mathrm{v}}{P_\mathrm{sv}}\right)}_{\coloneqq P_\mathrm{rel}},
@@ -33,7 +31,7 @@
       \begin{equation*}
         \mu_\mathrm{v}(P_\mathrm{sv})=\mu_\mathrm{l}(P_\mathrm{sv})
       \end{equation*}
-      yields
+      and assuming the liiwuid to be much denser than the, yields
       \begin{equation}
         -\zeta\gamma V_\mathrm{mol}^\mathrm{l}= RT\ln P_\mathrm{rel},
       \end{equation}
@@ -42,7 +40,7 @@
 
       \subfile{tikz/pore_cond_evap/pore_cond_evap.tex}
 
-      For a perfectly wetting liquid the meniscus in a closed pore the meniscus curvature is
+      For a perfectly wetting liquid the meniscus in a closed pore, the meniscus curvature is
       \begin{equation*}
         \zeta_\mathrm{sph} = \frac{1}{R_0}+\frac{1}{R_0}=\frac{2}{R_0}
       \end{equation*}
@@ -51,7 +49,7 @@
         P_\mathrm{eq}=P_\mathrm{sv}\cdot\exp{\left(-\frac{2\cdot \gamma V_\mathrm{mol}^\mathrm{l}}{R_0\cdot RT}\right)}<P_\mathrm{sv}.
         \label{eq:p-eq}
       \end{equation}
-      \Cref{fig:closed-pore-process} shows the reversabillity of the process resulting in the evaporation pressure being
+      \Cref{fig:closed-pore-process} shows the reversibility of the process resulting in the evaporation pressure being
       \begin{equation*}
         P_\mathrm{evap}=P_\mathrm{cond}.
       \end{equation*}
@@ -70,29 +68,34 @@
       \end{equation*}
       The evaporation process that occurs at equilibrium pressure is the same as for the closed pore.
 
-      \Cref{fig:kelvin-equation-plot} shows the relative vapor pressure to diameter conversion for the equilibrium and the spinodal mechanism. The conversion is valid for pores of large diameters in which the thickness of the liquid film is negligable. For smaller pores, where the film's thickness becomes relevant, the theory of \textsc{Saam} and \textsc{Cole} has to be used rather than \textsc{Kelvin} equation.
+      Important is the inequality
+      \begin{equation}
+        P_\mathrm{eq}(d)<P_\mathrm{sp}(d)<P_\mathrm{sv}.
+        \label{eq:cond-pressure-inequality}
+      \end{equation}
+      \Cref{fig:kelvin-equation-plot} shows the relative vapor pressure to diameter conversion for the equilibrium and the spinodal mechanisms. The conversion is valid for pores of large diameters in which the thickness of the liquid film is negligable. For smaller pores, where the film's thickness becomes relevant, the theory of \textsc{Saam} and \textsc{Cole} has to be used rather than \textsc{Kelvin} equation.
 
-      Qualatively, the pressures at which condensation and evaporation occur are shifted towards smaller values due to the reduction of the effective pore diameter by the liquid film as shown in \cref{fig:pshift}. (REFHERE???) For even smaller pores, thermal activation may be so important that the hysteresis disappears (REFHERE???).
+      Qualatively, the pressures at which condensation and evaporation occur are shifted towards smaller values due to the reduction of the effective pore diameter by the liquid film. (REFHERE???) For even smaller pores, thermal activation may be so important that the hysteresis disappears (REFHERE???).
       \medskip
 
-      The long term goal of the team's experiments is to probe these absorption and desorption models. However, for the native pores of $\SI{40}{\nano\meter}$ to $\SI{60}{\nano\meter}$ diameter that are used for the conducted experiments these effects are believed to be small and the \textsc{Kelvin} equation is used to translate the condensation and evaporation pressures to pore diameters.
+      The long term goal of the team's experiments is to probe these absorption and desorption models. However, for the native pores of $\SI{40}{\nano\meter}$ to $\SI{60}{\nano\meter}$ diameter that are used for the conducted experiments, these effects are believed to be small and the \textsc{Kelvin} equation will be used to translate the condensation and evaporation pressures to pore diameters.
 
 
     \section{Condensation and evaporation in non ideal pores}
     \label{eq:cond-evap-non-ideal-pore}
 
-      To understand the condensation and evaporation of hexane in the alumina membranes, the processes must be clear for a single pore. The following explanation starts with a straight cylindrical closed pore. Then, the aspect of funnellization is added to clarify its effect. Moving on to open pores, again, straight pores are followed by funnelled ones.
+      To discuss the condensation and evaporation of hexane in the alumina membranes, the processes must be clear for a single pore. The following explanation starts with a straight cylindrical closed pore. Then, the diameter gradient along the pore's length is added (funnellization). Finally, open pores (straight and funnelled) are discused.
 
       \subsection{Condensation and evaporation in a closed straight pore}
       \label{subsec:closed-pore-theory}
 
-        The isotherm of a straight cylindrical pore is illustrated in \cref{fig:theory-cp} with the corresponding processes inside the pore. Exposing the pore to vapor yields a wetting film on its surface (orange pressure range of the isotherm). The film starts forming a spherical meniscus at the closed end of the pore (green). Upon reaching equilibrium pressure $P_\mathrm{eq}(d)$ (compare \cref{eq:p-eq}) the pore fills, due to the translational symmetry of the meniscus, leaving only a spherical meniscus at the open end (red). The latter evolves with increasing pressure till an even surface is left at saturated vapor pressure $P_\mathrm{sv}$ (blue). According to \cref{sec:kelvin-equation}, this process is reversible. Upon decreasing the pressure, a spherical menicus forms on the surface of the liquid and recedes to the bottom of the pore at equilibrium pressure. The remaining film evaporates, yielding a fully dried pore at zero pressure.
+        The isotherm for a straight cylindrical pore is illustrated in \cref{fig:theory-cp} with the corresponding processes inside the pore. Exposing the pore to vapor yields a wetting film on its surface (orange pressure range of the isotherm). The film starts forming a spherical meniscus at the closed end of the pore (green). Upon reaching equilibrium pressure $P_\mathrm{eq}(d)$ (compare \cref{eq:p-eq}) the pore fills, due to the translational symmetry of the pore, leaving only a spherical meniscus at the open end (red). The latter flattens with increasing pressure till an even surface is left at saturated vapor pressure $P_\mathrm{sv}$ (blue). According to \cref{sec:kelvin-equation}, this process is reversible. Upon decreasing the pressure, a spherical menicus forms on the surface of the liquid and recedes to the bottom of the pore at equilibrium pressure. The remaining film evaporates, yielding a fully dried pore at zero pressure.
 
 
       \subsection{Condensation and evaporation in a closed funnelled pore}
       \label{subsec:closed-funnelled-pore-theory}
 
-        As will be discussed in ???, the membrane production yields funnelled pores which are open on the large end. As in the closed straight pore (\cref{subsec:closed-pore-theory}), the condensation and evaporation of liquid in a closed funnelled pore is reversible. The difference is that both processes are continuous now: The pore fills and empties over a pressure range depending on the difference between the pore diameters of the top and bottom side. This makes for an inclined isotherm, as can be seen on \cref{fig:theory-funnelled-cp}.
+        As will be discussed in \cref{subsec:open-pore-isotherm}, the membrane production yields funnelled pores which are open on the large end. As in the closed straight pore (\cref{subsec:closed-pore-theory}), the condensation and evaporation of liquid in a closed funnelled pore is reversible. The difference is that both processes are continuous now: The pore fills and empties over a pressure range depending on the difference between the pore diameters of the top and bottom side. This makes for an inclined isotherm, as can be seen on \cref{fig:theory-funnelled-cp}.
 
               \subfile{tikz/pore_theory/cp_theory.tex}
               \subfile{tikz/pore_theory/open_straight_cyl_pore_isos.tex}
@@ -101,76 +104,75 @@
       \subsection{Condensation and evaporation in an open straight pore}
       \label{subsec:open-pore-theory}
 
-        \Cref{fig:open-straight-op} shows the condensation isotherm branch of an open straight pore and the corresponding processes inside the pore. As explained before, a wetting film forms on the pores inside. However, for an open pore, the latter forms a cylindrical meniscus. Upon reaching the spinodal pressure $P_\mathrm{sp}(d)$ (compare \cref{eq:p-sp}), the film collapses, yielding a filled pore with menisci at either open end (red). The menisci are spherical cap menisci as
-        \begin{equation}
-          P_\mathrm{eq}(d)<P_\mathrm{sp}(d)<P_\mathrm{sv}
-        \end{equation}
-        and evolve into even surfaces at saturated vapor pressure (blue).
+        \Cref{fig:open-straight-op} shows the condensation isotherm branch of an open straight pore and the corresponding processes inside the pore. As explained above, a wetting film forms on the pores inside. However, for an open pore, the latter forms a cylindrical meniscus. Upon reaching the spinodal pressure $P_\mathrm{sp}(d)$ (compare \cref{eq:p-sp}), the film collapses, yielding a filled pore with menisci at either open end (red). Because of \cref{eq:cond-pressure-inequality}, the menisci are spherical cap menisci and evolve into flat surfaces at saturated vapor pressure (blue).
         \medskip
 
-        The desorption isotherm of a straight cylindrical pore is illustrated in \cref{fig:open-straight-op-evap}. With the only difference being that spherical menisci form on both ends of the pore. The evaporation of liquid from an open, straight pore functions the same as for a closed, straight pore which is described in \cref{subsec:closed-pore-theory}.
+        The desorption isotherm for a straight open pore is illustrated in \cref{fig:open-straight-op-evap}. The only difference with respect to the closed pore is that spherical menisci form on both ends of the open pore. The evaporation of liquid from an open, straight pore works the same as for a closed, straight pore which is described in \cref{subsec:closed-pore-theory}.
 
-        Thus, condensation and evaporation occur at two different pressures yielding a hysteresis. A complete isothermic loop of condensation and evaporation is shown in \cref{fig:iso-loops}.
+        Thus, condensation and evaporation occur at two different pressures yielding a hysteresis. A complete isothermic loop of condensation and evaporation is shown in \cref{fig:open-pore-loops}.
 
 
       \subsection{Condensation and evaporation in an open funnelled pore}
       \label{subsec:open-funnelled-pore-theory}
 
-      Here, a funnelled cylindrical pore that is open at both ends is regarded. In the case where the funnellization is small enough with respect to the pore's diameter for
-      \begin{equation*}
-          P_\mathrm{sp}(d')\ge P_\mathrm{eq}(d).
-          \label{eq:open-fun-pore-precond}
-      \end{equation*}
-      to hold, the pore fills abruptly at $P_\mathrm{sp}(d')$. For stronger funnellization, the condensation branch of the isotherm shows a vertical rise, followed by a continuous increase due to the further condensation at equilibrium pressure and according to the increasing pore diameter.
-
-      In both cases, the pore empties at equilibrium pressure, starting at the large end. This makes for the same behaviour as a closed funnelled pore which has been explained in \cref{subsec:closed-funnelled-pore-theory}.
-
-      \subfile{tikz/pore_theory/iso_loops.tex}
-
-
-
-    \section{Blablabla Näherung}
-    \label{sec:porous-transmission}
-
-      The refractive index of a porous medium with structures in the range of the wavelength of the transmitting light can be approximated by the blablabla???. Using the porosity $0<\phi<1$ as a parameter it is assumed that the effective refractive index behaves like
-      \begin{equation*}
-        n_\mathrm{eff} = n_1 \left(1-\phi\right) + n_2 \phi
-        \label{eq:porous-transmission-approximation}
-      \end{equation*}
-      where $n_{1,2}$ are the indices of the two components of which the medium is composed (for nanoporous alumina membranes in empty state the components are alumina and vacuum for example).
-
-      \subfile{tikz/optics/porous_n.tex}
-
-
-      \subsection{Transmission of Nanoporous Membranes in Empty and Filled State}
-
-        Here, nanoporous media made of an arbitrary material - with the sole condition that $n_\mathrm{mat}>1$ - shall be regarded in an empty and filled state. The wetting liquid's refractive index is $n_\mathrm{liq}>1$. The approximation \cref{eq:porous-transmission-approximation} yields the inequality
+        Here, an open funnelled pore is regarded. The behaviour for the evaporation is the same as for the closed funnelled pore. It starts at equilibrium pressure of the large end $P_\mathrm{eq}(d)$ from where the meniscus then descends to the smaller bottom end. In contrast, the bahaviour for condensation is different. If the funnellization is small enough with respect to the pore's diameter for
         \begin{equation*}
-          n_\mathrm{eff}^\mathrm{empty}=n_1\cdot\left( 1-\phi\right) + n_\mathrm{vac}\cdot\phi <n_1 \left( 1-\phi\right) +n_\mathrm{liq}\phi =n_\mathrm{eff}^\mathrm{filled},
-          \label{eq:neff-inequality}
+            P_\mathrm{sp}(d')\ge P_\mathrm{eq}(d).
+            \label{eq:open-fun-pore-precond}
         \end{equation*}
-        where
+        to hold, the pore fills abruptly at spinodal pressure $P_\mathrm{sp}(d')$. This is the case shown in \cref{fig:open-funnelled-pore-condensation} and \cref{fig:open-pore-loops}.
+
+        For stronger funnellization, the condensation branch of the isotherm shows a vertical rise, followed by a continuous increase due to the further condensation at equilibrium pressure and according to the increasing pore diameter.
+        \medskip
+
+        \Cref{fig:iso-loops} summarizes the results. A hysteresis occurs only for open pores. Moreover, the funnellization causes an inclined evaporation branch. For a closed pore, the steepness of the condensation branch changes too. In contrast, the condensation branch of an open pore is not affected by the funnellization.
+
+        \subfile{tikz/pore_theory/iso_loops.tex}
+
+
+    \section{Transmission of a nanoporous alumina membrane}
+
+      The experimental setup includes laser transmission measurements of the nanoporous alumina membranes. Therefore, the expected \textsc{Fresnel} transmission coefficients of the membranes in dry state and also with hexane condensed inside the pores are of interest. To keep things simple, the effective medium approximation (compare \cref{subsec:effective-medium-approx}) will be used.
+
+
+      \subsection{Effective medium approximation}
+      \label{subsec:effective-medium-approx}
+
+        For a medium composed of two components (indice 1 and 2), with the respective fractions $1-\phi$ and $\phi$ and refractive indice $n_1$ and $n_2$, the effective refractive index can be obtained by the effective medium approximation
+        \begin{equation}
+          n_\mathrm{eff} = n_1 \left(1-\phi\right) + n_2 \phi.
+          \label{eq:porous-transmission-approximation}
+        \end{equation}
+        A visual illustration of the idea is given by \cref{fig:porous-transmission}.
+
+        \subfile{tikz/optics/porous_n.tex}
+
+
+      \subsection{Fresnel transmission coefficient of nanoporous alumina membranes}
+
+        According to (REF NIST???), the refractive indice of alumina and hexane are
+        \begin{align*}
+          n_\mathrm{alumina}=1,7682  \\%https://refractiveindex.info/?shelf=main&book=Al2O3&page=Malitson-o
+          n_\mathrm{hexane}=1,3758  . %https://refractiveindex.info/?shelf=organic&book=hexane&page=Kozma
+        \end{align*}
+        Using the \textsc{Fresnel} formula
         \begin{equation*}
-          1=n_\mathrm{vac}<n_\mathrm{liq}
+          T=\underbrace{\left(\frac{2n_1n_2}{n_1+n_2}\right) ^2}_{\text{entering medium 2}}\cdot \underbrace{\left(\frac{2n_1n_2}{n_1+n_2}\right) ^2}_{\text{reentering medium 2}}
         \end{equation*}
-        with the refractive index of vacuum $n_\mathrm{vac}$. Combining with the \textsc{Fresnel} equations yields the transmission coefficients
-        \begin{equation*}
-          T_\mathrm{empty}=\left(\frac{2n_\mathrm{vac}}{n_\mathrm{vac}+n_\mathrm{eff}^\mathrm{empty}}\right)^2 > \left(\frac{2n_\mathrm{vac}}{n_\mathrm{vac}+n_\mathrm{eff}^\mathrm{filled}}\right)^2=T_\mathrm{filled}
-        \end{equation*}
-        when assuming an incident angle $\theta_\mathrm{i}=0$ once again.
+        and combining with \cref{eq:porous-transmission-approximation} yields the transmission coefficients
+        \begin{align}
+          T_\mathrm{empty}=0,92 \\
+          T_\mathrm{filled}=0,98  .
+          \label{eq:trans-coeffs}
+        \end{align}
+        
 
+      \section{Light scattering in alumina membranes}
+      \label{sec:scattering-in-alumina-membranes}
 
-        \subsubsection{Transmission of Empty AAM Membrane}
+      As will be observed during the experiment, the transmission of the nanoporous alumina membranes is stronger when the pores are filled with hexane than it is in the empty state of the membranes. Furthermore, a transmission drop during the transission from the empty state to the filled state and visa versa will be measured.
 
-          To give an example: The transmission coefficient of an empty nanoporous alumina membrane, as used in the conducted experiments, is computed in the following way: The alumina membranes parameters are
-          \begin{align}
-              \phi &= \SI{25}{\percent}   \\
-              n_{\ce{Al2O3}} &= 1,7682   %https://refractiveindex.info/?shelf=main&book=Al2O3&page=Malitson-o
-          \end{align}
-          which make for a transmission coefficient of
-          \begin{equation}
-              T_{\ce{Al2O3}}^\mathrm{empty}=0,9024.
-          \end{equation}
+      The idea behind these phenomena is that the cylindrical pores scatter light. Referring to the theory of \textsc{Rayleigh} scattering, this explains the higher transmission values for the filled state of the membranes by index matching. On the other hand, the pores show the order of a hexagonal lattice. If the order were perfect, the membrane should not scatter light, in either empty state or filled, because the distance between pores is small in respect to the wavelength of the light (red light, as a \ce{HeNe} laser is used). However, the lattice is not perfect, which causes some scattering in both states of the membrane. If now, all the pores do not fill and empty at the same pressures, the optical heterogeneity will increase during the condensation and evaporation process. This causes stronger light scattering and therefore transmission drops during the condensation and evaporation process. The extreme magnitude of these drops can be explained by the large length of the pores.
 
 
 \end{document}
