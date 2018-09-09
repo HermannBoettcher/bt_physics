@@ -43,6 +43,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[11pt, rgb]{scrreprt}
+%\bibliography{poreux2016}
 
 
 
@@ -143,6 +144,9 @@
 \unisection{Mathematisch-Naturwissenschaftlichen Sektion}
 \department{Fachbereich Physik}
 \supervisorOne{Prof. Dr. Georg Maret}
+
+
+\bibliography{poreux2016} 
 
 
 
@@ -443,6 +447,12 @@
 
 \newpage
 
+\begin{abstract}
+  I'm a great abstract.
+\end{abstract}
+
+\newpage
+
 \pagenumbering{arabic}
 
 \settoggle{externalize}{true}
@@ -512,20 +522,10 @@
   %\subfile{tikz/kelvin_equation/kelvin_equation_plot.tex}
   %\subfile{tikz/graphs/295c/295c.tex}
 
-\begin{thebibliography}{[MB91a]}
+
 \addcontentsline{toc}{chapter}{Bibliography}
 
-\normalsize
-\sffamily
-
-\setlength{\itemsep}{6pt}
-
-\bibitem[Cd15]{bib:corporateDesign}
-Universität Konstanz: Corporate Design Manual.
-Universtät Konstanz, (2015)
-
-
-\end{thebibliography}
+\printbibliography
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Ende vom Dokument                                     %

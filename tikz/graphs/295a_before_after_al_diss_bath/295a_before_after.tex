@@ -1,7 +1,7 @@
 \documentclass[../../../thesis.tex]{subfiles}
 
 \begin{document}
-  \begin{figure}[ht]
+  \begin{figure}[tb]
 		\centering
     \tikzsetnextfilename{295a_before_after_al_diss_bath}
     \begin{tikzpicture}
@@ -32,13 +32,13 @@
           ]
 					% Add plots
 					\addplot[mark=none, color=red] table [x=Prel,y=liquid_fraction]{tikz/graphs/295a_before_after_al_diss_bath/295a_cond_4.txt};
-					\addlegendentry{$LF_\mathrm{cond}^\mathrm{before}$}
+					\addlegendentry{$LF_\mathrm{cond}^\mathrm{295a}$}
 					\addplot[mark=none, color=red!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/295a_before_after_al_diss_bath/295a_evap_4.txt};
-					\addlegendentry{$LF_\mathrm{cond}^\mathrm{before}$}
+					\addlegendentry{$LF_\mathrm{cond}^\mathrm{295a}$}
 					\addplot[mark=none, color=blue] table [x=Prel,y=liquid_fraction]{tikz/graphs/295a_before_after_al_diss_bath/295a_al_bath_cond_2.txt};
-					\addlegendentry{$LF_\mathrm{cond}^\mathrm{after}$}
+					\addlegendentry{$LF_\mathrm{cond}^\mathrm{295a'}$}
 					\addplot[mark=none, color=blue!50] table [x=Prel,y=liquid_fraction]{tikz/graphs/295a_before_after_al_diss_bath/295a_al_bath_evap_2.txt};
-					\addlegendentry{$LF_\mathrm{evap}^\mathrm{after}$}
+					\addlegendentry{$LF_\mathrm{evap}^\mathrm{295a'}$}
         \end{axis}
 				% transmission
 				\begin{axis}[
@@ -55,22 +55,22 @@
 					ylabel = {Transmission $T$},
 					xtick = {1e-1,1e-2,1e-3},
 					ytick = {10,1,1e-1,1e-2,1e-3},
-					grid,
+          ymajorgrids=true,
           legend style={at={(0,0.5)}, legend columns=2, anchor=south west},
 					%title={Membrane 296b - $\SI{60}{\micro\meter}$}
 					]
 					% Add plots
 					\addplot[mark=none, color=red] table [x=Prel,y=transmission]{tikz/graphs/295a_before_after_al_diss_bath/295a_cond_4.txt};
-					\addlegendentry{$T_\mathrm{cond}^\mathrm{before}$}
+					\addlegendentry{$T_\mathrm{cond}^\mathrm{295a}$}
 					\addplot[mark=none, color=red!50] table [x=Prel,y=transmission]{tikz/graphs/295a_before_after_al_diss_bath/295a_evap_4.txt};
-					\addlegendentry{$T_\mathrm{evap}^\mathrm{before}$}
+					\addlegendentry{$T_\mathrm{evap}^\mathrm{295a}$}
 					\addplot[mark=none, color=blue] table [x=Prel,y=transmission]{tikz/graphs/295a_before_after_al_diss_bath/295a_al_bath_cond_2.txt};
-					\addlegendentry{$T_\mathrm{cond}^\mathrm{after}$}
+					\addlegendentry{$T_\mathrm{cond}^\mathrm{295a'}$}
 					\addplot[mark=none, color=blue!50] table [x=Prel,y=transmission]{tikz/graphs/295a_before_after_al_diss_bath/295a_al_bath_evap_2.txt};
-					\addlegendentry{$T_\mathrm{evap}^\mathrm{after}$}
+					\addlegendentry{$T_\mathrm{evap}^\mathrm{295a'}$}
 				\end{axis}
     \end{tikzpicture}
-    \label{fig:295a_al_diss}
-    \caption{Comparison of the isotherms of membrane 295a (closed pores) before an after a $\SI{4,5}{\hour}$ bath in aluminum dissoling acid (compare \cref{sssec:al-dissolution}). A small but homogenous shift of the isotherm to higher pressures is clearly visible. This implies that the acid does not only attack aluminum but also alumina.}
+    \label{fig:295a-al-diss}
+    \caption{Comparison of the isotherms of closed pore membrane 295a before an after a $\SI{4,5}{\hour}$ bath in the acid used for the aluminum dissolution (compare \cref{subsec:al-dissolution}). A small but homogenous shift of the isotherm to higher pressures is clearly visible. This implies that the acid does not only attack aluminum but also alumina.}
   \end{figure}
 \end{document}

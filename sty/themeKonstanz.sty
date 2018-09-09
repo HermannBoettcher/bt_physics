@@ -11,7 +11,8 @@
 % mein Kram
 \usepackage{bm}
 \newcommand{\uvec}[1]{\boldsymbol{\hat{\textbf{#1}}}}
-
+\usepackage[backend=bibtex]{biblatex}
+\addbibresource{poreux2016.bib}
 \usepackage{shellesc}
 \usepackage[mode=buildnew]{standalone}% requires -shell-escape
 \usepackage[decimalsymbol=comma, per-mode=fraction]{siunitx}
@@ -19,6 +20,7 @@
 \usepackage{amsmath}
 \usepackage{tikz}
 \usepackage{forest}
+\usepackage{biblatex}
 \usepackage{pgfplots}
 \usepgfplotslibrary{colormaps}
 %\pgfplotsset{compat=1.15}
@@ -30,6 +32,7 @@
 \usepackage{fontawesome}
 \usepackage{silence}
 \usepackage{mathtools}
+\usepackage[addtotoc]{abstract}
 \captionsetup[subfigure]{subrefformat=simple,labelformat=simple,listofformat=subsimple}
 \renewcommand\thesubfigure{(\alph{subfigure})}
 
@@ -1868,7 +1871,7 @@ Konstanz, \jahr%
               \itemsep   0\p@}
 
 
-\bibliographystyle{alphabetic}
+%\bibliographystyle{alphabetic}
 
 
 

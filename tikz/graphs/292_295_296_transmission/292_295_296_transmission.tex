@@ -1,7 +1,7 @@
 \documentclass[../../../thesis.tex]{subfiles}
 
 \begin{document}
-  \begin{figure}[ht]
+  \begin{figure}[tb]
 		\centering
     \subfloat[]{
     \tikzsetnextfilename{292_transmission}
@@ -25,16 +25,14 @@
   					ymin = \TransMin, ymax = \TransMax,
   					ylabel = {Transmission $T$},
   					xlabel = {Relative pressure $P_\mathrm{rel}$},
-  					ytick = {10,1,1e-1,1e-2,1e-3,1e-4},
+  					%ytick = {1,1e-1,1e-2,1e-3,1e-4},
   					grid,
             legend style={at={(0,0)}, legend columns=1, anchor=south west},
   					]
   					% Add plots
-            \addplot +[no markers, raw gnuplot, line width = 1pt,red]
-            gnuplot{plot "tikz/graphs/292_295_296_transmission/292d_cond_1.txt" using ($1):($2*0.45) index 2;};
+  					\addplot[mark=none, color=red] table [x=Prel,y=transmission, col sep=comma]{tikz/graphs/292_295_296_transmission/292d_cond_1.csv};
   					\addlegendentry{$T_\mathrm{cond}^\mathrm{292d}$}
-            \addplot +[no markers, raw gnuplot, line width = 1pt,red]
-            gnuplot{plot "tikz/graphs/292_295_296_transmission/292d_evap_1.txt" using ($1):($2*0.45) index 2;};
+  					\addplot[mark=none, color=red!50] table [x=Prel,y=transmission, col sep=comma]{tikz/graphs/292_295_296_transmission/292d_evap_1.csv};
   					\addlegendentry{$T_\mathrm{evap}^\mathrm{292d}$}
   				\end{axis}
         \end{tikzpicture}
@@ -45,7 +43,7 @@
       \begin{tikzpicture}
           \def\PrelMin{.86}
   				\def\PrelMax{1}
-  				\def\TransMin{1e-3}
+  				\def\TransMin{1e-4}
   				\def\TransMax{1}
   				\def\LfMin{0}
   				\def\LfMax{2}
@@ -64,7 +62,7 @@
   					ymin = \TransMin, ymax = \TransMax,
   					ylabel = {Transmission $T$},
   					xlabel = {Relative pressure $P_\mathrm{rel}$},
-  					ytick = {10,1,1e-1,1e-2,1e-3},
+  					%ytick = {10,1,1e-1,1e-2,1e-3},
   					grid,
             legend style={at={(0,0)}, legend columns=1, anchor=south west},
   					%title={Membrane 296b - $\SI{60}{\micro\meter}$}
@@ -73,7 +71,7 @@
   					\addplot[mark=none, color=red] table [x=Prel,y=transmission]{tikz/graphs/292_295_296_transmission/296b_op_cond_1.txt};
   					\addlegendentry{$T_\mathrm{cond}^\mathrm{296b''}$}
   					\addplot[mark=none, color=red!50] table [x=Prel,y=transmission]{tikz/graphs/292_295_296_transmission/296b_op_evap_1.txt};
-  					\addlegendentry{$T_\mathrm{evap}^\mathrm{292b''}$}
+  					\addlegendentry{$T_\mathrm{evap}^\mathrm{296b''}$}
   				\end{axis}
         \end{tikzpicture}
         \label{fig:296-trans}
@@ -84,7 +82,7 @@
       \begin{tikzpicture}
           \def\PrelMin{.86}
   				\def\PrelMax{1}
-  				\def\TransMin{1e-3}
+  				\def\TransMin{1e-4}
   				\def\TransMax{1}
   				\def\LfMin{0}
   				\def\LfMax{2}
@@ -103,7 +101,7 @@
   					ymin = \TransMin, ymax = \TransMax,
   					ylabel = {Transmission $T$},
   					xlabel = {Relative pressure $P_\mathrm{rel}$},
-  					ytick = {10,1,1e-1,1e-2,1e-3},
+  					%ytick = {10,1,1e-1,1e-2,1e-3},
   					grid,
             legend style={at={(0,0)}, legend columns=1, anchor=south west},
   					%title={Membrane 296b - $\SI{60}{\micro\meter}$}
@@ -123,7 +121,7 @@
       \begin{tikzpicture}
           \def\PrelMin{.5}
   				\def\PrelMax{1}
-  				\def\TransMin{1e-2}
+  				\def\TransMin{1e-4}
   				\def\TransMax{1}
   				\def\LfMin{0}
   				\def\LfMax{2}
@@ -139,7 +137,7 @@
   					ymin = \TransMin, ymax = \TransMax,
   					ylabel = {Transmission $T$},
   					xlabel = {Relative pressure $P_\mathrm{rel}$},
-  					ytick = {10,1,1e-1,1e-2},
+  					%ytick = {10,1,1e-1,1e-2},
   					grid,
             legend style={at={(0,0)}, legend columns=1, anchor=south west},
   					%title={Membrane 296b - $\SI{60}{\micro\meter}$}
@@ -148,7 +146,7 @@
   					\addplot[mark=none, color=red] table [x=Prel,y=transmission]{tikz/graphs/292_295_296_transmission/295f200ALD_cond_1.txt};
   					\addlegendentry{$T_\mathrm{cond}^\mathrm{295f''}$}
   					\addplot[mark=none, color=red!50] table [x=Prel,y=transmission]{tikz/graphs/292_295_296_transmission/295f200ALD_evap_1.txt};
-  					\addlegendentry{$T_\mathrm{evap}^\mathrm{29f''}$}
+  					\addlegendentry{$T_\mathrm{evap}^\mathrm{295f''}$}
   				\end{axis}
         \end{tikzpicture}
         \label{fig:295f200ALD-trans}}
