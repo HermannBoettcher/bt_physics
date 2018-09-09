@@ -7,7 +7,9 @@
 % Stand: 14.09.2016 - Michael Brendle (Version 0.4)   %
 %                                                     %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\newenvironment{poliabstract}[1]
+   {\renewcommand{\abstractname}{#1}\begin{abstract}}
+   {\end{abstract}}
 % mein Kram
 \usepackage{bm}
 \newcommand{\uvec}[1]{\boldsymbol{\hat{\textbf{#1}}}}
@@ -635,21 +637,21 @@
 \selectfontsize{17pt}\centering\textbf{\docTitle}%
 \end{textblock*}%
 % Art der Arbeit, z.b. Bachelorarbeit, Masterarbeit, ...
-\begin{textblock*}{\textwidth}(0.5\footspace, 8cm)%
+\begin{textblock*}{\textwidth}(0.5\footspace, 7cm)%
 \selectfontsize{17pt}\centering\textbf{#1}%
 \end{textblock*}%
 % Autor (Deutsch, English)
 \ifthenelse{\equal{\lanUser}{\lanEnglish}}%
 {%
-\begin{textblock*}{\textwidth}(0.5\footspace, 10cm)%
+\begin{textblock*}{\textwidth}(0.5\footspace, 8.5cm)%
 \selectfontsize{14pt}\centering%
-by\\%
+vorgelegt von\\%
 \vskip 2pt
 \textbf{\autor}%
 \end{textblock*}%
 }%
 {%
-\begin{textblock*}{\textwidth}(0.5\footspace, 10cm)%
+\begin{textblock*}{\textwidth}(0.5\footspace, 8.5cm)%
 \selectfontsize{14pt}\centering%
 vorgelegt von\\%
 \vskip 2pt%
@@ -659,36 +661,47 @@ vorgelegt von\\%
 % at the / an der
 \ifthenelse{\equal{\lanUser}{\lanEnglish}}%
 {%
-\begin{textblock*}{\textwidth}(0.5\footspace, 12.5cm)%
+\begin{textblock*}{\textwidth}(0.5\footspace, 10.5cm)%
 \selectfontsize{14pt}\centering%
-at the%
+an der%
 \end{textblock*}%
 }%
 {%
-\begin{textblock*}{\textwidth}(0.5\footspace, 12.5cm)%
+\begin{textblock*}{\textwidth}(0.5\footspace, 10.5cm)%
 \selectfontsize{14pt}\centering%
 an der%
 \end{textblock*}%
 }%
 % Unversität Konstanz Logo
-\begin{textblock*}{\textwidth}(0.5\footspace, 13.25cm)%
+\begin{textblock*}{\textwidth}(0.5\footspace, 10.5cm)%
 \centering\includegraphics[width=0.75\textwidth]{graphics/UniKonstanz_Logo_Optimum.pdf}
 \end{textblock*}%
 % Uni-Sektion und Fachebereich
-\begin{textblock*}{\textwidth}(0.5\footspace, 19.5cm)%
+\begin{textblock*}{\textwidth}(0.5\footspace, 15.5cm)%
 \selectfontsize{14pt}\centering%
 \docUnisection\\%
 \vskip 2pt%
 \docDepartment%
 \end{textblock*}%
+{%
+\begin{textblock*}{\textwidth}(0.5\footspace, 18cm)%
+\selectfontsize{14pt}\centering%
+angefertigt am\\%
+\vskip 2pt%
+\textbf{Institut Néel}%\\%
+\vskip 2pt%
+des\\%
+\vskip 2pt%
+\textbf{Centre national de la recherche scientifique}
+\end{textblock*}%
+}%
 % Gutachter (Deutsch, English)
 \ifthenelse{\equal{\lanUser}{\lanEnglish}}%
 {%
 \begin{textblock*}{\textwidth}(0.5\footspace, 22.5cm)%
 \selectfontsize{14pt}\centering%
 \begin{tabular}{lL{0.5cm}l}%
-1. Evaluated by & & \docSupervisorOne\\[2pt]%
-2. Evaluated by & & \docSupervisorTwo%
+1. Gutachter & & \docSupervisorOne\\[2pt]%
 \end{tabular}%
 \end{textblock*}%
 }%
@@ -706,7 +719,7 @@ Zweitgutachter: & & \docSupervisorTwo%
 {%
 \begin{textblock*}{\textwidth}(0.5\footspace, 26cm)%
 \selectfontsize{14pt}\centering%
-Constance, \jahr%
+Konstanz, \jahr%
 \end{textblock*}%
 }%
 {%

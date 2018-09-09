@@ -17,6 +17,30 @@
 \endgroup
 
 \datalist[entry]{nty/global//global/global}
+  \entry{etienne}{article}{}
+    \name{author}{2}{}{%
+      {{hash=BF}{%
+         family={Bonnet},
+         familyi={B\bibinitperiod},
+         given={F.},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=WP}{%
+         family={Wolf},
+         familyi={W\bibinitperiod},
+         given={P.E.},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BFWP1}
+    \strng{fullhash}{BFWP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{title}{to be published}
+  \endentry
+
   \entry{Bruschi2015a}{article}{}
     \name{author}{7}{}{%
       {{hash=BL}{%
@@ -231,6 +255,35 @@
     \field{year}{1938}
   \endentry
 
+  \entry{hexane}{article}{}
+    \name{author}{2}{}{%
+      {{hash=IZKPK}{%
+         family={I.\bibnamedelima Z.\bibnamedelima Kozma},
+         familyi={I\bibinitperiod\bibinitdelim Z\bibinitperiod\bibinitdelim
+  K\bibinitperiod},
+         given={P.\bibnamedelima Krok},
+         giveni={P\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+      {{hash=RE}{%
+         family={Riedle},
+         familyi={R\bibinitperiod},
+         given={E.},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{IZKPKRE1}
+    \strng{fullhash}{IZKPKRE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{I}
+    \field{sortinithash}{I}
+    \field{title}{Direct measurement of the group-velocity mismatch and
+  derivation of the refractive-index dispersion for a variety of solvents in
+  the ultraviolet}
+    \field{journaltitle}{Journal of the Optical Society of America B}
+    \field{year}{2005}
+  \endentry
+
   \entry{Rufolf-aam}{thesis}{}
     \name{author}{1}{}{%
       {{hash=LAR}{%
@@ -254,6 +307,32 @@
     }
     \field{type}{phdthesis}
     \field{year}{2009}
+  \endentry
+
+  \entry{sapphire}{article}{}
+    \name{author}{2}{}{%
+      {{hash=MIH}{%
+         family={Malitson},
+         familyi={M\bibinitperiod},
+         given={I.\bibnamedelima H.},
+         giveni={I\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=DMJ}{%
+         family={Dodge},
+         familyi={D\bibinitperiod},
+         given={M.\bibnamedelima J.},
+         giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MIHDMJ1}
+    \strng{fullhash}{MIHDMJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{title}{Refractive Index and Birefringence of Synthetic Sapphire}
+    \field{journaltitle}{Journal of the Optical Society of America}
+    \field{year}{1972}
   \endentry
 
   \entry{Mistura2016a}{article}{}
@@ -353,6 +432,31 @@
     \warn{\item Invalid format of field 'month'}
   \endentry
 
+  \entry{al-mem-matrices}{article}{}
+    \name{author}{1}{}{%
+      {{hash=PBWMRPGSHK}{%
+         family={Pierre\bibnamedelima Braunstein},
+         familyi={P\bibinitperiod\bibinitdelim B\bibinitperiod},
+         suffix={Hans‐Peter\bibnamedelima Kormann},
+         suffixi={H\bibinitperiod\bibinitdelim K\bibinitperiod},
+         given={Wolfgang Meyer‐Zaika Raphaël Pugin Günter\bibnamedelima
+  Schmid},
+         giveni={W\bibinitperiod\bibinitdelim M\bibinitperiod R\bibinitperiod
+  P\bibinitperiod G\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PBHKWMRPGS1}
+    \strng{fullhash}{PBHKWMRPGS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{title}{Strategies for the Anchoring of Metal Complexes, Clusters,
+  and Colloids Inside Nanoporous Alumina Membranes}
+    \field{journaltitle}{Chemistry A European Journal}
+    \field{year}{2000}
+  \endentry
+
   \entry{Puibasset2007a}{article}{}
     \name{author}{1}{}{%
       {{hash=PJ}{%
@@ -386,6 +490,45 @@
     \field{journaltitle}{J. Chem. Phys.}
     \field{month}{10}
     \field{year}{2007}
+  \endentry
+
+  \entry{Saam1975a}{article}{}
+    \name{author}{2}{}{%
+      {{hash=SWF}{%
+         family={Saam},
+         familyi={S\bibinitperiod},
+         given={W.\bibnamedelima F.},
+         giveni={W\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=CMW}{%
+         family={Cole},
+         familyi={C\bibinitperiod},
+         given={Milton\bibnamedelima W.},
+         giveni={M\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Physical Society}%
+    }
+    \strng{namehash}{SWFCMW1}
+    \strng{fullhash}{SWFCMW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \verb{doi}
+    \verb 10.1103/PhysRevB.11.1086
+    \endverb
+    \field{number}{3}
+    \field{pages}{1086\bibrangedash 1105}
+    \field{title}{Excitations and thermodynamics for liquid-helium films}
+    \field{volume}{11}
+    \verb{file}
+    \verb Saam1975a.pdf:Saam1975a.pdf:PDF
+    \endverb
+    \field{journaltitle}{Phys. Rev. B}
+    \field{year}{1975}
+    \warn{\item Invalid format of field 'month'}
   \endentry
 
   \entry{SalPoi:ALD}{article}{}
@@ -430,6 +573,38 @@
   cycle during trimethylaluminum under-dosing conditions}
     \field{journaltitle}{Journal of Vacuum Science \& Technology}
     \field{year}{2017}
+  \endentry
+
+  \entry{nanowires}{article}{}
+    \name{author}{1}{}{%
+      {{hash=TBKLSMJRSD}{%
+         family={T. E.\bibnamedelima Bogart},
+         familyi={T\bibinitperiod\bibinitdelim B\bibinitperiod},
+         suffix={S.\bibnamedelima Dey},
+         suffixi={S\bibinitperiod\bibinitdelim D\bibinitperiod},
+         given={K.‐K. Lew S. E. Mohney J. M.\bibnamedelima Redwing},
+         giveni={K\bibinitperiod\bibinitdelim L\bibinitperiod S\bibinitperiod
+  M\bibinitperiod J\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TBSDKLSMJR1}
+    \strng{fullhash}{TBSDKLSMJR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{abstract}{%
+    The use of nanoporous alumina membranes to control the diameter of silicon
+  nanowires synthesized by vapor–liquid–solid growth is demonstrated. An
+  increase in nanowire diameter was observed when the nanowires grew out from
+  the top surface of the membrane (see Figure). The diameter increase was
+  attributed to a change in the shape of the Au–Si liquid alloy when the
+  nanowires emerged from the membrane surface.%
+    }
+    \field{title}{Diameter‐Controlled Synthesis of Silicon Nanowires Using
+  Nanoporous Alumina Membranes}
+    \field{journaltitle}{Advanced Materials}
+    \field{year}{2005}
   \endentry
 \enddatalist
 \endinput
