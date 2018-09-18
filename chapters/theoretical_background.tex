@@ -13,7 +13,7 @@
     \section{Kelvin equation}
     \label{sec:kelvin-equation}
 
-      Condensation of a fluid in a cylindrical pore occurs at pressures below the saturated vapor pressure $P_\mathrm{sv}$. For relatively large pores, this is dominantly due to the fluid's surface tension. For a curved meniscus, \textsc{Laplace-Young} equation implies
+      Condensation of a wetting fluid in a cylindrical pore occurs at pressures below the saturated vapor pressure $P_\mathrm{sv}$. For relatively large pores, this is dominantly due to the fluid's surface tension. For a curved meniscus, \textsc{Laplace-Young} equation implies
       \begin{equation*}
         P_\mathrm{l}-P_\mathrm{v}=-\gamma\underbrace{\left(\frac{1}{R_1}+\frac{1}{R_2}\right)}_{\coloneqq\zeta}
       \end{equation*}
@@ -31,7 +31,7 @@
       \begin{equation*}
         \mu_\mathrm{v}(P_\mathrm{sv})=\mu_\mathrm{l}(P_\mathrm{sv})
       \end{equation*}
-      and assuming the liiwuid to be much denser than the, yields
+      and assuming the liquid to be much denser than the vapor yields
       \begin{equation}
         -\zeta\gamma V_\mathrm{mol}^\mathrm{l}= RT\ln P_\mathrm{rel},
       \end{equation}
@@ -40,7 +40,7 @@
 
       \subfile{tikz/pore_cond_evap/pore_cond_evap.tex}
 
-      For a perfectly wetting liquid the meniscus in a closed pore, the meniscus curvature is
+      For a perfectly wetting liquid the meniscus curvature in a closed pore is
       \begin{equation*}
         \zeta_\mathrm{sph} = \frac{1}{R_0}+\frac{1}{R_0}=\frac{2}{R_0}
       \end{equation*}
@@ -78,7 +78,7 @@
       Qualitatively, the pressures at which condensation and evaporation occur are shifted towards smaller values due to the reduction of the effective pore diameter by the liquid film (\cite{Saam1975a}). For even smaller pores, thermal activation may be so important that the hysteresis disappears (\cite{etienne}).
       \medskip
 
-      The long term goal of the team's experiments is to probe these absorption and desorption models. However, for the native pores of $\SI{40}{\nano\meter}$ to $\SI{60}{\nano\meter}$ diameter that are used for the conducted experiments, these effects are believed to be small and the \textsc{Kelvin} equation will be used to translate the condensation and evaporation pressures to pore diameters.
+      The long term goal of the team's experiments is to probe these absorption and desorption models. However, for the native pores of $\SI{40}{\nano\meter}$ to $\SI{60}{\nano\meter}$ diameter that are used for the conducted experiments, these effects are expected to be small and the \textsc{Kelvin} equation will be used to translate the condensation and evaporation pressures to pore diameters.
 
 
     \section{Condensation and evaporation in non ideal pores}
@@ -157,12 +157,12 @@
         \end{align*}
         (\cite{sapphire,hexane}). Using the \textsc{Fresnel} formula
         \begin{equation*}
-          T=\underbrace{\left(\frac{2n_1n_2}{n_1+n_2}\right) ^2}_{\text{entering medium 2}}\cdot \underbrace{\left(\frac{2n_1n_2}{n_1+n_2}\right) ^2}_{\text{reentering medium 2}}
+          T=\underbrace{\frac{4n_1n_2}{\left( n_1+n_2\right) ^2}}_{\text{entering medium 2}}\cdot \underbrace{\frac{4n_1n_2}{\left( n_1+n_2\right)^2}}_{\text{exiting medium 2}}
         \end{equation*}
         and combining with \cref{eq:porous-transmission-approximation} yields the transmission coefficients
         \begin{align}
-          T_\mathrm{empty}=0,92 \\
-          T_\mathrm{filled}=0,98  .
+          T_\mathrm{empty}=0,85 \\
+          T_\mathrm{filled}=0,97  .
           \label{eq:trans-coeffs}
         \end{align}
 
@@ -170,7 +170,7 @@
       \section{Light scattering in alumina membranes}
       \label{sec:scattering-in-alumina-membranes}
 
-      As will be observed during the experiment, the transmission of the nanoporous alumina membranes is stronger when the pores are filled with hexane than it is in the empty state of the membranes. Furthermore, a transmission drop during the transission from the empty state to the filled state and visa versa will be measured.
+      As will be observed during the experiment, the transmission of the nanoporous alumina membranes is stronger when the pores are filled with hexane than it is in the empty state of the membranes. Furthermore, a transmission drop during the transmission from the empty state to the filled state and visa versa will be measured.
 
       The idea behind these phenomena is that the cylindrical pores scatter light. Referring to the theory of \textsc{Rayleigh} scattering, this explains the higher transmission values for the filled state of the membranes by index matching. On the other hand, the pores show the order of a hexagonal lattice. If the order were perfect, the membrane should not scatter light, in either empty state or filled, because the distance between pores is small in respect to the wavelength of the light (red light, as a \ce{HeNe} laser is used). However, the lattice is not perfect, which causes some scattering in both states of the membrane. If now, all the pores do not fill and empty at the same pressures, the optical heterogeneity will increase during the condensation and evaporation process. This causes stronger light scattering and therefore transmission drops during the condensation and evaporation process. The extreme magnitude of these drops can be explained by the large length of the pores.
 
